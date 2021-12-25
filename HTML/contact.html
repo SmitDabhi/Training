@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Helperland | About</title>
+
+    <title>Helperland | Conact Us</title>
 </head>
 
 <body>
@@ -52,20 +53,17 @@
                 </div>
             </div>
         </nav>
-        <!-- Img -->
-        <div class="about-img">
-        </div>
-        <!-- Img -->
+        <div class="contact-img"></div>
     </header>
     <!-- Navbar End -->
 
-    <!-- About-Details Start -->
-    <section class="about-details">
+    <!-- ContactUs Division Start -->
+    <section class="contact-us">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center ">
-                        <h2 class="content-title">A Few words about us</h2>
+                        <h2 class="content-title">Contact us</h2>
                     </div>
                 </div>
             </div>
@@ -76,43 +74,84 @@
                     <hr class="faq-hr">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 d-flex justify-content-center align-items-center text-center">
-                    <p class="about-para">We are providers of professional home cleaning services, offering hourly based
-                        house cleaning options, which mean that you don't <br>
-                        have to fret about getting your house cleaned anymore. We will handle everything for you, so
-                        that you can focus on spending your <br>
-                        precious time with your family members. <br><br>
-                        We have a number of experienced cleaners to help you make cleaning out or shifting your home an
-                        easy affair.</p>
+            <div class="row contact-details">
+                <div class="col-lg-4 mt-3">
+                    <div class="text-center">
+                        <div class="contact-icon">
+                            <img src="img/location.png" alt="">
+                        </div>
+                        <div class="contact-txt">
+                            <a href="#">1111 Lorem ipsum text 100, <br> Lorem ipsum AB</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center ">
-                        <h2 class="content-title">Our Story</h2>
+                <div class="col-lg-4 mt-3">
+                    <div class="text-center">
+                        <div class="contact-icon">
+                            <img src="img/phone-call.png" alt="">
+                        </div>
+                        <div class="contact-txt d-flex flex-column ">
+                            <a href="tel:+49 (40) 123 56 7890">+49 (40) 123 56 7890</a>
+                            <a href="tel:+49 (40) 987 56 0000">+49 (40) 987 56 0000</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-3">
+                    <div class="text-center">
+                        <div class="contact-icon m-3">
+                            <img src="img/mail-icon.png" alt="">
+                        </div>
+                        <div class="contact-txt">
+                            <a href="mailto:info@helperland.com">mailto:info@helperland.com</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 d-flex justify-content-center align-items-center">
-                    <hr class="faq-hr">
-                    <img src="img/faq-separator.png" class="faq-separator mx-2" alt="">
-                    <hr class="faq-hr">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 d-flex justify-content-center align-items-center text-center">
-                    <p class="about-para">A cleaner is a type of industrial or domestic worker who cleans homes or
-                        commercial premises for payment. Cleaners may specialise <br>
-                        in cleaning particular things or places, such a window cleaners. Cleaners often work when the
-                        people who otherwise occupy the <br>
-                        space are not around. They may clean offices at night or houses during the workday.</p>
-                </div>
+            <hr>
+            <div class="contact-form">
+                <h2>Get in touch with us</h2>
+                <form class="row g-3 mx-auto">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control form-txt" id="inputFname" placeholder="First name">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control form-txt" id="inputLname" placeholder="Last name">
+                    </div>
+                    <div class="col-md-6 form-number">
+                        <input type="tel" class="form-control form-txt" id="inputTel" placeholder="Mobile number">
+                        <span class="prefix">+46</span>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control form-txt" id="inputEmail" placeholder="Email address">
+                    </div>
+                    <div class="col-12">
+                        <select class="form-select form-sub" aria-label="Default select example">
+                            <option selected>Subject</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <textarea class="form-control form-txt" id="msgTextarea" rows="6"
+                            placeholder="Message"></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="form-btn">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
-    <!-- About-Details End -->
+    <!-- ContactUs Division End -->
+
+    <!-- Map Start -->
+    <section class="contact-map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.6980502384113!2d72.49824711476968!3d23.034856384946778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8352e403437b%3A0xdc9d4dae36889fb9!2sTatvaSoft!5e0!3m2!1sen!2sin!4v1639405140127!5m2!1sen!2sin"
+            class="address-map" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    <!-- Map End -->
 
     <!-- Footer Start -->
     <footer class="footer">
@@ -152,6 +191,7 @@
         </div>
     </footer>
     <!-- Footer End -->
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>

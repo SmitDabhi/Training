@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Helperland | Service Provider</title>
+</head>
+
+<body>
+    <!-- Header Start  -->
+    <header class="sp-header">
+        <nav class="navbar navbar-expand-lg navbar-dark  fixed-top p-0">
+            <div class="container-fluid home-nav">
+                <a class="navbar-brand p-0" href="#"><svg class="logo-nav" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="175" height="130">
+                        <image width="156" height="120"
+                            xlink:href="data:img/png;base64,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" />
+                    </svg></a>
+                <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                        <li class="nav-item mt-4">
+                            <a class=" header-nav sp-btn" href="#">Book now</a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <a class=" header-nav" href="#">Prices & services</a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <a class=" header-nav" href="#">Warranty</a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <a class=" header-nav" href="#blog">Blog</a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <a class=" header-nav" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <a class=" sp-btn" href="#">Login</a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <a class=" sp-btn" href="#">Become a
+                                Helper</a>
+                        </li>
+                        <li class="nav-item mt-4 dropdown">
+                            <a class="" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img class="px-2 py-0" src="img/flag.png" alt="flag"><svg
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="12" height="7">
+                                    <image width="12" height="7"
+                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAHCAQAAACWu2SvAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQflCxgKKTQARYB4AAAAa0lEQVQI103NoQoCYQDD8VkMggYRLYLFt7rmI10ziMVkEs6m2ZcwWQQRsdh/huM73dL+jC0qjYn8eaSxijNu5h2euuISA0c8LUUs3HEybFt7fMyMvXEQKQMbvDywa8nvsgbrknvSaZt+qhK+nGpkpn2sFJAAAAAASUVORK5CYII=" />
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#"><img src="img/flag.png" alt="">
+                                        <span>INDIA</span> </a></li>
+                                <li><a class="dropdown-item" href="#"><img src="img/flag.png" alt="">
+                                        <span>U.K.</span> </a></li>
+                                <li><a class="dropdown-item" href="#"><img src="img/flag.png" alt="">
+                                        <span>U.S.A.</span> </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row m-0">
+                <div class="col-lg-12 sp-heading">
+                    <form class="row g-3 service-form mx-auto">
+                        <div class="col-12 text-center m-0">
+                            <h3 class="form-heading">Register Now!</h3>
+                        </div>
+                        <div class="col-12 form-details my-3">
+                            <input type="text" class="form-control mx-auto" id="inputSPFname" placeholder="First name">
+                        </div>
+                        <div class="col-12 form-details my-3">
+                            <input type="text" class="form-control mx-auto" id="inputSPLname" placeholder="Last name">
+                        </div>
+                        <div class="col-12 form-details my-3">
+                            <input type="email" class="form-control mx-auto" id="inputEmail"
+                                placeholder="Email Address">
+                        </div>
+                        <div class="col-12 form-details my-3 sp-number">
+                            <input type="tel" class="form-control form-txt mx-auto" id="inputTel"
+                                placeholder="Mobile number">
+                            <span class="sp-prefix">+46</span>
+                        </div>
+                        <div class="col-12 form-details my-3">
+                            <input type="password" class="form-control mx-auto" name="pwd" id="inputPassword"
+                                placeholder="Password">
+                        </div>
+                        <div class="col-12 form-details my-3">
+                            <input type="password" class="form-control mx-auto" name="cpwd" id="inputCPassword"
+                                placeholder="Confirm Password">
+                        </div>
+                        <div class="col-12 form-details my-3">
+                            <div class="form-check mx-auto">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    I accept <a href="#">terms and conditions</a> & <a href="#">privacy policy</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center mb-4">
+                            <button type="submit" class="btn-sp-get ">Get Started <img class="ps-1"
+                                    src="./img/arrow-white.png" alt=""></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="sp-arrow text-center">
+                <img src="img/group-18_5.png" alt="">
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- SP Content Start -->
+    <section class="sp-process">
+        <div class="container">
+            <div class="process-heading text-center">
+                <h2>How it works</h2>
+            </div>
+            <div class="work-process">
+                <div class="row reg-ys">
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <div class="process-txt">
+                            <h3>Register yourself</h3>
+                            <p>Provide your basic information to register <br>
+                                yourself as a service provider.</p>
+                            <a href="#">Read more<img class="ps-2 sp-proc-arrow" src="./img/shape-2.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-img text-end">
+                            <img src="img/sp-img-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row ser-req">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="process-txt">
+                            <h3>Get service requests</h3>
+                            <p>You will get service requests from <br>
+                                customes depend on service area and profile.</p>
+                            <a href="#">Read more<img class="ps-2 sp-proc-arrow" src="./img/shape-2.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="process-img text-start">
+                            <img src="img/sp-img-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row comp-ser">
+                    <div class="col-lg-6">
+                        <div class="process-txt">
+                            <h3>Complete service</h3>
+                            <p>Accept service requests from your customers <br>
+                                and complete your work.</p>
+                            <a href="#">Read more<img class="ps-2 sp-proc-arrow" src="./img/shape-2.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-img text-end">
+                            <img src="img/sp-img-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SP Content End -->
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-lg-2 text-center p-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120"
+                        height="92">
+                        <image width="120" height="92"
+                            xlink:href="data:img/png;base64,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" />
+                    </svg>
+                </div>
+                <div class="col-lg-8 d-flex justify-content-center align-items-center">
+                    <div class="footer-navbar text-center p-4 ">
+                        <a class="" href="#">HOME</a>
+                        <a class="" href="#">ABOUT</a>
+                        <a class="" href="#">TESTIMONIALS</a>
+                        <a class="" href="#">FAQS</a>
+                        <a class="" href="#">INSURANCE</a>
+                        <a class="" href="#">POLICY</a>
+                        <a class="" href="#">IMPRESSUM</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 py-4 d-flex justify-content-center align-items-center  ">
+                    <a href="#"><img src="img/fb.svg" alt="fb" class="px-2"></a>
+                    <a href="#"><img src="img/insta.svg" alt="insta" class="px-2"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-lg-12 p-0">
+                    <hr class="footer-separator">
+                </div>
+            </div>
+            <div class="row faq-pilicy text-center">
+                <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
