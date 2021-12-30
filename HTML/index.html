@@ -13,13 +13,9 @@
 <body>
     <!-- Home Section Start -->
     <header class="home" id="home">
-        <nav class="navbar navbar-expand-lg navbar-dark  fixed-top p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark  fixed-top p-0 home-navbar">
             <div class="container-fluid home-nav">
-                <a class="navbar-brand p-0" href="#"><svg class="logo-nav" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" width="175" height="130">
-                        <image width="175" height="130"
-                            xlink:href="data:img/png;base64,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" />
-                    </svg></a>
+                <a class="navbar-brand p-0" href="#"><img src="img/logo-large.png" alt="" class="logonav"></a>
                 <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -27,29 +23,29 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
-                        <li class="nav-item mt-4">
+                        <li class="nav-item">
                             <a class=" header-nav sp-btn" href="#">Book now</a>
                         </li>
-                        <li class="nav-item mt-4">
+                        <li class="nav-item">
                             <a class=" header-nav" href="#">Prices & services</a>
                         </li>
-                        <li class="nav-item mt-4">
+                        <li class="nav-item">
                             <a class=" header-nav" href="#">Warranty</a>
                         </li>
-                        <li class="nav-item mt-4">
+                        <li class="nav-item">
                             <a class=" header-nav" href="#blog">Blog</a>
                         </li>
-                        <li class="nav-item mt-4">
+                        <li class="nav-item">
                             <a class=" header-nav" href="#">Contact</a>
                         </li>
-                        <li class="nav-item mt-4">
+                        <li class="nav-item">
                             <a class=" sp-btn" href="#">Login</a>
                         </li>
-                        <li class="nav-item mt-4">
+                        <li class="nav-item">
                             <a class=" sp-btn" href="#">Become a
                                 Helper</a>
                         </li>
-                        <li class="nav-item mt-4 dropdown">
+                        <li class="nav-item dropdown">
                             <a class="" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <img class="px-2 py-0" src="img/flag.png" alt="flag"><svg
@@ -317,15 +313,15 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card shadow prof-card">
                         <div class="card-body">
-                            <div align="right">
+                            <div>
                                 <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="36">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="msg-icon" width="35" height="36">
                                         <path fill-rule="evenodd" fill="#DAE5EC"
                                             d="M10.545 10.962h13.217c.485 0 .878.379.878.847 0 .468-.393.847-.878.847H10.545c.055 0-.878-.379-.878-.847 0-.468.933-.847.878-.847zm13.217 9.713c.485 0 .878.865.878.847 0 .468-.393.847-.878.847h-7.556c-.484 0-.877-.379-.877-.847 0 .018.393-.847.877-.847h7.556zM9.667 16.666c0-.469.933-.847.878-.847h13.217c.485 0 .878.378.878.847 0 .468-.393.847-.878.847H10.545c.055 0-.878-.379-.878-.847zm19.506 10.531c-3.601 3.475-8.714 5.152-13.763 4.536l-5.7 4.061c-.19.136-.419.406-.12.406-.629 0-.726-.211-.822-.237-.325-.085-.59-.31-.298-.61l-2.048-3.732c-.235.199.027-1.16 1.378-1.387-.233.566.41.027.645.566l1.084 2.491 4.938-3.519a1.12 1.12 0 0 1 .82-.194c4.509.675 9.117-.774 12.334-3.879 5.582-5.385 5.582-14.149 0-19.535C22.4.778 12.959.778 7.377 6.164 3.83 9.587 2.411 14.446 3.58 19.162l.008.035c.165.652.379 1.296.631 2.773l2.563 5.013c.388.539-.028 1.16-.586 1.386-.559.227-1.202-.026-1.437-.565L2.19 21.903c-.3-.717-.548-1.464-.726-2.178a.982.982 0 0 1-.038-.151C.114 14.162 1.755 8.595 5.825 4.666c6.437-6.211 16.911-6.21 23.348 0 6.437 6.212 6.437 16.319 0 22.531z" />
                                     </svg>
                                 </a>
                             </div>
-                            <div class="profile d-flex ms-4">
+                            <div class="profile d-flex">
                                 <div class="prof-img">
                                     <img src="img/group-31.png" alt="">
                                 </div>
@@ -337,11 +333,12 @@
                             <div class="prof-content">
                                 <p class="prof-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                                     fermentum
-                                    metus pulvinar aliquet consequat. Praesent nec malesuada nibh. <br>Nullam et metus
+                                    metus pulvinar aliquet consequat. Praesent nec malesuada nibh. <br> <br>Nullam et
+                                    metus
                                     congue,
                                     auctor augue sit amet, consectetur tortor.
                                 </p>
-                                <p class="read-more mb-4 mt-4">Read More <a href="#"><svg class="read-arrow"
+                                <p class="read-more">Read More <a href="#"><svg class="read-arrow"
                                             xmlns="http://www.w3.org/2000/svg" width="29" height="10">
                                             <path fill-rule="evenodd" fill="#4F4F4F"
                                                 d="M.1 3.725h21.392C20.456 2.263 19.94 1.31 19.887.1c2.357 2.151 5.421 3.318 9.213 4.414-3.792 1.051-6.721 2.334-9.213 4.696.573-1.602.589-2.454 1.637-4.009H.1V3.725z" />
@@ -353,15 +350,15 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card shadow prof-card">
                         <div class="card-body">
-                            <div align="right">
+                            <div>
                                 <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="36">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="msg-icon" width="35" height="36">
                                         <path fill-rule="evenodd" fill="#DAE5EC"
                                             d="M10.545 10.962h13.217c.485 0 .878.379.878.847 0 .468-.393.847-.878.847H10.545c.055 0-.878-.379-.878-.847 0-.468.933-.847.878-.847zm13.217 9.713c.485 0 .878.865.878.847 0 .468-.393.847-.878.847h-7.556c-.484 0-.877-.379-.877-.847 0 .018.393-.847.877-.847h7.556zM9.667 16.666c0-.469.933-.847.878-.847h13.217c.485 0 .878.378.878.847 0 .468-.393.847-.878.847H10.545c.055 0-.878-.379-.878-.847zm19.506 10.531c-3.601 3.475-8.714 5.152-13.763 4.536l-5.7 4.061c-.19.136-.419.406-.12.406-.629 0-.726-.211-.822-.237-.325-.085-.59-.31-.298-.61l-2.048-3.732c-.235.199.027-1.16 1.378-1.387-.233.566.41.027.645.566l1.084 2.491 4.938-3.519a1.12 1.12 0 0 1 .82-.194c4.509.675 9.117-.774 12.334-3.879 5.582-5.385 5.582-14.149 0-19.535C22.4.778 12.959.778 7.377 6.164 3.83 9.587 2.411 14.446 3.58 19.162l.008.035c.165.652.379 1.296.631 2.773l2.563 5.013c.388.539-.028 1.16-.586 1.386-.559.227-1.202-.026-1.437-.565L2.19 21.903c-.3-.717-.548-1.464-.726-2.178a.982.982 0 0 1-.038-.151C.114 14.162 1.755 8.595 5.825 4.666c6.437-6.211 16.911-6.21 23.348 0 6.437 6.212 6.437 16.319 0 22.531z" />
                                     </svg>
                                 </a>
                             </div>
-                            <div class="profile d-flex ms-4">
+                            <div class="profile d-flex">
                                 <div class="prof-img">
                                     <img src="img/group-32.png" alt="">
                                 </div>
@@ -373,11 +370,12 @@
                             <div class="prof-content">
                                 <p class="prof-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                                     fermentum
-                                    metus pulvinar aliquet consequat. Praesent nec malesuada nibh. <br>Nullam et metus
+                                    metus pulvinar aliquet consequat. Praesent nec malesuada nibh. <br> <br>Nullam et
+                                    metus
                                     congue,
                                     auctor augue sit amet, consectetur tortor.
                                 </p>
-                                <p class="read-more mb-4 mt-4">Read More <a href="#"><svg class="read-arrow"
+                                <p class="read-more">Read More <a href="#"><svg class="read-arrow"
                                             xmlns="http://www.w3.org/2000/svg" width="29" height="10">
                                             <path fill-rule="evenodd" fill="#4F4F4F"
                                                 d="M.1 3.725h21.392C20.456 2.263 19.94 1.31 19.887.1c2.357 2.151 5.421 3.318 9.213 4.414-3.792 1.051-6.721 2.334-9.213 4.696.573-1.602.589-2.454 1.637-4.009H.1V3.725z" />
@@ -389,15 +387,15 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card shadow prof-card">
                         <div class="card-body">
-                            <div align="right">
+                            <div>
                                 <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="36">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="msg-icon" width="35" height="36">
                                         <path fill-rule="evenodd" fill="#DAE5EC"
                                             d="M10.545 10.962h13.217c.485 0 .878.379.878.847 0 .468-.393.847-.878.847H10.545c.055 0-.878-.379-.878-.847 0-.468.933-.847.878-.847zm13.217 9.713c.485 0 .878.865.878.847 0 .468-.393.847-.878.847h-7.556c-.484 0-.877-.379-.877-.847 0 .018.393-.847.877-.847h7.556zM9.667 16.666c0-.469.933-.847.878-.847h13.217c.485 0 .878.378.878.847 0 .468-.393.847-.878.847H10.545c.055 0-.878-.379-.878-.847zm19.506 10.531c-3.601 3.475-8.714 5.152-13.763 4.536l-5.7 4.061c-.19.136-.419.406-.12.406-.629 0-.726-.211-.822-.237-.325-.085-.59-.31-.298-.61l-2.048-3.732c-.235.199.027-1.16 1.378-1.387-.233.566.41.027.645.566l1.084 2.491 4.938-3.519a1.12 1.12 0 0 1 .82-.194c4.509.675 9.117-.774 12.334-3.879 5.582-5.385 5.582-14.149 0-19.535C22.4.778 12.959.778 7.377 6.164 3.83 9.587 2.411 14.446 3.58 19.162l.008.035c.165.652.379 1.296.631 2.773l2.563 5.013c.388.539-.028 1.16-.586 1.386-.559.227-1.202-.026-1.437-.565L2.19 21.903c-.3-.717-.548-1.464-.726-2.178a.982.982 0 0 1-.038-.151C.114 14.162 1.755 8.595 5.825 4.666c6.437-6.211 16.911-6.21 23.348 0 6.437 6.212 6.437 16.319 0 22.531z" />
                                     </svg>
                                 </a>
                             </div>
-                            <div class="profile d-flex ms-4">
+                            <div class="profile d-flex">
                                 <div class="prof-img">
                                     <img src="img/group-33.png" alt="">
                                 </div>
@@ -409,11 +407,12 @@
                             <div class="prof-content">
                                 <p class="prof-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                                     fermentum
-                                    metus pulvinar aliquet consequat. Praesent nec malesuada nibh. <br>Nullam et metus
+                                    metus pulvinar aliquet consequat. Praesent nec malesuada nibh. <br> <br>Nullam et
+                                    metus
                                     congue,
                                     auctor augue sit amet, consectetur tortor.
                                 </p>
-                                <p class="read-more mb-4 mt-4">Read More <a href="#"><svg class="read-arrow"
+                                <p class="read-more">Read More <a href="#"><svg class="read-arrow"
                                             xmlns="http://www.w3.org/2000/svg" width="29" height="10">
                                             <path fill-rule="evenodd" fill="#4F4F4F"
                                                 d="M.1 3.725h21.392C20.456 2.263 19.94 1.31 19.887.1c2.357 2.151 5.421 3.318 9.213 4.414-3.792 1.051-6.721 2.334-9.213 4.696.573-1.602.589-2.454 1.637-4.009H.1V3.725z" />
@@ -468,7 +467,7 @@
                     aliquam
                     ac. <a href="#" class="policy"> Privacy Policy</a></p>
                 <button class="btn-end ms-auto me-3">
-                    <a id="hide-btn" onclick="removeFun()">Ok!</a>
+                    <a id="hide-btn">Ok!</a>
                 </button>
             </div>
 
@@ -488,7 +487,8 @@
         </a>
     </div>
     <!-- Back-Home Button -->
-    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 

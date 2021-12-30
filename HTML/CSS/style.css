@@ -32,7 +32,9 @@
 }
 .logo-nav {
 	width: 175px;
+	height: 130px;
 }
+
 .home-nav {
 	padding: 10px 17px;
 }
@@ -135,6 +137,9 @@
 	color: #8e8e8e;
 	margin: 0px 5px;
 }
+.prof-content {
+	margin-left: 38px;
+}
 .prof-details {
 	text-align: left;
 	padding: 10px;
@@ -144,13 +149,23 @@
 	margin: auto;
 	border-left: 4px solid #1d7a8c;
 	border-radius: 1px;
+	position: relative;
+}
+.msg-icon {
+	position: absolute;
+	top: 20px;
+	right: 20px;
 }
 .blog-card .card-body {
 	padding: 16px 20px;
 }
+.profile {
+	margin-top: 43px;
+	margin-left: 38px;
+}
 .prof-txt {
 	max-width: 288px;
-	margin: 15px 25px;
+	margin: 25px 0px;
 	font-size: 16px;
 	text-align: left;
 	color: #565656;
@@ -163,7 +178,7 @@
 .read-more {
 	font-size: 18px;
 	color: #565656;
-	margin: 5px 30px;
+	margin: 0px 0px 36px 0px;
 }
 .read-arrow {
 	margin: 0px 10px;
@@ -241,11 +256,7 @@
 	color: #6eabef;
 }
 
-.b2h-btn {
-	display: block;
-}
 .scroll-active {
-	background-color: #a9a9a9;
 	opacity: 0.9;
 }
 
@@ -450,6 +461,7 @@
 }
 .price-card {
 	max-width: 533px;
+	position: static;
 }
 .euro {
 	font-size: 48px;
@@ -517,6 +529,7 @@
 	max-width: 360px;
 	background-color: #f6f6f6;
 	border: 0px;
+	position: static;
 }
 .card-body {
 	padding: 0;
@@ -628,6 +641,11 @@
 	background-size: cover;
 	color: #ffffff;
 }
+.sp-logo {
+	height: 120px;
+	width: 156px;
+	transition: width 0.75s, height 0.75s;
+}
 .sp-heading {
 	margin-top: 170px;
 }
@@ -735,4 +753,116 @@
 	color: #4f4f4f;
 	font-size: 18px;
 	text-decoration: none;
+}
+
+/******************* Upcoming Services CSS *********************/
+.us-nav a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 300;
+	margin: 10px;
+	padding: 10px 18px;
+}
+.us-notification {
+	position: relative;
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+}
+.notify-badge {
+	position: absolute;
+	top: -10px;
+	right: 10px;
+	padding: 0px 6px;
+	border-radius: 50%;
+	background: red;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.us-user .dropdown-menu[data-bs-popper] {
+	top: 166%;
+}
+.us-user-dropdown a:hover {
+	background-color: transparent;
+}
+.user-name {
+	margin-top: 64px;
+	height: 120px;
+	border-bottom: 1px solid #e1e1e1;
+	background-color: #f9f9f9;
+}
+.user-name h2 {
+	font-size: 30px;
+	color: #4f4f4f;
+}
+.us-left-menu{
+	background-color: #1D7A8C;
+	width: 262px;
+	border-left: 1px solid #1d7a8c;
+	border-right: 1px solid #1d7a8c;
+}
+.us-left-menu .nav-link:hover{
+	background-color: #146371;
+	color: white;
+	cursor: pointer;
+}
+.us-left-menu .active{
+	background-color: #146371;
+	color: white;
+}
+.us-left-menu a{
+	width: 100%;
+	color: white;
+	border-bottom: 1px solid #bdbdbd8e;
+	font-size: 18px;
+
+}
+.us-right-menu{
+	margin-left: 32px;
+	width: 65.2%;
+}
+.customer-dash{
+	margin: 31px 0;
+}
+.us-menu a:hover{
+	color: rgb(202, 202, 202);
+
+}
+
+.us-footer a:hover{
+	color: rgb(202, 202, 202);
+}
+#myTable thead{
+	color: #646464;
+	background-color: #F9F9F9;
+	font-size: 16px;
+	font-weight: bold;
+	border: 1px solid #e1e1e1;
+}
+#myTable thead th{
+	padding: 17px 20px 20px 14px;
+}
+#myTable tbody td{
+	padding: 8px 20px 8px 14px;
+}
+#myTable tbody tr{
+	border: 1px solid #e1e1e1;
+}
+.tb-btn-cancel a:hover{
+ 	color: #FF6B6B;
+	 background-color: white;
+	 border: 1px solid #FF6B6B;
+}
+.tb-btn-cancel a{
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 7px 15px;
+	background-color: #FF6B6B;
+	border-radius: 17px;
+}
+.service-date{
+	display: flex;
+	flex-direction: column;
 }

@@ -1,12 +1,11 @@
-function removeFun() {
-	document.getElementById("privacy").style.display = "none";
-}
-const btnHome = document.getElementById("homebtn");
-
-window.addEventListener("scroll", () => {
-	let nav = document.querySelector("nav");
-	let winPos = window.scrollY > 0;
-
-	nav.classList.toggle("scroll-active", winPos);
-	btnHome.classList.toggle("b2h-btn", winPos);
+$(document).ready(()=>{
+    $(window).scroll((e)=>{
+        if(window.scrollY>0){
+			$('.about-navbar').css('opacity','0.8');
+			$('#homebtn').css('display', 'block');		         
+        }else{
+			$('.about-navbar').css('opacity','1');
+			$('#homebtn').css('display', 'none');		
+        }
+    });
 });
