@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon_img.png" type="image/x-icon">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
@@ -29,7 +30,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 us-nav text-center us-menu">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 us-nav text-center">
                         <li class="nav-item">
                             <a class="" href="#">Prices & services</a>
                         </li>
@@ -72,7 +73,8 @@
     </header>
     <!-- Navbar End  -->
 
-    <section class="customer-dash">
+    <!-- SP Dashboard Start -->
+    <section class="sp-dash">
         <div class="container">
             <div class="d-flex justify-content-center">
                 <div class="nav flex-column us-left-menu text-start" id="v-pills-tab" role="tablist"
@@ -104,13 +106,21 @@
                         aria-labelledby="v-pills-newService-tab">
                         New Service Requests</div>
                     <div class="tab-pane fade" id="v-pills-upSer" role="tabpanel" aria-labelledby="v-pills-upSer-tab">
-                        <table id="myTable" class="display" style="width:100%">
+                        <table id="usTable" class="display" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Service ID <img src="img/sort.png" alt=""></th>
-                                    <th>Service date <img src="img/sort.png" alt=""></th>
-                                    <th class="ps-5">Customer details <img src="img/sort.png" alt=""></th>
-                                    <th class="text-center">Distance <img src="img/sort.png" alt=""></th>
+                                    <th>Service ID
+                                        <!-- <img src="img/sort.png" alt=""> -->
+                                    </th>
+                                    <th>Service date
+                                        <!-- <img src="img/sort.png" alt=""> -->
+                                    </th>
+                                    <th class="ps-5">Customer details
+                                        <!-- <img src="img/sort.png" alt=""> -->
+                                    </th>
+                                    <th class="text-center">Distance
+                                        <!-- <img src="img/sort.png" alt=""> -->
+                                    </th>
                                     <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
@@ -123,8 +133,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -137,8 +151,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -151,8 +169,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -165,8 +187,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -179,8 +205,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -193,8 +223,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -207,8 +241,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -221,8 +259,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -235,8 +277,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -249,8 +295,12 @@
                                         <span class=""><img class="me-1" src="img/layer-14.png" alt="">12:00 -
                                             18:00</span>
                                     </td>
-                                    <td class="tb-cs-detail ps-5">David Bough <br><img src="img/layer-15.png" alt="">
-                                        Musterstrabe 5,12345 Bonn
+                                    <td class="tb-cs-detail ps-5">
+                                        <span>David Bough</span><br>
+                                        <span>
+                                            <img src="img/layer-15.png" class="img-home" alt="">
+                                            <span>Musterstrabe 5,12345 Bonn</span>
+                                        </span>
                                     </td>
                                     <td class="tb-km text-center">XX km</td>
                                     <td class="tb-btn-cancel text-center"><a href="#">Cancel</a></td>
@@ -274,6 +324,7 @@
             </div>
         </div>
     </section>
+    <!-- SP Dashboard End -->
 
     <!-- Footer Start -->
     <footer class="footer">
@@ -316,6 +367,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/upcomingService.js"></script>
 </body>
 
 </html>

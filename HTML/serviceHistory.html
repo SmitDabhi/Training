@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon_img.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Helperland | Sevices History</title>
+</head>
+
+<body>
+    <!-- Navbar Start  -->
+    <header class="us-header">
+        <nav class="prices-nav navbar navbar-expand-lg navbar-dark p-0 fixed-top ">
+            <div class="container-fluid">
+                <a class="navbar-brand px-15" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="73" height="54">
+                        <image width="73" height="54"
+                            xlink:href="data:img/png;base64,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" />
+                    </svg></a>
+                <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 us-nav text-center">
+                        <li class="nav-item">
+                            <a class="about-r-btn" href="#">Book now</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="" href="#">Prices & services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="" href="#">Warranty</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item us-notification">
+                            <a class="m-2" href="#"><i class="fas fa-bell fa-lg"></i> <span
+                                    class="notify-badge">1</span></a>
+                        </li>
+                        <li class="nav-item dropdown us-user">
+                            <a class="" data-bs-toggle="dropdown" aria-expanded="false" id="navbarDarkDropdownMenuLink"
+                                href="#"><i class="far fa-user-circle fa-lg"></i><i
+                                    class="fas fa-angle-down fa-lg ps-2"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end text-start us-user-dropdown"
+                                aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item text-dark" href="#">Welcome,<br> NAME</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-dark" href="#">My Dashboard</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">My Settings</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="user-name d-flex justify-content-center align-items-center">
+            <h2>Welcome, <strong>Name!</strong> </h2>
+        </div>
+    </header>
+    <!-- Navbar End  -->
+    <img src="" alt="">
+    <!-- Customer Dashboard Start -->
+    <section class="customer-dash">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="nav flex-column us-left-menu text-start" id="v-pills-tab" role="tablist"
+                    aria-orientation="vertical">
+                    <a class="nav-link active" id="dashboard" data-bs-toggle="pill" data-bs-target="#us-dash" role="tab"
+                        aria-controls="us-dash" aria-selected="true">Dashboard</a>
+                    <a class="nav-link" id="v-pills-serHistory-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-serHistory" role="tab" aria-controls="v-pills-serHistory"
+                        aria-selected="false">Service History</a>
+                    <a class="nav-link" id="v-pills-serSchedule-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-serSchedule" role="tab" aria-controls="v-pills-serSchedule"
+                        aria-selected="false">Service Schedule</a>
+                    <a class="nav-link" id="v-pills-favPro-tab" data-bs-toggle="pill" data-bs-target="#v-pills-favPro"
+                        role="tab" aria-controls="v-pills-favPro" aria-selected="false">Favourite Pros</a>
+                    <a class="nav-link" id="v-pills-invoices-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-invoices" role="tab" aria-controls="v-pills-invoices"
+                        aria-selected="false">Invoices</a>
+                    <a class="nav-link" id="v-pills-notification-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-notification" role="tab" aria-controls="v-pills-notification"
+                        aria-selected="false">Notifications</a>
+                </div>
+                <div class="tab-content us-right-menu" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="us-dash" role="tabpanel" aria-labelledby="dashboard">
+                        Dashboard
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-serHistory" role="tabpanel"
+                        aria-labelledby="v-pills-serHistory-tab">
+                        <div class="content-header mb-2">
+                            <h3 class="my-auto">Service History</h3>
+                            <button>Export</button>
+                        </div>
+                        <div class="customer-table">
+                            <table id="shTable">
+                                <thead>
+                                    <tr>
+                                        <th>Service Details </th>
+                                        <th>Service Provider </th>
+                                        <th class="text-center">Payment </th>
+                                        <th class="text-center">Status </th>
+                                        <th class="text-center">Rate SP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-completed text-center">
+                                            <span>Completed</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-completed text-center">
+                                            <span>Completed</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-cancelled text-center">
+                                            <span>Cancelled</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-completed text-center">
+                                            <span>Completed</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-cancelled text-center">
+                                            <span>Cancelled</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">12/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-completed text-center">
+                                            <span>Completed</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">14/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-cancelled text-center">
+                                            <span>Cancelled</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-completed text-center">
+                                            <span>Completed</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-cancelled text-center">
+                                            <span>Cancelled</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-cancelled text-center">
+                                            <span>Cancelled</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sh-tb-details">
+                                            <span><img src="img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
+                                            <span class="sh-tb-timing">12:00 - 18:00</span>
+                                        </td>
+                                        <td class="sh-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="sh-tb-payment text-center">
+                                            <span>&euro;</span>
+                                            <span>63</span>
+                                        </td>
+                                        <td class="sh-tb-status-completed text-center">
+                                            <span>Completed</span>
+                                        </td>
+                                        <td class="sh-tb-rate text-center">
+                                            <button>Rate SP</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-serSchedule" role="tabpanel"
+                        aria-labelledby="v-pills-serSchedule-tab">
+                        Service Schedule</div>
+                    <div class="tab-pane fade" id="v-pills-favPro" role="tabpanel" aria-labelledby="v-pills-favPro-tab">
+                        Favourite Pros</div>
+                    <div class="tab-pane fade" id="v-pills-invoices" role="tabpanel"
+                        aria-labelledby="v-pills-invoices-tab">
+                        Invoices</div>
+                    <div class="tab-pane fade" id="v-pills-notification" role="tabpanel"
+                        aria-labelledby="v-pills-notification-tab">
+                        Notifications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Customer Dashboard End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-lg-2 text-center p-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120"
+                        height="92">
+                        <image width="120" height="92"
+                            xlink:href="data:img/png;base64,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" />
+                    </svg>
+                </div>
+                <div class="col-lg-8 d-flex justify-content-center align-items-center">
+                    <div class="footer-navbar text-center p-4 us-footer">
+                        <a class="" href="#">HOME</a>
+                        <a class="" href="#">ABOUT</a>
+                        <a class="" href="#">TESTIMONIALS</a>
+                        <a class="" href="#">FAQS</a>
+                        <a class="" href="#">INSURANCE</a>
+                        <a class="" href="#">POLICY</a>
+                        <a class="" href="#">IMPRESSUM</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 py-4 d-flex justify-content-center align-items-center  ">
+                    <a href="#"><img src="img/fb.svg" alt="fb" class="px-2"></a>
+                    <a href="#"><img src="img/insta.svg" alt="insta" class="px-2"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-lg-12 p-0">
+                    <hr class="footer-separator">
+                </div>
+            </div>
+            <div class="row faq-pilicy text-center">
+                <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+
+    <script src="js/serviceHistory.js"></script>
+</body>
+
+</html>
