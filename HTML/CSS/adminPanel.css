@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.um-logo-txt {
+    font-size: 30px;
+    color: white;
+}
+
+.um-navbar nav {
+    background-color: #1FB6FF;
+}
+
+.um-navbar .container-fluid {
+    padding: 6.5px 15px 0.64px 15px;
+}
+
+.um-username {
+    font-size: 16px;
+    color: white;
+    margin: 0 17.35px 0 7px;
+}
+
+.um-top-menu .nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.um-top-menu {
+    margin-right: 3.35px;
+}
+
+.um-left-menu {
+    background-color: #FFFFFF;
+    width: 17.5%;
+}
+
+.um-left-menu a {
+    color: #646464;
+    border: 1px solid#E5E5E5;
+    padding: 15px 14px 16px 14px;
+}
+
+.um-left-menu a:hover {
+    color: #646464;
+    cursor: pointer;
+}
+
+.um-right-menu {
+    background-color: #F2F4F5;
+    width: 82.5%;
+}
+
+.contentHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.um-admin {
+    width: 100%;
+}
+
+.sectionName {
+    font-size: 22px;
+    font-weight: bold;
+    color: #646464;
+    padding-left: 23px;
+}
+
+.addUserBtn img {
+    margin: -2px 7px 0 0;
+}
+
+.addUserBtn button {
+    background-color: #1FB6FF;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #1FB6FF;
+    padding: 10px 10px 9px 11px;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.content-footer span {
+    color: #A2A6A8;
+    font-size: 14px;
+}
+
+.btn-clear {
+    border: 1px solid #DEDDDD;
+    background-color: white;
+    color: #646464;
+    font-size: 16px;
+    padding: 13px 23px;
+}
+
+.btn-search {
+    border: 1px solid #1FB6FF;
+    background-color: #1FB6FF;
+    color: white;
+    font-size: 16px;
+    padding: 13px 17px;
+}

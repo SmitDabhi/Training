@@ -17,4 +17,5 @@ $(document).ready( function () {
             'info': "Total Record: _MAX_",
         }
     });
+   
 } );
