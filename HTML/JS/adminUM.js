@@ -8,10 +8,13 @@ $(document).ready( function () {
          }],
         "language": {
             "paginate": {
-              "previous": '<img src="img/Left-arrow-button-copy.png" alt="">',
-              "next":'<img src="img/Right-arrow-button.png" alt="">'
+              "previous": '<img src="img/adminLeft.png" alt="">',
+              "next":'<img src="img/adminRight.png" alt="">'
             },
             'info': "",
         }
+    });
+    $(".threeDotMenu").click(function (e) { 
+        $(".threeDotToggleMenu").toggle();
     });
 });
