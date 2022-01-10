@@ -18,10 +18,113 @@
     background-color: #525252;
 }
 
+#exampleModal {
+    color: #646464;
+}
+
+#exampleModal .modal-dialog {
+    justify-content: center;
+}
+
+#exampleModal .modal-content {
+    max-width: 320px;
+}
+
+#exampleModal .modal-header {
+    border-bottom: none;
+}
+
+#exampleModal .modal-header h5 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#exampleModal .login-btn {
+    text-align: center;
+}
+
+#exampleModal .login-btn button {
+    color: white;
+    background-color: #6DA9B5;
+    padding: 5px 120px;
+    border: 1px solid transparent;
+    border-radius: 17px;
+}
+
+#exampleModal .modal-footer {
+    border-top: none;
+}
+
+#exampleModal .modal-footer a {
+    text-decoration: none;
+    color: #006072;
+}
+
+#frgPsw {
+    color: #646464;
+}
+
+#frgPsw .modal-dialog {
+    justify-content: center;
+}
+
+#frgPsw .modal-content {
+    max-width: 320px;
+}
+
+#frgPsw .modal-header {
+    border-bottom: none;
+}
+
+#frgPsw .modal-header h5 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#frgPsw .send-btn {
+    text-align: center;
+}
+
+#frgPsw .send-btn button {
+    color: white;
+    background-color: #6DA9B5;
+    padding: 5px 120px;
+    border: 1px solid transparent;
+    border-radius: 17px;
+}
+
+#frgPsw .modal-footer {
+    border-top: none;
+}
+
+#frgPsw .modal-footer a {
+    text-decoration: none;
+    color: #006072;
+}
+
+.emailModal {
+    position: relative;
+}
+
+.emailModal i {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+}
+
+.pswModal {
+    position: relative;
+}
+
+.pswModal i {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+}
+
 .price-navMenu a {
     text-decoration: none;
     color: #fff;
-    font-size: 17px;
     font-weight: 300;
     margin: 10px;
     padding: 10px 18px;
@@ -218,7 +321,25 @@
     left: 28%;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width:991.5px) {
+    .nav-item {
+        text-align: end;
+        margin: 5px 0;
+    }
+
+    .price-sp-btn {
+        border: none;
+        padding: 7px 0 7px 20px;
+        margin: 0px 5px;
+        font-size: 15px;
+        background-color: transparent !important;
+    }
+
+    .header-nav {
+        font-size: 15px;
+        padding: 7px 0 7px 20px;
+    }
+
     .pro-pane-left {
         text-align: center;
     }
@@ -228,12 +349,23 @@
     }
 }
 
-@media screen and (min-width: 993px) {
+
+@media screen and (min-width: 992px) {
     .pro-pane-left {
         text-align: end;
     }
 
     .pro-pane-right {
         text-align: start;
+    }
+}
+
+@media screen and (max-width:1015px) {
+    .header-nav {
+        font-size: 14px;
+    }
+
+    .price-sp-btn {
+        font-size: 14px;
     }
 }

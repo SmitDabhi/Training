@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon_img.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="css/service.css">
 
@@ -17,7 +19,7 @@
     <header class="sp-header">
         <nav class="navbar navbar-expand-lg navbar-dark  fixed-top p-0 sp-navabar">
             <div class="container-fluid home-nav">
-                <a class="navbar-brand p-0" href="#"><img src="img/logo-large.png" alt="" class="sp-logo"></a>
+                <a class="navbar-brand p-0" href="index.html"><img src="img/logo-large.png" alt="" class="sp-logo"></a>
                 <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +31,7 @@
                             <a class=" header-nav sp-btn" href="#">Book now</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" header-nav" href="#">Prices & services</a>
+                            <a class=" header-nav" href="price.html">Prices & services</a>
                         </li>
                         <li class="nav-item">
                             <a class=" header-nav" href="#">Warranty</a>
@@ -38,13 +40,13 @@
                             <a class=" header-nav" href="#blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" header-nav" href="#">Contact</a>
+                            <a class=" header-nav" href="contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" sp-btn" href="#">Login</a>
+                            <a class=" sp-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" sp-btn" href="#">Become a
+                            <a class=" sp-btn" href="servicePro.html">Become a
                                 Helper</a>
                         </li>
                         <li class="nav-item dropdown">
@@ -70,6 +72,81 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Login Modal Start -->
+        <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login to your account</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-12 emailModal">
+                                <input type="email" class="form-control" id="" placeholder="Email">
+                                <i class="far fa-user"></i>
+                            </div>
+                            <div class="col-12 pswModal">
+                                <input type="password" class="form-control" id="" placeholder="Password">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Remember me
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 login-btn">
+                                <button type="button">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <div class="forgotpsw">
+                            <a id="frgLink" href="#" data-bs-toggle="modal" data-bs-target="#frgPsw">Forgot
+                                Password?</a>
+                        </div>
+                        <div class="accoutReg text-center">
+                            <p>Don't have an account? <a href="#">Create an account</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login Modal End -->
+
+        <!-- Forgot Password Modal S -->
+        <div class="modal fade" id="frgPsw" aria-labelledby="frgPswLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="frgPswLabel">Forgot Password</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-12">
+                                <input type="email" class="form-control" id="" placeholder="Email Address">
+                            </div>
+                            <div class="col-12 send-btn">
+                                <button type="button">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <div>
+                            <a href="#" class="loginlink" data-bs-toggle="modal" data-bs-target="#exampleModal">Login
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Forgot Password Modal E -->
+
         <div class="container">
             <div class="row m-0">
                 <div class="col-lg-12 sp-heading">
@@ -131,7 +208,12 @@
             </div>
             <div class="work-process">
                 <div class="row reg-ys">
-                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="process-img txtEnd">
+                            <img src="img/sp-img-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center order-lg-1">
                         <div class="process-txt">
                             <h3>Register yourself</h3>
                             <p>Provide your basic information to register <br>
@@ -139,14 +221,14 @@
                             <a href="#">Read more<img class="ps-2 sp-proc-arrow" src="./img/shape-2.png" alt=""></a>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="process-img text-end">
-                            <img src="img/sp-img-1.png" alt="">
-                        </div>
-                    </div>
                 </div>
                 <div class="row ser-req">
-                    <div class="col-lg-6 order-lg-2">
+                    <div class="col-lg-6 ">
+                        <div class="process-img ">
+                            <img src="img/sp-img-2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6  d-flex justify-content-center align-items-center">
                         <div class="process-txt">
                             <h3>Get service requests</h3>
                             <p>You will get service requests from <br>
@@ -154,24 +236,19 @@
                             <a href="#">Read more<img class="ps-2 sp-proc-arrow" src="./img/shape-2.png" alt=""></a>
                         </div>
                     </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="process-img text-start">
-                            <img src="img/sp-img-2.png" alt="">
-                        </div>
-                    </div>
                 </div>
                 <div class="row comp-ser">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="process-img txtEnd">
+                            <img src="img/sp-img-3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center order-lg-1">
                         <div class="process-txt">
                             <h3>Complete service</h3>
                             <p>Accept service requests from your customers <br>
                                 and complete your work.</p>
                             <a href="#">Read more<img class="ps-2 sp-proc-arrow" src="./img/shape-2.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-img text-end">
-                            <img src="img/sp-img-3.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -192,10 +269,10 @@
                 </div>
                 <div class="col-lg-8 d-flex justify-content-center align-items-center">
                     <div class="footer-navbar text-center p-4 ">
-                        <a class="" href="#">HOME</a>
-                        <a class="" href="#">ABOUT</a>
+                        <a class="" href="index.html">HOME</a>
+                        <a class="" href="about.html">ABOUT</a>
                         <a class="" href="#">TESTIMONIALS</a>
-                        <a class="" href="#">FAQS</a>
+                        <a class="" href="faq.html">FAQS</a>
                         <a class="" href="#">INSURANCE</a>
                         <a class="" href="#">POLICY</a>
                         <a class="" href="#">IMPRESSUM</a>

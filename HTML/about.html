@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon_img.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/about.css">
     <title>Helperland | About</title>
@@ -16,7 +18,7 @@
     <header class="about-navbar">
         <nav class="navbar navbar-expand-lg about-nav-color navbar-dark p-0 fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand px-15" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                <a class="navbar-brand px-15" href="index.html"><svg xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" width="73" height="54">
                         <image width="73" height="54"
                             xlink:href="data:img/png;base64,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" />
@@ -29,30 +31,106 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 about-nav text-center">
                         <li class="nav-item">
-                            <a class="about-r-btn" href="#">Book now</a>
+                            <a class="about-r-btn header-nav" href="#">Book now</a>
                         </li>
                         <li class="nav-item">
-                            <a class="" href="#">Prices & services</a>
+                            <a class=" header-nav" href="price.html">Prices & services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="" href="#">Warranty</a>
+                            <a class=" header-nav" href="#">Warranty</a>
                         </li>
                         <li class="nav-item">
-                            <a class="" href="#">Blog</a>
+                            <a class=" header-nav" href="#">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="" href="#">Contact</a>
+                            <a class=" header-nav" href="contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="about-r-btn" href="#">Login</a>
+                            <a class="about-r-btn header-nav" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                href="#">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="about-r-btn" href="#">Become a Helper</a>
+                            <a class="about-r-btn header-nav" href="servicePro.html">Become a Helper</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        <!-- Login Modal Start -->
+        <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login to your account</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-12 emailModal">
+                                <input type="email" class="form-control" id="" placeholder="Email">
+                                <i class="far fa-user"></i>
+                            </div>
+                            <div class="col-12 pswModal">
+                                <input type="password" class="form-control" id="" placeholder="Password">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Remember me
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 login-btn">
+                                <button type="button">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <div class="forgotpsw">
+                            <a id="frgLink" href="#" data-bs-toggle="modal" data-bs-target="#frgPsw">Forgot
+                                Password?</a>
+                        </div>
+                        <div class="accoutReg text-center">
+                            <p>Don't have an account? <a href="#">Create an account</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login Modal End -->
+
+        <!-- Forgot Password Modal S -->
+        <div class="modal fade" id="frgPsw" aria-labelledby="frgPswLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="frgPswLabel">Forgot Password</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-12">
+                                <input type="email" class="form-control" id="" placeholder="Email Address">
+                            </div>
+                            <div class="col-12 send-btn">
+                                <button type="button">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <div>
+                            <a href="#" class="loginlink" data-bs-toggle="modal" data-bs-target="#exampleModal">Login
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Forgot Password Modal E -->
+
         <!-- Img -->
         <div class="about-img">
         </div>
@@ -128,10 +206,10 @@
                 </div>
                 <div class="col-lg-8 d-flex justify-content-center align-items-center">
                     <div class="footer-navbar text-center p-4 ">
-                        <a class="" href="#">HOME</a>
-                        <a class="" href="#">ABOUT</a>
+                        <a class="" href="index.html">HOME</a>
+                        <a class="" href="about.html">ABOUT</a>
                         <a class="" href="#">TESTIMONIALS</a>
-                        <a class="" href="#">FAQS</a>
+                        <a class="" href="faq.html">FAQS</a>
                         <a class="" href="#">INSURANCE</a>
                         <a class="" href="#">POLICY</a>
                         <a class="" href="#">IMPRESSUM</a>

@@ -15,10 +15,11 @@
 
 .um-navbar nav {
     background-color: #1FB6FF;
+    padding: 0;
 }
 
 .um-navbar .container-fluid {
-    padding: 6.5px 15px 0.64px 15px;
+    padding: 7px 15px 8px 15px;
 }
 
 .um-top-menu .nav-item {
@@ -38,7 +39,7 @@
 }
 
 .admin-panel {
-    margin-top: 68px;
+    margin-top: 60px;
 
 }
 
@@ -48,8 +49,8 @@
 
 .admin-leftMenu {
     position: sticky;
-    top: 68px;
-    height: calc(100vh - 68px);
+    top: 60px;
+    height: calc(100vh - 60px);
     width: 20vw;
 }
 
@@ -167,6 +168,10 @@
     margin: 20px 20px 0 0;
 }
 
+.umDoR span {
+    margin-left: 5px;
+}
+
 .umDoR {
     display: flex;
     align-items: center;
@@ -182,20 +187,32 @@
     height: 10px;
     position: absolute;
     top: -6px;
-    right: 25px;
+    right: 28px;
     transform: rotate(45deg);
     box-shadow: -5px -5px 6px #00000040;
     background-color: white;
 
 }
 
-.threeDotToggleMenu {
+#servReqTB .threeDotToggleMenu {
     display: none;
     position: absolute;
-    right: 18px;
+    right: 26px;
+    top: 55px;
+    width: 163px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #D6D6D6;
+    box-shadow: 0px 0px 6px #00000040;
+    z-index: 10;
+}
+
+#userManageTB .threeDotToggleMenu {
+    display: none;
+    position: absolute;
+    right: 25px;
     top: 45px;
     width: 163px;
-    height: 113px;
     background-color: white;
     border-radius: 4px;
     border: 1px solid #D6D6D6;
@@ -352,6 +369,7 @@ table.dataTable thead .sorting_desc {
     background-color: #fff;
     border: 1px solid #e1e1e1;
     padding: 15px 15px;
+    border-top: none;
 }
 
 .activeTB {
@@ -387,4 +405,121 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 
+}
+
+
+/****************** Service Requests ******************/
+.srContentHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 29px;
+}
+
+.serviceID input {
+    width: 110px;
+    height: 46px;
+}
+
+.customer select {
+    height: 46px;
+    width: 127px;
+    color: #646464;
+}
+
+.serviceProvider select {
+    height: 46px;
+    width: 166px;
+    color: #646464;
+}
+
+.statusSelect select {
+    height: 46px;
+    width: 120px;
+    color: #646464;
+}
+
+.fromDt input, .toDt input {
+    width: 135px;
+    height: 46px;
+}
+
+.img-home {
+    margin-top: -5px;
+}
+
+.sr-tb-provider {
+    display: flex;
+    align-items: center;
+}
+
+.sr-tb-provider span:nth-child(1) img {
+    padding: 12px 7px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+}
+
+.sr-tb-provider .sp-details {
+    padding: 12px 7px;
+    display: flex;
+    flex-direction: column;
+}
+
+#servReqTB thead {
+    color: #646464;
+    background-color: #F9F9F9;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #E1E1E1;
+}
+
+#servReqTB thead th {
+    padding: 17px 20px 20px 14px;
+}
+
+
+
+#servReqTB tbody td {
+    padding: 0 20px 0 14px;
+    color: #646464;
+}
+
+#servReqTB tbody tr {
+    background-color: white !important;
+    border: 1px solid #e1e1e1;
+}
+
+div#servReqTB_paginate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+}
+
+.newTB {
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #F2BB37;
+    padding: 4px 12px 5px 7px;
+}
+
+.pendingTB {
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #1FB6FF;
+    padding: 4px 8px 5px 7px;
+}
+
+.completedTB {
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #67B644;
+    padding: 4px 8px 5px 7px;
+}
+
+.cancelledTB {
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #FF6B6B;
+    padding: 4px 7px 5px 8px;
 }

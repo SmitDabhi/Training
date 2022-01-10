@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/favicon_img.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="css/home.css">
 
@@ -16,19 +18,19 @@
     <header class="home" id="home">
         <nav class="navbar navbar-expand-lg navbar-dark  fixed-top p-0 home-navbar">
             <div class="container-fluid home-nav">
-                <a class="navbar-brand p-0" href="#"><img src="img/logo-large.png" alt="" class="logo-nav"></a>
+                <a class="navbar-brand p-0" href="index.html"><img src="img/logo-large.png" alt="" class="logo-nav"></a>
                 <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class=" header-nav sp-btn" href="#">Book now</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" header-nav" href="#">Prices & services</a>
+                            <a class=" header-nav" href="price.html">Prices & services</a>
                         </li>
                         <li class="nav-item">
                             <a class=" header-nav" href="#">Warranty</a>
@@ -37,13 +39,13 @@
                             <a class=" header-nav" href="#blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" header-nav" href="#">Contact</a>
+                            <a class=" header-nav" href="contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" sp-btn" href="#">Login</a>
+                            <a class=" sp-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" sp-btn" href="#">Become a
+                            <a class=" sp-btn" href="servicePro.html">Become a
                                 Helper</a>
                         </li>
                         <li class="nav-item dropdown">
@@ -69,32 +71,114 @@
                 </div>
             </div>
         </nav>
+        <!-- Login Modal Start -->
+        <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login to your account</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-12 emailModal">
+                                <input type="email" class="form-control" id="" placeholder="Email">
+                                <i class="far fa-user"></i>
+                            </div>
+                            <div class="col-12 pswModal">
+                                <input type="password" class="form-control" id="" placeholder="Password">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Remember me
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 login-btn">
+                                <button type="button">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <div class="forgotpsw">
+                            <a id="frgLink" href="#" data-bs-toggle="modal" data-bs-target="#frgPsw">Forgot
+                                Password?</a>
+                        </div>
+                        <div class="accoutReg text-center">
+                            <p>Don't have an account? <a href="#">Create an account</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login Modal End -->
+
+        <!-- Forgot Password Modal S -->
+        <div class="modal fade" id="frgPsw" aria-labelledby="frgPswLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="frgPswLabel">Forgot Password</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-12">
+                                <input type="email" class="form-control" id="" placeholder="Email Address">
+                            </div>
+                            <div class="col-12 send-btn">
+                                <button type="button">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <div>
+                            <a href="#" class="loginlink" data-bs-toggle="modal" data-bs-target="#exampleModal">Login
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Forgot Password Modal E -->
+
         <div class="container">
             <div class="row m-0">
                 <div class="col-lg-6 heading">
                     <div>
-                        <p class="mb-2 heading-txt">Lorem, ipsum dolor.</p>
+                        <p class="mb-2 heading-txt">Do not feel like housework?</p>
+                        <span>Great! Book now for Helperland and enjoy the benefits</span>
                     </div>
                     <div class="head-txt">
                         <p class="mb-0"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="13" height="10">
                                 <path fill-rule="evenodd" fill="#FFF"
                                     d="m11.279.1 1.719 1.662-8.041 8.234L0 4.919l1.719-1.76 3.238 3.316L11.279.1z" />
                             </svg>
-                            Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            Certified & insured helper</p>
                     </div>
                     <div class="head-txt">
                         <p class="mb-0"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="13" height="10">
                                 <path fill-rule="evenodd" fill="#FFF"
                                     d="m11.279.1 1.719 1.662-8.041 8.234L0 4.919l1.719-1.76 3.238 3.316L11.279.1z" />
                             </svg>
-                            Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            Easy booking procedure</p>
                     </div>
                     <div class="head-txt">
                         <p class="mb-0"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="13" height="10">
                                 <path fill-rule="evenodd" fill="#FFF"
                                     d="m11.279.1 1.719 1.662-8.041 8.234L0 4.919l1.719-1.76 3.238 3.316L11.279.1z" />
                             </svg>
-                            Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            Friendly customer service</p>
+                    </div>
+                    <div class="head-txt">
+                        <p class="mb-0"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="13" height="10">
+                                <path fill-rule="evenodd" fill="#FFF"
+                                    d="m11.279.1 1.719 1.662-8.041 8.234L0 4.919l1.719-1.76 3.238 3.316L11.279.1z" />
+                            </svg>
+                            Secure online payment method</p>
                     </div>
                 </div>
             </div>
@@ -102,7 +186,7 @@
             <div class="text-center mt-4 btn-book">
                 <a href="#">Let's Book a Cleaner</a>
             </div>
-            <div class="d-flex justify-content-center flex-wrap align-items-baseline mt-5 pt-5">
+            <div class="d-flex justify-content-center processImgs mt-5 pt-5">
                 <div class="text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="52" height="55">
                         <path fill-rule="evenodd" fill="#FFF"
@@ -162,7 +246,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center ">
-                        <h2 class="mb-5">Why Helperland</h2>
+                        <h2 class="mb-5">Convince yourself!</h2>
                     </div>
                 </div>
             </div>
@@ -173,11 +257,12 @@
                     </div>
                     <div class="grp-text text-center mt-5">
                         <div class="title mb-5">
-                            <p class="mb-2">Experience & Vetted Professionals</p>
+                            <p class="mb-2">Friendly & Certified Helpers</p>
                         </div>
                         <div class="m-4">
-                            <p>dominate the industry in scale and scope with an adaptable, extensive network that
-                                consistently delivers exceptional results.</p>
+                            <p>We want you to be completely satisfied with our service and feel comfortable at home. In
+                                order to guarantee this, our helpers go through a test procedure. Only when the cleaners
+                                meet our high standards, they may call themselves Helper.</p>
                         </div>
                     </div>
                 </div>
@@ -187,11 +272,12 @@
                     </div>
                     <div class="grp-text text-center mt-5 ">
                         <div class="title mb-5 d-flex justify-content-center align-items-center">
-                            <p class="mb-2">Secure Online Payment</p>
+                            <p class="mb-2">Transparent and secure payment</p>
                         </div>
                         <div class="m-4">
-                            <p>Payment is processed securely online. Customers pay safely online and
-                                manage the booking.</p>
+                            <p>We have transparent prices, you do not have to scratch money or money on the sideboard
+                                Leave it: Pay your helper easily and securely via the online payment method. You will
+                                also receive an invoice for each completed cleaning.</p>
                         </div>
                     </div>
                 </div>
@@ -200,13 +286,13 @@
                         <img class="responsive-img" src="img/group-24.png" alt="">
                     </div>
                     <div class="grp-text text-center mt-5">
-                        <div class="title mb-5 d-flex justify-content-center align-items-center">
-                            <p class="mb-2">Dedicated Customer
-                                Service</p>
+                        <div class="title mb-5 d-flex justify-content-center ">
+                            <p class="mb-2">We're here for you</p>
                         </div>
                         <div class="m-4">
-                            <p>to our customers and are guided in all we do by their needs. The team is always happy to
-                                support you and offer all the information.</p>
+                            <p>You have a question or need assistance with the booking process? Our customer service is
+                                happy to help and advise you. How you can reach us you will find out when you look under
+                                "Contact". We look forward to hearing from you or reading.</p>
                         </div>
                     </div>
                 </div>
@@ -218,20 +304,18 @@
     <!-- Blog Section Start -->
     <section class="blog">
         <div class="container">
-            <div class="row p-5 mt-5">
+            <div class="row p-4 mt-5">
                 <div class="col-lg-7">
                     <div class="blog-first">
-                        <p class="">Lorem ipsum dolor sit amet, consectetur</p>
+                        <p class="">We do not know what makes you happy, but ...</p>
                     </div>
                     <div class="blog-second">
-                        <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi sapien,
-                            suscipit
-                            ut accumsan
-                            vitae, pulvinar ac libero. <br> Aliquam erat volutpat. Nullam quis ex odio. Nam bibendum
-                            cursus purus, vel efficitur urna
-                            finibus vitae. Nullam finibus aliquet pharetra. Morbi in sem dolor. Integer pretium
-                            hendrerit
-                            ante quis vehicula. <br> Mauris consequat ornare enim, sed lobortis quam ultrices sed.</p>
+                        <p class="mt-3">If it's not dusting off, our friendly helpers will free you from this burden -
+                            do not worry anymore about spending valuable time doing housework, but savor life, you're
+                            well worth your time with beautiful experiences. Free yourself and enjoy the gained time: Go
+                            celebrate, relax, play with your children, meet friends or dare to jump on the bungee.Other
+                            leisure ideas and exclusive events can be found in our blog - guaranteed free from dust and
+                            cleaning tips!</p>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -441,10 +525,10 @@
                 </div>
                 <div class="col-lg-8 d-flex justify-content-center align-items-center">
                     <div class="footer-navbar text-center p-4 ">
-                        <a class="" href="#">HOME</a>
-                        <a class="" href="#">ABOUT</a>
+                        <a class="" href="index.html">HOME</a>
+                        <a class="" href="about.html">ABOUT</a>
                         <a class="" href="#">TESTIMONIALS</a>
-                        <a class="" href="#">FAQS</a>
+                        <a class="" href="faq.html">FAQS</a>
                         <a class="" href="#">INSURANCE</a>
                         <a class="" href="#">POLICY</a>
                         <a class="" href="#">IMPRESSUM</a>
@@ -489,6 +573,8 @@
         </a>
     </div>
     <!-- Back-Home Button -->
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

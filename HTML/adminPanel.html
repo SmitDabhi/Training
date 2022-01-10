@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="css/adminPanel.css">
 
-    <title>Helperland | User Management</title>
+    <title>Helperland | Admin Panel</title>
 </head>
 
 <body>
@@ -49,21 +49,659 @@
             <div class="admin-leftMenu">
                 <div class="nav flex-column text-start um-left-menu " id="v-pills-tab" role="tablist"
                     aria-orientation="vertical">
-                    <a class="nav-link" id="v-pills-serRequest-tab" data-bs-toggle="pill"
+                    <a class="nav-link active" id="v-pills-serRequest-tab" data-bs-toggle="pill"
                         data-bs-target="#v-pills-serRequest" role="tab" aria-controls="v-pills-serRequest"
                         aria-selected="true">Service Requests</a>
-                    <a class="nav-link active" id="v-pills-userManage-tab" data-bs-toggle="pill"
+                    <a class="nav-link" id="v-pills-userManage-tab" data-bs-toggle="pill"
                         data-bs-target="#v-pills-userManage" role="tab" aria-controls="v-pills-userManage"
                         aria-selected="false">User Management</a>
                 </div>
             </div>
             <div class="admin-mainContent">
                 <div class="tab-content um-right-menu justify-content-center" id="v-pills-tabContent">
-                    <div class="tab-pane fade " id="v-pills-serRequest" role="tabpanel"
+                    <!-- Service Request Pane Start -->
+                    <div class="tab-pane fade show active" id="v-pills-serRequest" role="tabpanel"
                         aria-labelledby="v-pills-serRequest-tab">
-                        Service Request
+                        <div class="srContentHeader">
+                            <span class="sectionName">Service Requests</span>
+                        </div>
+
+                        <div class="serchingTab">
+                            <div class="serviceID">
+                                <input type="number" class="form-control" placeholder="Service ID">
+                            </div>
+                            <div class="customer ms-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Customer</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="serviceProvider ms-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Service Provider</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="statusSelect ms-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Status</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="fromDt">
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="toDt">
+                                <input type="date" class="form-control">
+                            </div>
+                            <button type="submit" class="btn-submit ">Submit</button>
+                            <button type="reset" class="btn-clear me-3">Clear</button>
+                        </div>
+
+                        <div class="umTable">
+                            <table id="servReqTB" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Service ID </th>
+                                        <th>Service date </th>
+                                        <th>Customer details </th>
+                                        <th>Service provider </th>
+                                        <th>Status </th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">1234</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="newTB">New</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">1</a></li>
+                                                    <li><a href="#">2</a></li>
+                                                    <li><a href="#">3</a></li>
+                                                    <li class="mb-0"><a href="#">4</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">2345</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="pendingTB">Pending</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Edit & Reschedule</a></li>
+                                                    <li><a href="#">Refund</a></li>
+                                                    <li><a href="#">Cancel</a></li>
+                                                    <li><a href="#">Change SP</a></li>
+                                                    <li><a href="#">Escalate</a></li>
+                                                    <li><a href="#">History Log</a></li>
+                                                    <li class="mb-0"><a href="#">Download Invoice</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">3456</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="completedTB">Completed</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Refund</a></li>
+                                                    <li><a href="#">Escalate</a></li>
+                                                    <li><a href="#">History Log</a></li>
+                                                    <li class="mb-0"><a href="#">Download Invoice</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">4567</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="cancelledTB">Cancelled</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Refund</a></li>
+                                                    <li><a href="#">Escalate</a></li>
+                                                    <li><a href="#">History Log</a></li>
+                                                    <li class="mb-0"><a href="#">Download Invoice</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">5678</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="newTB">New</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">1</a></li>
+                                                    <li><a href="#">2</a></li>
+                                                    <li><a href="#">3</a></li>
+                                                    <li class="mb-0"><a href="#">4</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">6789</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="pendingTB">Pending</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Edit & Reschedule</a></li>
+                                                    <li><a href="#">Refund</a></li>
+                                                    <li><a href="#">Cancel</a></li>
+                                                    <li><a href="#">Change SP</a></li>
+                                                    <li><a href="#">Escalate</a></li>
+                                                    <li><a href="#">History Log</a></li>
+                                                    <li class="mb-0"><a href="#">Download Invoice</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">7890</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="completedTB">Completed</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Refund</a></li>
+                                                    <li><a href="#">Escalate</a></li>
+                                                    <li><a href="#">History Log</a></li>
+                                                    <li class="mb-0"><a href="#">Download Invoice</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">8901</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="cancelledTB">Cancelled</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Refund</a></li>
+                                                    <li><a href="#">Escalate</a></li>
+                                                    <li><a href="#">History Log</a></li>
+                                                    <li class="mb-0"><a href="#">Download Invoice</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">9012</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="newTB">New</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">1</a></li>
+                                                    <li><a href="#">2</a></li>
+                                                    <li><a href="#">3</a></li>
+                                                    <li class="mb-0"><a href="#">4</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">1011</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="pendingTB">Pending</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Edit & Reschedule</a></li>
+                                                    <li><a href="#">Refund</a></li>
+                                                    <li><a href="#">Cancel</a></li>
+                                                    <li><a href="#">Change SP</a></li>
+                                                    <li><a href="#">Escalate</a></li>
+                                                    <li><a href="#">History Log</a></li>
+                                                    <li class="mb-0"><a href="#">Download Invoice</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">1112</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="completedTB">Completed</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Refund</a></li>
+                                                    <li><a href="#">Escalate</a></li>
+                                                    <li><a href="#">History Log</a></li>
+                                                    <li class="mb-0"><a href="#">Download Invoice</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="sID">1213</span>
+                                        </td>
+                                        <td class="service-date">
+                                            <div><img class="me-1" src="img/calendar2.png"
+                                                    alt=""><strong>09/04/2018</strong></div>
+                                            <div><img class="me-1" src="img/layer-14.png" alt="">12:00 -
+                                                18:00</div>
+                                        </td>
+                                        <td>
+                                            <div>David Bough</div>
+                                            <div>
+                                                <img src="img/layer-15.png" class="img-home" alt="">
+                                                <span>Musterstrabe 5,12345 Bonn</span>
+                                            </div>
+
+                                        </td>
+                                        <td class="sr-tb-provider">
+                                            <span><img src="img/cap.png" alt=""></span>
+                                            <span class="sp-details">
+                                                <span class="sp-tb-name">Lyum Watson</span>
+                                                <span class="sp-tb-ratings">
+                                                    <div class="starRating">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star1.png" alt="">
+                                                        <img src="img/star2.png" alt="">
+                                                        <span>4</span>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="statusTB"><span class="cancelledTB">Cancelled</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Refund</a></li>
+                                                    <li><a href="#">Escalate</a></li>
+                                                    <li><a href="#">History Log</a></li>
+                                                    <li class="mb-0"><a href="#">Download Invoice</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="content-footer">
+                            <span>©2018 Helperland. All rights reserved.</span>
+                        </div>
                     </div>
-                    <div class="tab-pane fade show active" id="v-pills-userManage" role="tabpanel"
+                    <!-- Service Request Pane End -->
+
+                    <!-- User Management Pane Start -->
+                    <div class="tab-pane fade" id="v-pills-userManage" role="tabpanel"
                         aria-labelledby="v-pills-userManage-tab">
                         <div class="contentHeader">
                             <span class="sectionName">User Management</span>
@@ -209,30 +847,6 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Uttam</td>
-                                        <td></td>
-                                        <td>
-                                            <div class="umDoR">
-                                                <img src="img/calendar2.png" alt="">
-                                                <span>17/09/2020</span>
-                                            </div>
-                                        </td>
-                                        <td>Service Provider</td>
-                                        <td>9512374860</td>
-                                        <td>364001</td>
-                                        <td class="statusTB"><span class="activeTB">Active</span></td>
-                                        <td class="actionBTN">
-                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
-                                            <div class="threeDotToggleMenu">
-                                                <ul>
-                                                    <li><a href="#">Edit</a></li>
-                                                    <li><a href="#">Deactive</a></li>
-                                                    <li class="mb-0"><a href="#">Service History</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <td>Jenish</td>
                                         <td></td>
                                         <td>
@@ -305,16 +919,64 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Zenil</td>
+                                        <td>Dharmik</td>
                                         <td></td>
                                         <td>
                                             <div class="umDoR">
                                                 <img src="img/calendar2.png" alt="">
-                                                <span>05/04/2020</span>
+                                                <span>18/01/2020</span>
+                                            </div>
+                                        </td>
+                                        <td>Customer</td>
+                                        <td>7546982310</td>
+                                        <td>364001</td>
+                                        <td class="statusTB"><span class="activeTB">Active</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Edit</a></li>
+                                                    <li><a href="#">Deactive</a></li>
+                                                    <li class="mb-0"><a href="#">Service History</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ketan</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="umDoR">
+                                                <img src="img/calendar2.png" alt="">
+                                                <span>21/08/2020</span>
+                                            </div>
+                                        </td>
+                                        <td>Service Provider</td>
+                                        <td>8523697410</td>
+                                        <td>364001</td>
+                                        <td class="statusTB"><span class="activeTB">Active</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Edit</a></li>
+                                                    <li><a href="#">Deactive</a></li>
+                                                    <li class="mb-0"><a href="#">Service History</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ravi</td>
+                                        <td>Finance Manager</td>
+                                        <td>
+                                            <div class="umDoR">
+                                                <img src="img/calendar2.png" alt="">
+                                                <span>18/04/2020</span>
                                             </div>
                                         </td>
                                         <td>Call Center</td>
-                                        <td>6932587410</td>
+                                        <td>8523164790</td>
                                         <td>364001</td>
                                         <td class="statusTB"><span class="inactiveTB">Inactive</span></td>
                                         <td class="actionBTN">
@@ -323,6 +985,30 @@
                                                 <ul>
                                                     <li><a href="#">Edit</a></li>
                                                     <li><a href="#">Active</a></li>
+                                                    <li class="mb-0"><a href="#">Service History</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hardik</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="umDoR">
+                                                <img src="img/calendar2.png" alt="">
+                                                <span>15/08/2020</span>
+                                            </div>
+                                        </td>
+                                        <td>Service Provider</td>
+                                        <td>6398521470</td>
+                                        <td>364001</td>
+                                        <td class="statusTB"><span class="activeTB">Active</span></td>
+                                        <td class="actionBTN">
+                                            <i class="fa fa-ellipsis-v threeDotMenu" aria-hidden="true"></i>
+                                            <div class="threeDotToggleMenu">
+                                                <ul>
+                                                    <li><a href="#">Edit</a></li>
+                                                    <li><a href="#">Deactive</a></li>
                                                     <li class="mb-0"><a href="#">Service History</a></li>
                                                 </ul>
                                             </div>
@@ -407,6 +1093,7 @@
                             <span>©2018 Helperland. All rights reserved.</span>
                         </div>
                     </div>
+                    <!-- User Management Pane End -->
                 </div>
             </div>
         </div>
@@ -419,6 +1106,7 @@
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="js/adminSR.js"></script>
     <script src="js/adminUM.js"></script>
 </body>
 

@@ -1,9 +1,9 @@
-$(document).ready( function () {
-    $('#userManageTB').DataTable({
+$(document).ready(function () {
+    $('#servReqTB').DataTable({
         "dom": 'Bt<"table-bottom d-flex justify-content-between"<"table-bottom-inner d-flex"li>p>',
         "searching":false,
         'columnDefs': [ {
-            'targets': [7], 
+            'targets': [5], 
             'orderable': false, 
          }],
         "language": {
@@ -13,8 +13,5 @@ $(document).ready( function () {
             },
             'info': "",
         }
-    });
-    $(".threeDotMenu").click(function (e) { 
-        $(this).closest(".actionBTN").children(".threeDotToggleMenu").toggle();
     });
 });

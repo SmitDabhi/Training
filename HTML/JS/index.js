@@ -16,4 +16,11 @@ $(document).ready(()=>{
 	$("#hide-btn").click(function (e) { 
 		$("#privacy").css("display", "none");
 	});
+	$("#frgLink").click(function (e) { 
+		$("#exampleModal").modal('hide');
+	});
+	$(".loginlink").click(function (e) { 
+		$("#frgPsw").modal('hide');
+	});
+
 });

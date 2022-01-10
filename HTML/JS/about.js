@@ -8,4 +8,10 @@ $(document).ready(()=>{
 			$('#homebtn').css('display', 'none');		
         }
     });
+    $("#frgLink").click(function (e) { 
+		$("#exampleModal").modal('hide');
+	});
+	$(".loginlink").click(function (e) { 
+		$("#frgPsw").modal('hide');
+	});
 });
