@@ -19,7 +19,7 @@
 }
 
 .um-navbar .container-fluid {
-    padding: 7px 15px 8px 15px;
+    padding: 9px 15px 10px 15px;
 }
 
 .um-top-menu .nav-item {
@@ -39,7 +39,7 @@
 }
 
 .admin-panel {
-    margin-top: 60px;
+    margin-top: 55px;
 
 }
 
@@ -49,7 +49,7 @@
 
 .admin-leftMenu {
     position: sticky;
-    top: 60px;
+    top: 55px;
     height: calc(100vh - 60px);
     width: 20vw;
 }
@@ -246,7 +246,7 @@
 }
 
 #userManageTB thead th {
-    padding: 17px 20px 20px 14px;
+    padding: 17px 20px 18px 14px;
 }
 
 #userManageTB thead th img {
@@ -444,6 +444,30 @@ input::-webkit-inner-spin-button {
     height: 46px;
 }
 
+.ui[class*="left icon"].input>input::placeholder {
+    color: #646464;
+}
+
+.fDT {
+    position: relative;
+}
+
+.fDT svg {
+    position: absolute;
+    top: 12px;
+    left: 11px;
+}
+
+.tDT {
+    position: relative;
+}
+
+.tDT svg {
+    position: absolute;
+    top: 12px;
+    left: 11px;
+}
+
 .img-home {
     margin-top: -5px;
 }
@@ -474,7 +498,7 @@ input::-webkit-inner-spin-button {
 }
 
 #servReqTB thead th {
-    padding: 17px 20px 20px 14px;
+    padding: 17px 20px 18px 14px;
 }
 
 

@@ -8,6 +8,9 @@ $(document).ready(()=>{
 			$('#homebtn').css('display', 'none');		
         }
     });
+	$("#homebtn").click(function (e) { 
+		$("html, body").animate({ scrollTop: 0 }, 0); 
+	});
     $("#frgLink").click(function (e) { 
 		$("#exampleModal").modal('hide');
 	});

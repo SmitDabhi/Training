@@ -202,7 +202,10 @@
     color: #1fb6ff;
 }
 
-
+.form-check-input:checked {
+    background-color: #1d7a8c;
+    border-color: #1d7a8c;
+}
 
 .form-details input::placeholder {
     color: #a0a0a0;

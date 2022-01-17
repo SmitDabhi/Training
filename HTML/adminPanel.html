@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+    <link
+        href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css"
+        rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/adminPanel.css">
 
     <title>Helperland | Admin Panel</title>
@@ -95,10 +98,26 @@
                                 </select>
                             </div>
                             <div class="fromDt">
-                                <input type="date" class="form-control">
+                                <div class="ui calendar" id="fDate">
+                                    <div class="ui input left icon fDT">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                                            <path fill-rule="evenodd" fill="#1FB6FF"
+                                                d="M.457 20.1V2.143H4.15V.12h1.848v2.023H9.76V.12h1.163v2.023H14.1V.12h1.748v2.023h3.694V20.1H.457zM17.695 6.456H2.304v11.706h15.391V6.456zM7.229 11.385H5.382V9.536h1.847v1.849zm0 4.425H5.382v-2.577h1.847v2.577zm3.694-4.425H9.76V9.536h1.163v1.849zm0 4.425H9.76v-2.577h1.163v2.577zm3.694-4.425H12.77V9.536h1.847v1.849zm0 4.425H12.77v-2.577h1.847v2.577z" />
+                                        </svg>
+                                        <input type="text" placeholder="From Date">
+                                    </div>
+                                </div>
                             </div>
                             <div class="toDt">
-                                <input type="date" class="form-control">
+                                <div class="ui calendar" id="tDate">
+                                    <div class="ui input left icon tDT">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                                            <path fill-rule="evenodd" fill="#1FB6FF"
+                                                d="M.457 20.1V2.143H4.15V.12h1.848v2.023H9.76V.12h1.163v2.023H14.1V.12h1.748v2.023h3.694V20.1H.457zM17.695 6.456H2.304v11.706h15.391V6.456zM7.229 11.385H5.382V9.536h1.847v1.849zm0 4.425H5.382v-2.577h1.847v2.577zm3.694-4.425H9.76V9.536h1.163v1.849zm0 4.425H9.76v-2.577h1.163v2.577zm3.694-4.425H12.77V9.536h1.847v1.849zm0 4.425H12.77v-2.577h1.847v2.577z" />
+                                        </svg>
+                                        <input type="text" placeholder="To Date">
+                                    </div>
+                                </div>
                             </div>
                             <button type="submit" class="btn-submit ">Submit</button>
                             <button type="reset" class="btn-clear me-3">Clear</button>
@@ -1106,6 +1125,8 @@
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script
+        src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
     <script src="js/adminSR.js"></script>
     <script src="js/adminUM.js"></script>
 </body>

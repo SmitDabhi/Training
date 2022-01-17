@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/about.css">
-    <title>Helperland | About</title>
+    <link rel="stylesheet" href="CSS/signUp.css">
+    <title>Helperland | Sign Up</title>
 </head>
 
 <body>
     <!-- Navbar Start -->
-    <header class="about-navbar">
-        <nav class="navbar navbar-expand-lg about-nav-color navbar-dark p-0 fixed-top">
+    <header class="signup-navbar">
+        <nav class="navbar navbar-expand-lg signUp-nav navbar-dark p-0 fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand px-15" href="index.html"><svg xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" width="73" height="54">
@@ -29,9 +29,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 about-nav text-center">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 signUp-navMenu text-center">
                         <li class="nav-item">
-                            <a class="about-r-btn header-nav" href="#">Book now</a>
+                            <a class="signUp-sp-btn header-nav" href="#">Book now</a>
                         </li>
                         <li class="nav-item">
                             <a class=" header-nav" href="price.html">Prices & services</a>
@@ -46,152 +46,77 @@
                             <a class=" header-nav" href="contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="about-r-btn header-nav" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            <a class="signUp-sp-btn header-nav" data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 href="#">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="about-r-btn header-nav" href="servicePro.html">Become a Helper</a>
+                            <a class="signUp-sp-btn header-nav" href="servicePro.html">Become a Helper</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-
-        <!-- Login Modal Start -->
-        <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Login to your account</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="row g-3">
-                            <div class="col-12 emailModal">
-                                <input type="email" class="form-control" id="" placeholder="Email">
-                                <i class="far fa-user"></i>
-                            </div>
-                            <div class="col-12 pswModal">
-                                <input type="password" class="form-control" id="" placeholder="Password">
-                                <i class="fas fa-lock"></i>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                    <label class="form-check-label" for="gridCheck">
-                                        Remember me
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-12 login-btn">
-                                <button type="button">Login</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <div class="forgotpsw">
-                            <a id="frgLink" href="#" data-bs-toggle="modal" data-bs-target="#frgPsw">Forgot
-                                Password?</a>
-                        </div>
-                        <div class="accoutReg text-center">
-                            <p>Don't have an account? <a href="#">Create an account</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Login Modal End -->
-
-        <!-- Forgot Password Modal S -->
-        <div class="modal fade" id="frgPsw" aria-labelledby="frgPswLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="frgPswLabel">Forgot Password</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="row g-3">
-                            <div class="col-12">
-                                <input type="email" class="form-control" id="" placeholder="Email Address">
-                            </div>
-                            <div class="col-12 send-btn">
-                                <button type="button">Send</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <div>
-                            <a href="#" class="loginlink" data-bs-toggle="modal" data-bs-target="#exampleModal">Login
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Forgot Password Modal E -->
-
-        <!-- Img -->
-        <div class="about-img">
-        </div>
-        <!-- Img -->
     </header>
     <!-- Navbar End -->
 
-    <!-- About-Details Start -->
-    <section class="about-details">
+    <!-- SignUp Form Section Start -->
+    <section class="signupForm">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center ">
-                        <h2 class="content-title">A Few words about us</h2>
-                    </div>
-                </div>
-            </div>
             <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="content-title">Create an Account</h2>
+                </div>
                 <div class="col-lg-12 d-flex justify-content-center align-items-center">
-                    <hr class="about-hr">
+                    <hr class="sign-hr">
                     <img src="img/faq-separator.png" class="faq-separator mx-2" alt="">
-                    <hr class="about-hr">
+                    <hr class="sign-hr">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 d-flex justify-content-center align-items-center text-center">
-                    <p class="about-para">We are providers of professional home cleaning services, offering hourly based
-                        house cleaning options, which mean that you don't <br>
-                        have to fret about getting your house cleaned anymore. We will handle everything for you, so
-                        that you can focus on spending your <br>
-                        precious time with your family members. <br><br>
-                        We have a number of experienced cleaners to help you make cleaning out or shifting your home an
-                        easy affair.</p>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center ">
-                        <h2 class="content-title">Our Story</h2>
+            <div class="signForm">
+                <form class="row g-3 mx-auto">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control form-txt" id="inputFname" placeholder="First name">
                     </div>
-                </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control form-txt" id="inputLname" placeholder="Last name">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control form-txt" id="inputEmail" placeholder="E-mail address">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">+46</span>
+                            <input type="tel" class="form-control" placeholder="Phone number">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" class="form-control" name="pwd" id="inputPassword"
+                            placeholder="Password">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" class="form-control" name="cpwd" id="inputCPassword"
+                            placeholder="Confirm Password">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-check mx-auto">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                I have read the <a href="#" class="privacyLink">privacy policy</a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn-register">Register</button>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <span class="loginSpan">Already registered? <a href="#" class="privacyLink">Login Now</a></span>
+                    </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 d-flex justify-content-center align-items-center">
-                    <hr class="about-hr">
-                    <img src="img/faq-separator.png" class="faq-separator mx-2" alt="">
-                    <hr class="about-hr">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 d-flex justify-content-center align-items-center text-center">
-                    <p class="about-para">A cleaner is a type of industrial or domestic worker who cleans homes or
-                        commercial premises for payment. Cleaners may specialise <br>
-                        in cleaning particular things or places, such a window cleaners. Cleaners often work when the
-                        people who otherwise occupy the <br>
-                        space are not around. They may clean offices at night or houses during the workday.</p>
-                </div>
-            </div>
+            </form>
+        </div>
         </div>
     </section>
-    <!-- About-Details End -->
+    <!-- SignUp Form Section End -->
 
     <!-- Footer Start -->
     <footer class="footer">
@@ -234,7 +159,7 @@
 
     <!-- Back-Home Button -->
     <div class="home-btn" id="homebtn">
-        <a>
+        <a href="#">
             <div class="up-arrow">
                 <svg class="up-pos" xmlns="http://www.w3.org/2000/svg" width="20" height="10">
                     <path fill-rule="evenodd" fill="#F4F5F8"
@@ -244,9 +169,10 @@
         </a>
     </div>
     <!-- Back-Home Button -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/about.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="JS/signup.js"></script>
 </body>
 
 </html>

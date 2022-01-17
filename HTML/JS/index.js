@@ -22,5 +22,7 @@ $(document).ready(()=>{
 	$(".loginlink").click(function (e) { 
 		$("#frgPsw").modal('hide');
 	});
-
+	$("#homebtn").click(function (e) { 
+		$("html, body").animate({ scrollTop: 0 }, 0); 
+	});
 });

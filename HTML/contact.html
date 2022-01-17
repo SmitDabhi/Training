@@ -196,9 +196,11 @@
                     <div class="col-md-6">
                         <input type="text" class="form-control form-txt" id="inputLname" placeholder="Last name">
                     </div>
-                    <div class="col-md-6 form-number">
-                        <input type="tel" class="form-control form-txt" id="inputTel" placeholder="Mobile number">
-                        <span class="prefix">+46</span>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">+46</span>
+                            <input type="tel" class="form-control form-txt" placeholder="Phone number">
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <input type="email" class="form-control form-txt" id="inputEmail" placeholder="Email address">
@@ -273,7 +275,7 @@
 
     <!-- Back-Home Button -->
     <div class="home-btn" id="homebtn">
-        <a href="#">
+        <a>
             <div class="up-arrow">
                 <svg class="up-pos" xmlns="http://www.w3.org/2000/svg" width="20" height="10">
                     <path fill-rule="evenodd" fill="#F4F5F8"

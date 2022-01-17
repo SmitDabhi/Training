@@ -175,6 +175,18 @@
     font-size: 16px;
 }
 
+.input-group-text {
+    color: #646464;
+}
+
+.input-group {
+    position: static;
+}
+
+.input-group>.form-control, .input-group>.form-select {
+    position: static;
+}
+
 .contact-form h2 {
     margin: 74px 0px 23px;
     text-align: center;

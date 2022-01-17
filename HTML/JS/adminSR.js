@@ -14,4 +14,10 @@ $(document).ready(function () {
             'info': "",
         }
     });
+    $('#fDate').calendar({
+        type: 'date'
+      });
+    $('#tDate').calendar({
+        type: 'date'
+      });
 });
