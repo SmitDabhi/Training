@@ -1,0 +1,99 @@
+/* _content/Helperland/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+*[b-oly2lupp25] {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+a.navbar-brand[b-oly2lupp25] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-oly2lupp25] {
+  color: #0077cc;
+}
+
+.btn-primary[b-oly2lupp25] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-oly2lupp25], .nav-pills .show > .nav-link[b-oly2lupp25] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-oly2lupp25] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-oly2lupp25] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-oly2lupp25] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-oly2lupp25] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+
+.footer[b-oly2lupp25] {
+    background-color: #111111;
+}
+
+.footer-navbar a[b-oly2lupp25] {
+    text-decoration: none;
+    color: white;
+    padding: 0px 10px;
+    font-size: 14px;
+    letter-spacing: 0px;
+}
+
+.footer-separator[b-oly2lupp25] {
+    height: 1px;
+    margin: 1rem 0;
+    background-color: #424242;
+    border: 0;
+    opacity: 1;
+}
+
+.footer-policy p[b-oly2lupp25] {
+    font-size: 14px;
+    padding: 20px 0px;
+    margin: 0px;
+    color: #9ba0a3;
+}
+
+.home-btn[b-oly2lupp25] {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.up-arrow[b-oly2lupp25] {
+    width: 48px;
+    height: 48px;
+    background-color: #525252;
+    border-radius: 50%;
+    position: relative;
+    float: left;
+    margin: 0px 0px;
+}
+
+.up-pos[b-oly2lupp25] {
+    position: absolute;
+    top: 37%;
+    left: 28%;
+}

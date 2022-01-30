@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewData["Title"] = "Become Provider";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<section class="servicePro-bg">
+    <div class="container">
+        <div class="row m-0">
+            <div class="col-lg-12 sp-heading">
+                <form class="row g-3 service-form mx-auto">
+                    <div class="col-12 text-center m-0">
+                        <h3 class="form-heading">Register Now!</h3>
+                    </div>
+                    <div class="col-12 form-details my-3">
+                        <input type="text" class="form-control mx-auto" id="inputSPFname" placeholder="First name">
+                    </div>
+                    <div class="col-12 form-details my-3">
+                        <input type="text" class="form-control mx-auto" id="inputSPLname" placeholder="Last name">
+                    </div>
+                    <div class="col-12 form-details my-3">
+                        <input type="email" class="form-control mx-auto" id="inputEmail"
+                            placeholder="Email Address">
+                    </div>
+                    <div class="col-12 form-details my-3 sp-number">
+                        <input type="tel" class="form-control form-txt mx-auto" id="inputTel"
+                            placeholder="Mobile number">
+                        <span class="sp-prefix">+46</span>
+                    </div>
+                    <div class="col-12 form-details my-3">
+                        <input type="password" class="form-control mx-auto" name="pwd" id="inputPassword"
+                            placeholder="Password">
+                    </div>
+                    <div class="col-12 form-details my-3">
+                        <input type="password" class="form-control mx-auto" name="cpwd" id="inputCPassword"
+                            placeholder="Confirm Password">
+                    </div>
+                    <div class="col-12 form-details my-3">
+                        <div class="form-check mx-auto">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                I accept <a href="#">terms and conditions</a> & <a href="#">privacy policy</a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mb-4">
+                        <button type="submit" class="btn-sp-get ">Get Started <img class="ps-1"
+                                src="/img/arrow-white.png" alt=""></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="sp-arrow text-center">
+            <a href="#servicePro">
+                <img src="/img/group-18_5.png" alt=""></a>
+        </div>
+    </div>
+</section>
+
+<!-- SP Content Start -->
+<section class="sp-process" id="servicePro">
+    <div class="container">
+        <div class="process-heading text-center">
+            <h2>How it works</h2>
+        </div>
+        <div class="work-process">
+            <div class="row reg-ys">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="process-img txtEnd">
+                        <img src="/img/sp-img-1.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center align-items-center order-lg-1">
+                    <div class="process-txt">
+                        <h3>Register yourself</h3>
+                        <p>Provide your basic information to register <br>
+                            yourself as a service provider.</p>
+                        <a href="#">Read more<img class="ps-2 sp-proc-arrow" src="/img/shape-2.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row ser-req">
+                <div class="col-lg-6 ">
+                    <div class="process-img ">
+                        <img src="/img/sp-img-2.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6  d-flex justify-content-center align-items-center">
+                    <div class="process-txt">
+                        <h3>Get service requests</h3>
+                        <p>You will get service requests from <br>
+                            customes depend on service area and profile.</p>
+                        <a href="#">Read more<img class="ps-2 sp-proc-arrow" src="/img/shape-2.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row comp-ser">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="process-img txtEnd">
+                        <img src="/img/sp-img-3.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center align-items-center order-lg-1">
+                    <div class="process-txt">
+                        <h3>Complete service</h3>
+                        <p>Accept service requests from your customers <br>
+                            and complete your work.</p>
+                        <a href="#">Read more<img class="ps-2 sp-proc-arrow" src="/img/shape-2.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SP Content End -->
+
+@section css{
+    <link rel="stylesheet" href="/css/service.css">
+}
+@section script{
+    <script src="/js/service.js"></script>
+}
