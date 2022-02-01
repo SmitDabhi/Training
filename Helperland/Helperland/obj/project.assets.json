@@ -9426,11 +9426,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\Helperland.csproj",
+      "projectUniqueName": "S:\\Training Tatvasoft\\Helperland\\Helperland\\Helperland.csproj",
       "projectName": "Helperland",
-      "projectPath": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\Helperland.csproj",
+      "projectPath": "S:\\Training Tatvasoft\\Helperland\\Helperland\\Helperland.csproj",
       "packagesPath": "C:\\Users\\smitd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\obj\\",
+      "outputPath": "S:\\Training Tatvasoft\\Helperland\\Helperland\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\smitd\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -17,27 +17,32 @@ namespace Helperland.Controllers
         {
             return View();
         }
-        
+
+        [Route("price")]
         public IActionResult Price()
         {
             return View();
         }
         
+        [Route("faq")]
         public IActionResult Faq()
         {
             return View();
         }
 
+        [Route("becomeProvider")]
         public IActionResult BecomePro()
         {
             return View();
         }
 
+        [Route("contact")]
         public IActionResult Contact()
         {
             return View();
         }
         
+        [Route("about")]
         public IActionResult About()
         {
             return View();

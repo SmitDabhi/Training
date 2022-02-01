@@ -8,57 +8,61 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Helperland
 build_property.RootNamespace = Helperland
-build_property.ProjectDir = C:\Users\smitd\source\repos\Helperland\Helperland\
+build_property.ProjectDir = S:\Training Tatvasoft\Helperland\Helperland\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\smitd\source\repos\Helperland\Helperland
+build_property.MSBuildProjectDirectory = S:\Training Tatvasoft\Helperland\Helperland
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Home/About.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Home/BecomePro.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Home/BecomePro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCZWNvbWVQcm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Home/Contact.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Home/Faq.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Home/Faq.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGYXEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Home/Index.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Home/Price.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Home/Price.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Shared/Error.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Login/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Shared/_HomeLayout.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/_HomeLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ib21lTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Shared/_SecondLayout.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/_SecondLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZWNvbmRMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/Shared/_ValidationScriptsPartial.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/_ViewImports.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smitd/source/repos/Helperland/Helperland/Views/_ViewStart.cshtml]
+[S:/Training Tatvasoft/Helperland/Helperland/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

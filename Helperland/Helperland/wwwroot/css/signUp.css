@@ -7,15 +7,15 @@
     font-family: "Roboto", sans-serif;
 }
 
-.signUp-nav {
+.prices-nav {
     background-color: #525252;
 }
 
-.signup-navbar {
+.price-navbar {
     margin-bottom: 64px;
 }
 
-.signUp-navMenu a {
+.price-navMenu a {
     text-decoration: none;
     color: #fff;
     font-weight: 300;
@@ -23,12 +23,12 @@
     padding: 10px 18px;
 }
 
-.signUp-navMenu a:hover {
+.price-navMenu a:hover {
     border: 1px solid #ffffff80;
     border-radius: 20px;
 }
 
-.signUp-sp-btn {
+.price-sp-btn {
     background: #29626d 0% 0% no-repeat padding-box;
     border: 1px solid #ffffff80;
     border-radius: 20px;
@@ -121,7 +121,7 @@
     background-color: #111111;
 }
 
-.footer-pilicy p {
+.footer-policy{
     font-size: 14px;
     padding: 20px 0px;
     margin: 0px;
@@ -157,7 +157,7 @@
         margin: 5px 0;
     }
 
-    .signUp-sp-btn {
+    .price-sp-btn {
         border: none;
         padding: 7px 0 7px 20px;
         margin: 0px 5px;

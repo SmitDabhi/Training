@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JRC+wi0BTHqxUdJhELcFq070j0Sp0HedMJzO9RBiXlQ=",
+  "Hash": "Oz7BRUUM578o9Qu1yUkYVkPApM10bo8t9fva2dTtvlM=",
   "Source": "Helperland",
   "BasePath": "_content/Helperland",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Helperland\\wwwroot",
       "Source": "Helperland",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\about.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\about.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/about.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\about.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\adminPanel.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\adminPanel.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/adminPanel.css",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\css\\adminPanel.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\bootstrap.min.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\bootstrap.min.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\contact.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\contact.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/contact.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\contact.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\faq.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\faq.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/faq.css",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\faq.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\home.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\home.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/home.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\prices.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\prices.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/prices.css",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\prices.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\service.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\service.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/service.css",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\service.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\serviceHistory.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\serviceHistory.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/serviceHistory.css",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\serviceHistory.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\signUp.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\signUp.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/signUp.css",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\signUp.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\css\\upcomingService.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\upcomingService.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "css/upcomingService.css",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\upcomingService.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\favicon.ico",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\favicon.ico",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\1.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\1.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/1.png",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\img\\1.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\2.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\2.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/2.png",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\img\\2.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\3.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\3.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/3.png",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\img\\3.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\4.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\4.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/4.png",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\img\\4.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\5.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\5.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/5.png",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\img\\5.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\about-banner-img.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\about-banner-img.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/about-banner-img.png",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\img\\about-banner-img.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\accordion-arrow.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\accordion-arrow.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/accordion-arrow.png",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\img\\accordion-arrow.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\accordion-arrow-rotated.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\accordion-arrow-rotated.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/accordion-arrow-rotated.png",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\img\\accordion-arrow-rotated.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\add.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\add.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/add.png",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\img\\add.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\adminLeft.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\adminLeft.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/adminLeft.png",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\img\\adminLeft.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\adminRight.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\adminRight.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/adminRight.png",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\img\\adminRight.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\admin-user.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\admin-user.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/admin-user.png",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\img\\admin-user.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\arrow-white.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\arrow-white.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/arrow-white.png",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\img\\arrow-white.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\become-a-pro-banner.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\become-a-pro-banner.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/become-a-pro-banner.png",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\img\\become-a-pro-banner.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\blog-left-bg.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\blog-left-bg.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/blog-left-bg.png",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog-left-bg.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\blog-right-bg.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\blog-right-bg.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/blog-right-bg.png",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog-right-bg.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\c-1.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\c-1.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/c-1.png",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\img\\c-1.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\c-2.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\c-2.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/c-2.png",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\img\\c-2.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\c-3.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\c-3.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/c-3.png",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\img\\c-3.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\calendar.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\calendar.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/calendar.png",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\img\\calendar.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\calendar2.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\calendar2.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/calendar2.png",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\img\\calendar2.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\calender 3.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\calender 3.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/calender 3.png",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\img\\calender 3.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\cap.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\cap.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/cap.png",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\img\\cap.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\contact-banner.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\contact-banner.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/contact-banner.png",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\img\\contact-banner.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\down-arrow.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\down-arrow.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/down-arrow.png",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\img\\down-arrow.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\ellipse-525.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\ellipse-525.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/ellipse-525.png",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\img\\ellipse-525.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\ellipse-525.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\ellipse-525.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/ellipse-525.svg",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\img\\ellipse-525.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\faq-banner.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\faq-banner.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/faq-banner.png",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\img\\faq-banner.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\faq-separator.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\faq-separator.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/faq-separator.png",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\img\\faq-separator.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\favicon_img.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\favicon_img.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/favicon_img.png",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\img\\favicon_img.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\fb.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\fb.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/fb.svg",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\img\\fb.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\flag.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\flag.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/flag.png",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\img\\flag.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\forma-1 (1).svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\forma-1 (1).svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/forma-1 (1).svg",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\img\\forma-1 (1).svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\forma-1.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\forma-1.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/forma-1.svg",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\img\\forma-1.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\forma-1-copy.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\forma-1-copy.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/forma-1-copy.svg",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\img\\forma-1-copy.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\forma-1-copy-10.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\forma-1-copy-10.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/forma-1-copy-10.png",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\img\\forma-1-copy-10.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-18_5.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-18_5.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-18_5.png",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-18_5.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-21.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-21.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-21.png",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-21.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-22.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-22.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-22.png",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-22.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-23.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-23.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-23.png",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-23.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-24.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-24.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-24.png",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-24.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-28.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-28.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-28.png",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-28.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-29.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-29.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-29.png",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-29.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-30.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-30.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-30.png",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-30.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-31.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-31.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-31.png",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-31.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-32.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-32.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-32.png",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-32.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-33.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-33.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-33.png",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-33.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-35.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-35.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-35.png",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-35.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\group-36.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\group-36.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/group-36.png",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\img\\group-36.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\home-text-arrow.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\home-text-arrow.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/home-text-arrow.svg",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\img\\home-text-arrow.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\icon-notification.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\icon-notification.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/icon-notification.png",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\img\\icon-notification.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\insta.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\insta.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/insta.svg",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\img\\insta.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\keyboard-right-arrow-button.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\keyboard-right-arrow-button.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/keyboard-right-arrow-button.svg",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\img\\keyboard-right-arrow-button.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\layer-14.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\layer-14.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/layer-14.png",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\img\\layer-14.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\layer-15.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\layer-15.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/layer-15.png",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\img\\layer-15.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\layer-598.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\layer-598.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/layer-598.png",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\img\\layer-598.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\Left-arrow-button-copy.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\Left-arrow-button-copy.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/Left-arrow-button-copy.png",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Left-arrow-button-copy.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\leftMost.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\leftMost.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/leftMost.png",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\img\\leftMost.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\location.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\location.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/location.png",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\img\\location.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\logo-large.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\logo-large.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/logo-large.png",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\img\\logo-large.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\logo-small.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\logo-small.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/logo-small.png",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\img\\logo-small.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\logout.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\logout.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/logout.png",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\img\\logout.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\mail-icon.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\mail-icon.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/mail-icon.png",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\img\\mail-icon.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\message.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\message.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/message.svg",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\img\\message.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\phone-call.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\phone-call.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/phone-call.png",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\img\\phone-call.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\prices-banner.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\prices-banner.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/prices-banner.png",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\img\\prices-banner.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\price-spec.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\price-spec.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/price-spec.png",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\img\\price-spec.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\pro-img.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\pro-img.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/pro-img.png",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\img\\pro-img.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\right-arrow.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\right-arrow.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/right-arrow.png",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\img\\right-arrow.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\Right-arrow-button.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\Right-arrow-button.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/Right-arrow-button.png",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Right-arrow-button.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\right-arrow-grey.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\right-arrow-grey.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/right-arrow-grey.png",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\img\\right-arrow-grey.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\RightMost.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\RightMost.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/RightMost.png",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\img\\RightMost.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\shape-1.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\shape-1.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/shape-1.svg",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\img\\shape-1.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\shape-2.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\shape-2.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/shape-2.png",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\img\\shape-2.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\shape-2.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\shape-2.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/shape-2.svg",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\img\\shape-2.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\sort.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\sort.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/sort.png",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\img\\sort.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\sort_asc.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\sort_asc.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/sort_asc.png",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\img\\sort_asc.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\sort_desc.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\sort_desc.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/sort_desc.png",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\img\\sort_desc.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\sp-img-1.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\sp-img-1.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/sp-img-1.png",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\img\\sp-img-1.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\sp-img-2.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\sp-img-2.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/sp-img-2.png",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\img\\sp-img-2.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\sp-img-3.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\sp-img-3.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/sp-img-3.png",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\img\\sp-img-3.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\star1.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\star1.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/star1.png",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\img\\star1.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\star2.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\star2.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/star2.png",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\img\\star2.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\step-4.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\step-4.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/step-4.png",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\img\\step-4.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\step-arrow-1.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\step-arrow-1.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/step-arrow-1.svg",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\img\\step-arrow-1.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\step-arrow-1-copy.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\step-arrow-1-copy.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/step-arrow-1-copy.svg",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\img\\step-arrow-1-copy.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\up-.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\up-.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/up-.svg",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\img\\up-.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\user.png",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\user.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/user.png",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\img\\user.png"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\img\\white-logo-transparent-background-copy-4.svg",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\white-logo-transparent-background-copy-4.svg",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "img/white-logo-transparent-background-copy-4.svg",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\img\\white-logo-transparent-background-copy-4.svg"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\about.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\about.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/about.js",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\js\\about.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\adminSR.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\adminSR.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/adminSR.js",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\js\\adminSR.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\adminUM.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\adminUM.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/adminUM.js",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\js\\adminUM.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\bootstrap.bundle.min.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\contact.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\contact.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/contact.js",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\js\\contact.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\faq.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\faq.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/faq.js",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\js\\faq.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\index.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\index.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/index.js",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\js\\index.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\price.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\price.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/price.js",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\js\\price.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\service.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\service.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/service.js",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\js\\service.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\serviceHistory.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\serviceHistory.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/serviceHistory.js",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\js\\serviceHistory.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\signup.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\signup.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/signup.js",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\js\\signup.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\js\\upcomingService.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\upcomingService.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "js/upcomingService.js",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\js\\upcomingService.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2057,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2074,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2091,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2108,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2125,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2142,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2159,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2176,10 +2176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2193,10 +2193,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2210,10 +2210,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2227,10 +2227,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -2244,10 +2244,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -2261,10 +2261,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -2295,10 +2295,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -2312,10 +2312,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -2329,10 +2329,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -2346,10 +2346,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -2363,10 +2363,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -2380,10 +2380,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -2397,10 +2397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -2414,10 +2414,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -2431,10 +2431,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -2448,10 +2448,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -2465,10 +2465,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -2482,10 +2482,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -2499,10 +2499,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -2516,10 +2516,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2533,10 +2533,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2550,10 +2550,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2567,10 +2567,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2584,10 +2584,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2618,10 +2618,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2635,10 +2635,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2652,10 +2652,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2669,10 +2669,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2686,10 +2686,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -2703,10 +2703,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -2720,10 +2720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -2737,10 +2737,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2754,10 +2754,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -2771,10 +2771,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2788,10 +2788,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2805,10 +2805,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -2822,10 +2822,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -2839,10 +2839,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -2856,10 +2856,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -2873,10 +2873,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -2890,10 +2890,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\smitd\\source\\repos\\Helperland\\Helperland\\wwwroot\\",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
