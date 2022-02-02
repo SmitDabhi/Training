@@ -8,7 +8,15 @@ $(document).ready(()=>{
 			$('#homebtn').css('display', 'none');		
         }
     });
-	$("#homebtn").click(function (e) {
-		$("html, body").animate({ scrollTop: 0 }, 0);
-	});
+    $(".uploadBtnLabel").click( ()=> {
+        $("#uploadFile").trigger('click');
+    });
+    $("#uploadFile").change(() => {
+        var a = $("#uploadFile").val();
+        if (a) {
+            $(".custom-txt").html(a.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1]);
+        } else {
+            $(".custom-txt").html("No file chosen, yet.")
+        }
+    })
 });

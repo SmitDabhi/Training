@@ -79,10 +79,12 @@
     position: static;
 }
 
-.input-group>.form-control, .input-group>.form-select {
+.input-group > .form-control, .input-group > .form-select {
     position: static;
 }
-
+select#Subject {
+    color: #a0a0a0;
+}
 .contact-form h2 {
     margin: 74px 0px 23px;
     text-align: center;
@@ -129,6 +131,46 @@
     padding: 13px 15px;
 }
 
+.form-check-input:checked {
+    background-color: #1d7a8c;
+    border-color: #1d7a8c;
+}
+.uploadLabel{
+    color:#4F4F4F;
+    font-weight:bold;
+    margin:5px 0px
+}
+.custom-txt{
+    color: #a0a0a0;
+}
+#btn-upload {
+    padding: 10px 20px;
+    color: #4f4f4f;
+    border: 1px solid #4f4f4f;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.form-check-label{
+    color:#4F4F4F;
+}
+.uploadButton {
+    margin-top: 10px;
+}
+.uploadBtnLabel {
+    color:#4f4f4f;
+    padding:10px 20px;
+    border:1px solid #4f4f4f;
+    cursor:pointer;
+    border-radius:40px;
+}
+.uploadSection {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
 .form-btn {
     border: 0;
     border-radius: 23px;

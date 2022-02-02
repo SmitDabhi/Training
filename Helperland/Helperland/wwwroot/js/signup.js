@@ -1,4 +1,5 @@
-$(document).ready(()=>{
+$(document).ready(() => {
+
     $(window).scroll((e)=>{
         if(window.scrollY>0){
 			$('.price-navbar').css('opacity','0.8');
@@ -10,5 +11,5 @@ $(document).ready(()=>{
     });
     $("#homebtn").click(function (e) { 
 		$("html, body").animate({ scrollTop: 0 }, 0); 
-	});
+    });
 });
