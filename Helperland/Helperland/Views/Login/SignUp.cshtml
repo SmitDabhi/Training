@@ -1,4 +1,4 @@
-﻿@model Helperland.Models.User
+﻿@model Helperland.Models.viewModels.UserRegVM
 
 @{
     ViewData["Title"] = "Create an Account";
@@ -21,27 +21,33 @@
         <div class="signForm">
             <form class="row g-3 mx-auto" id="signupPage" method="post" asp-controller="Login" asp-action="SignUp">
                 <div class="col-md-6">
-                    <input asp-for="FirstName" class="form-control form-txt" id="inputFname" placeholder="First name">
+                    <input asp-for="Firstname" class="form-control form-txt" id="inputFname" placeholder="First name">
+                    <span asp-validation-for="Firstname" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
-                    <input asp-for="LastName" class="form-control form-txt" id="inputLname" placeholder="Last name">
+                    <input asp-for="Lastname" class="form-control form-txt" id="inputLname" placeholder="Last name">
+                    <span asp-validation-for="Lastname" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
                     <input asp-for="Email" class="form-control form-txt" id="inputEmail" placeholder="E-mail address">
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">+46</span>
-                        <input type="tel" asp-for="Mobile" class="form-control" placeholder="Phone number">
+                        <input asp-for="PhoneNumber" class="form-control" placeholder="Phone number">
                     </div>
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
-                    <input type="password" asp-for="Password" class="form-control" id="inputPassword"
+                    <input asp-for="Password" class="form-control" id="inputPassword"
                         placeholder="Password">
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
-                    <input type="password" class="form-control" id="inputCPassword"
+                    <input asp-for="Confirmpwd" class="form-control" id="inputCPassword"
                         placeholder="Confirm Password">
+                    <span asp-validation-for="Confirmpwd" class="text-danger"></span>
                 </div>
                 <div class="col-md-12">
                     <div class="form-check mx-auto">

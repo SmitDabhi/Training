@@ -1,4 +1,5 @@
-﻿
+﻿@model Helperland.Models.viewModels.UserRegVM
+
 @{
     ViewData["Title"] = "Become Provider";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
@@ -8,36 +9,42 @@
     <div class="container">
         <div class="row m-0">
             <div class="col-lg-12 sp-heading">
-                <form class="row g-3 service-form mx-auto">
+                <form method='post' asp-action="BecomePro" asp-controller="Login" class="row g-3 service-form mx-auto">
                     <div class="col-12 text-center m-0">
                         <h3 class="form-heading">Register Now!</h3>
                     </div>
-                    <div class="col-12 form-details my-3">
-                        <input type="text" class="form-control mx-auto" id="inputSPFname" placeholder="First name">
+                    <div class="col-12 form-details">
+                        <input asp-for="Firstname" class="form-control mx-auto" id="inputSPFname" placeholder="First name">
+                        <span asp-validation-for="Firstname" class="text-danger ms-4"></span>
                     </div>
-                    <div class="col-12 form-details my-3">
-                        <input type="text" class="form-control mx-auto" id="inputSPLname" placeholder="Last name">
+                    <div class="col-12 form-details">
+                        <input asp-for="Lastname" class="form-control mx-auto" id="inputSPLname" placeholder="Last name">
+                        <span asp-validation-for="Lastname" class="text-danger ms-4"></span>
                     </div>
-                    <div class="col-12 form-details my-3">
-                        <input type="email" class="form-control mx-auto" id="inputEmail"
+                    <div class="col-12 form-details">
+                        <input asp-for="Email" class="form-control mx-auto" id="inputEmail"
                             placeholder="Email Address">
+                        <span asp-validation-for="Email" class="text-danger ms-4"></span>
                     </div>
-                    <div class="col-12 form-details my-3 sp-number">
-                        <input type="tel" class="form-control form-txt mx-auto" id="inputTel"
+                    <div class="col-12 form-details sp-number">
+                        <input asp-for="PhoneNumber" class="form-control form-txt mx-auto" id="inputTel"
                             placeholder="Mobile number">
                         <span class="sp-prefix">+46</span>
+                        <span asp-validation-for="PhoneNumber" class="text-danger ms-4"></span>
                     </div>
-                    <div class="col-12 form-details my-3">
-                        <input type="password" class="form-control mx-auto" name="pwd" id="inputPassword"
+                    <div class="col-12 form-details">
+                        <input asp-for="Password" class="form-control mx-auto" id="inputPassword"
                             placeholder="Password">
+                         <span asp-validation-for="Password" class="text-danger ms-4"></span>
                     </div>
-                    <div class="col-12 form-details my-3">
-                        <input type="password" class="form-control mx-auto" name="cpwd" id="inputCPassword"
+                    <div class="col-12 form-details">
+                        <input asp-for="Confirmpwd" class="form-control mx-auto" id="inputCPassword"
                             placeholder="Confirm Password">
+                    <span asp-validation-for="Confirmpwd" class="text-danger ms-4"></span>
                     </div>
-                    <div class="col-12 form-details my-3">
+                    <div class="col-12 form-details">
                         <div class="form-check mx-auto">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <input class="form-check-input" type="checkbox" id="gridCheck" required>
                             <label class="form-check-label" for="gridCheck">
                                 I accept <a href="#">terms and conditions</a> & <a href="#">privacy policy</a>
                             </label>

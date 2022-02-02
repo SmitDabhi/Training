@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U9bedKjiK5dgulQkEW7xTrO5T4ZCfRz6g83KfpYMebE=",
+  "Hash": "HrkgbU+qDhYkh+3NjCqzlbwLgdrUXLGk82Srcjddxeo=",
   "Source": "Helperland",
   "BasePath": "_content/Helperland",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\ContactUsImgs\\16846626-dcd7-4765-8b7d-3a480e90ec9a_Screenshot 2022-02-02 120007.jpg",
+      "SourceId": "Helperland",
+      "SourceType": "Discovered",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
+      "BasePath": "_content/Helperland",
+      "RelativePath": "ContactUsImgs/16846626-dcd7-4765-8b7d-3a480e90ec9a_Screenshot 2022-02-02 120007.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ContactUsImgs\\16846626-dcd7-4765-8b7d-3a480e90ec9a_Screenshot 2022-02-02 120007.jpg"
+    },
     {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\ContactUsImgs\\2df0075c-a253-497e-ad05-9f65011febd5_1638275245 - Copy - Copy.jpg",
       "SourceId": "Helperland",

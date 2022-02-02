@@ -36,12 +36,6 @@ namespace Helperland.Controllers
             return View();
         }
 
-        [Route("becomeProvider")]
-        public IActionResult BecomePro()
-        {
-            return View();
-        }
-
         [Route("contact")]
         public IActionResult Contact(bool IsSubmit=false)
         {   
