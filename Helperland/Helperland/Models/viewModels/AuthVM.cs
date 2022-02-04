@@ -7,10 +7,10 @@ namespace Helperland.Models.viewModels
         [Required]
         public string Username { get; set; }
 
-        [Required]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         public bool Remember { get; set; }
+
     }
 }

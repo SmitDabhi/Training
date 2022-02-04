@@ -28,5 +28,8 @@ $(document).ready(() => {
 	if (urlSearchParams == "login=true") {
 		$('#exampleModal').modal('show');
 	}
+	if (urlSearchParams == "forgot=true") {
+		$("#frgPsw").modal('show');
+    }
 });
 

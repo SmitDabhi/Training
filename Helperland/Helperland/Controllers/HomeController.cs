@@ -29,6 +29,10 @@ namespace Helperland.Controllers
                 ViewBag.Uname = req.FirstName;
                 ViewBag.UType = req.UserTypeId;
             }
+            else
+            {
+                ViewBag.UType = 1;
+            }
             return View();
         }
 
@@ -42,6 +46,10 @@ namespace Helperland.Controllers
                 ViewBag.IsloggedIn = "success";
                 ViewBag.Uname = req.FirstName;
                 ViewBag.UType = req.UserTypeId;
+            }
+            else
+            {
+                ViewBag.UType = 1;
             }
             return View();
         }
@@ -57,6 +65,10 @@ namespace Helperland.Controllers
                 ViewBag.Uname = req.FirstName;
                 ViewBag.UType = req.UserTypeId;
             }
+            else
+            {
+                ViewBag.UType = 1;
+            }
             return View();
         }
 
@@ -70,6 +82,10 @@ namespace Helperland.Controllers
                 ViewBag.IsloggedIn = "success";
                 ViewBag.Uname = req.FirstName;
                 ViewBag.UType = req.UserTypeId;
+            }
+            else
+            {
+                ViewBag.UType = 1;
             }
             ViewBag.IsSubmit = IsSubmit;
             return View();
@@ -119,6 +135,10 @@ namespace Helperland.Controllers
                 ViewBag.IsloggedIn = "success";
                 ViewBag.Uname = req.FirstName;
                 ViewBag.UType = req.UserTypeId;
+            }
+            else
+            {
+                ViewBag.UType = 1;
             }
             return View();
         }

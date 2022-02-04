@@ -2,6 +2,7 @@
 using Helperland.Models;
 using Helperland.Models.viewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
 
 namespace Helperland.Controllers
 {
@@ -17,10 +18,16 @@ namespace Helperland.Controllers
         [Route("userRegistration")]
         public IActionResult SignUp(bool IsCSExist = false)
         {
-            ViewBag.IsCSExist = IsCSExist;
-            return View();
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid == null)
+            {
+                ViewBag.IsCSExist = IsCSExist;
+                ViewBag.UType = 1;
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
         }
-        
+
 
         [Route("userRegistration")]
         [ValidateAntiForgeryToken]
@@ -61,10 +68,10 @@ namespace Helperland.Controllers
             if (Uid == null)
             {
                 ViewBag.IsSPExist = IsSPExist;
+                ViewBag.UType = 1;
                 return View();
             }
-            return RedirectToAction("Index", "Home");
-            
+            return RedirectToAction("Index", "Home");  
         } 
         
         [Route("becomeProvider")]
@@ -135,6 +142,83 @@ namespace Helperland.Controllers
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public IActionResult Forgot(AuthVM forgotEmail)
+        {
+            if (ModelState.IsValid)
+            {
+                if(_dbcontext.Users.Any(x => x.Email == forgotEmail.Username))
+                {
+                    User req = _dbcontext.Users.FirstOrDefault(x => x.Email == forgotEmail.Username);
+                    string To = forgotEmail.Username;
+                    int Uid = req.UserId;
+                    string Subject = "Reset Password";
+                    string Hash = BCrypt.Net.BCrypt.HashPassword(req.Password);
+                    string Body = "<span>Hi <br> Click the link below to reset your account password. <br>" + "<a href='" + Url.Action("ResetPassword", "Login", new { id = Uid, code = Hash }, "https") + "'>Reset Password</a></span>";
+                    MailMessage msg = new MailMessage();
+                    msg.Body = Body;
+                    msg.To.Add(To);
+                    msg.Subject = Subject;
+                    msg.From = new MailAddress("sm.project.workstation@gmail.com");
+                    msg.IsBodyHtml = true;
+
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                    System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+                    credential.UserName = "sm.project.workstation@gmail.com";
+                    credential.Password = "Sm@150601";
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = credential;
+                    smtp.Send(msg);
+
+                    
+                    TempData["showClass"] = "alert alert-success show";
+                    TempData["errorMsg"] = "Reset password link send to your registered Email Address!";
+                    return RedirectToAction("Index", "Home", new { forgot = "true" });
+                }
+                else
+                {
+                    TempData["showClass"] = "alert alert-danger show";
+                    TempData["errorMsg"] = "Email not registered!";
+                    return RedirectToAction("Index", "Home", new { forgot = "true" });
+                }
+            }
+            TempData["showClass"] = "alert alert-danger show";
+            TempData["errorMsg"] = "Please enter Email!";
+            return RedirectToAction("Index","Home", new { forgot = "true" });
+        }
+
+        public IActionResult ResetPassword(int id,string code)
+        {
+            var req = _dbcontext.Users.FirstOrDefault(x => x.UserId == id);
+            var encpsw = req.Password;
+            if (BCrypt.Net.BCrypt.Verify(encpsw, code))
+            {
+                ViewBag.Page = "ResetPsw";
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
+        }
+        
+        [HttpPost]
+        public IActionResult ResetPassword(ResetPswVM model,int id)
+        {
+            if (ModelState.IsValid)
+            {
+                User req = _dbcontext.Users.FirstOrDefault(x => x.UserId == id);
+                req.Password = model.Password;
+                req.ModifiedDate = DateTime.Now;
+                _dbcontext.Users.Update(req);
+                _dbcontext.SaveChanges();
+                return RedirectToAction("Index", "Home", new { login = "true" });
+            }
+            return RedirectToAction("ResetPassword");
         }
     }
 }
