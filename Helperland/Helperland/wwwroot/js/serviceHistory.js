@@ -9,10 +9,10 @@ $(document).ready( function () {
          }],
         "language": {
             "paginate": {
-                "first": '<img src="img/leftMost.png" alt="">',
-                "last": '<img src="img/RightMost.png" alt="">',
-              "previous": '<img src="img/Left-arrow-button-copy.png" alt="">',
-              "next":'<img src="img/Right-arrow-button.png" alt="">'
+                "first": '<img src="/img/leftMost.png" alt="">',
+                "last": '<img src="/img/RightMost.png" alt="">',
+              "previous": '<img src="/img/Left-arrow-button-copy.png" alt="">',
+              "next":'<img src="/img/Right-arrow-button.png" alt="">'
             },
             'info': "Total Record: _MAX_",
         }
@@ -25,6 +25,18 @@ $(document).ready( function () {
     });
     $(".dashNavSide a").click(function (e) { 
         $(".smNavMenu").removeClass("open");
+    });
+    $(window).scroll((e) => {
+        if (window.scrollY > 0) {
+            $('.serviceHistory-nav').css('opacity', '0.8');
+            $('#homebtn').css('display', 'block');
+        } else {
+            $('.serviceHistory-nav').css('opacity', '1');
+            $('#homebtn').css('display', 'none');
+        }
+    });
+    $("#homebtn").click(function (e) {
+        $("html, body").animate({ scrollTop: 0 }, 0);
     });
    
 } );

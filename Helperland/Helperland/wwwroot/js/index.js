@@ -1,4 +1,4 @@
-$(document).ready(()=>{
+$(document).ready(() => {
     $(window).scroll((e)=>{
         if(window.scrollY>10){
 			$('.home-navbar').css({'background-color': '#525252','opacity':'0.9'});
@@ -24,4 +24,9 @@ $(document).ready(()=>{
 	$("#homebtn").click(function (e) { 
 		$("html, body").animate({ scrollTop: 0 }, 0); 
 	});
+	const urlSearchParams = new URLSearchParams(window.location.search);
+	if (urlSearchParams == "login=true") {
+		$('#exampleModal').modal('show');
+	}
 });
+

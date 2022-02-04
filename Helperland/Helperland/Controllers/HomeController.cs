@@ -21,24 +21,56 @@ namespace Helperland.Controllers
 
         public IActionResult Index()
         {
+            int?  Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                var req = _dbcontext.Users.Where(x => x.UserId == Uid).FirstOrDefault();
+                ViewBag.IsloggedIn = "success";
+                ViewBag.Uname = req.FirstName;
+                ViewBag.UType = req.UserTypeId;
+            }
             return View();
         }
 
         [Route("price")]
         public IActionResult Price()
         {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                var req = _dbcontext.Users.Where(x => x.UserId == Uid).FirstOrDefault();
+                ViewBag.IsloggedIn = "success";
+                ViewBag.Uname = req.FirstName;
+                ViewBag.UType = req.UserTypeId;
+            }
             return View();
         }
         
         [Route("faq")]
         public IActionResult Faq()
         {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                var req = _dbcontext.Users.Where(x => x.UserId == Uid).FirstOrDefault();
+                ViewBag.IsloggedIn = "success";
+                ViewBag.Uname = req.FirstName;
+                ViewBag.UType = req.UserTypeId;
+            }
             return View();
         }
 
         [Route("contact")]
         public IActionResult Contact(bool IsSubmit=false)
-        {   
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                var req = _dbcontext.Users.Where(x => x.UserId == Uid).FirstOrDefault();
+                ViewBag.IsloggedIn = "success";
+                ViewBag.Uname = req.FirstName;
+                ViewBag.UType = req.UserTypeId;
+            }
             ViewBag.IsSubmit = IsSubmit;
             return View();
         }
@@ -80,6 +112,14 @@ namespace Helperland.Controllers
         [Route("about")]
         public IActionResult About()
         {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                var req = _dbcontext.Users.Where(x => x.UserId == Uid).FirstOrDefault();
+                ViewBag.IsloggedIn = "success";
+                ViewBag.Uname = req.FirstName;
+                ViewBag.UType = req.UserTypeId;
+            }
             return View();
         }
 

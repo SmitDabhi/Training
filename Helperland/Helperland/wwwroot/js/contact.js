@@ -18,5 +18,5 @@ $(document).ready(()=>{
         } else {
             $(".custom-txt").html("No file chosen, yet.")
         }
-    })
+    });
 });

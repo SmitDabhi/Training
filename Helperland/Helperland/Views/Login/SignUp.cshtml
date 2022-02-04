@@ -20,6 +20,15 @@
         </div>
         <div class="signForm">
             <form class="row g-3 mx-auto" id="signupPage" method="post" asp-controller="Login" asp-action="SignUp">
+                @if(ViewBag.IsCSExist == true)
+                { 
+                    <div class="col-md-12">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            Email ID or Phone Number already exists!
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                }
                 <div class="col-md-6">
                     <input asp-for="Firstname" class="form-control form-txt" id="inputFname" placeholder="First name">
                     <span asp-validation-for="Firstname" class="text-danger"></span>

@@ -83,6 +83,9 @@
     background-color: transparent;
 }
 
+a#navbarDarkDropdownMenuLink {
+    cursor: pointer;
+}
 .user-name {
     margin-top: 64px;
     height: 120px;
@@ -273,21 +276,24 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
     border: 1px solid #E1E1E1;
     border-radius: 50%;
     display: inline;
+    color: black;
+    text-decoration: none;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
     color: white !important;
     background: #1d7a8c !important;
     border: 1px solid transparent;
+    text-decoration:none;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
     padding: 0px;
+    cursor:pointer;
 }
 
 .dataTables_wrapper .dataTables_paginate a.paginate_button.first:hover, .dataTables_wrapper .dataTables_paginate a.paginate_button.last:hover, .dataTables_wrapper .dataTables_paginate a.paginate_button.next:hover, .dataTables_wrapper .dataTables_paginate a.paginate_button.previous:hover {
     background: transparent !important;
-    border: 1px solid transparent;
 }
 
 .dataTables_wrapper .dataTables_paginate span .paginate_button:hover, .dataTables_wrapper .dataTables_paginate span .paginate_button.current:hover {
@@ -405,15 +411,15 @@ table.dataTable.no-footer {
 }
 
 table.dataTable thead .sorting {
-    background-image: url("../img/sort.png");
+    background-image: url("/img/sort.png");
 }
 
 table.dataTable thead .sorting_asc {
-    background-image: url("../img/sort_asc.png") !important;
+    background-image: url("/img/sort_asc.png");
 }
 
 table.dataTable thead .sorting_desc {
-    background-image: url("../img/sort_desc.png") !important;
+    background-image: url("/img/sort_desc.png");
 }
 
 .table-bottom {
@@ -440,13 +446,35 @@ table.dataTable thead .sorting_desc {
     opacity: 1;
 }
 
-.footer-pilicy p {
+.footer-policy{
     font-size: 14px;
     padding: 20px 0px;
     margin: 0px;
     color: #9ba0a3;
 }
 
+.home-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.up-arrow {
+    width: 48px;
+    height: 48px;
+    background-color: #525252;
+    border-radius: 50%;
+    position: relative;
+    float: left;
+    margin: 0px 0px;
+}
+
+.up-pos {
+    position: absolute;
+    top: 37%;
+    left: 28%;
+}
 @media screen and (min-width: 993px) {
     #smSerHistoryNav {
         display: none;

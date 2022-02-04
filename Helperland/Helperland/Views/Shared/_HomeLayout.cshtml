@@ -15,7 +15,7 @@
      <header class="home" id="home">
         <nav class="navbar navbar-expand-lg navbar-dark  fixed-top p-0 home-navbar">
             <div class="container-fluid home-nav">
-                <a class="navbar-brand p-0" asp-action="Index"><img src="~/img/logo-large.png" asp-append-version="true" alt="" class="logo-nav"></a>
+                <a class="navbar-brand p-0" asp-controller="Home" asp-action="Index"><img src="~/img/logo-large.png" asp-append-version="true" alt="" class="logo-nav"></a>
                 <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -23,9 +23,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class=" header-nav sp-btn" >Book now</a>
-                        </li>
+                        @if(@ViewBag.UType == 1)
+                        {
+                            <li class="nav-item">
+                                <a class=" header-nav sp-btn" >Book now</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class=" header-nav" asp-controller="Home" asp-action="Price">Prices & services</a>
                         </li>
@@ -38,12 +41,38 @@
                         <li class="nav-item">
                             <a class=" header-nav" asp-controller="Home" asp-action="Contact">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="header-nav sp-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="header-nav sp-btn" asp-controller="Login" asp-action="BecomePro">Become a Helper</a>
-                        </li>
+                        @if(@ViewBag.IsloggedIn == "success")
+                        {
+                            <li class="nav-item us-notification">
+                                <a class=""><i class="fas fa-bell fa-lg"></i> <span
+                                        class="notify-badge">1</span></a>
+                            </li>
+                            <li class="nav-item dropdown us-user">
+                                <a class="" data-bs-toggle="dropdown" aria-expanded="false" id="navbarDarkDropdownMenuLink">
+                                    <i class="far fa-user-circle fa-lg"></i>
+                                    <i class="fas fa-angle-down fa-lg ps-2"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end text-start us-user-dropdown"
+                                    aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><label class="dropdown-item text-dark">Welcome,<br><strong>@ViewBag.Uname</strong></label></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item text-dark">My Dashboard</a></li>
+                                    <li><a class="dropdown-item text-dark">My Settings</a></li>
+                                    <li><a class="dropdown-item text-dark" asp-controller="Login" asp-action="Logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        }else
+                        {
+                            
+                            <li class="nav-item">
+                                <a class="header-nav sp-btn" asp-controller="Home" asp-action="Index" asp-route-login="true">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="header-nav sp-btn" id="btnBecomePro" asp-controller="Login" asp-action="BecomePro">Become a Helper</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

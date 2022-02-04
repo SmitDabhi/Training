@@ -62,14 +62,17 @@
         <hr>
         <div class="contact-form">
             <h2>Get in touch with us</h2>
-            @if(ViewBag.IsSubmit == true)
-            {
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                  Your message has been saved successfully.
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            }
+            
             <form class="row g-3 mx-auto" enctype="multipart/form-data" method="post" asp-controller="Home" asp-action="Contact">
+                @if(ViewBag.IsSubmit == true)
+                {   
+                    <div class="col-md-12">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Your message has been saved successfully.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                }
                 <div class="col-md-6">
                     <input asp-for="Firstname" class="form-control form-txt" id="inputFname" placeholder="First name">
                     <span asp-validation-for="Firstname" class="text-danger"></span>

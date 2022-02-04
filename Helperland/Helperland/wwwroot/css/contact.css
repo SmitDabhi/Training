@@ -235,6 +235,44 @@ select#Subject {
     left: 28%;
 }
 
+
+.us-notification a {
+    position: relative;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    cursor:pointer;
+}
+.us-notification a:hover {
+    border:none;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-radius: unset;
+}
+.notify-badge {
+    position: absolute;
+    top: -5px;
+    right: 6px;
+    padding: 0px 6px;
+    border-radius: 50%;
+    background: red;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.us-user .dropdown-menu[data-bs-popper] {
+    top: 166%;
+}
+
+.us-user-dropdown a:hover {
+    background-color: transparent;
+}
+a#navbarDarkDropdownMenuLink {
+    cursor: pointer;
+}
+a#navbarDarkDropdownMenuLink:hover {
+    border: none;
+    border-radius: unset;
+}
 @media screen and (max-width:991.5px) {
     .nav-item {
         text-align: end;
