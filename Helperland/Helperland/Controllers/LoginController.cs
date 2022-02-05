@@ -171,8 +171,8 @@ namespace Helperland.Controllers
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 
                     System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
-                    credential.UserName = "sm.project.workstation@gmail.com";
-                    credential.Password = "Sm@150601";
+                    credential.UserName = "User_name";
+                    credential.Password = "Password";
                     smtp.UseDefaultCredentials = false;
                     smtp.Credentials = credential;
                     smtp.Send(msg);
