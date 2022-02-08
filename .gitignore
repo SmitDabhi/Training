@@ -112,6 +112,8 @@ ipch/
 *.VC.db
 *.VC.VC.opendb
 
+
+
 # Visual Studio profiler
 *.psess
 *.vsp
@@ -363,7 +365,8 @@ MigrationBackup/
 <<<<<<< HEAD
 FodyWeavers.xsd
 
-appsettings.json
+/Helperland/appsettings.json
+
 =======
 FodyWeavers.xsd
 >>>>>>> cad578f0a9919d52904dad06c4c1eb83ae2157f9
