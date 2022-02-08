@@ -363,7 +363,7 @@ MigrationBackup/
 <<<<<<< HEAD
 FodyWeavers.xsd
 
-Helperland/appsettings.json
+Helperland/Helperland/appsettings.json
 =======
 FodyWeavers.xsd
 >>>>>>> cad578f0a9919d52904dad06c4c1eb83ae2157f9
