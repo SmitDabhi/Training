@@ -3,16 +3,18 @@ using Helperland.Models;
 using Helperland.Models.viewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mail;
+using Microsoft.Extensions.Configuration;
 
 namespace Helperland.Controllers
 {
     public class LoginController : Controller
     {
         private readonly HelperlandDBContext _dbcontext;
-
-        public LoginController(HelperlandDBContext dbcontext)
+        private readonly IConfiguration _config;
+        public LoginController(HelperlandDBContext dbcontext, IConfiguration config)
         {
             _dbcontext = dbcontext;
+            _config = config;
         }
 
         [Route("userRegistration")]
@@ -171,8 +173,9 @@ namespace Helperland.Controllers
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 
                     System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
-                    credential.UserName = "User_name";
-                    credential.Password = "Password";
+                   
+                    credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                    credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
                     smtp.UseDefaultCredentials = false;
                     smtp.Credentials = credential;
                     smtp.Send(msg);
