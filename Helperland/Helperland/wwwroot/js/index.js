@@ -11,7 +11,16 @@ $(document).ready(() => {
             $('.logo-nav').css({'width': '175px','height':'130px'})
 			$('#homebtn').css('display', 'none');		
         }
-    });
+	});
+	$(".hamburger").click(function (e) {
+		$(".smNavMenu").addClass("open");
+	});
+	$(".firstPart").click(function (e) {
+		$(".smNavMenu").removeClass("open");
+	});
+	$(".dashNavSide a").click(function (e) {
+		$(".smNavMenu").removeClass("open");
+	});
 	$("#hide-btn").click(function (e) { 
 		$("#privacy").css("display", "none");
 	});
@@ -24,12 +33,19 @@ $(document).ready(() => {
 	$("#homebtn").click(function (e) { 
 		$("html, body").animate({ scrollTop: 0 }, 0); 
 	});
+	$('#logoutModal').modal({
+		backdrop: 'static',
+		keyboard: false
+	});
 	const urlSearchParams = new URLSearchParams(window.location.search);
 	if (urlSearchParams == "login=true") {
 		$('#exampleModal').modal('show');
 	}
 	if (urlSearchParams == "forgot=true") {
 		$("#frgPsw").modal('show');
+	}
+	if (urlSearchParams == "logout=true") {
+		$("#logoutModal").modal('show');
     }
 });
 

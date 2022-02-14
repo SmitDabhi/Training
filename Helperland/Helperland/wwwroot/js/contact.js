@@ -19,4 +19,13 @@ $(document).ready(()=>{
             $(".custom-txt").html("No file chosen, yet.")
         }
     });
+    $(".hamburger").click(function (e) {
+        $(".smNavMenu").addClass("open");
+    });
+    $(".firstPart").click(function (e) {
+        $(".smNavMenu").removeClass("open");
+    });
+    $(".dashNavSide a").click(function (e) {
+        $(".smNavMenu").removeClass("open");
+    });
 });

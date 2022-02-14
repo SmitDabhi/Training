@@ -43,11 +43,11 @@ namespace Helperland.Controllers
                     FirstName = userModel.Firstname,
                     LastName = userModel.Lastname,
                     Email = userModel.Email,
-                    Password = userModel.Password,
+                    Password = BCrypt.Net.BCrypt.HashPassword(userModel.Password),
                     Mobile = userModel.PhoneNumber,
                     UserTypeId = 1,
                     CreatedDate = DateTime.Now,
-                    ModifiedDate = DateTime.Now,
+                    ModifiedDate = DateTime.Now, 
                 };
                 if (_dbcontext.Users.Any(x => x.Email == req.Email) || _dbcontext.Users.Any(x => x.Mobile == req.Mobile))
                 {
@@ -74,8 +74,8 @@ namespace Helperland.Controllers
                 return View();
             }
             return RedirectToAction("Index", "Home");  
-        } 
-        
+        }
+
         [Route("becomeProvider")]
         [ValidateAntiForgeryToken]
         [HttpPost]
@@ -88,7 +88,7 @@ namespace Helperland.Controllers
                     FirstName = spModel.Firstname,
                     LastName = spModel.Lastname,
                     Email = spModel.Email,
-                    Password = spModel.Password,
+                    Password = BCrypt.Net.BCrypt.HashPassword(spModel.Password),
                     Mobile = spModel.PhoneNumber,
                     UserTypeId = 2,
                     CreatedDate = DateTime.Now,
@@ -109,23 +109,35 @@ namespace Helperland.Controllers
             return View();
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult AuthLogin(AuthVM auth)
         {
             if (ModelState.IsValid)
             {
-                var req = _dbcontext.Users.Where(x => x.Email == auth.Username &&  x.Password == auth.Password).FirstOrDefault();
+                
+
+                var req = _dbcontext.Users.Where(x => x.Email == auth.Username).FirstOrDefault();
 
                 if (req != null)
                 {
-                    if (req.UserTypeId == 1)
+                    if(BCrypt.Net.BCrypt.Verify(auth.Password, req.Password)) 
+                    { 
+                        if (req.UserTypeId == 1)
+                        {
+                            HttpContext.Session.SetInt32("userid", req.UserId);
+                            return RedirectToAction("Servicerequest", "Customer");
+                        }else if(req.UserTypeId == 2)
+                        {
+                            HttpContext.Session.SetInt32("userid", req.UserId);
+                            return RedirectToAction("Servicerequest", "Customer");
+                        }
+                    }
+                    else
                     {
-                        HttpContext.Session.SetInt32("userid", req.UserId);
-                        return RedirectToAction("Servicerequest", "Customer");
-                    }else if(req.UserTypeId == 2)
-                    {
-                        HttpContext.Session.SetInt32("userid", req.UserId);
-                        return RedirectToAction("Servicerequest", "Customer");
+                        TempData["showClass"] = "alert show";
+                        TempData["errorMsg"] = "Invalid Username or Password!";
+                        return RedirectToAction("Index", "Home", new { login = "true" });
                     }
                 }
                 else
@@ -143,9 +155,10 @@ namespace Helperland.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home", new { logout = "true" });
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult Forgot(AuthVM forgotEmail)
         {
@@ -208,7 +221,8 @@ namespace Helperland.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
-        
+
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult ResetPassword(ResetPswVM model,int id)
         {

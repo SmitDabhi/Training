@@ -11,4 +11,13 @@ $(document).ready(()=>{
 	$("#homebtn").click(function (e) { 
 		$("html, body").animate({ scrollTop: 0 }, 0); 
 	});
+    $(".hamburger").click(function (e) {
+        $(".smNavMenu").addClass("open");
+    });
+    $(".firstPart").click(function (e) {
+        $(".smNavMenu").removeClass("open");
+    });
+    $(".dashNavSide a").click(function (e) {
+        $(".smNavMenu").removeClass("open");
+    });
 });

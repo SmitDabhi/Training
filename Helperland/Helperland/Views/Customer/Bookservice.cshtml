@@ -1,0 +1,504 @@
+﻿
+@{
+    ViewData["Title"] = "Book Service";
+    Layout = "~/Views/Shared/_SecondLayout.cshtml";
+}
+
+<!-- Book img -->
+<section class="book-bg"></section>   
+<!-- Book img -->
+
+<!-- Book Section Start -->
+<section class="book">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center ">
+                    <h2 class="content-title">Set up your cleaning service</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                <hr class="price-hr">
+                <img src="/img/faq-separator.png" class="faq-separator mx-2" alt="">
+                <hr class="price-hr">
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-8">
+                <ul class="nav nav-justified booknav" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active filled" onClick="form1()" id="setup-tab" data-bs-toggle="tab" data-bs-target="#setup" type="button" role="tab" aria-controls="setup" aria-selected="true"><img src="~/img/setup-service.png" /><p><span>Setup Service</span></p></button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" onClick="form2()" id="schedule-tab" data-bs-toggle="tab" data-bs-target="#schedule" type="button" role="tab" aria-controls="schedule" aria-selected="false"><img src="~/img/schedule.png" /><p><span>Schedule & Plan</span></p></button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" onClick="form3()" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" aria-controls="details" aria-selected="false"><img src="~/img/details.png" /><p><span>Your Details</span></p></button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" onClick="form4()" id="payment-tab" data-bs-toggle="tab" data-bs-target="#payment" type="button" role="tab" aria-controls="payment" aria-selected="false"><img src="~/img/payment.png" /><p><span>Make Payment</span></p></button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="setup" role="tabpanel" aria-labelledby="setup-tab">
+                      <div class="postalSection">
+                        <span class="bookSectionTitle">Enter your Postal Code</span>
+                        <form class="row g-3">
+                            <div class="col-auto">
+                                <input type="number" class="form-control" placeholder="Postal Code">
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-check-postal" onclick="btnCheckZip" >Check Availability</button>
+                            </div>
+                        </form>
+                      </div>
+                  </div>
+                  <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+                      <div class="scheduleSection">
+                        <form>
+                            <div class="row timeSection">
+                                <div class="col-md-6">
+                                    <span class="bookSectionTitle">When do you need the cleaner?</span>
+                                    <div class="row selectTime">
+                                        <div class="col-md-6">
+                                            <div class="fromDt">
+                                                <div class="ui calendar" id="bookDate">
+                                                    <div class="ui input left icon fDT"><div class="ui popup calendar bottom left transition hidden" style="inset: 46px auto auto 0px;"><table class="ui celled center aligned unstackable table seven column day"><thead><tr><th colspan="7"><span class="link">February 2022</span><span class="prev link"><i class="chevron left icon"></i></span><span class="next link"><i class="chevron right icon"></i></span></th></tr><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead><tbody><tr><td class="link disabled">30</td><td class="link disabled">31</td><td class="link">1</td><td class="link">2</td><td class="link">3</td><td class="link">4</td><td class="link">5</td></tr><tr><td class="link">6</td><td class="link">7</td><td class="link">8</td><td class="link">9</td><td class="link today focus">10</td><td class="link">11</td><td class="link">12</td></tr><tr><td class="link">13</td><td class="link">14</td><td class="link">15</td><td class="link">16</td><td class="link">17</td><td class="link">18</td><td class="link">19</td></tr><tr><td class="link">20</td><td class="link">21</td><td class="link">22</td><td class="link">23</td><td class="link">24</td><td class="link">25</td><td class="link">26</td></tr><tr><td class="link">27</td><td class="link">28</td><td class="link disabled">1</td><td class="link disabled">2</td><td class="link disabled">3</td><td class="link disabled">4</td><td class="link disabled">5</td></tr><tr><td class="link disabled">6</td><td class="link disabled">7</td><td class="link disabled">8</td><td class="link disabled">9</td><td class="link disabled">10</td><td class="link disabled">11</td><td class="link disabled">12</td></tr></tbody></table></div>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                                                            <path fill-rule="evenodd" fill="#1D7A8C" d="M.457 20.1V2.143H4.15V.12h1.848v2.023H9.76V.12h1.163v2.023H14.1V.12h1.748v2.023h3.694V20.1H.457zM17.695 6.456H2.304v11.706h15.391V6.456zM7.229 11.385H5.382V9.536h1.847v1.849zm0 4.425H5.382v-2.577h1.847v2.577zm3.694-4.425H9.76V9.536h1.163v1.849zm0 4.425H9.76v-2.577h1.163v2.577zm3.694-4.425H12.77V9.536h1.847v1.849zm0 4.425H12.77v-2.577h1.847v2.577z"/>
+                                                        </svg>
+                                                        <input type="text" placeholder="Service Date" class="bookServiceDate">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option value="8.0">8:00 AM</option>
+                                                <option value="8.5">8:30 AM</option>
+                                                <option value="9.0">9:00 AM</option>
+                                                <option value="9.5">9:30 AM</option>
+                                                <option value="10.0">10:00 AM</option>
+                                                <option value="10.5">10:30 AM</option>
+                                                <option value="11.0">11:00 AM</option>
+                                                <option value="11.5">11:30 AM</option>
+                                                <option value="12.0">12:00 PM</option>
+                                                <option value="12.30">12:30 PM</option>
+                                                <option value="1.0">1:00 PM</option>
+                                                <option value="1.5">1:30 PM</option>
+                                                <option value="2.0">2:00 PM</option>
+                                                <option value="2.5">2:30 PM</option>
+                                                <option value="3.0">3:00 PM</option>
+                                                <option value="3.5">3:30 PM</option>
+                                                <option value="4.0">4:00 PM</option>
+                                                <option value="4.5">4:30 PM</option>
+                                                <option value="5.0">5:00 PM</option>
+                                                <option value="5.5">5:30 PM</option>
+                                                <option value="6.0">6:00 PM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="bookSectionTitle">How long do you need your cleaner to stay?</span>
+                                    <div class="selectHours">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="3.0">3.0 Hours</option>
+                                            <option value="3.5">3.5 Hours</option>
+                                            <option value="4.0">4.0 Hours</option>
+                                            <option value="4.5">4.5 Hours</option>
+                                            <option value="5.0">5.0 Hours</option>
+                                            <option value="5.5">5.5 Hours</option>
+                                            <option value="6.0">6.0 Hours</option>
+                                            <option value="6.5">6.5 Hours</option>
+                                            <option value="7.0">7.0 Hours</option>
+                                            <option value="7.5">7.5 Hours</option>
+                                            <option value="8.0">8.0 Hours</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row timeSection">
+                                <span class="bookSectionTitle">Extra Services</span>
+                                <div class="extra-checkbox">
+                                    <div class="checkbox-service">
+                                            <input type="checkbox" id="cabinet"/>
+                                            <label for="cabinet" id="lblCabinet">
+                                                <div class="cust-checkbox">
+                                                    <img  src="~/img/1_cabinet.png" />
+                                                </div>
+                                            </label>
+                                        <span>Inside cabinets</span>
+                                    </div>
+                                    <div class="checkbox-service">
+                                            <input type="checkbox" id="fridge"/>
+                                            <label for="fridge" id="lblFridge">
+                                                <div class="cust-checkbox">
+                                                    <img  src="~/img/2_fridge.png" />
+                                                </div>
+                                            </label>
+                                        <span>Inside fridge</span>
+                                    </div>
+                                    <div class="checkbox-service">
+                                            <input type="checkbox" id="oven"/>
+                                            <label for="oven" id="lblOven">
+                                                <div class="cust-checkbox">
+                                                    <img  src="~/img/3_oven.png" />
+                                                </div>
+                                            </label>
+                                        <span>Inside oven</span>
+                                    </div>
+                                    <div class="checkbox-service">
+                                            <input type="checkbox" id="wash"/>
+                                            <label for="wash" id="lblWash">
+                                                <div class="cust-checkbox">
+                                                    <img  src="~/img/4_wash.png" />
+                                                </div>
+                                            </label>
+                                        <span>Laundry wash & dry</span>
+                                    </div>
+                                    <div class="checkbox-service">
+                                            <input type="checkbox" id="windows"/>
+                                            <label for="windows" id="lblWindows">
+                                                <div class="cust-checkbox">
+                                                    <img  src="~/img/5_window.png" />
+                                                </div>
+                                            </label>
+                                        <span>Interior windows</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row timeSection">
+                                <span class="bookSectionTitle">Comments</span>
+                                <div class="">
+                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Comments"></textarea>
+                                </div>
+                                <div class="form-check bookScheduleCheck">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <label class="form-check-label" for="flexCheckChecked">
+                                    I have pets at home
+                                  </label>
+                                </div>
+                            </div>
+                            <div class="scheduleBtn">
+                                <button type="button" class="btn btn-check-postal" onclick="setupTime">Continue</button>
+                            </div>
+                        </form>
+                      </div>
+                  </div>
+                  <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="details-tab">
+                      <div class="detailsSection">
+                        <span class="bookSectionTitle">Enter your contact details, So we can serve you in better way!</span>
+                        <div class="bookAddress row">
+                            <div class="radioAdd">
+                                <div class="selectAddress">
+                                    <input type="radio" name="addressRadio" />
+                                    <span class="addressDetails">
+                                        <span class="addressRow"><strong>Address :</strong> 123</span>
+                                        <span class="phoneDetails"><strong>Phone number :</strong> 7896541230</span>
+                                    </span>
+                                </div>
+                                <div class="selectAddress">
+                                    <input type="radio" name="addressRadio" />
+                                    <span class="addressDetails">
+                                        <span class="addressRow"><strong>Address :</strong> 123</span>
+                                        <span class="phoneDetails"><strong>Phone number :</strong> 7896541230</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="addressBtn">
+                                <button type="button" class="btn btnAddAddress"><i class="fas fa-plus pe-2"></i>Add New Address</button>
+                            </div>
+                            <div class="addressForm d-none">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="inputStreet" class="form-label">Street</label>
+                                            <input type="text" class="form-control" id="inputStreet" placeholder="Street">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputHouseNo" class="form-label">House Number</label>
+                                            <input type="text" class="form-control" id="inputHouseNo" placeholder="House Number">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputPostCode" class="form-label">PostCode</label>
+                                            <input type="number" class="form-control" id="inputPostCode">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputLocation" class="form-label">Location</label>
+                                            <select class="form-select" aria-label="Default select example" id="inputLocation">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputPhone" class="form-label">Phone Number</label>
+                                            <input type="number" class="form-control" id="inputPhone">
+                                        </div>
+                                        <div class="col-12 addressFormBtn">
+                                            <button type="button" class="btn button-save" onclick="addressSave">Save</button>
+                                            <button type="button" class="btn button-discard">Discard</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row favSP">
+                            <span class="bookSectionTitle">Your favourite Service Providers</span>
+                            <span>You can choose your favourite service provider from the below list</span>
+                            <div class="favSpDetails d-flex">
+                                <span class="favSPAcc">
+                                    <span class="favSpIcon">
+                                        <img src="/img/cap.png" />
+                                    </span>
+                                    <span class="favSpName">
+                                        Sandip Patel
+                                    </span>
+                                    <span class="favSpSelectBtn">
+                                        <button type="button" class="btn">Select</button>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="addBtn">
+                                <button type="button" class="btn btn-check-postal">Continue</button>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
+                        <span class="bookSectionTitle">Pay securely with Helperland payment gateway!</span>
+                        <div class="paymentGateway">
+                            <span><i class="fal fa-credit-card fa-lg pe-2"></i> Card number</span>
+                            <span>MM/YY  CVV</span>
+                        </div>
+                        <div class="btnCBlast">
+                                <button type="button" class="btn btn-check-postal">Complete Booking</button>
+                        </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-4 paySumQues">
+                <div class="payment-summary">
+                    <div class="card-head">
+                        <span>Payment Summary</span>
+                    </div>
+                    <div class="card-area">
+                        <span class="txt-book-bold">Duration</span>
+                        <span class="d-flex align-items-center justify-content-between txt-book-normal">
+                            <span>Basic</span>
+                            <span>0 Hrs</span>
+                        </span>
+                        <hr />
+                        <span class="d-flex align-items-center justify-content-between txt-servicetime">
+                            <span>Total Service Time </span>
+                            <span>0 Hrs</span>
+                        </span>
+                    </div>
+                    <div class="card-area">
+                        <div class="d-flex align-items-center justify-content-between txt-perclean">
+                            <span>Per cleaning</span>
+                            <span class="fw-bold">0,00 &euro;</span>
+                        </div>
+                    </div>
+                    <div class="card-area">
+                        <div class="d-flex align-items-center justify-content-between txt-totalpay">
+                            <span>Total Payment</span>
+                            <span class="fw-bold">0,00 &euro;</span>
+                        </div>
+                    </div>
+                    <div class="card-area book-include">
+                        <span><img class="me-2" src="~/img/smiley.png" />See what is always included</span>
+                    </div>
+                </div>
+                <div class="book-ques">
+                    <div class="ques-head">
+                        <span>Questions?</span>
+                    </div>
+                    <div class="ques-body">
+                        <div class="accordion" id="accordionone">
+                            <div class="accordion_item">
+                                <p class="accordion-header accordion_btn collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#fc-1">
+                                    What's included in a cleaning?
+                                </p>
+                                <div id="fc-1" class="accordion-collapse collapse" data-bs-parent="#accordionone">
+                                    <div class="accordion-body">
+                                        <p>Bedroom, Living Room & Common Areas, Bathrooms, Kitchen, Extras</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion_item">
+                                <p class="accordion-header accordion_btn collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#fc-2">
+                                    Which Helperland professional will come to my place?
+                                </p>
+                                <div id="fc-2" class="accordion-collapse collapse" data-bs-parent="#accordionone">
+                                    <div class="accordion-body">
+                                        <p>Helperland has a vast network of experienced, top-rated cleaners. Based on
+                                            the time and date of your request, we work to assign the best professional
+                                            available. Like working with a specific pro? Add them to your Pro Team from
+                                            the mobile app and they'll be requested first for all future bookings. You
+                                            will receive an email with details about your professional prior to your
+                                            appointment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion_item">
+                                <p class="accordion-header accordion_btn collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#fc-3">
+                                    Can I skip or reschedule bookings?
+                                </p>
+                                <div id="fc-3" class="accordion-collapse collapse" data-bs-parent="#accordionone">
+                                    <div class="accordion-body">
+                                        <p>You can reschedule any booking for free at least 24 hours in advance of the
+                                            scheduled start time. If you need to skip a booking within the minimum
+                                            commitment, we'll credit the value of the booking to your account. You can
+                                            use this credit on future cleanings and other Helperland services.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion_item">
+                                <p class="accordion-header accordion_btn collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#fc-4">
+                                    Do I need to be home for the booking?
+                                </p>
+                                <div id="fc-4" class="accordion-collapse collapse" data-bs-parent="#accordionone">
+                                    <div class="accordion-body">
+                                        <p>We strongly recommend that you are home for the first clean of your booking
+                                            to show your cleaner around. Some customers choose to give a spare key to
+                                            their cleaner, but this decision is based on individual preferences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moreFaq">
+                            <a asp-controller="Home" asp-action="Faq">For more help</a>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Book Section End -->
+
+<!--Payment Summary Mobile View-->
+<div class="btn-paySummary">
+    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#paySummaryModal">
+      Payment Summary
+    </button>
+</div>
+<!--Payment Summary Mobile View--> 
+
+<!--Logout Modal-->
+<div class="modal fade" id="paySummaryModal" data-keyboard="false" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="smPaySumQues mt-2">
+                    <div class="payment-summary">
+                        <div class="card-head">
+                            <span>Payment Summary</span>
+                        </div>
+                        <div class="card-area">
+                            <span class="txt-book-bold">Duration</span>
+                            <span class="d-flex align-items-center justify-content-between txt-book-normal">
+                                <span>Basic</span>
+                                <span>0 Hrs</span>
+                            </span>
+                            <hr />
+                            <span class="d-flex align-items-center justify-content-between txt-servicetime">
+                                <span>Total Service Time </span>
+                                <span>0 Hrs</span>
+                            </span>
+                        </div>
+                        <div class="card-area">
+                            <div class="d-flex align-items-center justify-content-between txt-perclean">
+                                <span>Per cleaning</span>
+                                <span class="fw-bold">0,00 &euro;</span>
+                            </div>
+                        </div>
+                        <div class="card-area">
+                            <div class="d-flex align-items-center justify-content-between txt-totalpay">
+                                <span>Total Payment</span>
+                                <span class="fw-bold">0,00 &euro;</span>
+                            </div>
+                        </div>
+                        <div class="card-area book-include">
+                            <span><img class="me-2" src="~/img/smiley.png" />See what is always included</span>
+                        </div>
+                    </div>
+                    <div class="book-ques">
+                        <div class="ques-head">
+                            <span>Questions?</span>
+                        </div>
+                        <div class="ques-body">
+                            <div class="accordion" id="accordionone">
+                                <div class="accordion_item">
+                                    <p class="accordion-header accordion_btn collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#fc-1">
+                                        What's included in a cleaning?
+                                    </p>
+                                    <div id="fc-1" class="accordion-collapse collapse" data-bs-parent="#accordionone">
+                                        <div class="accordion-body">
+                                            <p>Bedroom, Living Room & Common Areas, Bathrooms, Kitchen, Extras</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion_item">
+                                    <p class="accordion-header accordion_btn collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#fc-2">
+                                        Which Helperland professional will come to my place?
+                                    </p>
+                                    <div id="fc-2" class="accordion-collapse collapse" data-bs-parent="#accordionone">
+                                        <div class="accordion-body">
+                                            <p>Helperland has a vast network of experienced, top-rated cleaners. Based on
+                                                the time and date of your request, we work to assign the best professional
+                                                available. Like working with a specific pro? Add them to your Pro Team from
+                                                the mobile app and they'll be requested first for all future bookings. You
+                                                will receive an email with details about your professional prior to your
+                                                appointment.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion_item">
+                                    <p class="accordion-header accordion_btn collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#fc-3">
+                                        Can I skip or reschedule bookings?
+                                    </p>
+                                    <div id="fc-3" class="accordion-collapse collapse" data-bs-parent="#accordionone">
+                                        <div class="accordion-body">
+                                            <p>You can reschedule any booking for free at least 24 hours in advance of the
+                                                scheduled start time. If you need to skip a booking within the minimum
+                                                commitment, we'll credit the value of the booking to your account. You can
+                                                use this credit on future cleanings and other Helperland services.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="moreFaq">
+                                <a asp-controller="Home" asp-action="Faq">For more help</a>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Logout Modal-->
+@section css{
+    <link
+        href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/book.css">
+}
+@section script{
+    <script
+        src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+    <script src="/js/book.js"></script>
+}

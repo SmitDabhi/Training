@@ -13,7 +13,7 @@
 </head>
 <body>
     <header class="price-navbar">
-        <nav class="prices-nav navbar navbar-expand-lg navbar-dark p-0 fixed-top ">
+        <nav class="prices-nav navbar navbar-expand-lg navbar-dark p-0 fixed-top " id="SecondaryNav">
             <div class="container-fluid">
                 <a class="navbar-brand px-15" asp-controller="Home" asp-action="Index"><svg xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" width="73" height="54">
@@ -30,7 +30,7 @@
                         @if(@ViewBag.UType == 1)
                         {   
                             <li class="nav-item">
-                                <a class="price-sp-btn header-nav">Book now</a>
+                                <a class="price-sp-btn header-nav" asp-controller="Customer" asp-action="Bookservice">Book now</a>
                             </li>
                         }
                         <li class="nav-item">
@@ -79,7 +79,92 @@
                     </ul>
                 </div>
             </div>
-        </nav>                                                  
+        </nav>      
+        
+        <!-- Mobile View Navbar Start -->
+        <nav class="shSmallNav serviceHistory-nav fixed-top" id="smHomeNav">
+            <div class="container-fluid">
+                <div class="smallNavlogo">
+                    <a asp-action="Index" asp-controller="Home"><img src="/img/logo-small.png" alt=""></a>
+                </div>
+                @if (@ViewBag.IsloggedIn == "success")
+                {
+                    <div class="smallNavNofitify">
+                        <a class="m-2" href="#"><i class="fas fa-bell fa-lg"></i> <span class="sm-notify-badge">1</span></a>
+                    </div>
+                }
+                <div class="hamburger">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="smNavMenu d-flex">
+                    <div class="firstPart"></div>
+                    <div class="secondPart">
+                        @if (@ViewBag.IsloggedIn == "success")
+                        {
+                            <div class="uName">
+                                Welcome,<br>
+                                <strong>@ViewBag.Uname</strong>
+                            </div>
+                            <hr class="smNavSeparator">
+                            <div class="nav flex-column text-start dashNavSide">
+                                @if(@ViewBag.UType == 1){
+                                    <a>Dashboard</a>
+                                    <a>Service History</a>
+                                    <a>Service Schedule</a>
+                                    <a>Favourite Pros</a>
+                                    <a>Invoices</a>
+                                    <a>Notifications</a>
+                                }else if(@ViewBag.UType == 2)
+                                {
+                                    <a>Dashboard</a>
+                                    <a>New Service Requests</a>
+                                    <a>Upcoming services</a>
+                                    <a>Service Schedule</a>
+                                    <a>Service History</a>
+                                    <a>My Ratings</a>
+                                    <a>Block Customer</a>
+                                    <a>Invoices</a>
+                                    <a>Notifications</a>
+                                }
+                            </div>
+                            <div class="navItem"><a> My Settings</a></div>
+                            <div class="navItem"><a> Logout</a></div>
+                            <hr class="smNavSeparator">
+                            @if (@ViewBag.UType == 1)
+                            {
+                                <div class="navItem"><a href="#">Book Now</a></div>
+                            }
+                            <div class="navItem"><a asp-controller="Home" asp-action="Price">Plans & Services</a></div>
+                            <div class="navItem"><a>Warranty</a></div>
+                            <div class="navItem"><a>Blog</a></div>
+                            <div class="navItem"><a asp-controller="Home" asp-action="Contact">Contact</a></div>
+                            <hr class="smNavSeparator">
+                            <div class="d-flex justify-content-center align-items-center  socialIcon">
+                                <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+                                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                            </div>
+                        }else{
+                            @if (@ViewBag.UType == 1)
+                            {
+                                <div class="navItem"><a href="#">Book Now</a></div>
+                            }
+                            <div class="navItem"><a asp-controller="Home" asp-action="Price">Plans & Services</a></div>
+                            <div class="navItem"><a>Warranty</a></div>
+                            <div class="navItem"><a>Blog</a></div>
+                            <div class="navItem"><a asp-controller="Home" asp-action="Contact">Contact</a></div>
+                            <div class="navItem"><a asp-controller="Home" asp-action="Index" asp-route-login="true">Login</a></div>
+                            <div class="navItem"><a asp-controller="Login" asp-action="BecomePro">Become a Helper</a></div>
+                            <hr class="smNavSeparator">
+                            <div class="d-flex justify-content-center align-items-center  socialIcon">
+                                <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+                                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile View Navbar End -->
     </header>
     <div>
         @RenderBody()

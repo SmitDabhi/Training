@@ -11,7 +11,16 @@ $(document).ready(()=>{
 			$('.logo-nav').css({'width': '156px','height':'120px'})
 			$('#homebtn').css('display', 'none');		
         }
-    });
+	});
+	$(".hamburger").click(function (e) {
+		$(".smNavMenu").addClass("open");
+	});
+	$(".firstPart").click(function (e) {
+		$(".smNavMenu").removeClass("open");
+	});
+	$(".dashNavSide a").click(function (e) {
+		$(".smNavMenu").removeClass("open");
+	});
 	$("#homebtn").click(function (e) { 
 		$("html, body").animate({ scrollTop: 0 }, 0); 
 	});

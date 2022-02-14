@@ -1,0 +1,754 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+textarea {
+    resize: none;
+}
+
+.book-bg {
+    height: 370px;
+    background-image: url(/img/book-service-banner.jpg);
+    background-size: cover;
+    margin-top: 62.75px;
+}
+
+.prices-nav {
+    background-color: #525252;
+}
+.shSmallNav .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 14px 4px 15px;
+}
+
+.shSmallNav .hamburger i {
+    font-size: 36px;
+    color: #858585;
+    padding-right: 10px;
+}
+
+.shSmallNav .smallNavNofitify a {
+    position: relative;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    padding: 9px 17px;
+    color: white;
+}
+
+.sm-notify-badge {
+    position: absolute;
+    padding: 0px 6px;
+    border-radius: 50%;
+    background: red;
+    font-size: 13px;
+    font-weight: bold;
+    top: -2px;
+    right: 2px;
+}
+
+.price-navMenu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    margin: 10px;
+    padding: 10px 18px;
+}
+
+.price-navMenu a:hover {
+    border: 1px solid #ffffff80;
+    border-radius: 20px;
+}
+
+.us-notification a {
+    position: relative;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    cursor: pointer;
+}
+
+.us-notification a:hover {
+    border: none;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-radius: unset;
+}
+
+.notify-badge {
+    position: absolute;
+    top: -5px;
+    right: 6px;
+    padding: 0px 6px;
+    border-radius: 50%;
+    background: red;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.us-user .dropdown-menu[data-bs-popper] {
+    top: 166%;
+}
+
+.us-user-dropdown a:hover {
+    background-color: transparent;
+}
+
+a#navbarDarkDropdownMenuLink {
+    cursor: pointer;
+}
+
+a#navbarDarkDropdownMenuLink:hover {
+    border: none;
+    border-radius: unset;
+}
+
+.price-sp-btn {
+    background: #29626d 0% 0% no-repeat padding-box;
+    border: 1px solid #ffffff80;
+    border-radius: 20px;
+}
+
+.price-hr {
+    width: 62px;
+    height: 1px;
+}
+section.book {
+    margin-top: 30px;
+}
+.postalSection {
+    margin-bottom: 20px;
+}
+.content-title {
+    font-size: 36px;
+    color: #4f4f4f;
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 10px;
+}
+
+.payment-summary {
+    max-width: 360px;
+    box-shadow: 0px 0px 7px #00000059;
+    margin:auto;
+    padding:0;
+}
+.ques-head{
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    margin-top:26px;
+}
+.ques-head span {
+    color: #4F4F4F;
+    font-size:20px;
+    font-weight:bold;
+}
+.card-head {
+    background-color: #1D7A8C;
+    height: 67px;
+    display: flex;
+    align-items: center;
+}
+
+.card-head span{
+    font-size:18px;
+    color:#FFFFFF;
+    padding-left:22px;
+}
+
+.card-area hr{
+    color: #DFDFDF;
+    height:2px;
+    margin:4px 0;
+}
+.txt-book-bold{
+    font-size:18px;
+    font-weight:bold;
+    color:#646464;
+    margin:8px 0;
+}
+.txt-book-normal {
+    font-size: 16px;
+    color: #4F4F4F;
+}
+.txt-servicetime {
+    font-size: 16px;
+    color: #4F4F4F;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+.txt-perclean {
+    font-size: 16px;
+    color: #4F4F4F;
+    padding: 17px 0;
+}
+.txt-totalpay span:nth-child(1) {
+    font-size: 20px;
+    color: #1D7A8C;
+}
+.txt-totalpay span:nth-child(2) {
+    font-size:42px;
+    color:#1D7A8C;
+    padding:17px 0;
+}
+.book-include {
+    background-color: #F3F3F3;
+    color: #8D8D8D;
+}
+.book-include span{
+    padding: 15px 0;
+}
+.book-ques {
+    max-width: 360px;
+    margin:auto;
+}
+
+.accordion .accordion_btn::before {
+    content: "";
+    background-image: url(/img/accordion-arrow-rotated.png);
+    width:20px;
+    height:20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+}
+p.accordion-header.accordion_btn {
+    cursor: pointer;
+}
+.accordion .accordion_item {
+    position: relative;
+    padding: 0px 0px 20px 25px;
+    margin-top: 20px;
+    border-bottom: 1px solid #E1E1E1;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+.accordion .accordion_btn.collapsed::before {
+    background-image: url(/img/accordion-arrow.png);
+}
+.nav-item .active{
+    background-color:#1D7A8C !important;
+    color:white !important;
+    position:relative;
+}
+.nav-item .active ::after{
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    top: 100%;
+    border-width: 14px 14px 0 14px;
+    border-color: #1d7a8c transparent transparent transparent;
+    border-style: solid;
+    left: 50%;
+    margin-left: -14px;
+}
+.booknav .active img{
+    filter: brightness(0) invert(1);
+}
+.nav-item .nav-link{
+    color:#646464;
+    background-color:#F3F3F3;
+    border: 1px solid #DCDCDC;
+    padding:19px 5px;
+}
+.nav-link span{
+    margin-left:5px;
+}
+.bookSectionTitle {
+    color: #4f4f4f;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.bookScheduleCheck{
+    margin-left:10.5px;
+    margin-top:10px;
+    color:#4f4f4f;
+}
+.bookScheduleCheck .form-check-input:checked {
+    background-color: #1D7A8C;
+    border-color: #1D7A8C;
+}
+.postalSection form input {
+    width: 300px;
+}
+.postalSection form .form-control{
+    padding:12px 15px;
+}
+.postalSection form{
+    margin:50px 0;
+    padding:30px 0;
+    align-items:center;
+}
+.btn-check-postal:hover {
+    color: white;
+    background-color: #146371 ;
+}
+.btn-check-postal{
+    padding:11px 30px;
+    background-color:#1D7A8C;
+    border-radius:23px;
+    color:white;
+    font-weight:bold;
+}
+.booknav{
+    margin-bottom:30px;
+}
+.selectTime{
+    margin-top:10px;
+}
+.fromDt{
+    position:relative;
+    color:#4f4f4f;
+}
+.fromDt input::placeholder{
+    color:#4f4f4f;
+}
+.fromDt svg{
+    position:absolute;
+    left:10px;
+    top:8px;
+}
+.scheduleBtn{
+    text-align:end;
+    margin :25px 0px;
+}
+.selectHours {
+    width: 140px;
+    margin-top: 10px;
+}
+.card-area {
+    border: 1px solid #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    color: #4f4f4f;
+    padding: 0 19px;
+}
+.moreFaq {
+    font-size: 16px;
+    font-weight:bold;
+    padding:20px 0;
+}
+.moreFaq a{
+    text-decoration:none;
+    color: #1D7A8C;
+}
+.scheduleSection select{
+    height:38px;
+    color:#4f4f4f;
+}
+.selectTime select{
+    width:auto;
+    color:#4f4f4f;
+}
+.row.timeSection {
+    border-bottom: 1px solid #dcdcdc;
+    margin: 0px 0.5px;
+    padding-bottom:25px;
+}
+.extra-checkbox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.extra-checkbox label{
+    cursor:pointer;
+}
+.checkbox-service input:checked ~ label .cust-checkbox{
+    border: 3px solid #1D7A8C;
+}
+.checkbox-service input:checked ~  label .cust-checkbox img {
+    filter: invert(40%) sepia(25%) saturate(1227%) hue-rotate(142deg) brightness(93%) contrast(91%);
+}
+.checkbox-service span {
+    margin-top: 10px;
+    color:#4f4f4f;
+}
+.cust-checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 108px;
+    height: 108px;
+    border: 1px solid #b0c9ce;
+    opacity: 1;
+    border-radius: 50%;
+    padding: 30px 35px
+}
+.checkbox-service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ui.input {
+    width: -webkit-fill-available;
+}
+.extra-checkbox input[type="checkbox"]{
+    appearance:none;
+    -webkit-appearance:none;
+}
+.bookAddress{
+    overflow: hidden;
+}
+.favSP {
+    padding: 0 10.5px;
+    color: #4f4f4f;
+    font-size: 16px;
+}
+.favSP span:nth-child(2){
+    padding:0;
+}
+.favSP .bookSectionTitle {
+    border-bottom: 1px solid #dcdcdc;
+    padding:0 0 5px 0;
+}
+.addressBtn{
+    margin-top:10px;
+}
+.addressBtn button {
+    padding: 10px 15px;
+    border: 2px solid #1D7A8C;
+    background-color: white;
+    color: #1D7A8C;
+    border-radius:23px;
+    font-weight:700;
+}
+.addressBtn button:hover{
+    border:2px solid #1D7A8C;
+    background-color:#1D7A8C;
+    color:white;
+}
+.favSpDetails {
+    border-bottom: 1px solid #dcdcdc;
+    margin: 0 0.5px;
+}
+.favSPAcc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    margin:10px 0;
+}
+.favSPAcc span{
+    margin:5px 0;
+}
+.favSpIcon {
+    padding: 35px 30px;
+    border: 1px solid #E1E1E1;
+    background-color: #F3F3F3;
+    border-radius: 50%;
+}
+.favSpName {
+    font-weight: bold;
+}
+.favSpSelectBtn button {
+    padding: 10px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius:5px;
+    color:#4f4f4f;
+}
+.addBtn{
+    padding:0;
+    text-align:end;
+    margin:25px 0;
+}
+
+.addressForm form {
+    padding: 15px;
+    background-color: #F8F8F8;
+    color: #4F4F4F;
+    border: 1px solid #c8c8c8;
+    border-radius:3px;
+}
+.addressFormBtn{
+    margin-top:10px;
+}
+.addressFormBtn .button-save{
+    padding:10px 25px;
+    background-color:#1D7A8C;
+    margin-right:5px;
+    color:white;
+    border-radius:23px;
+}
+.addressFormBtn .button-save:hover{
+    background-color: #146371;
+}
+.addressFormBtn .button-discard{
+    border:1px solid #c6c6c6;
+    padding:10px 25px;
+    color:#4F4F4F;
+    border-radius:23px;
+}
+.addressFormBtn .button-discard:hover{
+    border:1px solid #1D7A8C;
+    color:#1D7A8C;
+}
+.radioAdd {
+    margin: 10px;
+    padding: 0;
+}
+.selectAddress input[type="radio"]{
+    margin-right:10px;
+}
+.selectAddress input[name="addressRadio"]{
+    accent-color:#1D7A8C;
+    cursor:pointer;
+}
+.selectAddress {
+    justify-content: start;
+    display: flex;
+    align-items: center;
+    color: #646464;
+    border: 1px solid #c8c8c8;
+    border-radius:3px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.addressDetails {
+    display: flex;
+    flex-direction: column;
+}
+.footer-separator {
+    height: 1px;
+    margin: 1rem 0;
+    background-color: #424242;
+    border: 0;
+    opacity: 1;
+}
+
+.footer-navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 0px 10px;
+    font-size: 14px;
+    letter-spacing: 0px;
+}
+
+.footer {
+    background-color: #111111;
+}
+
+.footer-policy {
+    font-size: 14px;
+    padding: 20px 0px;
+    margin: 0px;
+    color: #9ba0a3;
+}
+.home-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.up-arrow {
+    width: 48px;
+    height: 48px;
+    background-color: #525252;
+    border-radius: 50%;
+    position: relative;
+    float: left;
+    margin: 0px 0px;
+}
+
+.up-pos {
+    position: absolute;
+    top: 37%;
+    left: 28%;
+}
+.btn-paySummary button{
+    background-color: #67B644;
+    border-radius: 20px 20px 0px 0px;
+}
+.btn-paySummary{
+    text-align:center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.booknav li button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnCBlast {
+    text-align: end;
+    margin: 30px;
+    padding: 10px 0;
+}
+.paymentGateway {
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    color: #646464;
+    border-bottom:2px solid  #c6c6c6;
+}
+.booknav .filled {
+    background-color: #1D7A8C !important;
+    color:white !important;
+}
+.booknav .filled img {
+    filter: brightness(0) invert(1);
+}
+@media screen and (min-width: 993px) {
+    #smHomeNav {
+        display: none;
+    }
+    .btn-paySummary{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #SecondaryNav {
+        display: none;
+    }
+    .paySumQues {
+        display: none;
+    }
+    #smHomeNav {
+        background-color: #525252;
+    }
+
+    .smNavMenu {
+        position: fixed;
+        min-height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 100vw;
+        transition: left 0.4s;
+    }
+
+        .smNavMenu.open {
+            left: 0;
+        }
+
+    .firstPart {
+        background: rgba(0, 0, 0, 0);
+        width: 70vw;
+        height: 100vh;
+        transition: background 0.35s;
+    }
+
+    .smNavMenu.open .firstPart {
+        background: rgba(0, 0, 0, 0.45);
+    }
+
+    .secondPart {
+        width: 30vw;
+        font-size: 17px;
+        color: #646464;
+        background-color: #fff;
+        font-size: 14px;
+    }
+
+    .uName {
+        padding: 8px 16px;
+    }
+
+    .navItem {
+        padding: 8px 16px;
+    }
+
+        .navItem a {
+            text-decoration: none;
+            color: #646464;
+            cursor: pointer;
+        }
+
+            .navItem a:hover {
+                color: #646464;
+            }
+
+    .dashNavSide a {
+        color: #646464;
+        text-decoration: none;
+        padding: 8px 16px;
+        cursor: pointer;
+    }
+
+        .dashNavSide a.active {
+            color: #1D7A8C;
+        }
+
+        .dashNavSide a:hover {
+            color: #2c94a8;
+        }
+
+    .smNavSeparator {
+        background: #3b3b3b;
+        margin: 5px 0;
+    }
+
+    .socialIcon I {
+        color: #111111;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width:1015px) {
+    .header-nav {
+        font-size: 14px;
+    }
+
+    .price-sp-btn {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:768px){
+    .booknav li button{
+        display:flex;
+        flex-direction:column;
+        font-size:12px;
+        justify-content:center;
+        align-items:center;
+    }
+    .row.selectTime {
+        width: 100%;
+    }
+    .row.selectTime .col-md-6 {
+    width: 50%;
+    }
+}
+@media screen and (max-width:500px) {
+    .firstPart {
+        width: 50vw;
+        transition: background 0.35s;
+    }
+
+    .secondPart {
+        width: 50vw;
+    }
+
+    .checkbox-service {
+        padding: 10px;
+    }
+}
+@media screen and (max-width:440px) {
+    .booknav li button span{
+        display:none;
+    }
+    
+
+}

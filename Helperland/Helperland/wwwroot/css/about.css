@@ -10,6 +10,37 @@
 .prices-nav {
     background-color: #525252;
 }
+.shSmallNav .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 14px 4px 15px;
+}
+
+.shSmallNav .hamburger i {
+    font-size: 36px;
+    color: #858585;
+    padding-right: 10px;
+}
+
+.shSmallNav .smallNavNofitify a {
+    position: relative;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    padding: 9px 17px;
+    color: white;
+}
+
+.sm-notify-badge {
+    position: absolute;
+    padding: 0px 6px;
+    border-radius: 50%;
+    background: red;
+    font-size: 13px;
+    font-weight: bold;
+    top: -2px;
+    right: 2px;
+}
 
 .price-navMenu a {
     text-decoration: none;
@@ -152,27 +183,92 @@ a#navbarDarkDropdownMenuLink:hover {
 }
 
 
-@media screen and (max-width:991.5px) {
-    .nav-item {
-        text-align: end;
+@media screen and (min-width: 993px) {
+    #smHomeNav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #SecondaryNav {
+        display: none;
+    }
+    #smHomeNav{
+        background-color:#525252;
+    }
+    .smNavMenu {
+        position: fixed;
+        min-height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 100vw;
+        transition: left 0.4s;
+    }
+
+        .smNavMenu.open {
+            left: 0;
+        }
+
+    .firstPart {
+        background: rgba(0, 0, 0, 0);
+        width: 70vw;
+        height: 100vh;
+        transition: background 0.35s;
+    }
+
+    .smNavMenu.open .firstPart {
+        background: rgba(0, 0, 0, 0.45);
+    }
+
+    .secondPart {
+        width: 30vw;
+        font-size: 17px;
+        color: #646464;
+        background-color: #fff;
+        font-size: 14px;
+    }
+
+    .uName {
+        padding: 8px 16px;
+    }
+
+    .navItem {
+        padding: 8px 16px;
+    }
+
+        .navItem a {
+            text-decoration: none;
+            color: #646464;
+            cursor: pointer;
+        }
+
+            .navItem a:hover {
+                color: #646464;
+            }
+
+    .dashNavSide a {
+        color: #646464;
+        text-decoration: none;
+        padding: 8px 16px;
+        cursor: pointer;
+    }
+
+        .dashNavSide a.active {
+            color: #1D7A8C;
+        }
+
+        .dashNavSide a:hover {
+            color: #2c94a8;
+        }
+
+    .smNavSeparator {
+        background: #3b3b3b;
         margin: 5px 0;
     }
 
-    .price-sp-btn {
-        border: none;
-        padding: 7px 0 7px 20px;
-        margin: 0px 5px;
-        font-size: 15px;
-        background-color: transparent !important;
-    }
-
-    .nav-item.dropdown {
-        display: none;
-    }
-
-    .header-nav {
-        font-size: 15px;
-        padding: 7px 0 7px 20px;
+    .socialIcon I {
+        color: #111111;
+        margin: 10px;
     }
 }
 
