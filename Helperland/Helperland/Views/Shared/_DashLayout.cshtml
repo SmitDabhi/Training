@@ -52,7 +52,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item text-dark">My Dashboard</a></li>
+                                <li><a class="dropdown-item text-dark" asp-controller="Customer" asp-action="Servicerequest">My Dashboard</a></li>
                                 <li><a class="dropdown-item text-dark">My Settings</a></li>
                                 <li><a class="dropdown-item text-dark" asp-controller="Login" asp-action="Logout">Logout</a></li>
                             </ul>
@@ -77,35 +77,67 @@
                 <div class="smNavMenu d-flex">
                     <div class="firstPart"></div>
                     <div class="secondPart">
-                        <div class="uName">
-                            Welcome,<br>
-                            <strong>@ViewBag.Uname</strong>
-                        </div>
-                        <hr class="smNavSeparator">
-                        <div class="nav flex-column text-start dashNavSide">
-                            <a>Dashboard</a>
-                            <a class="active">Service History</a>
-                            <a>Service Schedule</a>
-                            <a>Favourite Pros</a>
-                            <a>Invoices</a>
-                            <a>Notifications</a>
-                        </div>
-                        <div class="navItem"><a> My Settings</a></div>
-                        <div class="navItem"><a> Logout</a></div>
-                        <hr class="smNavSeparator">
-                        @if (@ViewBag.UType == 1)
+                        @if (@ViewBag.IsloggedIn == "success")
                         {
-                            <div class="navItem"><a href="#">Book Now</a></div>
+                            <div class="uName">
+                                Welcome,<br>
+                                <strong>@ViewBag.Uname</strong>
+                            </div>
+                            <hr class="smNavSeparator">
+                            <div class="nav flex-column text-start dashNavSide">
+                                @if(@ViewBag.UType == 1){
+                                    <a asp-controller="Customer" asp-action="Servicerequest">Dashboard</a>
+                                    <a>Service History</a>
+                                    <a>Service Schedule</a>
+                                    <a>Favourite Pros</a>
+                                    <a>Invoices</a>
+                                    <a>Notifications</a>
+                                }else if(@ViewBag.UType == 2)
+                                {
+                                    <a>Dashboard</a>
+                                    <a>New Service Requests</a>
+                                    <a>Upcoming services</a>
+                                    <a>Service Schedule</a>
+                                    <a>Service History</a>
+                                    <a>My Ratings</a>
+                                    <a>Block Customer</a>
+                                    <a>Invoices</a>
+                                    <a>Notifications</a>
+                                }
+                            </div>
+                            <div class="navItem"><a> My Settings</a></div>
+                            <div class="navItem"><a asp-controller="Login" asp-action="Logout"> Logout</a></div>
+                            <hr class="smNavSeparator">
+                            @if (@ViewBag.UType == 1)
+                            {
+                                <div class="navItem"><a asp-controller="Customer" asp-action="Bookservice">Book Now</a></div>
+                            }
+                            <div class="navItem"><a asp-controller="Home" asp-action="Price">Plans & Services</a></div>
+                            <div class="navItem"><a>Warranty</a></div>
+                            <div class="navItem"><a>Blog</a></div>
+                            <div class="navItem"><a asp-controller="Home" asp-action="Contact">Contact</a></div>
+                            <hr class="smNavSeparator">
+                            <div class="d-flex justify-content-center align-items-center  socialIcon">
+                                <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+                                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                            </div>
+                        }else{
+                            @if (@ViewBag.UType == 1)
+                            {
+                                <div class="navItem"><a asp-controller="Customer" asp-action="Bookservice">Book Now</a></div>
+                            }
+                            <div class="navItem"><a asp-controller="Home" asp-action="Price">Plans & Services</a></div>
+                            <div class="navItem"><a>Warranty</a></div>
+                            <div class="navItem"><a>Blog</a></div>
+                            <div class="navItem"><a asp-controller="Home" asp-action="Contact">Contact</a></div>
+                            <div class="navItem"><a asp-controller="Home" asp-action="Index" asp-route-login="true">Login</a></div>
+                            <div class="navItem"><a asp-controller="Login" asp-action="BecomePro">Become a Helper</a></div>
+                            <hr class="smNavSeparator">
+                            <div class="d-flex justify-content-center align-items-center  socialIcon">
+                                <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+                                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                            </div>
                         }
-                        <div class="navItem"><a asp-controller="Home" asp-action="Price">Plans & Services</a></div>
-                        <div class="navItem"><a>Warranty</a></div>
-                        <div class="navItem"><a>Blog</a></div>
-                        <div class="navItem"><a asp-controller="Home" asp-action="Contact">Contact</a></div>
-                        <hr class="smNavSeparator">
-                        <div class="d-flex justify-content-center align-items-center  socialIcon">
-                            <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
-                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -62,7 +62,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item text-dark">My Dashboard</a></li>
+                                    <li><a class="dropdown-item text-dark" asp-controller="Customer" asp-action="Servicerequest">My Dashboard</a></li>
                                     <li><a class="dropdown-item text-dark">My Settings</a></li>
                                     <li><a class="dropdown-item text-dark" asp-controller="Login" asp-action="Logout">Logout</a></li>
                                 </ul>
@@ -108,7 +108,7 @@
                             <hr class="smNavSeparator">
                             <div class="nav flex-column text-start dashNavSide">
                                 @if(@ViewBag.UType == 1){
-                                    <a>Dashboard</a>
+                                    <a asp-controller="Customer" asp-action="Servicerequest">Dashboard</a>
                                     <a>Service History</a>
                                     <a>Service Schedule</a>
                                     <a>Favourite Pros</a>
@@ -128,11 +128,11 @@
                                 }
                             </div>
                             <div class="navItem"><a> My Settings</a></div>
-                            <div class="navItem"><a> Logout</a></div>
+                            <div class="navItem"><a asp-controller="Login" asp-action="Logout"> Logout</a></div>
                             <hr class="smNavSeparator">
                             @if (@ViewBag.UType == 1)
                             {
-                                <div class="navItem"><a href="#">Book Now</a></div>
+                                <div class="navItem"><a asp-controller="Customer" asp-action="Bookservice">Book Now</a></div>
                             }
                             <div class="navItem"><a asp-controller="Home" asp-action="Price">Plans & Services</a></div>
                             <div class="navItem"><a>Warranty</a></div>
@@ -146,7 +146,7 @@
                         }else{
                             @if (@ViewBag.UType == 1)
                             {
-                                <div class="navItem"><a href="#">Book Now</a></div>
+                                <div class="navItem"><a asp-controller="Customer" asp-action="Bookservice">Book Now</a></div>
                             }
                             <div class="navItem"><a asp-controller="Home" asp-action="Price">Plans & Services</a></div>
                             <div class="navItem"><a>Warranty</a></div>

@@ -167,10 +167,10 @@ section.book {
     padding-left:22px;
 }
 
-.card-area hr{
-    color: #DFDFDF;
-    height:2px;
-    margin:4px 0;
+.card-area hr {
+    color: #a1a1a1;
+    height: 1px;
+    margin: 4px 0;
 }
 .txt-book-bold{
     font-size:18px;
@@ -279,10 +279,14 @@ p.accordion-header.accordion_btn {
     margin-left:10.5px;
     margin-top:10px;
     color:#4f4f4f;
+    display:flex;
+    align-items:center;
 }
-.bookScheduleCheck .form-check-input:checked {
-    background-color: #1D7A8C;
-    border-color: #1D7A8C;
+.bookScheduleCheck input{
+    margin-right:5px;
+}
+.bookScheduleCheck input:checked {
+    accent-color: #1D7A8C;
 }
 .postalSection form input {
     width: 300px;
@@ -290,10 +294,10 @@ p.accordion-header.accordion_btn {
 .postalSection form .form-control{
     padding:12px 15px;
 }
-.postalSection form{
-    margin:50px 0;
-    padding:30px 0;
-    align-items:center;
+.postalSection form {
+    margin: 0px 0px 100px 0px;
+    padding: 10px 0 50px 0;
+    align-items: center;
 }
 .btn-check-postal:hover {
     color: white;
@@ -352,9 +356,12 @@ p.accordion-header.accordion_btn {
     height:38px;
     color:#4f4f4f;
 }
-.selectTime select{
-    width:auto;
-    color:#4f4f4f;
+#errorPostalDiv{
+    margin:10px 0 0 7px;
+}
+.selectTime select {
+    width: auto;
+    color: #4f4f4f;
 }
 .row.timeSection {
     border-bottom: 1px solid #dcdcdc;
@@ -470,13 +477,24 @@ p.accordion-header.accordion_btn {
     text-align:end;
     margin:25px 0;
 }
-
+input#inputPostCode {
+    color: #4f4f4f;
+}
+.addressForm form span#basic-addon1 {
+    color: #4f4f4f;
+}
 .addressForm form {
     padding: 15px;
     background-color: #F8F8F8;
     color: #4F4F4F;
     border: 1px solid #c8c8c8;
     border-radius:3px;
+}
+.addressForm form .row .col-md-6{
+    margin-bottom:10px;
+}
+select#inputLocation {
+    color: #4f4f4f;
 }
 .addressFormBtn{
     margin-top:10px;
@@ -575,15 +593,24 @@ p.accordion-header.accordion_btn {
     top: 37%;
     left: 28%;
 }
-.btn-paySummary button{
+.btn-paySummary button {
     background-color: #67B644;
     border-radius: 20px 20px 0px 0px;
+    color: white;
+    font-weight: 500;
+}
+.btn-paySummary button:hover{
+    color:white;
+    background-color:#67B610;
 }
 .btn-paySummary{
     text-align:center;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+.modal-content{
+    max-width:360px;
 }
 .booknav li button {
     display: flex;
@@ -592,7 +619,7 @@ p.accordion-header.accordion_btn {
 }
 .btnCBlast {
     text-align: end;
-    margin: 30px;
+    margin: 30px 10px;
     padding: 10px 0;
 }
 .paymentGateway {
@@ -611,6 +638,56 @@ p.accordion-header.accordion_btn {
 .booknav .filled img {
     filter: brightness(0) invert(1);
 }
+
+#bookSuccessModal .modal-dialog {
+    justify-content: center;
+    align-items: center;
+}
+
+#bookSuccessModal .modal-content {
+    max-width: 400px;
+}
+
+#bookSuccessModal .modal-header{
+    border-bottom:none;
+}
+#bookSuccessModal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 20px;
+}
+
+i.fas.fa-check-circle {
+    color: #67b644;
+}
+
+span.bookSuccessTxt {
+    font-size: 22px;
+    color: #646464;
+    padding: 25px 0px;
+    text-align:center;
+}
+
+span.bookSuccessSmTxt {
+    padding-bottom: 20px;
+    color: #646464;
+    font-size: 16px;
+}
+
+span.bookSuccessModalBtn a {
+    text-decoration: none;
+    padding: 9px 20px;
+    background-color: #1D7A8C;
+    color: white;
+    border-radius: 23px;
+}
+
+input#inputLocation {
+    color: #4F4F4F;
+}
+
 @media screen and (min-width: 993px) {
     #smHomeNav {
         display: none;

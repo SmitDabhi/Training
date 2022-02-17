@@ -377,3 +377,14 @@ a#navbarDarkDropdownMenuLink:hover {
         font-size: 15px;
     }
 }
+
+@media screen and (max-width:500px) {
+    .firstPart {
+        width: 50vw;
+        transition: background 0.35s;
+    }
+
+    .secondPart {
+        width: 50vw;
+    }
+}
