@@ -46,6 +46,9 @@ $(document).ready(() => {
 	}
 	if (urlSearchParams == "logout=true") {
 		$("#logoutModal").modal('show');
-    }
+	}
+	if (urlSearchParams == "reset=true") {
+		$('#resetPassSuccessModal').modal('show');
+	}
 });
 

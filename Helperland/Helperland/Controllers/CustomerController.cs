@@ -59,8 +59,8 @@ namespace Helperland.Controllers
                 var zip = _dbContext.Zipcodes.FirstOrDefault(x=>x.ZipcodeValue == validZip.PostalCode);
                 if (zip != null)
                 {
-                    CookieOptions cookie = new CookieOptions();
-                    Response.Cookies.Append("zipCode", validZip.PostalCode, cookie);
+                    TempData["zipCode"] = zip.ZipcodeValue;
+                    
                     var city = _dbContext.Cities.FirstOrDefault(x=>x.Id == zip.CityId);
                     var CityName = city.CityName;
                     var obj = new { Results = "Success", City = CityName };
@@ -83,7 +83,8 @@ namespace Helperland.Controllers
             int? Uid = HttpContext.Session.GetInt32("userid");
             List<GetAddressVM> addresses = new List<GetAddressVM>();
 
-            var zipCode = Request.Cookies["zipcode"];
+            var zipCode = Convert.ToString(TempData["zipCode"]);
+            TempData.Keep("zipCode");
 
             var userAddresses = _dbContext.UserAddresses.Where(x=>x.UserId == Uid && x.PostalCode == zipCode).ToList();
 

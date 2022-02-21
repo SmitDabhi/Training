@@ -226,16 +226,12 @@ namespace Helperland.Controllers
         [HttpPost]
         public IActionResult ResetPassword(ResetPswVM model,int id)
         {
-            if (ModelState.IsValid)
-            {
-                User req = _dbcontext.Users.FirstOrDefault(x => x.UserId == id);
-                req.Password = model.Password;
-                req.ModifiedDate = DateTime.Now;
-                _dbcontext.Users.Update(req);
-                _dbcontext.SaveChanges();
-                return RedirectToAction("Index", "Home", new { login = "true" });
-            }
-            return RedirectToAction("ResetPassword");
+            User req = _dbcontext.Users.FirstOrDefault(x => x.UserId == id);
+            req.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);
+            req.ModifiedDate = DateTime.Now;
+            _dbcontext.Users.Update(req);
+            _dbcontext.SaveChanges();
+            return RedirectToAction("Index", "Home", new { reset = "true" });
         }
     }
 }

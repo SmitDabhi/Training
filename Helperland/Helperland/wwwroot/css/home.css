@@ -514,6 +514,45 @@ a#navbarDarkDropdownMenuLink {
     cursor:pointer;
     margin:0 23px;
 }
+#resetPassSuccessModal .modal-dialog {
+    justify-content: center;
+    align-items: center;
+}
+
+#resetPassSuccessModal .modal-content {
+    max-width: 400px;
+}
+
+#resetPassSuccessModal .modal-header {
+    border-bottom: none;
+}
+
+#resetPassSuccessModal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 20px;
+}
+
+i.fas.fa-check-circle {
+    color: #67b644;
+}
+
+span.resetPassSuccesssTxt {
+    font-size: 22px;
+    color: #646464;
+    padding: 25px 0px;
+    text-align: center;
+}
+
+span.resetPassSuccessModalBtn a {
+    text-decoration: none;
+    padding: 9px 20px;
+    background-color: #1D7A8C;
+    color: white;
+    border-radius: 23px;
+}
 
 @media screen and (min-width: 993px) {
     #smHomeNav {

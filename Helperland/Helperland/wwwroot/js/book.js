@@ -126,22 +126,32 @@ function btnCheckZip() {
         method: "POST",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         data: zipObj,
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: function (data) {
-            console.log(data);
-            if (data.results == "Success") {
-                $("#errorPostalDiv").addClass("d-none");
-                $("#inputLocation").val(data.city);
-                form2();
-            } else if (data.results == "Invalid") {
-                $("#errorPostalDiv").removeClass("d-none");
-                $(".PostalError").text("Please Enter Valid Postal Code!");
-            } else {
-                $("#errorPostalDiv").removeClass("d-none");
-                $(".PostalError").text("We are not providing service in this area. We’ll notify you if any helper would start working near your area!");
-            }
+            setTimeout(function () {
+                console.log(data);
+                if (data.results == "Success") {
+                    $("#errorPostalDiv").addClass("d-none");
+                    $("#inputLocation").val(data.city);
+                    form2();
+                } else if (data.results == "Invalid") {
+                    $("#errorPostalDiv").removeClass("d-none");
+                    $(".PostalError").text("Please Enter Valid Postal Code!");
+                } else {
+                    $("#errorPostalDiv").removeClass("d-none");
+                    $(".PostalError").text("We are not providing service in this area. We’ll notify you if any helper would start working near your area!");
+                }
+            }, 2000);
         },
         error: function (err) {
             alert("Fail Error");
+        },
+        complete: () => {
+            setTimeout(() => {
+                $(".loading-div").addClass("d-none");
+            }, 2000);
         }
     });
 
@@ -245,20 +255,30 @@ function GetAddresses() {
         method: "GET",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         url: "/Customer/GetAddresses",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: function (data) {
-            if (data != "notfound") {
-                var AddList = $(".radioAdd");
-                AddList.empty();
-                for (var i = 0; i < data.length; i++) {
-                    AddList.append('<div class="selectAddress"><input type="radio" name="addressRadio" id="addressID' + data[i].id + '" value="' + data[i].id + '"><span class="addressDetails"><span class="addressRow"><strong>Address :</strong> ' + data[i].addressLine2 + ', ' + data[i].addressLine1 + ', ' + data[i].city + ', ' + data[i].postalCode + '</span><span class="phoneDetails"><strong>Phone number :</strong>' + data[i].mobile + '</span></span></div>');
+            setTimeout(() => {
+                if (data != "notfound") {
+                    var AddList = $(".radioAdd");
+                    AddList.empty();
+                    for (var i = 0; i < data.length; i++) {
+                        AddList.append('<div class="selectAddress"><input type="radio" name="addressRadio" id="addressID' + data[i].id + '" value="' + data[i].id + '"><span class="addressDetails"><span class="addressRow"><strong>Address :</strong> ' + data[i].addressLine2 + ', ' + data[i].addressLine1 + ', ' + data[i].city + ', ' + data[i].postalCode + '</span><span class="phoneDetails"><strong>Phone number :</strong>' + data[i].mobile + '</span></span></div>');
+                    }
+                } else {
+                    var AddList = $(".radioAdd");
+                    AddList.empty();
                 }
-            } else {
-                var AddList = $(".radioAdd");
-                AddList.empty();
-            }
+            }, 2000);
         },
         error: function (err) {
             alert("fail")
+        },
+        complete: () => {
+            setTimeout(() => {
+                $(".loading-div").addClass("d-none");
+            }, 2000);
         }
     });
 }
@@ -298,21 +318,30 @@ function addSave() {
             url: "/Customer/AddressSave",
             method: "POST",
             data: obj,
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
             success: function (data) {
-                if (data == "true") {
-                    GetAddresses();
-                    $(".addressForm").addClass("d-none");
-                    $("#errorAddNotSelected").addClass("d-none");
-                    $(".addressBtn").removeClass("d-none");
-                    ClearForm();
+                setTimeout(() => {
+                    if (data == "true") {
+                        GetAddresses();
+                        $(".addressForm").addClass("d-none");
+                        $("#errorAddNotSelected").addClass("d-none");
+                        $(".addressBtn").removeClass("d-none");
+                        ClearForm();
 
-                } else {
-                    alert("Fail");
-                }
-                
+                    } else {
+                        alert("Fail");
+                    }
+                }, 2000);
             },
             error: function (err) {
                 alert("false");
+            },
+            complete: () => {
+                setTimeout(() => {
+                    $(".loading-div").addClass("d-none");
+                }, 2000);
             }
         });
     }
@@ -328,7 +357,10 @@ function addressFun() {
             $("#errorAddNotSelected").removeClass("d-none").text("Please Select Address!");
         } else {
             $("#errorAddNotSelected").addClass("d-none");
-            $(".radioAdd div input[type=radio]:checked").prop('checked', true);
+            $(".loading-div").removeClass("d-none");
+            setTimeout(() => {
+                $(".loading-div").addClass("d-none");
+            }, 2000);
             form4();
         }
     }
@@ -377,18 +409,28 @@ function completeBook() {
         url: "/Customer/CompleteBooking",
         method: "POST",
         data: obj,
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: function (data) {
-            console.log("Success");
-            if (data == "false") {
-                alert("False");
-            } else {
-                $(".bookSuccessSmTxt").text("Service request id : " + data);
-                $("#bookSuccessModal").modal("show");
-            }
+            setTimeout(() => {
+                console.log("Success");
+                if (data == "false") {
+                    alert("False");
+                } else {
+                    $(".bookSuccessSmTxt").text("Service request id : " + data);
+                    $("#bookSuccessModal").modal("show");
+                }
+            }, 2000);
         },
         error: function (err) {
             console.log(err);
             alert("Fail");
+        },
+        complete: () => {
+            setTimeout(() => {
+                $(".loading-div").addClass("d-none");
+            }, 2000);
         }
     });
 }
