@@ -553,6 +553,10 @@ span.resetPassSuccessModalBtn a {
     color: white;
     border-radius: 23px;
 }
+input#gridCheck:checked {
+    background-color: #6DA9B5;
+    border-color: #6DA9B5;
+}
 
 @media screen and (min-width: 993px) {
     #smHomeNav {

@@ -6,7 +6,288 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+textarea{
+    resize:none;
+}
+/*   ----------Customer Dashboard----------   */
+#srBookReq {
+    text-decoration: none;
+    color: white;
+    background-color: #1D7A8C;
+    padding: 8px 15px;
+    border-radius: 23px;
+}
+button.srReschedule {
+    background-color: #1D7A8C;
+    padding: 8px 10px;
+    color: white;
+    border-radius: 17px;
+    margin-right: 5px;
+}
+button.srReschedule:hover{
+    background-color: white;
+    color: #1D7A8C;
+    border:1px solid #1D7A8C;
+}
+button.srCancel {
+    background-color: #FF6B6B;
+    color: white;
+    border-radius: 17px;
+    padding: 8px 10px;
+}
+button.srCancel:hover {
+    background-color: white;
+    color: #FF6B6B;
+    border: 1px solid #FF6B6B;
+}
+.sr-tb-payment span {
+    color: #1d7a8c;
+    font-size: 24px;
+    font-weight: bold;
+}
 
+#serReqTable thead {
+    color: #646464;
+    background-color: #F9F9F9;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #e1e1e1;
+}
+
+#serReqTable thead th {
+    padding: 17px 10px 20px 10px;
+}
+
+#serReqTable thead th img {
+    margin: -2px 0 0 8px;
+}
+
+#serReqTable tbody td {
+    padding: 10px;
+    color: #646464;
+}
+
+#serReqTable tbody tr {
+    border: 1px solid #e1e1e1;
+}
+.sr-tb-payment {
+    text-align: center;
+}
+
+/* ---ReqDetails Modal--- */
+#reqDetailsModal .modal-header {
+    border-bottom: none;
+}
+#reqDetailsModal .modal-header h5 {
+    color: #646464;
+    font-size: 20px;
+}
+#reqDetailsModal .modal-body {
+    color: #646464;
+}
+#reqDetailsModal .modal-footer {
+    border-top: none;
+    justify-content:start;
+}
+#reqDetailsModal .modal-body .row {
+    margin: 0 5px;
+    border-bottom: 1px solid #c8c8c8;
+    padding: 10px 0;
+}
+#reqDetailsModal .modal-body .row span{
+    padding:0;
+}
+.reqDataPayment {
+    color: #1d7a8c;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+.reqDataHasPetTrue i {
+    background-color: #67B644;
+    color: white;
+    padding: 4px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.reqDataHasPetFalse i {
+    background-color: #f93737;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* ---Reschedule Modal---*/
+#rescheduleModal .modal-header {
+    border-bottom: none;
+}
+#rescheduleModal .modal-header h5 {
+    color: #646464;
+    font-size: 20px;
+}
+#rescheduleModal .modal-content {
+    max-width: 400px;
+}
+#rescheduleModal .modal-footer {
+    border-top: none;
+}
+#rescheduleModal .modal-footer button {
+    width: 100%;
+    background-color: #1D7A8c;
+}
+.fromDt{
+    position:relative;
+    color:#4f4f4f;
+}
+.fromDt input::placeholder{
+    color:#4f4f4f;
+}
+.fromDt svg{
+    position:absolute;
+    left:10px;
+    top:8px;
+}
+select#selectBookTime {
+    height: 38px;
+    color: #646464;
+}
+input#bookDt {
+    color: #646464;
+}
+.ui.input.left.icon.fDT {
+    width: 100%;
+}
+span.reScheReqTitle {
+    color: #646464;
+}
+/* ---Cancel Modal--- */
+#cancelReqModal .modal-header {
+    border-bottom: none;
+}
+#cancelReqModal .modal-header h5 {
+    color: #646464;
+    font-size: 20px;
+}
+#cancelReqModal .modal-content {
+    max-width: 400px;
+}
+#cancelReqModal .modal-footer {
+    border-top: none;
+}
+#cancelReqModal .modal-footer button {
+    width: 100%;
+    background-color: #1D7A8c;
+}
+
+/*   ----------Customer Account----------   */
+nav.accNav div button {
+    background-color: transparent;
+    border: none;
+    color: #646464;
+    font-weight: 600;
+    border-bottom: 3px solid #d1d1d1;
+}
+nav.accNav div button:hover{
+    border-bottom: 3px solid #1d7a8c;
+    color: #1D7A8C;
+}
+
+nav.accNav div button.active{
+    border-bottom: 3px solid #1d7a8c;
+    color: #1D7A8C !important;
+}
+#nav-tabAccount{
+    margin-top:20px;
+}
+#passChange .row {
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+#passChange .row div{
+    font-weight:600;
+    color:#646464;
+    max-width:300px;
+}
+.btnChangeSave {
+    padding: 8px 15px;
+    background-color: #1d7a8c;
+    color: white;
+    border-radius:50px
+}
+.btnChangeSave:hover{
+    background-color:#146371;
+    color:white;
+}
+form#passChange {
+    margin-bottom: 10px;
+}
+.addressDetails {
+    display: flex;
+    flex-direction: column;
+}
+#getDetailsForm {
+    color: #646464;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.dobSelect select {
+    padding: 5px 3px;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    margin: 0 3px;
+    color: #646464;
+    flex-grow: 1;
+}
+span#basic-addon1 {
+    color: #646464;
+}
+.dobSelect select.invalid {
+    color: #E9403C;
+}
+.date-dropdowns {
+    display: flex;
+    height: 38px;
+}
+.addAction {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+.addAction i:nth-child(1){
+    margin-left:5px;
+}
+#accAddressTab > :not(caption) > * > * {
+    border-bottom: 0;
+}
+#accAddressTab thead {
+    color: #646464;
+    background-color: #F9F9F9;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #e1e1e1;
+}
+#accAddressTab thead tr th:nth-child(1){
+    padding-left:20px;
+}
+#accAddressTab tbody tr {
+    border: 1px solid #e1e1e1;
+}
+#accAddressTab tbody td {
+    padding: 10px 10px 10px 20px;
+    color: #646464;
+}
+
+
+
+
+
+
+
+
+/*   ----------Service History----------   */
 .serviceHistory-nav {
     background-color: #525252;
 }
@@ -96,6 +377,7 @@ a#navbarDarkDropdownMenuLink {
 .user-name h2 {
     font-size: 30px;
     color: #4f4f4f;
+    font-family: "Roboto", sans-serif;
 }
 
 .us-left-menu {
@@ -135,6 +417,7 @@ a#navbarDarkDropdownMenuLink {
 
 .customer-dash {
     margin: 31px 0;
+    margin-bottom: 100px;
 }
 
 .us-nav a:hover {
@@ -155,6 +438,8 @@ a#navbarDarkDropdownMenuLink {
     font-size: 22px;
     font-weight: bold;
     color: #646464;
+    font-family: "Roboto", sans-serif;
+
 }
 
 .content-header button {
@@ -226,10 +511,10 @@ a#navbarDarkDropdownMenuLink {
     background-color: white !important;
 }
 
-table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1, table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+/*table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1, table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
     background-color: white !important;
 }
-
+*/
 table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
     border-top: none;
 }
@@ -276,7 +561,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
     border: 1px solid #E1E1E1;
     border-radius: 50%;
     display: inline;
-    color: black;
+    color: #646464;
     text-decoration: none;
 }
 
@@ -309,6 +594,7 @@ table.dataTable thead th {
 table.dataTable.no-footer {
     border-bottom: none;
     border-collapse: collapse;
+    margin: 15px 0;
 }
 
 .sh-tb-details {
@@ -412,6 +698,8 @@ table.dataTable.no-footer {
 
 table.dataTable thead .sorting {
     background-image: url("/img/sort.png");
+    background-repeat: no-repeat;
+    background-position: right center;
 }
 
 table.dataTable thead .sorting_asc {
@@ -497,8 +785,17 @@ table.dataTable thead .sorting_desc {
     .table-bottom-inner {
         flex-direction: row;
         justify-content: center;
+        padding: 5px;
+        margin: 5px;
     }
-
+    div#serReqTable_paginate {
+        text-align: end;
+        padding:5px;
+    }
+    div#shTable_paginate{
+        text-align: end;
+        padding:5px;
+    }
     .table-bottom {
         justify-content: center;
         flex-direction: column;
@@ -581,6 +878,25 @@ table.dataTable thead .sorting_desc {
 }
 
 @media screen and (max-width: 600px) {
+    #serReqTable thead {
+        display: none;
+    }
+
+    #serReqTable tbody {
+        display: grid;
+    }
+
+    #serReqTable tbody tr {
+        border: 1px solid #8d8d8d;
+        margin-bottom: 15px;
+        box-shadow: 3px 3px #8888;
+    }
+
+    #serReqTable td {
+        display: block;
+        border: 1px solid #e1e1e1;
+    }
+    
     #shTable thead {
         display: none;
     }
@@ -599,7 +915,13 @@ table.dataTable thead .sorting_desc {
         display: block;
         border: 1px solid #e1e1e1;
     }
-
+    .customer-dash {
+        margin-bottom: 0;
+    }
+    .sr-tb-payment {
+        text-align: start;
+    }
+    
     .sh-tb-payment {
         text-align: start;
     }
@@ -618,5 +940,14 @@ table.dataTable thead .sorting_desc {
 
     .secondPart {
         width: 50vw;
+    }
+}
+
+@media screen and (max-width: 482px) {
+    #srBookReq span{
+        display:none;
+    }
+    #srBookReq::after {
+        content: "Book";
     }
 }

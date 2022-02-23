@@ -24,12 +24,13 @@ namespace Helperland.Controllers
                 ViewBag.IsloggedIn = "success";
                 ViewBag.Uname = req.FirstName;
                 ViewBag.UType = req.UserTypeId;
+                return View();
             }
             else
             {
                 ViewBag.UType = 1;
+                return RedirectToAction("Index", "Home");
             }
-            return View();
         }
 
         [Route("book-service")]
@@ -235,6 +236,43 @@ namespace Helperland.Controllers
             else
             {
                 return Json("false");
+            }
+        }
+
+        public IActionResult Dashboard()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+
+                ViewBag.IsloggedIn = "success";
+                ViewBag.Uname = req.FirstName;
+                ViewBag.UType = req.UserTypeId;
+                return View();
+            }
+            else
+            {
+                ViewBag.UType = 1;
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        public IActionResult Myaccount()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+
+                ViewBag.IsloggedIn = "success";
+                ViewBag.Uname = req.FirstName;
+                ViewBag.UType = req.UserTypeId;
+
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
             }
         }
     }

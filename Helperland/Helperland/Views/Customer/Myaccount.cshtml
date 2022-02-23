@@ -1,0 +1,328 @@
+﻿
+@{
+    ViewData["Title"] = "My Account";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+<div class="user-name d-flex justify-content-center align-items-center">
+    <h2>Welcome, <strong>@ViewBag.Uname</strong> </h2>
+</div>
+
+<!-- Cust Dashboard Start -->
+<section class="customer-dash">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="nav flex-column us-left-menu text-start">
+                <a class="nav-link">Dashboard</a>
+                <a class="nav-link" asp-action="Servicerequest" asp-controller="Customer">Service History</a>
+                <a class="nav-link">Service Schedule</a>
+                <a class="nav-link">Favourite Pros</a>
+                <a class="nav-link">Invoices</a>
+                <a class="nav-link">Notifications</a>
+            </div>
+            <div class="us-right-menu" id="us-right-sideNav">
+                <div>
+                    <nav class="accNav">
+                      <div class="nav" id="nav-tab" role="tablist">
+                        <button class="nav-link flex-fill active" id="nav-details-tab" data-bs-toggle="tab" data-bs-target="#nav-details" type="button" role="tab" aria-controls="nav-details" aria-selected="true">My Details</button>
+                        <button class="nav-link flex-fill" id="nav-address-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-address" aria-selected="false">My Address</button>
+                        <button class="nav-link flex-fill" id="nav-pass-tab" data-bs-toggle="tab" data-bs-target="#nav-pass" type="button" role="tab" aria-controls="nav-pass" aria-selected="false">Change Password</button>
+                      </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabAccount">
+                      <div class="tab-pane fade show active" id="nav-details" role="tabpanel" aria-labelledby="nav-details-tab">
+                          <form id="getDetailsForm">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="inputFname" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="inputFname">   
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="inputLname" class="form-label">Last name</label>
+                                    <input type="text" class="form-control" id="inputLname">   
+                                </div>
+                                <div class="col-md-4 mb-3"> 
+                                    <label for="inputEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="inputEmail" disabled>   
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="inputPhoneNumber" class="form-label">Mobile number</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon1">+91</span>
+                                        <input class="form-control"  data-val-length-max="10" data-val-length-min="10" data-val-regex-pattern="^([0-9]{10})$"  id="inputPhoneNumber" maxlength="10">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3 dobSelect">
+                                    <label for="inputDOB" class="form-label">Date of Birth</label>
+                                    <input class="form-control" type="hidden" id="inputDOB" />
+                                </div>
+                                <div class="col-12">
+                                    <hr />
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btnChangeSave btn" id="btnDataChangeSave">Save</button>
+                                </div>
+                            </div>
+                          </form>
+                      </div>
+                      <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
+                          <table id="accAddressTab" class="table">
+                              <thead>
+                                  <tr>
+                                      <th>Addresses</th>
+                                      <th class="text-center">Action</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="addressDetails">
+                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
+                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="addAction">
+                                            <a><i class="far fa-edit"></i></a> 
+                                            <a><i class="fal fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="addressDetails">
+                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
+                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="addAction">
+                                            <a><i class="far fa-edit"></i></a> 
+                                            <a><i class="fal fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="addressDetails">
+                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
+                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="addAction">
+                                            <a><i class="far fa-edit"></i></a> 
+                                            <a><i class="fal fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="addressDetails">
+                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
+                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="addAction">
+                                            <a><i class="far fa-edit"></i></a> 
+                                            <a><i class="fal fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="addressDetails">
+                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
+                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="addAction">
+                                            <a><i class="far fa-edit"></i></a> 
+                                            <a><i class="fal fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                              </tbody>
+                          </table>
+                          <div class="addNewAddressBtn">
+                            <button type="button" class="btnChangeSave btn">Add New Address</button>
+                          </div>
+                      </div>
+                      <div class="tab-pane fade" id="nav-pass" role="tabpanel" aria-labelledby="nav-pass-tab">
+                          <form id="passChange">
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <label for="inputOldPass" class="form-label">Old Password</label>
+                                    <input type="password" class="form-control" id="inputOldPass" placeholder="Current Password">   
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="inputNewPass" class="form-label">New Password</label>
+                                    <input type="password" class="form-control" id="inputNewPass" placeholder="Password">   
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="inputCPass" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="inputCPass" placeholder="Confirm Password">   
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btnChangeSave btn" id="btnPassChangeSave">Save</button>
+                                </div>
+                            </div>
+                          </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cust Dashboard End -->
+
+
+
+@*<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#reqDetailsModal">
+ Reschedule
+</button>
+<!--Details Modal-->
+<div class="modal fade" id="reqDetailsModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Service Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <span class="reqDataDate">05/01/2022 08:00-11:00</span>
+                    <span class="reqDataDuration"><strong>Duration</strong> : 3:00</span>
+                </div>
+                <div class="row">
+                    <span class="reqDataId"><strong>Service Id</strong> : 101</span>
+                    <span class="reqDataExtra"><strong>Extras</strong> : Inside Oven</span>
+                    <span class="reqDataNetAmount"><strong>Net Amount</strong> :</span>
+                    <span class="reqDataPayment">120 &euro;</span>
+                </div>
+                <div class="row">
+                    <span class="reqDataAddress"><strong>Service Address</strong> : Temp</span>
+                    <span class="reqDataPhone"><strong>Phone</strong> : 7896541230</span>
+                    <span class="reqDataEmail"><strong>Email</strong> : smit@sd.com</span>
+                </div>
+                <div class="row">
+                    <span class="reqDataComments"><strong>Comments</strong> :</span>
+                    <span class="reqDataHasPetTrue d-none"><i class="fa fa-check" aria-hidden="true"></i>I have pets at Home</span>
+                    <span class="reqDataHasPetFalse"><i class="fa fa-times" aria-hidden="true"></i>I don't have pets at Home</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn srReschedule">Reschedule</button>
+                <button class="btn srCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Details Modal-->
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rescheduleModal">
+ Reschedule
+</button>
+<!--Reschedule Modal-->
+<div class="modal fade" id="rescheduleModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Reschedule Service Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <span class="reScheReqTitle">Select New Date & Time</span>
+                    <div class="col-6">
+                        <div class="fromDt">
+                            <div class="ui calendar" id="bookDate">
+                                <div class="ui input left icon fDT"><div class="ui popup calendar bottom left transition hidden" style="inset: 46px auto auto 0px;"><table class="ui celled center aligned unstackable table seven column day"><thead><tr><th colspan="7"><span class="link">February 2022</span><span class="prev link"><i class="chevron left icon"></i></span><span class="next link"><i class="chevron right icon"></i></span></th></tr><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead><tbody><tr><td class="link disabled">30</td><td class="link disabled">31</td><td class="link">1</td><td class="link">2</td><td class="link">3</td><td class="link">4</td><td class="link">5</td></tr><tr><td class="link">6</td><td class="link">7</td><td class="link">8</td><td class="link">9</td><td class="link today focus">10</td><td class="link">11</td><td class="link">12</td></tr><tr><td class="link">13</td><td class="link">14</td><td class="link">15</td><td class="link">16</td><td class="link">17</td><td class="link">18</td><td class="link">19</td></tr><tr><td class="link">20</td><td class="link">21</td><td class="link">22</td><td class="link">23</td><td class="link">24</td><td class="link">25</td><td class="link">26</td></tr><tr><td class="link">27</td><td class="link">28</td><td class="link disabled">1</td><td class="link disabled">2</td><td class="link disabled">3</td><td class="link disabled">4</td><td class="link disabled">5</td></tr><tr><td class="link disabled">6</td><td class="link disabled">7</td><td class="link disabled">8</td><td class="link disabled">9</td><td class="link disabled">10</td><td class="link disabled">11</td><td class="link disabled">12</td></tr></tbody></table></div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                                        <path fill-rule="evenodd" fill="#1D7A8C" d="M.457 20.1V2.143H4.15V.12h1.848v2.023H9.76V.12h1.163v2.023H14.1V.12h1.748v2.023h3.694V20.1H.457zM17.695 6.456H2.304v11.706h15.391V6.456zM7.229 11.385H5.382V9.536h1.847v1.849zm0 4.425H5.382v-2.577h1.847v2.577zm3.694-4.425H9.76V9.536h1.163v1.849zm0 4.425H9.76v-2.577h1.163v2.577zm3.694-4.425H12.77V9.536h1.847v1.849zm0 4.425H12.77v-2.577h1.847v2.577z"/>
+                                    </svg>
+                                    <input type="text" placeholder="Service Date" id="bookDt" class="bookServiceDate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <select class="form-select selectBookTime" id="selectBookTime" aria-label="Default select example">
+                            <option value="08:00 AM">08:00 AM</option>
+                            <option value="08:30 AM">08:30 AM</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="09:30 AM">09:30 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="01:00 PM">01:00 PM</option>
+                            <option value="01:30 PM">01:30 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="02:30 PM">02:30 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="03:30 PM">03:30 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="04:30 PM">04:30 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                            <option value="05:30 PM">05:30 PM</option>
+                            <option value="06:00 PM">06:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Reschedule Modal-->
+
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelReqModal">
+ Cancel
+</button>
+<!--Cancel Modal-->
+<div class="modal fade" id="cancelReqModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Cancel Service Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <span class="reScheReqTitle">Why do you want to cancel the service request?</span>
+                    <div class="col-12">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Cancel Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Cancel Modal-->*@
+
+
+@section css{
+@*    <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css"
+        rel="stylesheet" type="text/css" />
+*@    
+<link href="/css/customerDash.css" rel="stylesheet" />
+}
+
+@section script{
+@*    <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+      
+*@    
+        <script src="/js/CustomDate.min.js"></script>
+        <script src="/js/myaccount.js"></script>
+}

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewData["Title"]</title>
     <link rel="shortcut icon" href="/img/favicon_img.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />  
     @RenderSection("css",required:false)
 </head>
 <body>
@@ -52,8 +55,8 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item text-dark" asp-controller="Customer" asp-action="Servicerequest">My Dashboard</a></li>
-                                <li><a class="dropdown-item text-dark">My Settings</a></li>
+                                <li><a class="dropdown-item text-dark" asp-controller="Customer" asp-action="Dashboard">My Dashboard</a></li>
+                                <li><a class="dropdown-item text-dark" asp-action="Myaccount" asp-controller="Customer">My Settings</a></li>
                                 <li><a class="dropdown-item text-dark" asp-controller="Login" asp-action="Logout">Logout</a></li>
                             </ul>
                         </li>
@@ -86,8 +89,8 @@
                             <hr class="smNavSeparator">
                             <div class="nav flex-column text-start dashNavSide">
                                 @if(@ViewBag.UType == 1){
-                                    <a asp-controller="Customer" asp-action="Servicerequest">Dashboard</a>
-                                    <a>Service History</a>
+                                    <a asp-controller="Customer" asp-action="Dashboard">Dashboard</a>
+                                    <a asp-controller="Customer" asp-action="Servicerequest">Service History</a>
                                     <a>Service Schedule</a>
                                     <a>Favourite Pros</a>
                                     <a>Invoices</a>
@@ -105,7 +108,7 @@
                                     <a>Notifications</a>
                                 }
                             </div>
-                            <div class="navItem"><a> My Settings</a></div>
+                            <div class="navItem"><a asp-action="Myaccount" asp-controller="Customer"> My Settings</a></div>
                             <div class="navItem"><a asp-controller="Login" asp-action="Logout"> Logout</a></div>
                             <hr class="smNavSeparator">
                             @if (@ViewBag.UType == 1)
@@ -202,7 +205,10 @@
         </a>
     </div>
     <!-- Back-Home Button -->
-    
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     @RenderSection("script", required:false)
 </body>
 </html>

@@ -126,7 +126,7 @@ namespace Helperland.Controllers
                         if (req.UserTypeId == 1)
                         {
                             HttpContext.Session.SetInt32("userid", req.UserId);
-                            return RedirectToAction("Servicerequest", "Customer");
+                            return RedirectToAction("Dashboard", "Customer");
                         }else if(req.UserTypeId == 2)
                         {
                             HttpContext.Session.SetInt32("userid", req.UserId);

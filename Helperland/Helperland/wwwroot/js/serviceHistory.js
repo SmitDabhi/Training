@@ -6,7 +6,7 @@ $(document).ready( function () {
         'columnDefs': [ {
             'targets': [4], 
             'orderable': false, 
-         }],
+        }],
         "language": {
             "paginate": {
                 "first": '<img src="/img/leftMost.png" alt="">',

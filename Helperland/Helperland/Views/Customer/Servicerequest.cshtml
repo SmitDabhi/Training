@@ -8,12 +8,12 @@
     <h2>Welcome, <strong>@ViewBag.Uname</strong> </h2>
 </div>
 
-<!-- SP Dashboard Start -->
+<!-- Cust Dashboard Start -->
 <section class="customer-dash">
     <div class="container">
         <div class="d-flex justify-content-center">
             <div class="nav flex-column us-left-menu text-start">
-                <a class="nav-link">Dashboard</a>
+                <a class="nav-link" asp-action="Dashboard" asp-controller="Customer">Dashboard</a>
                 <a class="nav-link active">Service History</a>
                 <a class="nav-link">Service Schedule</a>
                 <a class="nav-link">Favourite Pros</a>
@@ -398,24 +398,17 @@
         </div>
     </div>
 </section>
-<!-- SP Dashboard End -->
+<!-- Cust Dashboard End -->
 
 @section css{
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="/css/serviceHistory.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/customerDash.css">
 }
 @section script{
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
-
     <script src="/js/serviceHistory.js"></script>
 }

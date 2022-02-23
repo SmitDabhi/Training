@@ -19,6 +19,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQm9va3NlcnZpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Customer/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Customer/Myaccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcTXlhY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [S:/Training Tatvasoft/Helperland/Helperland/Views/Customer/Servicerequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcU2VydmljZXJlcXVlc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

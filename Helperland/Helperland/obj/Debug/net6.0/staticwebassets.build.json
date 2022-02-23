@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kq3qI8ZAb5TaIYfrzx3sOdn79L5Nbw59siOUNEGiKsM=",
+  "Hash": "22O1VXhmbAB5hpudpGbex4gQJh8RgY7X53RKdiy3wXw=",
   "Source": "Helperland",
   "BasePath": "_content/Helperland",
   "Mode": "Default",
@@ -238,6 +238,23 @@
       "OriginalItemSpec": "wwwroot\\css\\adminPanel.css"
     },
     {
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\becomePro.css",
+      "SourceId": "Helperland",
+      "SourceType": "Discovered",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
+      "BasePath": "_content/Helperland",
+      "RelativePath": "css/becomePro.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\becomePro.css"
+    },
+    {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\book.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
@@ -287,6 +304,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\contact.css"
+    },
+    {
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\customerDash.css",
+      "SourceId": "Helperland",
+      "SourceType": "Discovered",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
+      "BasePath": "_content/Helperland",
+      "RelativePath": "css/customerDash.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\customerDash.css"
     },
     {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\faq.css",
@@ -357,40 +391,6 @@
       "OriginalItemSpec": "wwwroot\\css\\ResetPsw.css"
     },
     {
-      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\service.css",
-      "SourceId": "Helperland",
-      "SourceType": "Discovered",
-      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
-      "BasePath": "_content/Helperland",
-      "RelativePath": "css/service.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\service.css"
-    },
-    {
-      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\serviceHistory.css",
-      "SourceId": "Helperland",
-      "SourceType": "Discovered",
-      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
-      "BasePath": "_content/Helperland",
-      "RelativePath": "css/serviceHistory.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\serviceHistory.css"
-    },
-    {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\signUp.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
@@ -408,12 +408,12 @@
       "OriginalItemSpec": "wwwroot\\css\\signUp.css"
     },
     {
-      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\upcomingService.css",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\css\\spDash.css",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
       "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
-      "RelativePath": "css/upcomingService.css",
+      "RelativePath": "css/spDash.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -422,7 +422,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\upcomingService.css"
+      "OriginalItemSpec": "wwwroot\\css\\spDash.css"
     },
     {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\favicon.ico",
@@ -2312,6 +2312,23 @@
       "OriginalItemSpec": "wwwroot\\js\\adminUM.js"
     },
     {
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\becomePro.js",
+      "SourceId": "Helperland",
+      "SourceType": "Discovered",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
+      "BasePath": "_content/Helperland",
+      "RelativePath": "js/becomePro.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\becomePro.js"
+    },
+    {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\book.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
@@ -2361,6 +2378,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\contact.js"
+    },
+    {
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\customerDash.js",
+      "SourceId": "Helperland",
+      "SourceType": "Discovered",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
+      "BasePath": "_content/Helperland",
+      "RelativePath": "js/customerDash.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\customerDash.js"
     },
     {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\faq.js",
@@ -2431,23 +2465,6 @@
       "OriginalItemSpec": "wwwroot\\js\\resetPsw.js"
     },
     {
-      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\service.js",
-      "SourceId": "Helperland",
-      "SourceType": "Discovered",
-      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
-      "BasePath": "_content/Helperland",
-      "RelativePath": "js/service.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\service.js"
-    },
-    {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\serviceHistory.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
@@ -2482,12 +2499,12 @@
       "OriginalItemSpec": "wwwroot\\js\\signup.js"
     },
     {
-      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\upcomingService.js",
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\spDash.js",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
       "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
       "BasePath": "_content/Helperland",
-      "RelativePath": "js/upcomingService.js",
+      "RelativePath": "js/spDash.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2496,7 +2513,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\upcomingService.js"
+      "OriginalItemSpec": "wwwroot\\js\\spDash.js"
     },
     {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

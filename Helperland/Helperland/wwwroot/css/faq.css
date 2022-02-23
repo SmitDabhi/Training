@@ -301,9 +301,9 @@ a#navbarDarkDropdownMenuLink:hover {
         transition: left 0.4s;
     }
 
-        .smNavMenu.open {
-            left: 0;
-        }
+    .smNavMenu.open {
+        left: 0;
+    }
 
     .firstPart {
         background: rgba(0, 0, 0, 0);
@@ -332,15 +332,15 @@ a#navbarDarkDropdownMenuLink:hover {
         padding: 8px 16px;
     }
 
-        .navItem a {
-            text-decoration: none;
-            color: #646464;
-            cursor: pointer;
-        }
+    .navItem a {
+        text-decoration: none;
+        color: #646464;
+        cursor: pointer;
+    }
 
-            .navItem a:hover {
-                color: #646464;
-            }
+    .navItem a:hover {
+        color: #646464;
+    }
 
     .dashNavSide a {
         color: #646464;
@@ -349,13 +349,13 @@ a#navbarDarkDropdownMenuLink:hover {
         cursor: pointer;
     }
 
-        .dashNavSide a.active {
-            color: #1D7A8C;
-        }
+    .dashNavSide a.active {
+        color: #1D7A8C;
+    }
 
-        .dashNavSide a:hover {
-            color: #2c94a8;
-        }
+    .dashNavSide a:hover {
+        color: #2c94a8;
+    }
 
     .smNavSeparator {
         background: #3b3b3b;
