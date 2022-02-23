@@ -16,7 +16,7 @@
         $(".smNavMenu").removeClass("open");
     });
 
-    if ($("#inputNewPass").val() == "" || $("#inputCPass").val()) {
+    if ($("#inputNewPass").val() == "" || $("#inputCPass").val()=="") {
         $("#btnPswUpdate").prop("disabled", true);
     }
 

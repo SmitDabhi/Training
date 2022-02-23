@@ -10,7 +10,7 @@
 
 <!-- Cust Dashboard Start -->
 <section class="customer-dash">
-    <div class="container">
+    <div class="container-fluid">
         <div class="d-flex justify-content-center">
             <div class="nav flex-column us-left-menu text-start">
                 <a class="nav-link">Dashboard</a>
@@ -20,18 +20,19 @@
                 <a class="nav-link">Invoices</a>
                 <a class="nav-link">Notifications</a>
             </div>
-            <div class="us-right-menu" id="us-right-sideNav">
+            <div class="us-right-menu flex-fill" id="us-right-sideNav">
                 <div>
                     <nav class="accNav">
                       <div class="nav" id="nav-tab" role="tablist">
                         <button class="nav-link flex-fill active" id="nav-details-tab" data-bs-toggle="tab" data-bs-target="#nav-details" type="button" role="tab" aria-controls="nav-details" aria-selected="true">My Details</button>
-                        <button class="nav-link flex-fill" id="nav-address-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-address" aria-selected="false">My Address</button>
+                        <button class="nav-link flex-fill" id="nav-address-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-address" aria-selected="false" onclick="getAddressAcc()">My Address</button>
                         <button class="nav-link flex-fill" id="nav-pass-tab" data-bs-toggle="tab" data-bs-target="#nav-pass" type="button" role="tab" aria-controls="nav-pass" aria-selected="false">Change Password</button>
                       </div>
                     </nav>
                     <div class="tab-content" id="nav-tabAccount">
                       <div class="tab-pane fade show active" id="nav-details" role="tabpanel" aria-labelledby="nav-details-tab">
                           <form id="getDetailsForm">
+                            <div id="errorDataPage"></div>
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <label for="inputFname" class="form-label">First name</label>
@@ -51,6 +52,7 @@
                                         <span class="input-group-text" id="basic-addon1">+91</span>
                                         <input class="form-control"  data-val-length-max="10" data-val-length-min="10" data-val-regex-pattern="^([0-9]{10})$"  id="inputPhoneNumber" maxlength="10">
                                     </div>
+                                    <span class="text-danger d-none" id="errorMobileData">Please Enter Valid Mobile Number!</span>
                                 </div>
                                 <div class="col-md-4 mb-3 dobSelect">
                                     <label for="inputDOB" class="form-label">Date of Birth</label>
@@ -74,76 +76,7 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="addressDetails">
-                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
-                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="addAction">
-                                            <a><i class="far fa-edit"></i></a> 
-                                            <a><i class="fal fa-trash-alt"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="addressDetails">
-                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
-                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="addAction">
-                                            <a><i class="far fa-edit"></i></a> 
-                                            <a><i class="fal fa-trash-alt"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="addressDetails">
-                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
-                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="addAction">
-                                            <a><i class="far fa-edit"></i></a> 
-                                            <a><i class="fal fa-trash-alt"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="addressDetails">
-                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
-                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="addAction">
-                                            <a><i class="far fa-edit"></i></a> 
-                                            <a><i class="fal fa-trash-alt"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="addressDetails">
-                                            <span class="addressRow"><strong>Address :</strong> 43, Shanti Residency, Bhavnagar, 364001</span>
-                                            <span class="phoneDetails"><strong>Phone number :</strong>7048505029</span>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="addAction">
-                                            <a><i class="far fa-edit"></i></a> 
-                                            <a><i class="fal fa-trash-alt"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+
                               </tbody>
                           </table>
                           <div class="addNewAddressBtn">
@@ -152,6 +85,7 @@
                       </div>
                       <div class="tab-pane fade" id="nav-pass" role="tabpanel" aria-labelledby="nav-pass-tab">
                           <form id="passChange">
+                            <div class="" id="errorPassChange"></div>
                             <div class="row">
                                 <div class="col-12 mb-3">
                                     <label for="inputOldPass" class="form-label">Old Password</label>
