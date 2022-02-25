@@ -52,7 +52,7 @@
 
 
 
-@*<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#reqDetailsModal">
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#reqDetailsModal">
  Reschedule
 </button>
 <!--Details Modal-->
@@ -94,9 +94,7 @@
 </div>
 <!--Details Modal-->
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rescheduleModal">
- Reschedule
-</button>
+
 <!--Reschedule Modal-->
 <div class="modal fade" id="rescheduleModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
@@ -107,6 +105,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
+                    <input type="hidden" id="getReqIdReschedule" />
                     <span class="reScheReqTitle">Select New Date & Time</span>
                     <div class="col-6">
                         <div class="fromDt">
@@ -122,42 +121,39 @@
                     </div>
                     <div class="col-6">
                         <select class="form-select selectBookTime" id="selectBookTime" aria-label="Default select example">
-                            <option value="08:00 AM">08:00 AM</option>
-                            <option value="08:30 AM">08:30 AM</option>
-                            <option value="09:00 AM">09:00 AM</option>
-                            <option value="09:30 AM">09:30 AM</option>
-                            <option value="10:00 AM">10:00 AM</option>
-                            <option value="10:30 AM">10:30 AM</option>
-                            <option value="11:00 AM">11:00 AM</option>
-                            <option value="11:30 AM">11:30 AM</option>
-                            <option value="12:00 PM">12:00 PM</option>
-                            <option value="12:30 PM">12:30 PM</option>
-                            <option value="01:00 PM">01:00 PM</option>
-                            <option value="01:30 PM">01:30 PM</option>
-                            <option value="02:00 PM">02:00 PM</option>
-                            <option value="02:30 PM">02:30 PM</option>
-                            <option value="03:00 PM">03:00 PM</option>
-                            <option value="03:30 PM">03:30 PM</option>
-                            <option value="04:00 PM">04:00 PM</option>
-                            <option value="04:30 PM">04:30 PM</option>
-                            <option value="05:00 PM">05:00 PM</option>
-                            <option value="05:30 PM">05:30 PM</option>
-                            <option value="06:00 PM">06:00 PM</option>
+                            <option value="08:00">08:00 AM</option>
+                            <option value="08:30">08:30 AM</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="09:30">09:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13:00">01:00 PM</option>
+                            <option value="13:30">01:30 PM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="14:30">02:30 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="15:30">03:30 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="16:30">04:30 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                            <option value="17:30">05:30 PM</option>
+                            <option value="18:00">06:00 PM</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" id="btnModalUpdateDT">Update</button>
             </div>
         </div>
     </div>
 </div>
 <!--Reschedule Modal-->
 
-<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelReqModal">
- Cancel
-</button>
 <!--Cancel Modal-->
 <div class="modal fade" id="cancelReqModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
@@ -168,19 +164,20 @@
             </div>
             <div class="modal-body">
                 <div class="row">
+                    <input type="hidden" id="getReqId" />
                     <span class="reScheReqTitle">Why do you want to cancel the service request?</span>
                     <div class="col-12">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea class="form-control" id="cancelComment" rows="3"></textarea>
                     </div>
                 </div>
             </div>  
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Cancel Now</button>
+                <button type="button" class="btn btn-primary" id="btnModalCancelReq">Cancel Now</button>
             </div>
         </div>
     </div>
 </div>
-<!--Cancel Modal-->*@
+<!--Cancel Modal-->
 
 
 @section css{

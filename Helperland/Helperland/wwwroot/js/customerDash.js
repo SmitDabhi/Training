@@ -40,6 +40,64 @@
         $("html, body").animate({ scrollTop: 0 }, 0);
     });
 
+    if ($("#cancelComment").val() == "") {
+        $("#btnModalCancelReq").prop("disabled", true);
+    }
+
+    $("#cancelComment").on('keyup', () => {
+        if ($("#cancelComment").val() == "") {
+            $("#btnModalCancelReq").prop("disabled", true);
+        } else {
+            $("#btnModalCancelReq").prop("disabled", false);
+        }
+    });
+
+    $("#btnModalCancelReq").click(() => {
+        var obj = {
+            ServiceRequestId: parseInt($("#getReqId").val()),
+            Comments : $("#cancelComment").val()
+        };
+        console.log(obj);
+
+        $.ajax({
+            url: "/Customer/CancelReq",
+            method: "POST",
+            data: obj,
+            success: (data) => {
+                console.log(data);
+                if (data == "true") {
+                    window.location.reload();
+                }
+            },
+            error: (err) => {
+                console.log(err);
+            }
+        });
+    });
+
+    $("#btnModalUpdateDT").click(() => {
+        var obj = {
+            ServiceId: parseInt($("#getReqIdReschedule").val()),
+            ServiceDate : $("#bookDt").val() +" "+ $("#selectBookTime").val()
+        }
+        console.log(obj);
+
+        $.ajax({
+            url: "/Customer/RescheduleDT",
+            method: "POST",
+            data: obj,
+            success: (data) => {
+                console.log(data);
+                if (data == "true") {
+                    window.location.reload();
+                }
+            },
+            error: (err) => {
+                console.log(err);
+            }
+        });
+    });
+
     getServReqData();
 });
 
@@ -54,9 +112,9 @@ function getServReqData() {
                 reqDataList.empty();
 
                 for (var i = 0; i < data.length; i++) {
-                    if (data[i].spName == null) {
+                    if (data[i].spName == null && data[i].status == null) {
                         reqDataList.append('<tr><td class= "sr-tb-id">' + data[i].serviceId + '</td><td class="sr-tb-date"><div class="d-flex flex-column justify-content-center align-items-start"><span class="d-flex justify-content-center align-items-start"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="d-flex justify-content-center align-items-start"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start"><button class="btn srReschedule">Reschedule</button><button class="btn srCancel">Cancel</button></div></td></tr >');
-                    } else {
+                    } else if (data[i].spName != null && data[i].status == null){
                         reqDataList.append('<tr><td class= "sr-tb-id">' + data[i].serviceId + '</td><td class="sr-tb-date"><div class="d-flex flex-column justify-content-center align-items-start"><span class="d-flex justify-content-center align-items-start"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="d-flex justify-content-center align-items-start"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"><div class="sh-tb-provider"><span> Icon</span><span class="sp-Name-rate"><span>Name</span><span>Rating</span></span></div></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start"><button class="btn srReschedule">Reschedule</button><button class="btn srCancel">Cancel</button></div></td></tr >');
                     }
                 }
@@ -102,11 +160,44 @@ function getServReqData() {
                 });
             }
 
+            $("#serReqTable tbody tr").click((e) => {
+             
+                if (e.target.className == "btn srCancel") {
+                    while (e.target && e.target.nodeName !== "TR") {
+                        e.target = e.target.parentNode;
+                    }
+                    var reqId = $(e.target.childNodes[0]).text();
+                    console.log(reqId);
 
+                    $("#getReqId").val(reqId);
+                    $("#cancelComment").val("");
+                    $("#btnModalCancelReq").prop("disabled", true);
+                    $("#cancelReqModal").modal('show');
+                }
+
+                if (e.target.className == "btn srReschedule") {
+                    while (e.target && e.target.nodeName !== "TR") {
+                        e.target = e.target.parentNode;
+                    }
+                    var reqId = $(e.target.childNodes[0]).text();
+                    var dateTime = $(e.target.childNodes[1]).text();
+                    
+                    var date = dateTime.split(":")[0].slice(0, -2);
+                    var time = dateTime.split("-")[2].slice(4,-1);
+
+                    console.log(date);
+                    console.log(time);
+
+                    $("#getReqIdReschedule").val(reqId);
+                    $("#bookDt").val(date);
+                    $("#selectBookTime").val(time)
+                    $("#rescheduleModal").modal('show');
+                }
+            });
+            
         },
         error: (err) => {
             console.log(err);
         }
-
     });
 }

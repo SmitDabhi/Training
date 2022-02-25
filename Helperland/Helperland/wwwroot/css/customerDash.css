@@ -263,6 +263,14 @@ span#basic-addon1 {
     align-items: center;
     margin-top: 10px;
 }
+.addAction a{
+    text-decoration:none;
+    color:#646464;
+    cursor:pointer;
+}
+.addAction a:hover{
+    color:#3b3b3b;
+}
 .addAction i:nth-child(1){
     margin-left:5px;
 }

@@ -383,7 +383,7 @@ namespace Helperland.Controllers
         }
 
         [HttpGet]
-        public IActionResult getDataAcc()
+        public IActionResult GetDataAcc()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
 
@@ -417,7 +417,7 @@ namespace Helperland.Controllers
             req.FirstName = userData.Fname;
             req.LastName = userData.Lname;
             req.Mobile = userData.Mobile;
-
+            req.ModifiedDate = DateTime.Now;
             if(userData.DoB != null)
             {
                 req.DateOfBirth = Convert.ToDateTime(userData.DoB);
@@ -433,7 +433,7 @@ namespace Helperland.Controllers
         public IActionResult GetDashData()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
-            List<GetDashDataVM> custDashData = new();
+            List<GetServiceReqDataVM> custDashData = new();
 
             var ReqData = _dbContext.ServiceRequests.Where(x => x.UserId == Uid).ToList();
 
@@ -441,12 +441,13 @@ namespace Helperland.Controllers
             {
                 foreach (var item in ReqData)
                 {
-                    GetDashDataVM res = new();
+                    GetServiceReqDataVM res = new();
                     res.ServiceId = item.ServiceRequestId;
                     res.ServiceDate = item.ServiceStartDate.ToString("dd/MM/yyyy");
                     res.ServiceStartTime = item.ServiceStartDate.ToString("HH:mm");
                     res.ServiceEndTime = item.ServiceStartDate.AddHours((double)item.SubTotal).ToString("HH:mm");
                     res.TotalCost = item.TotalCost;
+                    res.Status = item.Status;
 
                     if(item.ServiceProviderId != null)
                     {
@@ -466,14 +467,13 @@ namespace Helperland.Controllers
             {
                 return Json("notfound");
             }
-
         }
 
         [HttpGet]
         public IActionResult GetSerHistoryData()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
-            List<GetServiceHistoryDataVM> getSerHistoryData = new();
+            List<GetServiceReqDataVM> getSerHistoryData = new();
 
             var reqData = _dbContext.ServiceRequests.Where(x => x.UserId == Uid).ToList();
 
@@ -481,7 +481,7 @@ namespace Helperland.Controllers
             {
                 foreach (var item in reqData)
                 {
-                    GetServiceHistoryDataVM res = new();
+                    GetServiceReqDataVM res = new();
                     res.ServiceId = item.ServiceRequestId;
                     res.ServiceDate = item.ServiceStartDate.ToString("dd/MM/yyyy");
                     res.ServiceStartTime = item.ServiceStartDate.ToString("HH:mm");
@@ -505,8 +505,39 @@ namespace Helperland.Controllers
             {
                 return Json("notfound");
             }
+        }
 
+        [HttpPost]
+        public IActionResult CancelReq(ServiceRequest service)
+        {
+            ServiceRequest req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == service.ServiceRequestId);
 
+            //Status
+            //    0 => Cancelled
+            //    1 => Completed
+
+            req.Status = 0;
+            req.Comments = service.Comments;
+            req.ModifiedDate = DateTime.Now;
+
+            _dbContext.ServiceRequests.Update(req);
+            _dbContext.SaveChanges();
+
+            return Json("true");
+        }
+
+        [HttpPost]
+        public IActionResult RescheduleDT(GetServiceReqDataVM service)
+        {
+            ServiceRequest req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == service.ServiceId);
+
+            req.ServiceStartDate = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null);
+            req.ModifiedDate = DateTime.Now;
+
+            _dbContext.ServiceRequests.Update(req);
+            _dbContext.SaveChanges();
+
+            return Json("true");
         }
     }
 }

@@ -141,36 +141,46 @@
         });
     });
 
+    $("#nav-address-tab").click(() => {
+        $.ajax({
+            method: "GET",
+            url: "/Customer/GetAddressAcc",
+            success: (data) => {
+                console.log(data);
+                if (data != "notfound") {
+                    var AddList = $("#accAddressTab tbody");
+                    AddList.empty();
+
+                    for (var i = 0; i < data.length; i++) {
+                        AddList.append('<tr><td><span class="addressDetails"><span class="addressRow"><strong>Address :</strong> ' + data[i].addressLine2 + ', ' + data[i].addressLine1 + ', ' + data[i].city + ', ' + data[i].postalCode + '</span><span class="phoneDetails"><strong>Phone number :</strong> ' + data[i].mobile + '</span></span></td><td><div class="addAction"><a class="editAddAcc" value="' + data[i].id + '"><i class="far fa-edit"></i></a><a class="delAddAcc" value="' + data[i].id +'"><i class="fal fa-trash-alt"></i></a></div></td></tr>');
+                    }
+                } else {
+                    var AddList = $("#accAddressTab tbody");
+                    AddList.empty();
+                }
+
+                $(".editAddAcc").click(() => {
+                    console.log("Add");
+                    
+                });
+                $(".delAddAcc").click(() => {
+                    console.log("Delete");
+                });
+            },
+            error: (err) => {
+                alert("fail");
+                console.log(err);
+            }
+        });
+    });
+
+    
     getDataAcc();
 });
 
-function getAddressAcc() {
-    $.ajax({
-        method: "GET",
-        url: "/Customer/GetAddressAcc",
-        success: (data) => {
-            if (data != "notfound") {
-                var AddList = $("#accAddressTab tbody");
-                AddList.empty();
-
-                for (var i = 0; i < data.length; i++) {
-                    AddList.append('<tr><td><span class="addressDetails"><span class="addressRow"><strong>Address :</strong> ' + data[i].addressLine2 + ', ' + data[i].addressLine1 +', '+ data[i].city +', '+ data[i].postalCode +'</span><span class="phoneDetails"><strong>Phone number :</strong> '+ data[i].mobile +'</span></span></td><td><div class="addAction"><a><i class="far fa-edit"></i></a><a><i class="fal fa-trash-alt"></i></a></div></td></tr>');
-                }
-            } else {
-                var AddList = $("#accAddressTab tbody");
-                AddList.empty();
-            }
-        },
-        error: (err) => {
-            alert("fail");
-            console.log(err);
-        }
-    });
-}
-
 function getDataAcc() {
     $.ajax({
-        url: "/Customer/getDataAcc",
+        url: "/Customer/GetDataAcc",
         method: "GET",
         success: (data) => {
 
