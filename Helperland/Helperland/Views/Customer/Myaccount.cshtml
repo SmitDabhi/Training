@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_DashLayout.cshtml";
 }
 
+
 <div class="user-name d-flex justify-content-center align-items-center">
     <h2>Welcome, <strong>@ViewBag.Uname</strong> </h2>
 </div>
@@ -13,7 +14,7 @@
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
             <div class="nav flex-column us-left-menu text-start">
-                <a class="nav-link">Dashboard</a>
+                <a class="nav-link" asp-action="Dashboard" asp-controller="Customer">Dashboard</a>
                 <a class="nav-link" asp-action="Servicerequest" asp-controller="Customer">Service History</a>
                 <a class="nav-link">Service Schedule</a>
                 <a class="nav-link">Favourite Pros</a>
@@ -23,15 +24,15 @@
             <div class="us-right-menu flex-fill" id="us-right-sideNav">
                 <div>
                     <nav class="accNav">
-                      <div class="nav" id="nav-tab" role="tablist">
+                        <div class="nav" id="nav-tab" role="tablist">
                         <button class="nav-link flex-fill active" id="nav-details-tab" data-bs-toggle="tab" data-bs-target="#nav-details" type="button" role="tab" aria-controls="nav-details" aria-selected="true">My Details</button>
                         <button class="nav-link flex-fill" id="nav-address-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-address" aria-selected="false" onclick="getAddressAcc()">My Address</button>
                         <button class="nav-link flex-fill" id="nav-pass-tab" data-bs-toggle="tab" data-bs-target="#nav-pass" type="button" role="tab" aria-controls="nav-pass" aria-selected="false">Change Password</button>
-                      </div>
+                        </div>
                     </nav>
                     <div class="tab-content" id="nav-tabAccount">
-                      <div class="tab-pane fade show active" id="nav-details" role="tabpanel" aria-labelledby="nav-details-tab">
-                          <form id="getDetailsForm">
+                        <div class="tab-pane fade show active" id="nav-details" role="tabpanel" aria-labelledby="nav-details-tab">
+                            <form id="getDetailsForm">
                             <div id="errorDataPage"></div>
                             <div class="row">
                                 <div class="col-md-4 mb-3">
@@ -65,26 +66,26 @@
                                     <button type="button" class="btnChangeSave btn" id="btnDataChangeSave">Save</button>
                                 </div>
                             </div>
-                          </form>
-                      </div>
-                      <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
-                          <table id="accAddressTab" class="table">
-                              <thead>
-                                  <tr>
-                                      <th>Addresses</th>
-                                      <th class="text-center">Action</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
+                            <table id="accAddressTab" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Addresses</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                              </tbody>
-                          </table>
-                          <div class="addNewAddressBtn">
+                                </tbody>
+                            </table>
+                            <div class="addNewAddressBtn">
                             <button type="button" class="btnChangeSave btn">Add New Address</button>
-                          </div>
-                      </div>
-                      <div class="tab-pane fade" id="nav-pass" role="tabpanel" aria-labelledby="nav-pass-tab">
-                          <form id="passChange">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-pass" role="tabpanel" aria-labelledby="nav-pass-tab">
+                            <form id="passChange">
                             <div class="" id="errorPassChange"></div>
                             <div class="row">
                                 <div class="col-12 mb-3">
@@ -103,8 +104,8 @@
                                     <button type="button" class="btnChangeSave btn" id="btnPassChangeSave">Save</button>
                                 </div>
                             </div>
-                          </form>
-                      </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,6 +113,7 @@
     </div>
 </section>
 <!-- Cust Dashboard End -->
+
 
 
 
@@ -246,17 +248,11 @@
 <!--Cancel Modal-->*@
 
 
-@section css{
-@*    <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css"
-        rel="stylesheet" type="text/css" />
-*@    
-<link href="/css/customerDash.css" rel="stylesheet" />
+@section css{    
+    <link href="/css/customerDash.css" rel="stylesheet" />
 }
 
-@section script{
-@*    <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
-      
-*@    
-        <script src="/js/CustomDate.min.js"></script>
-        <script src="/js/myaccount.js"></script>
+@section script{    
+    <script src="/js/CustomDate.min.js"></script>
+    <script src="/js/myaccount.js"></script>
 }

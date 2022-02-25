@@ -143,7 +143,7 @@ function btnCheckZip() {
                     $("#errorPostalDiv").removeClass("d-none");
                     $(".PostalError").text("We are not providing service in this area. We’ll notify you if any helper would start working near your area!");
                 }
-            }, 2000);
+            }, 1000);
         },
         error: function (err) {
             alert("Fail Error");
@@ -151,7 +151,7 @@ function btnCheckZip() {
         complete: () => {
             setTimeout(() => {
                 $(".loading-div").addClass("d-none");
-            }, 2000);
+            }, 1000);
         }
     });
 
@@ -270,7 +270,7 @@ function GetAddresses() {
                     var AddList = $(".radioAdd");
                     AddList.empty();
                 }
-            }, 2000);
+            }, 1000);
         },
         error: function (err) {
             alert("fail")
@@ -278,7 +278,7 @@ function GetAddresses() {
         complete: () => {
             setTimeout(() => {
                 $(".loading-div").addClass("d-none");
-            }, 2000);
+            }, 1000);
         }
     });
 }
@@ -333,7 +333,7 @@ function addSave() {
                     } else {
                         alert("Fail");
                     }
-                }, 2000);
+                }, 1000);
             },
             error: function (err) {
                 alert("false");
@@ -341,7 +341,7 @@ function addSave() {
             complete: () => {
                 setTimeout(() => {
                     $(".loading-div").addClass("d-none");
-                }, 2000);
+                }, 1000);
             }
         });
     }
@@ -360,7 +360,7 @@ function addressFun() {
             $(".loading-div").removeClass("d-none");
             setTimeout(() => {
                 $(".loading-div").addClass("d-none");
-            }, 2000);
+            }, 1000);
             form4();
         }
     }
@@ -421,7 +421,7 @@ function completeBook() {
                     $(".bookSuccessSmTxt").text("Service request id : " + data);
                     $("#bookSuccessModal").modal("show");
                 }
-            }, 2000);
+            }, 1000);
         },
         error: function (err) {
             console.log(err);
@@ -430,7 +430,7 @@ function completeBook() {
         complete: () => {
             setTimeout(() => {
                 $(".loading-div").addClass("d-none");
-            }, 2000);
+            }, 1000);
         }
     });
 }

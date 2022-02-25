@@ -84,6 +84,8 @@
                 } else if (data == "SamePass") {
                     $("#errorPassChange").html('<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>The new password is same as current password!</strong> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>')
                 }
+
+                $("#btnPassChangeSave").prop("disabled", true);
             },
             error: (err) => {
                 console.log(err);

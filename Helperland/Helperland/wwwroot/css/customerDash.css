@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    line-height:1.5;
 }
 textarea{
     resize:none;
@@ -73,7 +74,13 @@ button.srCancel:hover {
 .sr-tb-payment {
     text-align: center;
 }
-
+td.dataTables_empty {
+    text-align: center;
+}
+span.sp-Name-rate {
+    display: flex;
+    flex-direction: column;
+}
 /* ---ReqDetails Modal--- */
 #reqDetailsModal .modal-header {
     border-bottom: none;
@@ -398,16 +405,12 @@ a#navbarDarkDropdownMenuLink {
     color: white;
 }
 
-.us-left-menu a {
+.us-left-menu .nav-link {
+    padding: 13.5px 16px;
     width: 100%;
     color: white;
     border-bottom: 1px solid #bdbdbd8e;
     font-size: 18px;
-
-}
-
-.us-left-menu .nav-link {
-    padding: 0.85rem 1rem;
 }
 
 .us-right-menu {
@@ -690,12 +693,6 @@ table.dataTable.no-footer {
     border-radius: 17px;
 }
 
-.sh-tb-rate button:hover {
-    color: #6da9b5;
-    background-color: #FFFF;
-    border: 1px solid #6da9b5;
-}
-
 table.dataTable thead .sorting {
     background-image: url("/img/sort.png");
     background-repeat: no-repeat;
@@ -933,6 +930,7 @@ table.dataTable thead .sorting_desc {
     .sh-tb-status-cancelled {
         text-align: start;
     }
+    
 
     .firstPart {
         width: 50vw;

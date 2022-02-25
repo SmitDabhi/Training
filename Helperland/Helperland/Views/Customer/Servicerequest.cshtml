@@ -14,7 +14,7 @@
         <div class="d-flex justify-content-center">
             <div class="nav flex-column us-left-menu text-start">
                 <a class="nav-link" asp-action="Dashboard" asp-controller="Customer">Dashboard</a>
-                <a class="nav-link active">Service History</a>
+                <a class="nav-link active" >Service History</a>
                 <a class="nav-link">Service Schedule</a>
                 <a class="nav-link">Favourite Pros</a>
                 <a class="nav-link">Invoices</a>
@@ -30,7 +30,8 @@
                         <table id="shTable" class="display" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Service Details </th>
+                                    <th>Service Id</th>
+                                    <th>Service Date</th>
                                     <th>Service Provider </th>
                                     <th class="text-center">Payment </th>
                                     <th class="text-center">Status </th>
@@ -38,7 +39,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                @*<tr>
                                     <td class="sh-tb-details">
                                         <span><img src="/img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
                                         <span class="sh-tb-timing">12:00 - 18:00</span>
@@ -69,327 +70,7 @@
                                     <td class="sh-tb-rate text-center">
                                         <button>Rate SP</button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-completed">
-                                        <span>Completed</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-cancelled">
-                                        <span>Cancelled</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-completed">
-                                        <span>Completed</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-cancelled">
-                                        <span>Cancelled</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">12/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-completed">
-                                        <span>Completed</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">14/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-cancelled">
-                                        <span>Cancelled</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-completed">
-                                        <span>Completed</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-cancelled">
-                                        <span>Cancelled</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-cancelled">
-                                        <span>Cancelled</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sh-tb-details">
-                                        <span><img src="/img/calendar.png" class="me-2" alt="">31/08/2018</span><br>
-                                        <span class="sh-tb-timing">12:00 - 18:00</span>
-                                    </td>
-                                    <td class="sh-tb-provider">
-                                        <span><img src="/img/cap.png" alt=""></span>
-                                        <span class="sp-details">
-                                            <span class="sp-tb-name">Lyum Watson</span>
-                                            <span class="sp-tb-ratings">
-                                                <div class="starRating">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star1.png" alt="">
-                                                    <img src="/img/star2.png" alt="">
-                                                    <span>4</span>
-                                                </div>
-                                            </span>
-                                        </span>
-                                    </td>
-                                    <td class="sh-tb-payment">
-                                        <span>&euro;</span>
-                                        <span>63</span>
-                                    </td>
-                                    <td class="sh-tb-status-completed">
-                                        <span>Completed</span>
-                                    </td>
-                                    <td class="sh-tb-rate text-center">
-                                        <button>Rate SP</button>
-                                    </td>
-                                </tr>
+                                </tr>*@
                             </tbody>
                         </table>
                     </div>
@@ -399,6 +80,7 @@
     </div>
 </section>
 <!-- Cust Dashboard End -->
+
 
 @section css{
     <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">

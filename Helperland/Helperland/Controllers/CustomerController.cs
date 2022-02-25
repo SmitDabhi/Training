@@ -21,10 +21,18 @@ namespace Helperland.Controllers
             {
                 var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
 
-                ViewBag.IsloggedIn = "success";
-                ViewBag.Uname = req.FirstName;
-                ViewBag.UType = req.UserTypeId;
-                return View();
+                if (req.UserTypeId == 1)
+                {
+                    ViewBag.IsloggedIn = "success";
+                    ViewBag.Uname = req.FirstName;
+                    ViewBag.UType = req.UserTypeId;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.UType = 1;
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {
@@ -40,10 +48,18 @@ namespace Helperland.Controllers
             if (Uid != null)
             {
                 var req = _dbContext.Users.Where(x => x.UserId == Uid).FirstOrDefault();
-                ViewBag.IsloggedIn = "success";
-                ViewBag.Uname = req.FirstName;
-                ViewBag.UType = req.UserTypeId;
-                return View();
+                if(req.UserTypeId == 1)
+                {
+                    ViewBag.IsloggedIn = "success";
+                    ViewBag.Uname = req.FirstName;
+                    ViewBag.UType = req.UserTypeId;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.UType = 1;
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {
@@ -181,6 +197,7 @@ namespace Helperland.Controllers
                 serviceRequestAddress.State = state.StateName;
                 serviceRequestAddress.Mobile = userReq.Mobile;
                 serviceRequestAddress.ServiceRequestId = ServiceRequest.Entity.ServiceRequestId;
+                serviceRequestAddress.Email = userReq.Email;
 
                 _dbContext.ServiceRequestAddresses.Add(serviceRequestAddress);
                 _dbContext.SaveChanges();
@@ -245,11 +262,18 @@ namespace Helperland.Controllers
             if(Uid != null)
             {
                 var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
-
-                ViewBag.IsloggedIn = "success";
-                ViewBag.Uname = req.FirstName;
-                ViewBag.UType = req.UserTypeId;
-                return View();
+                if(req.UserTypeId == 1)
+                {
+                    ViewBag.IsloggedIn = "success";
+                    ViewBag.Uname = req.FirstName;
+                    ViewBag.UType = req.UserTypeId;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.UType = 1;
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {
@@ -265,14 +289,22 @@ namespace Helperland.Controllers
             {
                 var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
 
-                ViewBag.IsloggedIn = "success";
-                ViewBag.Uname = req.FirstName;
-                ViewBag.UType = req.UserTypeId;
-
-                return View();
+                if(req.UserTypeId == 1)
+                {
+                    ViewBag.IsloggedIn = "success";
+                    ViewBag.Uname = req.FirstName;
+                    ViewBag.UType = req.UserTypeId;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.UType = 1;
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {
+                ViewBag.UType = 1;
                 return RedirectToAction("Index", "Home");
             }
         }
@@ -395,6 +427,86 @@ namespace Helperland.Controllers
             _dbContext.SaveChanges();
 
             return Json("true");
+        }
+
+        [HttpGet]
+        public IActionResult GetDashData()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            List<GetDashDataVM> custDashData = new();
+
+            var ReqData = _dbContext.ServiceRequests.Where(x => x.UserId == Uid).ToList();
+
+            if(ReqData.Count > 0)
+            {
+                foreach (var item in ReqData)
+                {
+                    GetDashDataVM res = new();
+                    res.ServiceId = item.ServiceRequestId;
+                    res.ServiceDate = item.ServiceStartDate.ToString("dd/MM/yyyy");
+                    res.ServiceStartTime = item.ServiceStartDate.ToString("HH:mm");
+                    res.ServiceEndTime = item.ServiceStartDate.AddHours((double)item.SubTotal).ToString("HH:mm");
+                    res.TotalCost = item.TotalCost;
+
+                    if(item.ServiceProviderId != null)
+                    {
+                        User spData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.ServiceProviderId);
+                        res.SpName = spData.FirstName + " " + spData.LastName;
+                        decimal rating = _dbContext.Ratings.Where(x => x.RatingTo == item.ServiceProviderId).Average(x => x.Ratings);
+                        res.SpRatings = rating;
+                    }
+
+                    custDashData.Add(res);
+                }
+
+                return new JsonResult(custDashData);
+
+            }
+            else
+            {
+                return Json("notfound");
+            }
+
+        }
+
+        [HttpGet]
+        public IActionResult GetSerHistoryData()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            List<GetServiceHistoryDataVM> getSerHistoryData = new();
+
+            var reqData = _dbContext.ServiceRequests.Where(x => x.UserId == Uid).ToList();
+
+            if(reqData.Count > 0)
+            {
+                foreach (var item in reqData)
+                {
+                    GetServiceHistoryDataVM res = new();
+                    res.ServiceId = item.ServiceRequestId;
+                    res.ServiceDate = item.ServiceStartDate.ToString("dd/MM/yyyy");
+                    res.ServiceStartTime = item.ServiceStartDate.ToString("HH:mm");
+                    res.ServiceEndTime = item.ServiceStartDate.AddHours((double)item.SubTotal).ToString("HH:mm");
+                    res.TotalCost = item.TotalCost;
+                    res.Status = item.Status;
+
+                    if(item.ServiceProviderId != null)
+                    {
+                        User spData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.ServiceProviderId);
+                        res.SpName = spData.FirstName + " " + spData.LastName;
+                        decimal rating = _dbContext.Ratings.Where(x => x.RatingTo == item.ServiceProviderId).Average(x => x.Ratings);
+                        res.SpRatings = rating;
+                    }
+
+                    getSerHistoryData.Add(res);
+                }
+                return new JsonResult(getSerHistoryData);
+            }
+            else
+            {
+                return Json("notfound");
+            }
+
+
         }
     }
 }
