@@ -160,8 +160,8 @@ function getServReqData() {
                 });
             }
 
-            $("#serReqTable tbody tr").click((e) => {
-             
+            $("#serReqTable").click((e) => {
+
                 if (e.target.className == "btn srCancel") {
                     while (e.target && e.target.nodeName !== "TR") {
                         e.target = e.target.parentNode;

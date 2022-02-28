@@ -10,6 +10,11 @@
 textarea{
     resize:none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 /*   ----------Customer Dashboard----------   */
 #srBookReq {
     text-decoration: none;
@@ -266,7 +271,11 @@ span#basic-addon1 {
 .addAction a{
     text-decoration:none;
     color:#646464;
+}
+
+.addAction a i{
     cursor:pointer;
+
 }
 .addAction a:hover{
     color:#3b3b3b;
@@ -294,6 +303,68 @@ span#basic-addon1 {
     padding: 10px 10px 10px 20px;
     color: #646464;
 }
+/*Edit address Modal*/
+#addNewAddressModal .modal-header {
+    border-bottom: none;
+}
+
+#addNewAddressModal .modal-header h5 {
+    color: #646464;
+    font-size: 20px;
+}
+
+#addNewAddressModal .modal-body {
+    color: #646464;
+}
+
+#addNewAddressModal .modal-footer {
+    border-top: none;
+    justify-content: start;
+}
+#addNewAddressModal .col-md-6 {
+    margin-bottom: 10px;
+}
+#addNewAddressModal .modal-footer button {
+    width: 100%;
+    background-color: #1D7A8c;
+}
+
+/*  Delete address Modal  */
+#deleteAddressModal .modal-header {
+    border-bottom: none;
+}
+
+#deleteAddressModal .modal-header h5 {
+    color: #646464;
+    font-size: 24px;
+    font-weight:bold;
+}
+
+#deleteAddressModal .modal-content {
+    width: auto;
+}
+#deleteAddressModal .modal-body {
+    color: #646464;
+}
+#deleteAddressModal .modal-body h4{
+    font-size:16px;
+}
+
+#deleteAddressModal .modal-footer {
+    border-top: none;
+    justify-content: start;
+}
+
+#deleteAddressModal .col-md-6 {
+    margin-bottom: 10px;
+}
+
+#deleteAddressModal .modal-footer button {
+    background-color: #1D7A8c;
+    padding: 6px 20px;
+    border-radius: 23px;
+}
+
 
 
 

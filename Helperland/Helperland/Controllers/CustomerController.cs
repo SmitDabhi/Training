@@ -103,7 +103,7 @@ namespace Helperland.Controllers
             var zipCode = Convert.ToString(TempData["zipCode"]);
             TempData.Keep("zipCode");
 
-            var userAddresses = _dbContext.UserAddresses.Where(x=>x.UserId == Uid && x.PostalCode == zipCode).ToList();
+            var userAddresses = _dbContext.UserAddresses.Where(x=>x.UserId == Uid && x.PostalCode == zipCode && x.IsDeleted == false).ToList();
 
             if(userAddresses.Count > 0)
             {
@@ -116,7 +116,7 @@ namespace Helperland.Controllers
                     add.City = item.City;
                     add.Mobile = item.Mobile;
                     add.PostalCode = item.PostalCode;
-                    add.IsDefault = item.IsDefault;
+                    add.IsDeleted = item.IsDeleted;
 
                     addresses.Add(add);
                 }
@@ -357,7 +357,7 @@ namespace Helperland.Controllers
             int? Uid = HttpContext.Session.GetInt32("userid");
             List<GetAddressVM> addresses = new List<GetAddressVM>();
 
-            var userAddresses = _dbContext.UserAddresses.Where(x => x.UserId == Uid).ToList();
+            var userAddresses = _dbContext.UserAddresses.Where(x => x.UserId == Uid && x.IsDeleted == false).ToList();
 
             if (userAddresses.Count > 0)
             {
@@ -370,7 +370,7 @@ namespace Helperland.Controllers
                     add.City = item.City;
                     add.Mobile = item.Mobile;
                     add.PostalCode = item.PostalCode;
-                    add.IsDefault = item.IsDefault;
+                    add.IsDeleted = item.IsDeleted;
 
                     addresses.Add(add);
                 }
@@ -535,6 +535,66 @@ namespace Helperland.Controllers
             req.ModifiedDate = DateTime.Now;
 
             _dbContext.ServiceRequests.Update(req);
+            _dbContext.SaveChanges();
+
+            return Json("true");
+        }
+
+        [HttpPost]
+        public IActionResult AddAddressAcc(UserAddress userAdd)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                User req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+
+                userAdd.UserId = req.UserId;
+                userAdd.Email = req.Email;
+                userAdd.IsDefault = false;
+                userAdd.IsDeleted = false;
+
+                _dbContext.UserAddresses.Add(userAdd);
+                _dbContext.SaveChanges();
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult EditAddressAcc(UserAddress userAdd)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+
+            if(Uid != null)
+            {
+                User req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+
+                userAdd.UserId = req.UserId;
+                userAdd.Email = req.Email;
+
+                _dbContext.UserAddresses.Update(userAdd);
+                _dbContext.SaveChanges();
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult DeleteAddress(GetAddressVM delAdd)
+        {
+            UserAddress userAdd = _dbContext.UserAddresses.FirstOrDefault(x => x.AddressId == delAdd.Id);
+
+            userAdd.IsDeleted = true;
+
+            _dbContext.UserAddresses.Update(userAdd);
             _dbContext.SaveChanges();
 
             return Json("true");

@@ -130,28 +130,24 @@ function btnCheckZip() {
             $(".loading-div").removeClass("d-none");
         },
         success: function (data) {
-            setTimeout(function () {
-                console.log(data);
-                if (data.results == "Success") {
-                    $("#errorPostalDiv").addClass("d-none");
-                    $("#inputLocation").val(data.city);
-                    form2();
-                } else if (data.results == "Invalid") {
-                    $("#errorPostalDiv").removeClass("d-none");
-                    $(".PostalError").text("Please Enter Valid Postal Code!");
-                } else {
-                    $("#errorPostalDiv").removeClass("d-none");
-                    $(".PostalError").text("We are not providing service in this area. We’ll notify you if any helper would start working near your area!");
-                }
-            }, 1000);
+            console.log(data);
+            if (data.results == "Success") {
+                $("#errorPostalDiv").addClass("d-none");
+                $("#inputLocation").val(data.city);
+                form2();
+            } else if (data.results == "Invalid") {
+                $("#errorPostalDiv").removeClass("d-none");
+                $(".PostalError").text("Please Enter Valid Postal Code!");
+            } else {
+                $("#errorPostalDiv").removeClass("d-none");
+                $(".PostalError").text("We are not providing service in this area. We’ll notify you if any helper would start working near your area!");
+            }
         },
         error: function (err) {
             alert("Fail Error");
         },
         complete: () => {
-            setTimeout(() => {
                 $(".loading-div").addClass("d-none");
-            }, 1000);
         }
     });
 
@@ -259,26 +255,22 @@ function GetAddresses() {
             $(".loading-div").removeClass("d-none");
         },
         success: function (data) {
-            setTimeout(() => {
-                if (data != "notfound") {
-                    var AddList = $(".radioAdd");
-                    AddList.empty();
-                    for (var i = 0; i < data.length; i++) {
-                        AddList.append('<div class="selectAddress"><input type="radio" name="addressRadio" id="addressID' + data[i].id + '" value="' + data[i].id + '"><span class="addressDetails"><span class="addressRow"><strong>Address :</strong> ' + data[i].addressLine2 + ', ' + data[i].addressLine1 + ', ' + data[i].city + ', ' + data[i].postalCode + '</span><span class="phoneDetails"><strong>Phone number :</strong>' + data[i].mobile + '</span></span></div>');
-                    }
-                } else {
-                    var AddList = $(".radioAdd");
-                    AddList.empty();
+            if (data != "notfound") {
+                var AddList = $(".radioAdd");
+                AddList.empty();
+                for (var i = 0; i < data.length; i++) {
+                    AddList.append('<div class="selectAddress"><input type="radio" name="addressRadio" id="addressID' + data[i].id + '" value="' + data[i].id + '"><span class="addressDetails"><span class="addressRow"><strong>Address :</strong> ' + data[i].addressLine2 + ', ' + data[i].addressLine1 + ', ' + data[i].city + ', ' + data[i].postalCode + '</span><span class="phoneDetails"><strong>Phone number :</strong>' + data[i].mobile + '</span></span></div>');
                 }
-            }, 1000);
+            } else {
+                var AddList = $(".radioAdd");
+                AddList.empty();
+            }
         },
         error: function (err) {
             alert("fail")
         },
         complete: () => {
-            setTimeout(() => {
                 $(".loading-div").addClass("d-none");
-            }, 1000);
         }
     });
 }
@@ -322,26 +314,22 @@ function addSave() {
                 $(".loading-div").removeClass("d-none");
             },
             success: function (data) {
-                setTimeout(() => {
-                    if (data == "true") {
-                        GetAddresses();
-                        $(".addressForm").addClass("d-none");
-                        $("#errorAddNotSelected").addClass("d-none");
-                        $(".addressBtn").removeClass("d-none");
-                        ClearForm();
+                if (data == "true") {
+                    GetAddresses();
+                    $(".addressForm").addClass("d-none");
+                    $("#errorAddNotSelected").addClass("d-none");
+                    $(".addressBtn").removeClass("d-none");
+                    ClearForm();
 
-                    } else {
-                        alert("Fail");
-                    }
-                }, 1000);
+                } else {
+                    alert("Fail");
+                }
             },
             error: function (err) {
                 alert("false");
             },
             complete: () => {
-                setTimeout(() => {
                     $(".loading-div").addClass("d-none");
-                }, 1000);
             }
         });
     }
@@ -360,7 +348,7 @@ function addressFun() {
             $(".loading-div").removeClass("d-none");
             setTimeout(() => {
                 $(".loading-div").addClass("d-none");
-            }, 1000);
+            }, 500);
             form4();
         }
     }
@@ -413,24 +401,20 @@ function completeBook() {
             $(".loading-div").removeClass("d-none");
         },
         success: function (data) {
-            setTimeout(() => {
-                console.log("Success");
-                if (data == "false") {
-                    alert("False");
-                } else {
-                    $(".bookSuccessSmTxt").text("Service request id : " + data);
-                    $("#bookSuccessModal").modal("show");
-                }
-            }, 1000);
+            console.log("Success");
+            if (data == "false") {
+                alert("False");
+            } else {
+                $(".bookSuccessSmTxt").text("Service request id : " + data);
+                $("#bookSuccessModal").modal("show");
+            }
         },
         error: function (err) {
             console.log(err);
             alert("Fail");
         },
-        complete: () => {
-            setTimeout(() => {
-                $(".loading-div").addClass("d-none");
-            }, 1000);
+        complete: () => {      
+                $(".loading-div").addClass("d-none");       
         }
     });
 }
