@@ -449,12 +449,21 @@ namespace Helperland.Controllers
                     res.TotalCost = item.TotalCost;
                     res.Status = item.Status;
 
-                    if(item.ServiceProviderId != null)
+                    if (item.ServiceProviderId != null)
                     {
                         User spData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.ServiceProviderId);
                         res.SpName = spData.FirstName + " " + spData.LastName;
-                        decimal rating = _dbContext.Ratings.Where(x => x.RatingTo == item.ServiceProviderId).Average(x => x.Ratings);
-                        res.SpRatings = rating;
+                        res.SpAvtar = spData.UserProfilePicture;
+                        res.SpID = item.ServiceProviderId;
+                        var rating = _dbContext.Ratings.Where(x => x.RatingTo == item.ServiceProviderId);
+                        if (rating.Count() > 0)
+                        {
+                            res.SpRatings = Math.Round(rating.Average(x => x.Ratings), 1);
+                        }
+                        else
+                        {
+                            res.SpRatings = 0;
+                        }
                     }
 
                     custDashData.Add(res);
@@ -493,8 +502,17 @@ namespace Helperland.Controllers
                     {
                         User spData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.ServiceProviderId);
                         res.SpName = spData.FirstName + " " + spData.LastName;
-                        decimal rating = _dbContext.Ratings.Where(x => x.RatingTo == item.ServiceProviderId).Average(x => x.Ratings);
-                        res.SpRatings = rating;
+                        res.SpAvtar = spData.UserProfilePicture;
+                        res.SpID = item.ServiceProviderId;
+                        var rating = _dbContext.Ratings.Where(x => x.RatingTo == item.ServiceProviderId);
+                        if(rating.Count() > 0)
+                        {
+                            res.SpRatings = Math.Round(rating.Average(x => x.Ratings), 1);
+                        }
+                        else
+                        {
+                            res.SpRatings = 0;
+                        }
                     }
 
                     getSerHistoryData.Add(res);
@@ -520,10 +538,15 @@ namespace Helperland.Controllers
             req.Comments = service.Comments;
             req.ModifiedDate = DateTime.Now;
 
+            var obj = new
+            {
+                msg = "true",
+                id= req.ServiceRequestId
+            };
             _dbContext.ServiceRequests.Update(req);
             _dbContext.SaveChanges();
 
-            return Json("true");
+            return Json(obj);
         }
 
         [HttpPost]
@@ -598,6 +621,100 @@ namespace Helperland.Controllers
             _dbContext.SaveChanges();
 
             return Json("true");
+        }
+
+        [HttpGet]
+        public IActionResult GetReqData(int? Reqid)
+        {
+            if(Reqid != null)
+            {
+                var serviceReq = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == Reqid);
+                var serReqAdd = _dbContext.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == Reqid);
+                var serReqExtraa = _dbContext.ServiceRequestExtras.Where(x => x.ServiceRequestId == Reqid).ToList();
+
+                ServiceReqSumVM res = new();
+
+                res.ServiceId = serviceReq.ServiceRequestId;
+                res.ServiceDateTime = serviceReq.ServiceStartDate.ToString("dd/MM/yyyy")+" "+ serviceReq.ServiceStartDate.ToString("HH:mm")+"-"+ serviceReq.ServiceStartDate.AddHours((double)serviceReq.SubTotal).ToString("HH:mm");
+                res.Duration = serviceReq.SubTotal;
+                res.NetPay = serviceReq.TotalCost;
+                res.Pets = serviceReq.HasPets;
+                res.Address = serReqAdd.AddressLine1 + " " + serReqAdd.AddressLine2 + ", " + serReqAdd.PostalCode + " " + serReqAdd.City;
+                res.Phone = serReqAdd.Mobile;
+                res.Email = serReqAdd.Email;
+                res.Comment = serviceReq.Comments;
+
+
+                foreach (var item in serReqExtraa)
+                {
+                    if(item.ServiceExtraId == 1)
+                    {
+                        res.Cabinet = true;
+                    }else if (item.ServiceExtraId == 2)
+                    {
+                        res.Fridge = true;
+                    }else if (item.ServiceExtraId == 3)
+                    {
+                        res.Oven = true;
+                    }else if (item.ServiceExtraId == 4)
+                    {
+                        res.Wash = true;
+                    }else if (item.ServiceExtraId == 5)
+                    {
+                        res.Window = true;
+                    }
+                }
+
+                return new JsonResult(res);
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult RateSP(Rating rating)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                rating.RatingFrom =(int) Uid;
+                rating.RatingDate = DateTime.Now;
+                rating.Ratings = (rating.OnTimeArrival + rating.Friendly + rating.QualityOfService) / 3;
+
+                _dbContext.Ratings.Add(rating);
+                _dbContext.SaveChanges();
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetRateModalData(int reqId)
+        {
+            Rating rating = _dbContext.Ratings.FirstOrDefault(x => x.ServiceRequestId == reqId);
+
+            if (rating != null)
+            {
+                var obj = new
+                {
+                    ontime = rating.OnTimeArrival,
+                    friendly = rating.Friendly,
+                    qos = rating.QualityOfService,
+                    comment = rating.Comments
+                };
+
+                return Json(obj);
+            }
+            else
+            {
+                return Json("NoRating");
+            }
         }
     }
 }

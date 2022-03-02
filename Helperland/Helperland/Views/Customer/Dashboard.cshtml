@@ -52,9 +52,7 @@
 
 
 
-<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#reqDetailsModal">
- Reschedule
-</button>
+
 <!--Details Modal-->
 <div class="modal fade" id="reqDetailsModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
@@ -65,29 +63,30 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <span class="reqDataDate">05/01/2022 08:00-11:00</span>
-                    <span class="reqDataDuration"><strong>Duration</strong> : 3:00</span>
+                    <span class="reqDataDate"></span>
+                    <span class="reqDataDuration"></span>
                 </div>
                 <div class="row">
-                    <span class="reqDataId"><strong>Service Id</strong> : 101</span>
-                    <span class="reqDataExtra"><strong>Extras</strong> : Inside Oven</span>
+                    <span class="reqDataId"></span>
+                    <span class="reqDataExtraTitle"><strong>Extras</strong> : <span class="reqDataExtra"></span></span>
                     <span class="reqDataNetAmount"><strong>Net Amount</strong> :</span>
-                    <span class="reqDataPayment">120 &euro;</span>
+                    <span class="reqDataPayment"></span>
                 </div>
                 <div class="row">
-                    <span class="reqDataAddress"><strong>Service Address</strong> : Temp</span>
-                    <span class="reqDataPhone"><strong>Phone</strong> : 7896541230</span>
-                    <span class="reqDataEmail"><strong>Email</strong> : smit@sd.com</span>
+                    <span class="reqDataAddress"></span>
+                    <span class="reqDataPhone"></span>
+                    <span class="reqDataEmail"></span>
                 </div>
                 <div class="row">
-                    <span class="reqDataComments"><strong>Comments</strong> :</span>
+                    <span class="reqDataComments"><strong>Comments</strong> : </span>
+                    <span class="reqCommentText"></span>
                     <span class="reqDataHasPetTrue d-none"><i class="fa fa-check" aria-hidden="true"></i>I have pets at Home</span>
                     <span class="reqDataHasPetFalse"><i class="fa fa-times" aria-hidden="true"></i>I don't have pets at Home</span>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn srReschedule">Reschedule</button>
-                <button class="btn srCancel">Cancel</button>
+                <button class="btn srReschedule"><i class="fas fa-history"></i> Reschedule</button>
+                <button class="btn srCancel"><i class="fas fa-times"></i> Cancel</button>
             </div>
         </div>
     </div>
@@ -179,6 +178,27 @@
 </div>
 <!--Cancel Modal-->
 
+<!--Reschedule/Cancel Modal-->
+<div class="modal fade" id="reScheCancelSuccessModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="btn-close"></a>
+            </div>
+            <div class="modal-body">
+                <span class="reCancelSuccessImg">
+                    <i class="fas fa-check-circle fa-5x"></i>
+                </span>
+                <span class="reCancelSuccessTxt"></span>
+                <span class="reCancelSuccessSmTxt"></span>
+                <span class="reCancelSuccessModalBtn">
+                    <a>Ok</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Reschedule/Cancel Modal-->
 
 @section css{
     <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">

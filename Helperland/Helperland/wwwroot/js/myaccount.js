@@ -216,6 +216,8 @@
                         $("#deleteAddressModal").modal('show');
                     }
                 });
+
+                showAddressAcc();
             },
             error: (err) => {
                 alert("fail");
@@ -327,7 +329,7 @@
                     $("#nav-address-tab").click();
                     $("#successMsgAddForm").removeClass("d-none");
                     $("#successMsgAddForm div strong").text("Address saved successfully!");
-                    //    
+                    
                     setTimeout(()=>{
                         $("#successMsgAddForm").addClass("d-none")
                     }, 3000);
@@ -350,6 +352,7 @@
     
     getDataAcc();
 });
+var numShown = 0;
 
 function getDataAcc() {
     $.ajax({
@@ -378,4 +381,38 @@ function getDataAcc() {
         }
     });
 }
+
+function showAddressAcc() {
+
+    numShown = 5;
+
+    var $table = $('#accAddressTab').find('tbody');
+    var numRows = $table.find('tr').length;
+
+    $table.find('tr:gt(' + (numShown - 1) + ')').hide();
+
+    if (numShown > numRows) {
+        $("#shownRow").text(numRows);
+    } else {
+        $("#shownRow").text(numShown);
+    }
+    $("#totalRow").text(numRows);    
+}
+
+$("#loadMoreDataBtn").click(()=> {
+
+    numShown += 5;
+
+    var $table = $('#accAddressTab').find('tbody');
+    var numRows = $table.find('tr').length;
+
+    console.log(numShown);
+
+    if (numShown > numRows) {
+        numShown = numRows;
+    }
+
+    $("#shownRow").text(numShown);
+    $table.find('tr:lt(' + numShown + ')').show();
+});
 

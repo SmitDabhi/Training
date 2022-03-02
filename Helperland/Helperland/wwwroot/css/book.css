@@ -26,6 +26,9 @@ textarea {
 .prices-nav {
     background-color: #525252;
 }
+.prices-nav li.nav-item {
+    font-size: 16px;
+}
 .shSmallNav .container-fluid {
     display: flex;
     justify-content: space-between;

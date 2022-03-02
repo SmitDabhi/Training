@@ -57,7 +57,6 @@
             ServiceRequestId: parseInt($("#getReqId").val()),
             Comments : $("#cancelComment").val()
         };
-        console.log(obj);
 
         $.ajax({
             url: "/Customer/CancelReq",
@@ -65,8 +64,11 @@
             data: obj,
             success: (data) => {
                 console.log(data);
-                if (data == "true") {
-                    window.location.reload();
+                if (data.msg == "true") {
+                    $(".reCancelSuccessTxt").text("Your service request canceled successfully!");
+                    $(".reCancelSuccessSmTxt").text("Cancelled Request Id : " + data.id);
+                    $("#reScheCancelSuccessModal").modal("show");
+                    $("#cancelReqModal").modal("hide");
                 }
             },
             error: (err) => {
@@ -87,15 +89,24 @@
             method: "POST",
             data: obj,
             success: (data) => {
-                console.log(data);
                 if (data == "true") {
-                    window.location.reload();
+                    $(".reCancelSuccessTxt").text("Your service request reschedule successfully!");
+                    $("#reScheCancelSuccessModal").modal("show");
+                    $("#rescheduleModal").modal("hide");
                 }
             },
             error: (err) => {
                 console.log(err);
             }
         });
+    });
+    $('#reScheCancelSuccessModal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+
+    $(".reCancelSuccessModalBtn a, #reScheCancelSuccessModal .modal-header a").click(() => {
+        window.location.reload();
     });
 
     getServReqData();
@@ -107,15 +118,30 @@ function getServReqData() {
         url: "/Customer/GetDashData",
         method: "GET",
         success: (data) => {
+            console.log(data);
             if (data != "notfound") {
                 var reqDataList = $("#serReqTable tbody");
                 reqDataList.empty();
 
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].spName == null && data[i].status == null) {
-                        reqDataList.append('<tr><td class= "sr-tb-id">' + data[i].serviceId + '</td><td class="sr-tb-date"><div class="d-flex flex-column justify-content-center align-items-start"><span class="d-flex justify-content-center align-items-start"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="d-flex justify-content-center align-items-start"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start"><button class="btn srReschedule">Reschedule</button><button class="btn srCancel">Cancel</button></div></td></tr >');
+                        reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start"><button class="btn srReschedule">Reschedule</button><button class="btn srCancel">Cancel</button></div></td></tr >');
                     } else if (data[i].spName != null && data[i].status == null){
-                        reqDataList.append('<tr><td class= "sr-tb-id">' + data[i].serviceId + '</td><td class="sr-tb-date"><div class="d-flex flex-column justify-content-center align-items-start"><span class="d-flex justify-content-center align-items-start"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="d-flex justify-content-center align-items-start"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"><div class="sh-tb-provider"><span> Icon</span><span class="sp-Name-rate"><span>Name</span><span>Rating</span></span></div></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start"><button class="btn srReschedule">Reschedule</button><button class="btn srCancel">Cancel</button></div></td></tr >');
+                        reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"><div class="sh-tb-provider"><span class="spAvatar"></span><span class="sp-Name-rate"><span>' + data[i].spName + '</span><span><div class="Stars" style="--rating: ' + data[i].spRatings + ';"><span id="rateNumber">' + data[i].spRatings +'</span></span></span></div></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start"><button class="btn srReschedule">Reschedule</button><button class="btn srCancel">Cancel</button></div></td></tr >');
+                    }
+
+                    if (data[i].spAvtar == "male") {
+                        $(".spAvatar").html('<img src="/img/avatar-male.png" />');
+                    } else if (data[i].spAvtar == "female") {
+                        $(".spAvatar").html('<img src="/img/avatar-female.png" />');
+                    } else if (data[i].spAvtar == "car") {
+                        $(".spAvatar").html('<img src="/img/avatar-car.png" />');
+                    } else if (data[i].spAvtar == "hat") {
+                        $(".spAvatar").html('<img src="/img/avatar-hat.png" />');
+                    } else if (data[i].spAvtar == "ship") {
+                        $(".spAvatar").html('<img src="/img/avatar-ship.png" />');
+                    } else if (data[i].spAvtar == "iron") {
+                        $(".spAvatar").html('<img src="/img/avatar-iron.png" />');
                     }
                 }
 
@@ -161,7 +187,6 @@ function getServReqData() {
             }
 
             $("#serReqTable").click((e) => {
-
                 if (e.target.className == "btn srCancel") {
                     while (e.target && e.target.nodeName !== "TR") {
                         e.target = e.target.parentNode;
@@ -192,6 +217,83 @@ function getServReqData() {
                     $("#bookDt").val(date);
                     $("#selectBookTime").val(time)
                     $("#rescheduleModal").modal('show');
+                }
+
+                if (e.target.className == "serReqDateTimeDash" || e.target.className == "spanreqDTDash" || e.target.className == "serviceReqIdDash") {
+                    var reqId = parseInt(e.target.closest('tr').childNodes[0].textContent);
+
+                    $.ajax({
+                        url: "/Customer/GetReqData",
+                        method: "GET",
+                        data: { Reqid: reqId },
+                        success: (data) => {
+                            console.log(data);
+                            if (data != "notfound") {
+                                $(".reqDataDate").text(data.serviceDateTime);
+                                $(".reqDataDuration").html('<strong>Duration</strong> : ' + data.duration + ' Hours');
+                                $(".reqDataId").html('<strong>Service Id</strong> : ' + data.serviceId);
+                                $(".reqDataPayment").html(data.netPay + " &euro;");
+                                $(".reqDataAddress").html('<strong>Service Address</strong> : ' + data.address);
+                                $(".reqDataPhone").html('<strong>Phone</strong> : ' + data.phone);
+                                $(".reqDataEmail").html('<strong>Email</strong> : ' + data.email);
+
+                                if (data.comment != null) {
+                                    $(".reqCommentText").text(data.comment);
+                                } 
+
+                                if (data.pets) {
+                                    $(".reqDataHasPetTrue").removeClass("d-none");
+                                    $(".reqDataHasPetFalse").addClass("d-none");
+                                } else {
+                                    $(".reqDataHasPetTrue").addClass("d-none");
+                                    $(".reqDataHasPetFalse").removeClass("d-none");
+                                }
+
+                                $(".reqDataExtra").empty();
+
+                                if (data.cabinet) {
+                                    $(".reqDataExtra").append("Inside Cabinet,");
+                                }
+                                if (data.fridge) {
+                                    $(".reqDataExtra").append(" Inside Fridge,");
+                                }
+                                if (data.oven) {
+                                    $(".reqDataExtra").append(" Inside Oven,");
+                                }
+                                if (data.wash) {
+                                    $(".reqDataExtra").append(" Laundry wash & dry,");
+                                }
+                                if (data.window) {
+                                    $(".reqDataExtra").append(" Inside Windows");
+                                }
+
+                                $("#reqDetailsModal").modal('show');
+                            }
+
+                            $("#reqDetailsModal .srReschedule").click(() => {
+                                var reqId = data.serviceId;
+                                var date = data.serviceDateTime.split(" ")[0];
+                                var time = data.serviceDateTime.split(" ")[1].split("-")[0];
+                                $("#getReqIdReschedule").val(reqId);
+                                $("#bookDt").val(date);
+                                $("#selectBookTime").val(time)
+                                $("#rescheduleModal").modal('show');
+                                $("#reqDetailsModal").modal('hide');
+                            });
+
+                            $("#reqDetailsModal .srCancel").click(() => {
+                                var reqId = data.serviceId;
+                                $("#getReqId").val(reqId);
+                                $("#cancelComment").val("");
+                                $("#btnModalCancelReq").prop("disabled", true);
+                                $("#cancelReqModal").modal('show');
+                                $("#reqDetailsModal").modal('hide');
+                            });
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        }
+                    });
                 }
             });
             

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Overview";
+    ViewData["Title"] = "Service History";
     Layout = "~/Views/Shared/_DashLayout.cshtml";
 }
 
@@ -81,7 +81,115 @@
 </section>
 <!-- Cust Dashboard End -->
 
+<!--SH Details Modal-->
+<div class="modal fade" id="reqDetailsModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Service Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <span class="reqDataDate"></span>
+                    <span class="reqDataDuration"></span>
+                </div>
+                <div class="row">
+                    <span class="reqDataId"></span>
+                    <span class="reqDataExtraTitle"><strong>Extras</strong> : <span class="reqDataExtra"></span></span>
+                    <span class="reqDataNetAmount"><strong>Net Amount</strong> :</span>
+                    <span class="reqDataPayment"></span>
+                </div>
+                <div class="row">
+                    <span class="reqDataAddress"></span>
+                    <span class="reqDataPhone"></span>
+                    <span class="reqDataEmail"></span>
+                </div>
+                <div class="row">
+                    <span class="reqDataComments"><strong>Comments</strong> : </span>
+                    <span class="reqCommentText"></span>
+                    <span class="reqDataHasPetTrue d-none"><i class="fa fa-check" aria-hidden="true"></i>I have pets at Home</span>
+                    <span class="reqDataHasPetFalse"><i class="fa fa-times" aria-hidden="true"></i>I don't have pets at Home</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--SH Details Modal-->
 
+<!--Ratings Model-->
+<div class="modal fade" id="reqRatingsModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="showSPData"></div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <h4 class="rateHead">Rate your service provider</h4>
+                </div>
+                <input type="hidden" id="reqIdRateModal" />
+                <input type="hidden" id="spIdRateModal" />
+                <div class="form-group-row therating">
+                    <label class="starlabel col-4">On time arrival :</label>
+                    <div class="rating" id="time">
+                        <input id="rate-time5" name="rate-time" type="radio" value="5" class="radio-btn" />
+                        <label for="rate-time5">&#9733;</label>
+                        <input id="rate-time4" name="rate-time" type="radio" value="4" class="radio-btn" />
+                        <label for="rate-time4">&#9733;</label>
+                        <input id="rate-time3" name="rate-time" type="radio" value="3" class="radio-btn" />
+                        <label for="rate-time3">&#9733;</label>
+                        <input id="rate-time2" name="rate-time" type="radio" value="2" class="radio-btn" />
+                        <label for="rate-time2">&#9733;</label>
+                        <input id="rate-time1" name="rate-time" type="radio" value="1" class="radio-btn" />
+                        <label for="rate-time1">&#9733;</label>
+                    </div>
+                </div>
+                <div class="form-group-row therating">
+                    <label class="starlabel col-4">Friendly :</label>
+                    <div class="rating" id="frnd">
+                        <input id="rate-frnd5" name="rate-frnd" type="radio" value="5" class="radio-btn" />
+                        <label for="rate-frnd5">&#9733;</label>
+                        <input id="rate-frnd4" name="rate-frnd" type="radio" value="4" class="radio-btn" />
+                        <label for="rate-frnd4">&#9733;</label>
+                        <input id="rate-frnd3" name="rate-frnd" type="radio" value="3" class="radio-btn" />
+                        <label for="rate-frnd3">&#9733;</label>
+                        <input id="rate-frnd2" name="rate-frnd" type="radio" value="2" class="radio-btn" />
+                        <label for="rate-frnd2">&#9733;</label>
+                        <input id="rate-frnd1" name="rate-frnd" type="radio" value="1" class="radio-btn" />
+                        <label for="rate-frnd1">&#9733;</label>
+                    </div>
+                </div>
+                <div class="form-group-row therating">
+                    <label class="starlabel col-4">Quality of Service :</label>
+                    <div class="rating" id="qos">
+                        <input id="rate-QoS5" name="rate-QoS" type="radio" value="5" class="radio-btn" />
+                        <label for="rate-QoS5">&#9733;</label>
+                        <input id="rate-QoS4" name="rate-QoS" type="radio" value="4" class="radio-btn" />
+                        <label for="rate-QoS4">&#9733;</label>
+                        <input id="rate-QoS3" name="rate-QoS" type="radio" value="3" class="radio-btn" />
+                        <label for="rate-QoS3">&#9733;</label>
+                        <input id="rate-QoS2" name="rate-QoS" type="radio" value="2" class="radio-btn" />
+                        <label for="rate-QoS2">&#9733;</label>
+                        <input id="rate-QoS1" name="rate-QoS" type="radio" value="1" class="radio-btn" />
+                        <label for="rate-QoS1">&#9733;</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rate-Feedback">
+                        <label for="spFeedBack" class="form-label">Feedback on service provider</label>
+                        <textarea class="form-control" id="spFeedBack" rows="3"></textarea>
+                    </div>
+                    <div class="rate-submitBtn">
+                        <button class="btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Ratings Model-->
 @section css{
     <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
@@ -93,4 +201,5 @@
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
     <script src="/js/serviceHistory.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.2/xlsx.full.min.js"></script>
 }

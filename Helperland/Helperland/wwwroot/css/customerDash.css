@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
     margin: 0;
@@ -15,6 +15,29 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+/*  SP Star Ratings form DashBoard and SH  */
+.Stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.Stars::before {
+    content: '★★★★★';
+    background-clip: text;
+    background: linear-gradient(90deg, #fc0 var(--percent), #ccc var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#rateNumber{
+    font-size:16px;
+    padding-left:5px;
+}
+/*  SP Star Ratings form DashBoard and SH  */
+
+
 /*   ----------Customer Dashboard----------   */
 #srBookReq {
     text-decoration: none;
@@ -86,16 +109,47 @@ span.sp-Name-rate {
     display: flex;
     flex-direction: column;
 }
+.serReqDateTimeDash{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:start;
+}
+.spanreqDTDash {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.serviceReqIdDash:hover, .serReqDateTimeDash:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+.reqDataDate {
+    font-size: 22px;
+    line-height: 26px;
+    color: #4f4f4f;
+    font-weight: 700;
+}
+.reqDataDuration, .reqDataAddress, .reqDataId, .reqDataNetAmount, .reqDataPhone, .reqDataEmail, .reqDataComments, .reqDataHasPetTrue, .reqDataHasPetTrue, .reqDataHasPetFalse, .reqDataExtra, .reqDataExtraTitle {
+    font-size: 16px;
+}
+
+
+
+
 /* ---ReqDetails Modal--- */
 #reqDetailsModal .modal-header {
     border-bottom: none;
+    padding-bottom: 0;
 }
 #reqDetailsModal .modal-header h5 {
     color: #646464;
     font-size: 20px;
+    font-family: "Roboto", sans-serif;
 }
 #reqDetailsModal .modal-body {
     color: #646464;
+    padding: 0px 14px;
 }
 #reqDetailsModal .modal-footer {
     border-top: none;
@@ -115,6 +169,7 @@ span.sp-Name-rate {
     font-weight: bold;
     text-align: center;
 }
+
 .reqDataHasPetTrue i {
     background-color: #67B644;
     color: white;
@@ -128,6 +183,9 @@ span.sp-Name-rate {
     padding: 3px 5px;
     border-radius: 50%;
     margin-right: 5px;
+}
+span.reqCommentText {
+    margin-bottom: 10px;
 }
 
 /* ---Reschedule Modal---*/
@@ -191,6 +249,64 @@ span.reScheReqTitle {
     width: 100%;
     background-color: #1D7A8c;
 }
+  
+/*    reschedule and cancel modal  */
+
+#reScheCancelSuccessModal .modal-dialog {
+    justify-content: center;
+    align-items: center;
+}
+
+#reScheCancelSuccessModal .modal-content {
+    max-width: 400px;
+}
+
+#reScheCancelSuccessModal .modal-header a{
+    cursor:pointer;
+}
+
+#reScheCancelSuccessModal .modal-header {
+    border-bottom: none;
+}
+
+#reScheCancelSuccessModal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 20px;
+}
+
+i.fas.fa-check-circle {
+    color: #67b644;
+}
+
+span.reCancelSuccessTxt {
+    font-size: 22px;
+    color: #646464;
+    padding: 25px 0px;
+    text-align: center;
+}
+
+span.reCancelSuccessSmTxt {
+    padding-bottom: 20px;
+    color: #646464;
+    font-size: 16px;
+}
+
+span.reCancelSuccessModalBtn a {
+    text-decoration: none;
+    padding: 9px 20px;
+    background-color: #1D7A8C;
+    color: white !important;
+    border-radius: 23px;
+    cursor:pointer;
+}
+
+
+
+
+
 
 /*   ----------Customer Account----------   */
 nav.accNav div button {
@@ -303,6 +419,28 @@ span#basic-addon1 {
     padding: 10px 10px 10px 20px;
     color: #646464;
 }
+.addNewAddressBtn{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+#loadMoreDataBtn {
+    padding: 8px 15px;
+    background-color: transparent;
+    color: #646464;
+    border-radius: 50px;
+    border: 1px solid #646464;
+}
+#loadMoreDataBtn:hover{
+    border: 1px solid #1D7A8C;
+    color: #1D7A8C;
+}
+#rowNumbers{
+    color: #646464;
+    padding: 8px 15px;
+}
+
+
 /*Edit address Modal*/
 #addNewAddressModal .modal-header {
     border-bottom: none;
@@ -709,9 +847,10 @@ table.dataTable.no-footer {
 }
 
 .sh-tb-provider span:nth-child(1) img {
-    padding: 12px 7px;
-    border: 1px solid #aaa;
     border-radius: 50%;
+    height: 50px;
+    border: 2px solid #c8c8c8;
+    margin-right: 10px;
 }
 
 .sp-tb-name {
@@ -767,9 +906,13 @@ table.dataTable.no-footer {
     text-decoration: none;
     font-size: 14px;
     padding: 8px 9px 9px 12px;
-    background-color: #6da9b5;
-    border: 1px solid#6DA9B5;
+    background-color: #1D7A8C;
+    border: 1px solid #1D7A8C;
     border-radius: 17px;
+}
+.sh-tb-rate button:hover {
+    background-color: #146371;
+    color:white;
 }
 
 table.dataTable thead .sorting {
@@ -839,6 +982,103 @@ table.dataTable thead .sorting_desc {
     top: 37%;
     left: 28%;
 }
+/*  Ratings Modal  */
+#reqRatingsModal .modal-header {
+    border-bottom: none;
+}
+
+#reqRatingsModal .modal-footer {
+    border-top: none;
+}
+#reqRatingsModal .modal-footer button {
+    width: 100%;
+    background-color: #1D7A8c;
+}
+#reqRatingsModal .modal-body .row:nth-child(1) {
+    margin: 0px;
+    border-bottom: 1px solid #c8c8c8;
+    padding: 10px 0;
+}
+.rate-submitBtn button {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 20px;
+    background-color: #1D7A8C;
+    border: 1px solid #1D7A8C;
+    border-radius: 17px;
+}
+.rate-submitBtn button:hover{
+    background-color:#146371;
+    color:white;
+}
+.rateHead {
+    color: #646464;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0;
+}
+.rate-Feedback label{
+    color:#646464;
+}
+#reqRatingsModal .modal-body .row:nth-child(2){
+    justify-content:space-between;
+    align-items:center;
+}
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.starlabel{
+    color:#646464;
+}
+.rate-submitBtn {
+    padding: 15px 12px;
+}
+#reqRatingsModal input[type=radio] {
+    display: none;
+}
+.therating {
+    display: flex;
+    margin: 5px 0;
+    align-items: center;
+}
+.rating > label {
+    cursor: pointer;
+    color: #ccc;
+    width: 1.5rem;
+    font-size: 18px;
+}
+
+.rating>label:hover,
+.rating>label:hover~label,
+.rating>input.radio-btn:checked~label {
+    color: transparent;
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before,
+.rating>input.radio-btn:checked~label:before,
+.rating>input.radio-btn:checked~label:before {
+    content: "\2605";
+    color: #FFD700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  Media Queries  */
 @media screen and (min-width: 993px) {
     #smSerHistoryNav {
         display: none;
