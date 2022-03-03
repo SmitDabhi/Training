@@ -23,7 +23,21 @@
             <div class="us-right-menu flex-fill" id="us-right-sideNav">
                 <div>
                     <div class="content-header mb-2">
-                        <h3 class="my-auto">Service History</h3>
+                        <div class="headAndSortDiv">
+                            <h3 class="my-auto">Service History</h3>
+                            <div class="dropdown smSortingBtn">
+                                <a class="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-sort-amount-down fa-lg"></i></a>
+
+                                <ul class="dropdown-menu" id="radioSelectUl" aria-labelledby="dropdownMenuLink">
+                                <li><input type="radio" name="sortOption" id="ServiceDateOldest" value="SID:Asc">&nbsp;Service Id : Ascending </li>
+                                <li><input type="radio" name="sortOption" id="ServiceDateLatest" value="SID:Desc">&nbsp;Service Id : Descending </li>
+                                <li><input type="radio" name="sortOption" id="ServiceProviderAtoZ" value="SP:AtoZ">&nbsp;Service Provider : A to Z</li>
+                                <li><input type="radio" name="sortOption" id="ServiceProvider:ZtoA" value="SP:ZtoA">&nbsp;Service Provider : Z to A</li>
+                                <li><input type="radio" name="sortOption" id="PaymentLowtoHigh" value="Pay:L2H">&nbsp;Payment Low to High</li>
+                                <li><input type="radio" name="sortOption" id="PaymentHightoLow" value="Pay:H2L">&nbsp;Payment High to Low</li>
+                                </ul>
+                            </div>
+                        </div>
                         <button>Export</button>
                     </div>
                     <div class="customer-table">
@@ -90,27 +104,30 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <span class="reqDataDate"></span>
-                    <span class="reqDataDuration"></span>
+                <div id="serReqDetailsSH">
+                    <div class="row">
+                        <span class="reqDataDate"></span>
+                        <span class="reqDataDuration"></span>
+                    </div>
+                    <div class="row">
+                        <span class="reqDataId"></span>
+                        <span class="reqDataExtraTitle"><strong>Extras</strong> : <span class="reqDataExtra"></span></span>
+                        <span class="reqDataNetAmount"><strong>Net Amount</strong> :</span>
+                        <span class="reqDataPayment"></span>
+                    </div>
+                    <div class="row">
+                        <span class="reqDataAddress"></span>
+                        <span class="reqDataPhone"></span>
+                        <span class="reqDataEmail"></span>
+                    </div>
+                    <div class="row">
+                        <span class="reqDataComments"><strong>Comments</strong> : </span>
+                        <span class="reqCommentText"></span>
+                        <span class="reqDataHasPetTrue d-none"><i class="fa fa-check" aria-hidden="true"></i>I have pets at Home</span>
+                        <span class="reqDataHasPetFalse"><i class="fa fa-times" aria-hidden="true"></i>I don't have pets at Home</span>
+                    </div>
                 </div>
-                <div class="row">
-                    <span class="reqDataId"></span>
-                    <span class="reqDataExtraTitle"><strong>Extras</strong> : <span class="reqDataExtra"></span></span>
-                    <span class="reqDataNetAmount"><strong>Net Amount</strong> :</span>
-                    <span class="reqDataPayment"></span>
-                </div>
-                <div class="row">
-                    <span class="reqDataAddress"></span>
-                    <span class="reqDataPhone"></span>
-                    <span class="reqDataEmail"></span>
-                </div>
-                <div class="row">
-                    <span class="reqDataComments"><strong>Comments</strong> : </span>
-                    <span class="reqCommentText"></span>
-                    <span class="reqDataHasPetTrue d-none"><i class="fa fa-check" aria-hidden="true"></i>I have pets at Home</span>
-                    <span class="reqDataHasPetFalse"><i class="fa fa-times" aria-hidden="true"></i>I don't have pets at Home</span>
-                </div>
+                <div id="serReqSpDataSH" class="d-none"></div>
             </div>
         </div>
     </div>

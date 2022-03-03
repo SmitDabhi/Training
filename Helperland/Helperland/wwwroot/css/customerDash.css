@@ -26,13 +26,12 @@ input::-webkit-inner-spin-button {
 
 .Stars::before {
     content: '★★★★★';
-    background-clip: text;
     background: linear-gradient(90deg, #fc0 var(--percent), #ccc var(--percent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 #rateNumber{
-    font-size:16px;
+    font-size:14px;
     padding-left:5px;
 }
 /*  SP Star Ratings form DashBoard and SH  */
@@ -150,6 +149,7 @@ span.sp-Name-rate {
 #reqDetailsModal .modal-body {
     color: #646464;
     padding: 0px 14px;
+    display:flex;
 }
 #reqDetailsModal .modal-footer {
     border-top: none;
@@ -667,17 +667,34 @@ a#navbarDarkDropdownMenuLink {
     padding: 8px 15px;
     font-size: 14px;
     color: white;
-    background-color: #146371;
+    background-color: #1D7A8C;
     border-radius: 17px;
-    border: 1px solid #146371;
+    border: 1px solid #1D7A8C;
 }
 
 .content-header button:hover {
-    border: 1px solid #146371;
-    color: #146371;
+    border: 1px solid #1D7A8C;
+    color: #1D7A8C;
     background-color: white;
 }
+.content-header .smSortingBtn{
+    display:none;
+}
 
+ul#radioSelectUl {
+    min-width: 13rem;
+}
+
+#radioSelectUl li {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 5px;
+}
+
+#radioSelectUl li input[type=radio]{
+    accent-color:#1D7A8C;
+}
 #shTable thead {
     color: #646464;
     background-color: #F9F9F9;
@@ -844,6 +861,7 @@ table.dataTable.no-footer {
 .sh-tb-provider {
     display: flex;
     align-items: center;
+    color: #646464;
 }
 
 .sh-tb-provider span:nth-child(1) img {
@@ -897,7 +915,7 @@ table.dataTable.no-footer {
 .sh-tb-status-cancelled span {
     color: white;
     background-color: #FF6B6B;
-    padding: 5px 10px 4px 9px;
+    padding: 5px 13px 4px 12px;
     font-size: 13px;
 }
 
@@ -1065,8 +1083,12 @@ table.dataTable thead .sorting_desc {
     color: #FFD700;
 }
 
-
-
+/*  Request datalist Modal  */
+#serReqSpDataSH {
+    padding: 10px;
+    border-left: 2px solid #c8c8c8;
+    margin-bottom: 10px;
+}
 
 
 
@@ -1193,7 +1215,7 @@ table.dataTable thead .sorting_desc {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     #serReqTable thead {
         display: none;
     }
@@ -1258,6 +1280,25 @@ table.dataTable thead .sorting_desc {
     .secondPart {
         width: 50vw;
     }
+    .content-header {
+        flex-direction: column;
+    }
+    .content-header .smSortingBtn {
+        display: block;
+    }
+    .headAndSortDiv {
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    a#srBookReq {
+        margin-top: 10px;
+    }
+    .content-header .smSortingBtn a{
+        color:#646464;
+        padding-right:5px;
+    }
 }
 
 @media screen and (max-width: 482px) {
@@ -1266,5 +1307,15 @@ table.dataTable thead .sorting_desc {
     }
     #srBookReq::after {
         content: "Book";
+    }
+
+    #reqDetailsModal .modal-body{
+        flex-direction:column-reverse;
+    }
+
+    #serReqSpDataSH{
+        border-left:none;
+        border-bottom: 1px solid #c8c8c8;
+        padding:10px;
     }
 }

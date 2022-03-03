@@ -91,27 +91,13 @@ function getSerHistoryData() {
                     if (data[i].spName == null && data[i].status == 0) {
                         reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sh-tb-status-cancelled"><span>Cancelled</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start sh-tb-rate"><button class="btn" disabled>Rate SP</button></div></td></tr>')
                     } else if (data[i].spName != null && data[i].status == 0) {
-                        reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"><div class="sh-tb-provider"><span class="spAvatar"></span><span class="sp-Name-rate"><span>' + data[i].spName + '</span><span><div class="Stars" style="--rating: ' + data[i].spRatings + ';"><span id="rateNumber">' + data[i].spRatings +'</span></span></span></div></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sh-tb-status-cancelled"><span>Cancelled</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start sh-tb-rate"><button class="btn" value="' + data[i].spID +'" disabled>Rate SP</button></div></td></tr>')
+                        reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"><div class="sh-tb-provider"><span class="spAvatar"><img src="/img/avatar-'+ data[i].spAvtar +'.png" /></span><span class="sp-Name-rate"><span>' + data[i].spName + '</span><span><div class="Stars" style="--rating: ' + data[i].spRatings + ';"><span id="rateNumber">' + data[i].spRatings +'</span></span></span></div></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sh-tb-status-cancelled"><span>Cancelled</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start sh-tb-rate"><button class="btn" value="' + data[i].spID +'" disabled>Rate SP</button></div></td></tr>')
                     } else if (data[i].spName != null && data[i].status == 1) {
-                        reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"><div class="sh-tb-provider"><span class="spAvatar"></span><span class="sp-Name-rate"><span>' + data[i].spName + '</span><span><div class="Stars" style="--rating: ' + data[i].spRatings + ';"><span id="rateNumber">' + data[i].spRatings +'</span></span></span></div></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sh-tb-status-completed"><span>Completed</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start sh-tb-rate"><button class="btn rateBtnSH" value="' + data[i].spID +'">Rate SP</button></div></td></tr>')
-                    }
-
-                    if (data[i].spAvtar == "male") {
-                        $(".spAvatar").html('<img src="/img/avatar-male.png" />');
-                    } else if (data[i].spAvtar == "female") {
-                        $(".spAvatar").html('<img src="/img/avatar-female.png" />');
-                    } else if (data[i].spAvtar == "car") {
-                        $(".spAvatar").html('<img src="/img/avatar-car.png" />');
-                    } else if (data[i].spAvtar == "hat") {
-                        $(".spAvatar").html('<img src="/img/avatar-hat.png" />');
-                    } else if (data[i].spAvtar == "ship") {
-                        $(".spAvatar").html('<img src="/img/avatar-ship.png" />');
-                    } else if (data[i].spAvtar == "iron") {
-                        $(".spAvatar").html('<img src="/img/avatar-iron.png" />');
+                        reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"><div class="sh-tb-provider"><span class="spAvatar"><img src="/img/avatar-'+ data[i].spAvtar +'.png" /></span><span class="sp-Name-rate"><span>' + data[i].spName + '</span><span><div class="Stars" style="--rating: ' + data[i].spRatings + ';"><span id="rateNumber">' + data[i].spRatings +'</span></span></span></div></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sh-tb-status-completed"><span>Completed</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start sh-tb-rate"><button class="btn rateBtnSH" value="' + data[i].spID +'">Rate SP</button></div></td></tr>')
                     }
                 }
 
-                $('#shTable').DataTable({
+                var table = $('#shTable').DataTable({
                     "dom": 'Bt<"table-bottom d-flex justify-content-between"<"table-bottom-inner d-flex"li>p>',
                     "pagingType": "full_numbers",
                     "searching": false,
@@ -127,6 +113,30 @@ function getSerHistoryData() {
                             "next": '<img src="/img/Right-arrow-button.png" alt="">'
                         },
                         'info': "Total Record: _MAX_",
+                    }
+                });
+
+                $("#radioSelectUl input[type=radio]").change(() => {
+                    var checked = $("#radioSelectUl input[type=radio]:checked").val();
+
+                    if (checked == "SID:Asc") {
+                        sort(0, "asc");
+                    } else if (checked == "SID:Desc") {
+                        sort(0, "desc");
+
+                    } else if (checked == "SP:AtoZ") {
+                        sort(2, "asc");
+                    } else if (checked == "SP:ZtoA") {
+                        sort(2, "desc");
+                    } else if (checked == "Pay:L2H") {
+                        sort(3, "asc");
+                    } else if (checked == "Pay:H2L") {
+                        sort(3, "desc");
+                    }
+
+                    function sort(col, order) {
+                        console.log(col + " " + order)
+                        table.order([col, order]).draw();
                     }
                 });
                 
@@ -157,13 +167,13 @@ function getSerHistoryData() {
             $("#shTable").click((e) => {
                 if (e.target.className == "serviceReqIdDash" || e.target.className == "spanreqDTDash" || e.target.className == "serReqDateTimeDash") {
                     var reqId = parseInt(e.target.closest('tr').childNodes[0].textContent);
+                    var spDiv = $(e.target.closest('tr').childNodes[2]).html();
 
                     $.ajax({
                         url: "/Customer/GetReqData",
                         method: "GET",
                         data: { Reqid: reqId },
                         success: (data) => {
-                            console.log(data);
                             if (data != "notfound") {
                                 $(".reqDataDate").text(data.serviceDateTime);
                                 $(".reqDataDuration").html('<strong>Duration</strong> : ' + data.duration + ' Hours');
@@ -201,6 +211,13 @@ function getSerHistoryData() {
                                 }
                                 if (data.window) {
                                     $(".reqDataExtra").append(" Inside Windows");
+                                }
+
+                                if (spDiv != "") {
+                                    $("#serReqSpDataSH").html(spDiv).removeClass('d-none');
+
+                                } else {
+                                    $("#serReqSpDataSH").addClass("d-none");
                                 }
 
                                 $("#reqDetailsModal").modal('show');

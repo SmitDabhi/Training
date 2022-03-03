@@ -40,6 +40,8 @@
         $("html, body").animate({ scrollTop: 0 }, 0);
     });
 
+    
+
     if ($("#cancelComment").val() == "") {
         $("#btnModalCancelReq").prop("disabled", true);
     }
@@ -118,7 +120,6 @@ function getServReqData() {
         url: "/Customer/GetDashData",
         method: "GET",
         success: (data) => {
-            console.log(data);
             if (data != "notfound") {
                 var reqDataList = $("#serReqTable tbody");
                 reqDataList.empty();
@@ -127,25 +128,11 @@ function getServReqData() {
                     if (data[i].spName == null && data[i].status == null) {
                         reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start"><button class="btn srReschedule">Reschedule</button><button class="btn srCancel">Cancel</button></div></td></tr >');
                     } else if (data[i].spName != null && data[i].status == null){
-                        reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"><div class="sh-tb-provider"><span class="spAvatar"></span><span class="sp-Name-rate"><span>' + data[i].spName + '</span><span><div class="Stars" style="--rating: ' + data[i].spRatings + ';"><span id="rateNumber">' + data[i].spRatings +'</span></span></span></div></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start"><button class="btn srReschedule">Reschedule</button><button class="btn srCancel">Cancel</button></div></td></tr >');
-                    }
-
-                    if (data[i].spAvtar == "male") {
-                        $(".spAvatar").html('<img src="/img/avatar-male.png" />');
-                    } else if (data[i].spAvtar == "female") {
-                        $(".spAvatar").html('<img src="/img/avatar-female.png" />');
-                    } else if (data[i].spAvtar == "car") {
-                        $(".spAvatar").html('<img src="/img/avatar-car.png" />');
-                    } else if (data[i].spAvtar == "hat") {
-                        $(".spAvatar").html('<img src="/img/avatar-hat.png" />');
-                    } else if (data[i].spAvtar == "ship") {
-                        $(".spAvatar").html('<img src="/img/avatar-ship.png" />');
-                    } else if (data[i].spAvtar == "iron") {
-                        $(".spAvatar").html('<img src="/img/avatar-iron.png" />');
+                        reqDataList.append('<tr><td class= "sr-tb-id"><div class="serviceReqIdDash">' + data[i].serviceId + '</div></td><td class="sr-tb-date"><div class="serReqDateTimeDash"><span class="spanreqDTDash"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanreqDTDash"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td class="sr-tb-SP"><div class="sh-tb-provider"><span class="spAvatar"><img src="/img/avatar-' + data[i].spAvtar +'.png" /></span><span class="sp-Name-rate"><span>' + data[i].spName + '</span><span><div class="Stars" style="--rating: ' + data[i].spRatings + ';"><span id="rateNumber">' + data[i].spRatings +'</span></span></span></div></td><td class="sr-tb-payment"><span>' + data[i].totalCost + ' &euro;</span></td><td class="sr-tb-action"><div class="d-flex justify-content-center align-items-start"><button class="btn srReschedule">Reschedule</button><button class="btn srCancel">Cancel</button></div></td></tr >');
                     }
                 }
 
-                $("#serReqTable").DataTable({
+                var table = $("#serReqTable").DataTable({
                     "dom": 'Bt<"table-bottom d-flex justify-content-between"<"table-bottom-inner d-flex"li>p>',
                     "pagingType": "full_numbers",
                     "searching": false,
@@ -161,6 +148,30 @@ function getServReqData() {
                             "next": '<img src="/img/Right-arrow-button.png" alt="">'
                         },
                         'info': "Total Record: _MAX_",
+                    }
+                });
+
+                $("#radioSelectUl input[type=radio]").change(() => {
+                    var checked = $("#radioSelectUl input[type=radio]:checked").val();
+
+                    if (checked == "SID:Asc") {
+                        sort(0, "asc");
+                    } else if (checked == "SID:Desc") {
+                        sort(0, "desc");
+
+                    } else if (checked == "SP:AtoZ") {
+                        sort(2, "asc");
+                    } else if (checked == "SP:ZtoA") {
+                        sort(2, "desc");
+                    } else if (checked == "Pay:L2H") {
+                        sort(3, "asc");
+                    } else if (checked == "Pay:H2L") {
+                        sort(3, "desc");
+                    }
+
+                    function sort(col, order) {
+                        console.log(col + " " + order)
+                        table.order([col, order]).draw();
                     }
                 });
             } else {
@@ -221,6 +232,7 @@ function getServReqData() {
 
                 if (e.target.className == "serReqDateTimeDash" || e.target.className == "spanreqDTDash" || e.target.className == "serviceReqIdDash") {
                     var reqId = parseInt(e.target.closest('tr').childNodes[0].textContent);
+                    var spDiv = $(e.target.closest('tr').childNodes[2]).html();
 
                     $.ajax({
                         url: "/Customer/GetReqData",
@@ -266,6 +278,12 @@ function getServReqData() {
                                 if (data.window) {
                                     $(".reqDataExtra").append(" Inside Windows");
                                 }
+                                if (spDiv != "") {
+                                    $("#serReqSpDataSH").html(spDiv).removeClass('d-none');
+
+                                } else {
+                                    $("#serReqSpDataSH").addClass("d-none");
+                                }
 
                                 $("#reqDetailsModal").modal('show');
                             }
@@ -295,8 +313,7 @@ function getServReqData() {
                         }
                     });
                 }
-            });
-            
+            });           
         },
         error: (err) => {
             console.log(err);
