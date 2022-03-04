@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" href="/img/favicon_img.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />  
+    <link rel="stylesheet" href="/css/serviceProviderDash.css" />
+    @RenderSection("css",required:false)
+</head>
+<body>
+    <header class="us-header">
+        <nav class="serviceHistory-nav navbar navbar-expand-lg navbar-dark p-0 fixed-top " id="serHistoryNav">
+            <div class="container-fluid">
+                <a class="navbar-brand px-15" asp-action="Index" asp-controller="Home"><svg xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="73" height="54">
+                        <image width="73" height="54"
+                            xlink:href="data:img/png;base64,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" />
+                    </svg></a>
+                <div class="" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 us-nav text-center">
+                        <li class="nav-item">
+                            <a class="" asp-controller="Home" asp-action="Price">Prices & services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Warranty</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                        <li class="nav-item us-notification">
+                            <a class="m-2" href="#"><i class="fas fa-bell fa-lg"></i> <span
+                                    class="notify-badge">1</span></a>
+                        </li>
+                        <li class="nav-item dropdown us-user">
+                            <a class="" data-bs-toggle="dropdown" aria-expanded="false" id="navbarDarkDropdownMenuLink">
+                                <i class="far fa-user-circle fa-lg"></i>
+                                <i class="fas fa-angle-down fa-lg ps-2"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end text-start us-user-dropdown"
+                                aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><label class="dropdown-item text-dark">Welcome,<br><strong>@ViewBag.Uname</strong></label></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-dark" asp-controller="Serviceprovider" asp-action="Dashboard">My Dashboard</a></li>
+                                <li><a class="dropdown-item text-dark" asp-action="Myaccount" asp-controller="Serviceprovider">My Settings</a></li>
+                                <li><a class="dropdown-item text-dark" asp-controller="Login" asp-action="Logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile View Navbar Start -->
+        <nav class="shSmallNav serviceHistory-nav fixed-top" id="smSerHistoryNav">
+            <div class="container-fluid">
+                <div class="smallNavlogo">
+                    <a asp-action="Index" asp-controller="Home"><img src="/img/logo-small.png" alt=""></a>
+                </div>
+                <div class="smallNavNofitify">
+                    <a class="m-2" href="#"><i class="fas fa-bell fa-lg"></i> <span class="sm-notify-badge">1</span></a>
+                </div>
+                <div class="hamburger">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="smNavMenu d-flex">
+                    <div class="firstPart"></div>
+                    <div class="secondPart">
+                        @if (@ViewBag.IsloggedIn == "success")
+                        {
+                            <div class="uName">
+                                Welcome,<br>
+                                <strong>@ViewBag.Uname</strong>
+                            </div>
+                            <hr class="smNavSeparator">
+                            <div class="nav flex-column text-start dashNavSide">
+                                    <a asp-action="Dashboard" asp-controller="Serviceprovider">Dashboard</a>
+                                    <a>New Service Requests</a>
+                                    <a>Upcoming services</a>
+                                    <a>Service Schedule</a>
+                                    <a>Service History</a>
+                                    <a>My Ratings</a>
+                                    <a>Block Customer</a>
+                                    <a>Invoices</a>
+                                    <a>Notifications</a>
+                            </div>
+                            <div class="navItem"><a asp-action="Myaccount" asp-controller="Serviceprovider"> My Settings</a></div>
+                            <div class="navItem"><a asp-controller="Login" asp-action="Logout"> Logout</a></div>
+                            <hr class="smNavSeparator">
+                            <div class="navItem"><a asp-controller="Home" asp-action="Price">Plans & Services</a></div>
+                            <div class="navItem"><a>Warranty</a></div>
+                            <div class="navItem"><a>Blog</a></div>
+                            <div class="navItem"><a asp-controller="Home" asp-action="Contact">Contact</a></div>
+                            <hr class="smNavSeparator">
+                            <div class="d-flex justify-content-center align-items-center  socialIcon">
+                                <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+                                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                            </div>
+                        }else{
+                            <div class="navItem"><a asp-controller="Home" asp-action="Price">Plans & Services</a></div>
+                            <div class="navItem"><a>Warranty</a></div>
+                            <div class="navItem"><a>Blog</a></div>
+                            <div class="navItem"><a asp-controller="Home" asp-action="Contact">Contact</a></div>
+                            <div class="navItem"><a asp-controller="Home" asp-action="Index" asp-route-login="true">Login</a></div>
+                            <div class="navItem"><a asp-controller="Login" asp-action="BecomePro">Become a Helper</a></div>
+                            <hr class="smNavSeparator">
+                            <div class="d-flex justify-content-center align-items-center  socialIcon">
+                                <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+                                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile View Navbar End -->
+    </header>
+    <!-- Navbar End  -->
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+     <!-- Footer Start -->
+   <footer class="footer">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-lg-2 text-center p-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120"
+                        height="92">
+                        <image width="120" height="92"
+                            xlink:href="data:img/png;base64,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" />
+                    </svg>
+                </div>
+                <div class="col-lg-8 d-flex justify-content-center align-items-center">
+                    <div class="footer-navbar text-center p-4 us-footer">
+                        <a class="" asp-controller="Home" asp-action="Index">HOME</a>
+                        <a class="" asp-controller="Home" asp-action="About">ABOUT</a>
+                        <a class="" href="#">TESTIMONIALS</a>
+                        <a class="" asp-controller="Home" asp-action="Faq">FAQS</a>
+                        <a class="" href="#">INSURANCE</a>
+                        <a class="" href="#">POLICY</a>
+                        <a class="" href="#">IMPRESSUM</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 py-4 d-flex justify-content-center align-items-center">
+                    <a href="#"><img src="/img/fb.svg" alt="fb" class="px-2"></a>
+                    <a href="#"><img src="/img/insta.svg" alt="insta" class="px-2"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-lg-12 p-0">
+                    <hr class="footer-separator">
+                </div>
+            </div>
+            <div class="row text-center">
+                <p class="footer-policy"> &copy; 2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back-Home Button -->
+    <div class="home-btn" id="homebtn">
+        <a>
+            <div class="up-arrow">
+                <svg class="up-pos" xmlns="http://www.w3.org/2000/svg" width="20" height="10">
+                    <path fill-rule="evenodd" fill="#F4F5F8"
+                            d="M19.802 8.855c.132.129.197.29.197.466a.633.633 0 0 1-.197.466c-.262.653-.689.653-.951 0l-8.365-8.195L2.12 9.787c-.262.653-.689.653-.951 0a.65.65 0 0 1 0-.932L10.1.195c.172.425.599.425.861 0l8.841 8.66z" />
+                </svg>
+            </div>
+        </a>
+    </div>
+    <!-- Back-Home Button -->
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    @RenderSection("script", required:false)
+</body>
+</html>

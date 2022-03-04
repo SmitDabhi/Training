@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_SPDashLayout.cshtml";
+}
+
+<div class="user-name d-flex justify-content-center align-items-center">
+    <h2>Welcome, <strong>@ViewBag.Uname</strong> </h2>
+</div>
+
+<!-- SP Dashboard Start -->
+<section class="customer-dash">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <div class="nav flex-column us-left-menu text-start">
+                <a class="nav-link active">Dashboard</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="NewServiceRequest">New Service Requests</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="UpcomingServices">Upcoming Services</a>
+                <a class="nav-link">Service Schedule</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="ServiceHistory">Service History</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="MyRatings">My Ratings</a>
+                <a class="nav-link">Block Customer</a>
+                <a class="nav-link">Invoices</a>
+                <a class="nav-link">Notifications</a>
+            </div>
+            <div class="us-right-menu flex-fill" id="us-right-sideNav">
+                <div>
+                    <div class="content-header mb-2">
+                        Dashboard
+                    </div>
+                    <div class="customer-table">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SP Dashboard End -->

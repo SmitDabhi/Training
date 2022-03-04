@@ -63,6 +63,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnblVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Serviceprovider/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Serviceprovider/MyAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXE15QWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Serviceprovider/MyRatings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXE15UmF0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Serviceprovider/NewServiceRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXE5ld1NlcnZpY2VSZXF1ZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Serviceprovider/ServiceHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXFNlcnZpY2VIaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Serviceprovider/UpcomingServices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXFVwY29taW5nU2VydmljZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -77,6 +101,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/_SecondLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZWNvbmRMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/_SPDashLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TUERhc2hMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/_ValidationScriptsPartial.cshtml]

@@ -659,7 +659,6 @@ a#navbarDarkDropdownMenuLink {
     font-weight: bold;
     color: #646464;
     font-family: "Roboto", sans-serif;
-
 }
 
 .content-header button {
@@ -748,10 +747,6 @@ ul#radioSelectUl {
     background-color: white !important;
 }
 
-/*table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1, table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
-    background-color: white !important;
-}
-*/
 table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
     border-top: none;
 }

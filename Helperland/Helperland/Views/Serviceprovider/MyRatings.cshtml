@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "My Ratings";
+    Layout = "~/Views/Shared/_SPDashLayout.cshtml";
+}
+
+<div class="user-name d-flex justify-content-center align-items-center">
+    <h2>Welcome, <strong>@ViewBag.Uname</strong> </h2>
+</div>
+
+<!-- SP Dashboard Start -->
+<section class="customer-dash">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <div class="nav flex-column us-left-menu text-start">
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="Dashboard">Dashboard</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="NewServiceRequest">New Service Requests</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="UpcomingServices">Upcoming Services</a>
+                <a class="nav-link">Service Schedule</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="ServiceHistory">Service History</a>
+                <a class="nav-link active">My Ratings</a>
+                <a class="nav-link">Block Customer</a>
+                <a class="nav-link">Invoices</a>
+                <a class="nav-link">Notifications</a>
+            </div>
+            <div class="us-right-menu flex-fill" id="us-right-sideNav">
+                <div>
+                    <div class="content-header-RateTB mb-2">
+                        <div class="ratingSelect">
+                            <span>Rating</span>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>All</option>
+                              <option value="Excellent">Excellent</option>
+                              <option value="Very Good">Very Good</option>
+                              <option value="Good">Good</option>
+                              <option value="Poor">Poor</option>
+                              <option value="Very Poor">Very Poor</option>
+                            </select>
+                        </div>
+                        <div class="ratingSortDiv">
+                            <div class="dropdown rateSortingBtn">
+                                <a class="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Sorting <i class="fas fa-sort-amount-down fa-lg"></i></a>
+
+                                <ul class="dropdown-menu" id="radioSelectUl" aria-labelledby="dropdownMenuLink">
+                                    <li><input type="radio" name="sortOption" id="ServiceDateOldest" value="SID:Asc">&nbsp;Service Id : Ascending </li>
+                                    <li><input type="radio" name="sortOption" id="ServiceDateLatest" value="SID:Desc">&nbsp;Service Id : Descending </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spRate-table">
+                        <table id="spRateTable" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @*<tr>
+                                    <td>
+                                        <div class="spRateTBFirstpart">
+                                            <div class="spRateSerIDNameDiv">
+                                                <span class="spRateTBID">121</span>
+                                                <span class="spRateTBName">Mohit Dabhi</span>
+                                            </div>
+                                            <div class="spRateSerDateTimeDiv">
+                                                <span class="spanSPRateDTDash"><img src="/img/calendar2.png" class="me-2" />01/01/2011</span>
+                                                <span class="spanSPRateDTDash"><img src="/img/layer-14.png" class="me-2" />08:00-11:00</span>
+                                            </div>
+                                            <div class="spRateRatingsDiv">
+                                                <span class="rateDivHead">Ratings</span>
+                                                <div class="Stars" style="--rating: 4.4;"><span class="rateTDRatingTitle">Good</span></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custCommentDiv">
+                                            <span class="custCommentHead">Customer Comment</span>
+                                            <span class="custCommentRateTB">Good Work</span>
+                                        </div>
+                                    </td>
+                                </tr>*@
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SP Dashboard End -->
+
+@section css{
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+}
+
+@section script{
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="/js/spRate.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.2/xlsx.full.min.js"></script>
+}
