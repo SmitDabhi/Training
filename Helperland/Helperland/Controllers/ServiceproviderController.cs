@@ -319,5 +319,229 @@ namespace Helperland.Controllers
                 return Json("notfound");
             }
         }
+
+        [HttpPost]
+        public IActionResult PassChange(PassChangeVM passChangeVM)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            User req = _dbContext.Users.FirstOrDefault(y => y.UserId == Uid);
+
+            if (BCrypt.Net.BCrypt.Verify(passChangeVM.OldPassword, req.Password))
+            {
+                if (ModelState.IsValid)
+                {
+                    if (passChangeVM.NewPassword == passChangeVM.ConfirmPassword)
+                    {
+                        if (BCrypt.Net.BCrypt.Verify(passChangeVM.NewPassword, req.Password))
+                        {
+                            return Json("SamePass");
+                        }
+                        else
+                        {
+                            req.Password = BCrypt.Net.BCrypt.HashPassword(passChangeVM.NewPassword);
+                            req.ModifiedDate = DateTime.Now;
+                            _dbContext.Users.Update(req);
+                            _dbContext.SaveChanges();
+
+                            return Json("Success");
+                        }
+
+                    }
+                    else
+                    {
+                        return Json("PassNotMatch");
+                    }
+                }
+                else
+                {
+                    return Json("PassNotValid");
+                }
+            }
+            else
+            {
+                return Json("PassNotFound");
+            }
+        }
+        
+        [HttpGet]
+        public IActionResult GetMyAccountData()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                User data = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+                if (data != null)
+                {
+                    SPAccountDataVM res = new();
+                    res.Fname = data.FirstName;
+                    res.Lname = data.LastName;
+                    res.Email = data.Email;
+                    res.Mobile = data.Mobile;
+                    res.DOB = data.DateOfBirth;
+                    res.Nationaity = data.NationalityId;
+                    res.Gender = data.Gender;
+                    res.Avatar = data.UserProfilePicture;
+                    
+                    var addDetails = _dbContext.UserAddresses.FirstOrDefault(x => x.UserId == data.UserId);
+                    if(addDetails != null)
+                    {
+                        res.StreetName = addDetails.AddressLine1;
+                        res.HouseNo = addDetails.AddressLine2;
+                        res.PostalCode = addDetails.PostalCode;
+                        res.City = addDetails.City;
+                    }
+
+                    return new JsonResult(res);
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult UpdateSpData(SPAccountDataVM data)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                User req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+                req.FirstName = data.Fname;
+                req.LastName = data.Lname;
+                req.Email = data.Email;
+                req.Mobile = data.Mobile;
+                req.ZipCode = data.PostalCode;
+                if(data.DOB != null)
+                {
+                    req.DateOfBirth = Convert.ToDateTime(data.DOB);
+                }
+                //Nationality
+                //    1 => India
+                //    2 => US
+                //    0 => UK
+                req.NationalityId = data.Nationaity;
+                //Gender
+                //    1 => Male
+                //    2 => Female
+                //    0 => Rather not to say
+                req.Gender = data.Gender;
+                req.UserProfilePicture = data.Avatar;
+                req.ModifiedDate = DateTime.Now;
+
+                _dbContext.Users.Update(req);
+                _dbContext.SaveChanges();
+
+
+                if(_dbContext.UserAddresses.Any(x => x.UserId == Uid))
+                {
+                    UserAddress reqAdd = _dbContext.UserAddresses.FirstOrDefault(x => x.UserId == Uid);
+                    
+                    if(!_dbContext.States.Any(x => x.StateName == data.State))
+                    {
+                        State st = new();
+                        st.StateName = data.State;
+                        _dbContext.States.Add(st);
+                        _dbContext.SaveChanges();
+
+                    }
+
+                    if(!_dbContext.Cities.Any(x => x.CityName == data.City))
+                    {
+                        City ct = new();
+                        ct.CityName = data.City;
+
+                        var stateId = _dbContext.States.FirstOrDefault(x => x.StateName == data.State).Id;
+                        ct.StateId = stateId;
+
+                        _dbContext.Cities.Add(ct);
+                        _dbContext.SaveChanges();
+                    }
+
+                    Zipcode zip = _dbContext.Zipcodes.FirstOrDefault(x => x.ZipcodeValue == reqAdd.PostalCode);
+                    zip.ZipcodeValue = data.PostalCode;
+                    
+                    var cityId = _dbContext.Cities.FirstOrDefault(x => x.CityName == data.City).Id;
+                    zip.CityId = cityId;
+
+                    _dbContext.Zipcodes.Update(zip);
+                    _dbContext.SaveChanges();
+
+                    reqAdd.UserId = req.UserId;
+                    reqAdd.AddressLine1 = data.StreetName;
+                    reqAdd.AddressLine2 = data.HouseNo;
+                    reqAdd.City = data.City;
+                    if(data.State != null)
+                    {
+                        reqAdd.State = data.State;
+                    }
+                    reqAdd.PostalCode = data.PostalCode;
+                    reqAdd.IsDefault = false;
+                    reqAdd.IsDeleted = false;
+                    reqAdd.Email = data.Email;
+                    reqAdd.Mobile = data.Mobile;
+
+                    _dbContext.UserAddresses.Update(reqAdd);
+                    _dbContext.SaveChanges();
+                }
+                else
+                {
+                    UserAddress reqAdd = new();
+                    reqAdd.UserId = req.UserId;
+                    reqAdd.AddressLine1 = data.StreetName;
+                    reqAdd.AddressLine2 = data.HouseNo;
+                    reqAdd.City = data.City;
+                    reqAdd.State = data.State;
+                    reqAdd.PostalCode = data.PostalCode;
+                    reqAdd.IsDefault = false;
+                    reqAdd.IsDeleted = false;
+                    reqAdd.Email = data.Email;
+                    reqAdd.Mobile = data.Mobile;
+
+                    _dbContext.UserAddresses.Add(reqAdd);
+                    _dbContext.SaveChanges();
+
+                    if(!_dbContext.States.Any(x => x.StateName == data.State))
+                    {
+                        State st = new();
+                        st.StateName = data.State;
+                        _dbContext.States.Add(st);
+                        _dbContext.SaveChanges();
+
+                    }
+
+                    if(!_dbContext.Cities.Any(x => x.CityName == data.City))
+                    {
+                        City ct = new();
+                        ct.CityName = data.City;
+
+                        var stateId = _dbContext.States.FirstOrDefault(x => x.StateName == data.State).Id;
+                        ct.StateId = stateId;
+
+                        _dbContext.Cities.Add(ct);
+                        _dbContext.SaveChanges();
+                    }
+
+                    Zipcode zip = new();
+                    zip.ZipcodeValue = data.PostalCode;
+
+                    var cityId = _dbContext.Cities.FirstOrDefault(x => x.CityName == data.City).Id;
+                    zip.CityId = cityId;
+
+                    _dbContext.Zipcodes.Add(zip);
+                    _dbContext.SaveChanges();
+                }
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
     }
 }

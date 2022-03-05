@@ -8,6 +8,15 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
 
 /*    Navbar      */
 .serviceHistory-nav {
@@ -163,6 +172,7 @@ a#navbarDarkDropdownMenuLink {
     padding-left: 5px;
 }
 /*  SP Star Ratings  */
+
 
 /********** Service History Page **********/
 .content-header {
@@ -477,6 +487,137 @@ span.spRateTBName, .spanSPRateDTDash, .rateDivHead, .custCommentHead {
     padding: 20px;
 }
 /********** My Ratings Page **********/
+
+
+/********** My Account Page **********/
+nav.accNav div button {
+    background-color: transparent;
+    border: none;
+    color: #646464;
+    font-weight: 600;
+    border-bottom: 3px solid #d1d1d1;
+}
+nav.accNav div button:hover{
+    border-bottom: 3px solid #1d7a8c;
+    color: #1D7A8C;
+}
+
+nav.accNav div button.active{
+    border-bottom: 3px solid #1d7a8c;
+    color: #1D7A8C !important;
+}
+#nav-tabAccount{
+    margin-top:20px;
+}
+#passChange .row {
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+#passChange .row div {
+    font-weight: 600;
+    color: #646464;
+    max-width: 400px;
+}
+.btnChangeSave {
+    padding: 8px 15px;
+    background-color: #1d7a8c;
+    color: white;
+    border-radius:50px
+}
+.btnChangeSave:hover{
+    background-color:#146371;
+    color:white;
+}
+form#passChange {
+    margin-bottom: 10px;
+}
+#getDetailsForm {
+    color: #646464;
+    font-weight: 600;
+    margin: 15px 0;
+}
+.dobSelect select {
+    padding: 5px 3px;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    margin: 0 3px;
+    color: #646464;
+    flex-grow: 1;
+}
+span#basic-addon1 {
+    color: #646464;
+}
+.dobSelect select.invalid {
+    color: #E9403C;
+}
+.date-dropdowns {
+    display: flex;
+    height: 38px;
+}
+.spAccStatus span:nth-child(1){
+    font-size:20px;
+    font-weight:bold;
+    color:#646464;
+}
+#spAccountStatus {
+    color:#67b644;
+    font-size:20px;
+}
+div#spAccountHeading {
+    display: flex;
+    justify-content: space-between;
+}
+div#spBasicDetails {
+    margin-top: -45px;
+    border-bottom: 1px solid #c8c8c8;
+    margin-right: 100px;
+}
+div#spBasicDetails h3{
+    font-size:18px;
+    font-weight:bold;
+    color:#646464;
+}
+select#inputNationality {
+    color: #646464;
+}
+.genderRadio {
+    display: flex;
+    align-items: center;
+}
+.genderRadio input{
+    margin-right:5px;
+    accent-color:#1D7A8C;
+}
+.genderRadio label{
+    margin-right:10px;
+    font-weight:normal;
+}
+.avatarRadio label img {
+    height: 85px;
+    border-radius: 50%;
+    margin-right: 15px;
+    cursor:pointer;
+}
+.avatarRadio input{
+    display:none;
+}
+
+.avatarRadioOptions input:checked ~ label img {
+    border: 3px solid #1D7A8C;
+}
+h3.spAddressHead {
+    font-size: 18px;
+    font-weight: bold;
+    color: #646464;
+}
+.spAddSection {
+    border-bottom: 1px solid #c8c8c8;
+    margin-bottom: 10px;
+}
+/********** My Account Page **********/
+
+
 
 /*    Footer      */
 .footer {
