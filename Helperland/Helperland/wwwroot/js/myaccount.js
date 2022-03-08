@@ -69,6 +69,9 @@
             url: "/Customer/PassChange",
             method: "POST",
             data: obj,
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
             success: (data) => {
                 if (data == "Success") {
                     $("#inputOldPass").val("");
@@ -89,6 +92,9 @@
             },
             error: (err) => {
                 console.log(err);
+            },
+            complete: () => {
+                $(".loading-div").addClass("d-none");
             }
         });
     });
@@ -130,6 +136,9 @@
             url: "/Customer/UpdateUserData",
             method: "POST",
             data: obj,
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
             success: (data) => {
                 if (data == "true") {
                     $("#errorDataPage").html('<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>User has been updated successfully!</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
@@ -137,6 +146,9 @@
             },
             error: (err) => {
                 console.log(err);
+            },
+            complete: () => {
+                $(".loading-div").addClass("d-none");
             }
         });
     });
@@ -145,6 +157,9 @@
         $.ajax({
             method: "GET",
             url: "/Customer/GetAddressAcc",
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
             success: (data) => {
                 if (data != "notfound") {
                     var AddList = $("#accAddressTab tbody");
@@ -196,6 +211,9 @@
                                 url: "/Customer/EditAddressAcc",
                                 method: "POST",
                                 data: obj,
+                                beforeSend: () => {
+                                    $(".loading-div").removeClass("d-none");
+                                },
                                 success: (data) => {
                                     $("#addNewAddressModal").modal("hide");
                                     $("#nav-address-tab").click();
@@ -206,6 +224,9 @@
                                     }, 3000);                                },
                                 error: (err) => {
                                     console.log(err);
+                                },
+                                complete: () => {
+                                    $(".loading-div").addClass("d-none");
                                 }
                             });
                         });
@@ -222,6 +243,9 @@
             error: (err) => {
                 alert("fail");
                 console.log(err);
+            },
+            complete: () => {
+                $(".loading-div").addClass("d-none");
             }
         });
     });
@@ -235,6 +259,9 @@
             url: "/Customer/DeleteAddress",
             method: "POST",
             data: obj,
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
             success: (data) => {
                 $("#deleteAddressModal").modal("hide");
                 $("#nav-address-tab").click();
@@ -245,6 +272,9 @@
                 }, 3000);            },
             error: (err) => {
                 console.log(err);
+            },
+            complete: () => {
+                $(".loading-div").addClass("d-none");
             }
         });
     });
@@ -259,6 +289,9 @@
                 method:"GET",
                 dataType: "json",
                 cache: false,
+                beforeSend: () => {
+                    $(".loading-div").removeClass("d-none");
+                },
                 success: (data) => {
 
                     console.log(data);
@@ -273,6 +306,9 @@
                 },
                 error: (err) => {
                     console.log(err);
+                },
+                complete: () => {
+                    $(".loading-div").addClass("d-none");
                 }
 
             });
@@ -324,6 +360,9 @@
                 url: "/Customer/AddAddressAcc",
                 method: "POST",
                 data: obj,
+                beforeSend: () => {
+                    $(".loading-div").removeClass("d-none");
+                },
                 success: (data) => {
                     $("#addNewAddressModal").modal("hide");
                     $("#nav-address-tab").click();
@@ -336,6 +375,9 @@
                 },
                 error: (err) => {
                     console.log(err);
+                },
+                complete: () => {
+                    $(".loading-div").addClass("d-none");
                 }
             });
         });
@@ -359,6 +401,9 @@ function getDataAcc() {
     $.ajax({
         url: "/Customer/GetDataAcc",
         method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: (data) => {
 
             if (data != "notfound") {
@@ -379,6 +424,9 @@ function getDataAcc() {
         },
         error: (err) => {
             console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
         }
     });
 }

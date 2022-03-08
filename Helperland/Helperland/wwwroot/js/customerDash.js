@@ -64,6 +64,9 @@
             url: "/Customer/CancelReq",
             method: "POST",
             data: obj,
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
             success: (data) => {
                 console.log(data);
                 if (data.msg == "true") {
@@ -75,6 +78,9 @@
             },
             error: (err) => {
                 console.log(err);
+            },
+            complete: () => {
+                $(".loading-div").addClass("d-none");
             }
         });
     });
@@ -90,6 +96,9 @@
             url: "/Customer/RescheduleDT",
             method: "POST",
             data: obj,
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
             success: (data) => {
                 if (data == "true") {
                     $(".reCancelSuccessTxt").text("Your service request reschedule successfully!");
@@ -99,6 +108,9 @@
             },
             error: (err) => {
                 console.log(err);
+            },
+            complete: () => {
+                $(".loading-div").addClass("d-none");
             }
         });
     });
@@ -119,6 +131,9 @@ function getServReqData() {
     $.ajax({
         url: "/Customer/GetDashData",
         method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: (data) => {
             if (data != "notfound") {
                 var reqDataList = $("#serReqTable tbody");
@@ -238,6 +253,9 @@ function getServReqData() {
                         url: "/Customer/GetReqData",
                         method: "GET",
                         data: { Reqid: reqId },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
                         success: (data) => {
                             console.log(data);
                             if (data != "notfound") {
@@ -310,6 +328,9 @@ function getServReqData() {
                         },
                         error: (err) => {
                             console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
                         }
                     });
                 }
@@ -317,6 +338,28 @@ function getServReqData() {
         },
         error: (err) => {
             console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
         }
     });
 }
+
+var spanSorting = '<span class="arrow-hack sort">&nbsp;&nbsp;&nbsp;</span>',
+    spanAsc = '<span class="arrow-hack asc">&nbsp;&nbsp;&nbsp;</span>',
+    spanDesc = '<span class="arrow-hack desc">&nbsp;&nbsp;&nbsp;</span>';
+$("#serReqTable").on('click', 'th', function () {
+    $("#serReqTable thead th").each(function (i, th) {
+        $(th).find('.arrow-hack').remove();
+        var html = $(th).html();
+        if ($(th).hasClass("sorting_asc")) {
+            $(th).html(html + spanAsc);
+        } else if ($(th).hasClass("sorting_desc")) {
+            $(th).html(html + spanDesc);
+        } else {
+            $(th).html(html + spanSorting);
+        }
+    });
+});
+
+$("#serReqTable th").first().click().click();

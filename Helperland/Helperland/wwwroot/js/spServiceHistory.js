@@ -41,6 +41,9 @@ function getSerHistoryData() {
     $.ajax({
         url: "/Serviceprovider/GetSerHistoryData",
         method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: (data) => {
             console.log(data);
             if (data != "notfound") {
@@ -86,7 +89,7 @@ function getSerHistoryData() {
                 }
             });
 
-            $("#spServiceHistoryTB tbody tr").click((e) => {
+            $("#spServiceHistoryTB").click((e) => {
                 if (e.target.className == "serviceReqIdDash" || e.target.className == "spanreqDTDash" || e.target.className == "custNameSH" || e.target.className == "custAdd1SH" || e.target.className == "custAdd2SH" || e.target.className == "CustomerDataSH" || e.target.className == "CustomerDataIcon") {
                     var reqId = parseInt(e.target.closest('tr').childNodes[0].textContent);
 
@@ -94,6 +97,9 @@ function getSerHistoryData() {
                         url: "/Serviceprovider/GetServiceReqSummary",
                         method: "GET",
                         data: { Reqid: reqId },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
                         success: (data) => {
                             console.log(data);
                             if (data != "notfound") {
@@ -140,6 +146,9 @@ function getSerHistoryData() {
                         },
                         error: (err) => {
                             console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
                         }
                     });
                 }
@@ -147,6 +156,28 @@ function getSerHistoryData() {
         },
         error: (err) => {
             console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
         }
     });
 }
+
+var spanSorting = '<span class="arrow-hack sort">&nbsp;&nbsp;&nbsp;</span>',
+    spanAsc = '<span class="arrow-hack asc">&nbsp;&nbsp;&nbsp;</span>',
+    spanDesc = '<span class="arrow-hack desc">&nbsp;&nbsp;&nbsp;</span>';
+$("#spServiceHistoryTB").on('click', 'th', function () {
+    $("#spServiceHistoryTB thead th").each(function (i, th) {
+        $(th).find('.arrow-hack').remove();
+        var html = $(th).html();
+        if ($(th).hasClass("sorting_asc")) {
+            $(th).html(html + spanAsc);
+        } else if ($(th).hasClass("sorting_desc")) {
+            $(th).html(html + spanDesc);
+        } else {
+            $(th).html(html + spanSorting);
+        }
+    });
+});
+
+$("#spServiceHistoryTB th").first().click().click();

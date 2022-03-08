@@ -9,6 +9,15 @@
     <h2>Welcome, <strong>@ViewBag.Uname</strong> </h2>
 </div>
 
+<!-- Loader  -->
+<div class="loading-div d-none">
+    <div class="spinner">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+</div>
+<!-- Loader  -->
+
 <!-- Cust Dashboard Start -->
 <section class="customer-dash">
     <div class="container-fluid">
@@ -30,12 +39,12 @@
                               <a class="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-sort-amount-down fa-lg"></i></a>
 
                               <ul class="dropdown-menu" id="radioSelectUl" aria-labelledby="dropdownMenuLink">
-                                <li><input type="radio" name="sortOption" id="ServiceDateOldest" value="SID:Asc">&nbsp;Service Id : Ascending </li>
-                                <li><input type="radio" name="sortOption" id="ServiceDateLatest" value="SID:Desc">&nbsp;Service Id : Descending </li>
-                                <li><input type="radio" name="sortOption" id="ServiceProviderAtoZ" value="SP:AtoZ">&nbsp;Service Provider : A to Z</li>
-                                <li><input type="radio" name="sortOption" id="ServiceProvider:ZtoA" value="SP:ZtoA">&nbsp;Service Provider : Z to A</li>
-                                <li><input type="radio" name="sortOption" id="PaymentLowtoHigh" value="Pay:L2H">&nbsp;Payment Low to High</li>
-                                <li><input type="radio" name="sortOption" id="PaymentHightoLow" value="Pay:H2L">&nbsp;Payment High to Low</li>
+                                <li><input type="radio" name="sortOption" id="ServiceIDOldest" value="SID:Asc"><label for="ServiceIDOldest">Service Id : Ascending </label></li>
+                                <li><input type="radio" name="sortOption" id="ServiceIDLatest" value="SID:Desc"><label for="ServiceIDLatest">Service Id : Descending </label></li>
+                                <li><input type="radio" name="sortOption" id="ServiceProviderAtoZ" value="SP:AtoZ"><label for="ServiceProviderAtoZ">Service Provider : A to Z</label></li>
+                                <li><input type="radio" name="sortOption" id="ServiceProviderZtoA" value="SP:ZtoA"><label for="ServiceProviderZtoA">Service Provider : Z to A</label></li>
+                                <li><input type="radio" name="sortOption" id="PaymentLowtoHigh" value="Pay:L2H"><label for="PaymentLowtoHigh">Payment : Low to High</label></li>
+                                <li><input type="radio" name="sortOption" id="PaymentHightoLow" value="Pay:H2L"><label for="PaymentHightoLow">Payment : High to Low</label></li>
                               </ul>
                             </div>
                         </div>

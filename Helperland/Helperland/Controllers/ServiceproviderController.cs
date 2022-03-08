@@ -543,5 +543,193 @@ namespace Helperland.Controllers
                 return Json("notfound");
             }
         }
+
+        [HttpGet]
+        public IActionResult GetNewRequestData()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                List<SPServiceHistoryVM> data = new();
+                var spZip = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid).ZipCode;
+                var req = _dbContext.ServiceRequests.Where(x => x.ZipCode == spZip && x.ServiceProviderId == null && x.Status == null).ToList();
+
+                if (req.Count() > 0)
+                {
+                    foreach (var item in req)
+                    {
+                        SPServiceHistoryVM res = new();
+                        res.ServiceId = item.ServiceRequestId;
+                        res.ServiceDate = item.ServiceStartDate.ToString("dd/MM/yyyy");
+                        res.ServiceStartTime = item.ServiceStartDate.ToString("HH:mm");
+                        res.ServiceEndTime = item.ServiceStartDate.AddHours((double)item.SubTotal).ToString("HH:mm");
+                        res.Payment = item.TotalCost;
+                        res.HasPet = item.HasPets;
+
+                        var cData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.UserId);
+                        res.CustName = cData.FirstName + " " + cData.LastName;
+
+                        var AddressData = _dbContext.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == item.ServiceRequestId);
+
+                        res.AddLine1 = AddressData.AddressLine1;
+                        res.AddLine2 = AddressData.AddressLine2;
+                        res.PostalCode = AddressData.PostalCode;
+                        res.City = AddressData.City;
+
+                        data.Add(res);
+                    }
+
+                    return new JsonResult(data);
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult AcceptNewReq(int ReqId)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+
+            if (_dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ReqId).ServiceProviderId == null)
+            {
+                ServiceRequest req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ReqId);
+                req.ServiceProviderId = Uid;
+                req.SpacceptedDate = DateTime.Now;
+
+                _dbContext.ServiceRequests.Update(req);
+                _dbContext.SaveChanges();
+
+                var obj = new
+                {
+                    Msg = "Success",
+                    Id = ReqId
+                };
+
+                return Json(obj);
+            }
+            else
+            {
+                return Json("accepted");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetUpServiceData()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                List<SPServiceHistoryVM> data = new();
+                var spZip = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid).ZipCode;
+                var req = _dbContext.ServiceRequests.Where(x => x.ZipCode == spZip && x.ServiceProviderId == Uid && x.Status == null).ToList();
+
+                if (req.Count() > 0)
+                {
+                    foreach (var item in req)
+                    {
+                        SPServiceHistoryVM res = new();
+                        res.ServiceId = item.ServiceRequestId;
+                        res.ServiceDate = item.ServiceStartDate.ToString("dd/MM/yyyy");
+                        res.ServiceStartTime = item.ServiceStartDate.ToString("HH:mm");
+                        res.ServiceEndTime = item.ServiceStartDate.AddHours((double)item.SubTotal).ToString("HH:mm");
+                        res.Payment = item.TotalCost;
+                        var cData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.UserId);
+                        res.CustName = cData.FirstName + " " + cData.LastName;
+
+                        var AddressData = _dbContext.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == item.ServiceRequestId);
+
+                        res.AddLine1 = AddressData.AddressLine1;
+                        res.AddLine2 = AddressData.AddressLine2;
+                        res.PostalCode = AddressData.PostalCode;
+                        res.City = AddressData.City;
+
+                        data.Add(res);
+                    }
+
+                    return new JsonResult(data);
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult CompleteService(int ReqID)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                ServiceRequest data = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ReqID && x.ServiceProviderId == Uid);
+                if(data != null)
+                {
+                    data.Status = 1;
+
+                    _dbContext.ServiceRequests.Update(data);
+                    _dbContext.SaveChanges();
+
+                    var obj = new
+                    {
+                        msg = "true",
+                        id = data.ServiceRequestId
+                    };
+
+                    return Json(obj);
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+        
+        [HttpPost]
+        public IActionResult CancelService(int ReqID)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                ServiceRequest data = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ReqID && x.ServiceProviderId == Uid);
+                if(data != null)
+                {
+                    data.Status = 0;
+
+                    _dbContext.ServiceRequests.Update(data);
+                    _dbContext.SaveChanges();
+
+                    var obj = new
+                    {
+                        msg = "true",
+                        id = data.ServiceRequestId
+                    };
+
+                    return Json(obj);
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
     }
 }

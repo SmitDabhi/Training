@@ -84,11 +84,11 @@
                             <hr class="smNavSeparator">
                             <div class="nav flex-column text-start dashNavSide">
                                     <a asp-action="Dashboard" asp-controller="Serviceprovider">Dashboard</a>
-                                    <a>New Service Requests</a>
-                                    <a>Upcoming services</a>
+                                    <a asp-action="NewServiceRequest" asp-controller="Serviceprovider">New Service Requests</a>
+                                    <a asp-action="UpcomingServices" asp-controller="Serviceprovider">Upcoming services</a>
                                     <a>Service Schedule</a>
-                                    <a>Service History</a>
-                                    <a>My Ratings</a>
+                                    <a asp-action="ServiceHistory" asp-controller="Serviceprovider">Service History</a>
+                                    <a asp-action="MyRatings" asp-controller="Serviceprovider">My Ratings</a>
                                     <a>Block Customer</a>
                                     <a>Invoices</a>
                                     <a>Notifications</a>

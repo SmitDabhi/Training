@@ -28,6 +28,9 @@ function getRateData() {
     $.ajax({
         url: "/Serviceprovider/GetMyRatingsData",
         method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: (data) => {
             console.log(data);
             if (data != "notfound") {
@@ -81,6 +84,9 @@ function getRateData() {
         },
         error: (err) => {
             console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
         }
     });
 }

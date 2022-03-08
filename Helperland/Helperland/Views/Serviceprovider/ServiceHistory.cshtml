@@ -8,6 +8,15 @@
     <h2>Welcome, <strong>@ViewBag.Uname</strong> </h2>
 </div>
 
+<!-- Loader  -->
+<div class="loading-div d-none">
+    <div class="spinner">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+</div>
+<!-- Loader  -->
+
 <!-- SP Dashboard Start -->
 <section class="customer-dash">
     <div class="container-fluid">
@@ -32,10 +41,10 @@
                                 <a class="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-sort-amount-down fa-lg"></i></a>
 
                                 <ul class="dropdown-menu" id="radioSelectUl" aria-labelledby="dropdownMenuLink">
-                                <li><input type="radio" name="sortOption" id="ServiceDateOldest" value="SID:Asc">&nbsp;Service Id : Ascending </li>
-                                <li><input type="radio" name="sortOption" id="ServiceDateLatest" value="SID:Desc">&nbsp;Service Id : Descending </li>
-                                <li><input type="radio" name="sortOption" id="PaymentLowtoHigh" value="CUST:Asc">&nbsp;Customer:Ascending</li>
-                                <li><input type="radio" name="sortOption" id="PaymentHightoLow" value="CUST:Desc">&nbsp;Customer:Descending</li>
+                                <li><input type="radio" name="sortOption" id="ServiceIDOldest" value="SID:Asc"><label for="ServiceIDOldest">Service Id : Ascending </label></li>
+                                <li><input type="radio" name="sortOption" id="ServiceIDLatest" value="SID:Desc"><label for="ServiceIDLatest">Service Id : Descending </label></li>
+                                <li><input type="radio" name="sortOption" id="CustomerAsc" value="CUST:Asc"><label for="CustomerAsc">Customer:Ascending</label></li>
+                                <li><input type="radio" name="sortOption" id="CustomerDesc" value="CUST:Desc"><label for="CustomerDesc">Customer:Descending</label></li>
                                 </ul>
                             </div>
                         </div>

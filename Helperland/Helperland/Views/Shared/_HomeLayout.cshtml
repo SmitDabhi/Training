@@ -53,8 +53,15 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item text-dark" asp-controller="Customer" asp-action="Dashboard">My Dashboard</a></li>
-                                    <li><a class="dropdown-item text-dark" asp-action="Myaccount" asp-controller="Customer">My Settings</a></li>
+                                    @if(@ViewBag.UType == 1)
+                                    {   
+                                        <li><a class="dropdown-item text-dark" asp-controller="Customer" asp-action="Dashboard">My Dashboard</a></li>
+                                        <li><a class="dropdown-item text-dark" asp-action="Myaccount" asp-controller="Customer">My Settings</a></li> 
+                                    }else if(@ViewBag.UType == 2)
+                                    {
+                                        <li><a class="dropdown-item text-dark" asp-controller="Serviceprovider" asp-action="Dashboard">My Dashboard</a></li>
+                                        <li><a class="dropdown-item text-dark" asp-action="Myaccount" asp-controller="Serviceprovider">My Settings</a></li>
+                                    }
                                     <li><a class="dropdown-item text-dark" asp-controller="Login" asp-action="Logout">Logout</a></li>
                                 </ul>
                             </li>
@@ -108,18 +115,23 @@
                                     <a>Notifications</a>
                                 }else if(@ViewBag.UType == 2)
                                 {
-                                    <a>Dashboard</a>
-                                    <a>New Service Requests</a>
-                                    <a>Upcoming services</a>
+                                    <a asp-controller="Serviceprovider" asp-action="Dashboard">Dashboard</a>
+                                    <a asp-controller="Serviceprovider" asp-action="NewServiceRequest">New Service Requests</a>
+                                    <a asp-controller="Serviceprovider" asp-action="UpcomingServices">Upcoming services</a>
                                     <a>Service Schedule</a>
-                                    <a>Service History</a>
-                                    <a>My Ratings</a>
+                                    <a asp-controller="Serviceprovider" asp-action="ServiceHistory">Service History</a>
+                                    <a asp-controller="Serviceprovider" asp-action="MyRatings">My Ratings</a>
                                     <a>Block Customer</a>
                                     <a>Invoices</a>
                                     <a>Notifications</a>
                                 }
                             </div>
-                            <div class="navItem"><a asp-action="Myaccount" asp-controller="Customer"> My Settings</a></div>
+                            @if(@ViewBag.UType == 1){
+                                <div class="navItem"><a asp-action="Myaccount" asp-controller="Customer"> My Settings</a></div>
+                            }else if(@ViewBag.UType == 2)
+                            {
+                                <div class="navItem"><a asp-action="Myaccount" asp-controller="Serviceprovider"> My Settings</a></div>
+                            }                            
                             <div class="navItem"><a asp-controller="Login" asp-action="Logout">Logout</a></div>
                             <hr class="smNavSeparator">
                             @if (@ViewBag.UType == 1)

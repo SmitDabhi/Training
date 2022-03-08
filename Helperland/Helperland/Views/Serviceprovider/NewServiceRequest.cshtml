@@ -8,6 +8,15 @@
     <h2>Welcome, <strong>@ViewBag.Uname</strong> </h2>
 </div>
 
+<!-- Loader  -->
+<div class="loading-div d-none">
+    <div class="spinner">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+</div>
+<!-- Loader  -->
+
 <!-- SP Dashboard Start -->
 <section class="customer-dash">
     <div class="container-fluid">
@@ -25,14 +34,29 @@
             </div>
             <div class="us-right-menu flex-fill" id="us-right-sideNav">
                 <div>
-                    <div class="content-header mb-2">
+                    <div class="content-headerNewReq mb-2">
+                        <div class="sortAndHeading">
+                            <h3>New Service Requests</h3>
+                            <div class="dropdown smSortingBtn">
+                                <a class="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-sort-amount-down fa-lg"></i></a>
+
+                                <ul class="dropdown-menu" id="radioSelectUl" aria-labelledby="dropdownMenuLink">
+                                    <li><input type="radio" name="sortOption" id="serviceIdAsc" value="SID:Asc"><label for="serviceIdAsc">Service Id : Ascending </label></li>
+                                    <li><input type="radio" name="sortOption" id="serviceIdDesc" value="SID:Desc"><label for="serviceIdDesc">Service Id : Descending </label></li>
+                                    <li><input type="radio" name="sortOption" id="CustAsc" value="CUST:Asc"><label for="CustAsc">Customer:Ascending</label></li>
+                                    <li><input type="radio" name="sortOption" id="CustDesc" value="CUST:Desc"><label for="CustDesc">Customer:Descending</label></li>
+                                    <li><input type="radio" name="sortOption" id="PayAsc" value="PAY:Asc"><label for="PayAsc">Payment:Ascending</label></li>
+                                    <li><input type="radio" name="sortOption" id="PayDesc" value="PAY:Desc"><label for="PayDesc">Payment:Descending</label></li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="petCheckBtn">
-                            <input class="form-check-input" type="checkbox" value="" id="inputPetCheckBox">
+                            <input class="form-check-input" type="checkbox" value="" id="inputPetCheckBox" checked>
                             <label class="form-check-label" for="inputPetCheckBox">Include Pet at Home</label> 
                         </div>
                     </div>
                     <div class="customer-table">
-                        <table id="spServiceHistoryTB" class="display" style="width:100%">
+                        <table id="spNewRequestTB" class="display" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Serivce ID</th>
@@ -44,14 +68,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                @*<tr>
                                     <td>
                                         <div class="newReqServID">111</div>
                                     </td>
                                     <td>
                                         <div class="spRateSerDateTimeDiv">
-                                            <span class="spanSPRateDTDash"><img src="/img/calendar2.png" class="me-2" />01/01/2011</span>
-                                            <span class="spanSPRateDTDash"><img src="/img/layer-14.png" class="me-2" />08:00-11:00</span>
+                                            <span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />01/01/2011</span>
+                                            <span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />08:00-11:00</span>
                                         </div>
                                     </td>
                                     <td>
@@ -71,9 +95,9 @@
 
                                     </td>
                                     <td>
-                                        <button>Accept</button>
+                                        <button class="acceptBtn btn">Accept</button>
                                     </td>
-                                </tr>
+                                </tr>*@
                             </tbody>
                         </table>
                     </div>
@@ -84,3 +108,75 @@
 </section>
 <!-- SP Dashboard End -->
 
+<!--SH Details Modal-->
+<div class="modal fade" id="reqDetailsModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Service Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="serReqDetailsSH">
+                    <div class="row">
+                        <span class="reqDataDate"></span>
+                        <span class="reqDataDuration"></span>
+                    </div>
+                    <div class="row">
+                        <span class="reqDataId"></span>
+                        <span class="reqDataExtraTitle"><strong>Extras</strong> : <span class="reqDataExtra"></span></span>
+                        <span class="reqDataNetAmount"><strong>Net Amount</strong> :</span>
+                        <span class="reqDataPayment"></span>
+                    </div>
+                    <div class="row">
+                        <span class="reqDataAddress"></span>
+                        <span class="reqDataPhone"></span>
+                        <span class="reqDataEmail"></span>
+                    </div>
+                    <div class="row">
+                        <span class="reqDataComments"><strong>Comments</strong> : </span>
+                        <span class="reqCommentText"></span>
+                        <span class="reqDataHasPetTrue d-none"><i class="fa fa-check" aria-hidden="true"></i>I have pets at Home</span>
+                        <span class="reqDataHasPetFalse"><i class="fa fa-times" aria-hidden="true"></i>I don't have pets at Home</span>
+                    </div>
+                    <div>
+                        <button class="btn" id="acceptBtn">Accept</button>
+                    </div>
+                </div>
+                <div id="serReqSpDataSH" class="d-none"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--SH Details Modal-->
+ 
+<!--Success Modal-->
+<div class="modal fade" id="newReqSuccessModal" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <span class="newReqImg">
+                    <i class="fas fa-check-circle fa-5x"></i>
+                </span>
+                <span class="successTxt"></span>
+                <span class="successSmall"></span>
+                <span class="successBtn">
+                    <button class="btn">Ok</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Success Modal-->
+@section css{
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+}
+
+@section script{
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="/js/spNewRequest.js"></script>
+}

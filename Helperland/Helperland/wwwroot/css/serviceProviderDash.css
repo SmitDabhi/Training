@@ -93,6 +93,90 @@ a#navbarDarkDropdownMenuLink {
 }
 /*    Navbar      */
 
+/*Loading Spinner*/
+.loading-div{
+    position:fixed;
+    height:100vh;
+    width:100vw;
+    background-color:rgba(26,26,26,0.6);
+    top:0;
+    left:0;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.spinner {
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.cube1, .cube2 {
+    background-color: #1D7A8C;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+    animation: sk-cubemove 1.8s infinite ease-in-out;
+    border: 1px solid white;
+}
+
+.cube2 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+    25% {
+        -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+    }
+
+    50% {
+        -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+    }
+
+    75% {
+        -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+    }
+
+    100% {
+        -webkit-transform: rotate(-360deg)
+    }
+}
+
+@keyframes sk-cubemove {
+    25% {
+        transform: translateX(42px) rotate(-90deg) scale(0.5);
+        -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+    }
+
+    50% {
+        transform: translateX(42px) translateY(42px) rotate(-179deg);
+        -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+    }
+
+    50.1% {
+        transform: translateX(42px) translateY(42px) rotate(-180deg);
+        -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+    }
+
+    75% {
+        transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+        -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+    }
+}
+/*Loading Spinner*/
+
 /*    SP Dashboard Common Part   */
 .user-name {
     margin-top: 64px;
@@ -193,6 +277,7 @@ a#navbarDarkDropdownMenuLink {
     background-color: #1D7A8C;
     border-radius: 17px;
     border: 1px solid #1D7A8C;
+    margin-top: 10px;
 }
 .content-header button:hover {
     border: 1px solid #1D7A8C;
@@ -205,7 +290,8 @@ a#navbarDarkDropdownMenuLink {
 
 ul#radioSelectUl {
     min-width: 13rem;
-    color:#646464;
+    color: #646464;
+    inset: 0px;
 }
 
 #radioSelectUl li {
@@ -217,6 +303,10 @@ ul#radioSelectUl {
 
 #radioSelectUl li input[type=radio]{
     accent-color:#1D7A8C;
+}
+#radioSelectUl li label{
+    padding-left:5px;
+    cursor:pointer;
 }
 #spServiceHistoryTB thead {
     color: #646464;
@@ -318,7 +408,7 @@ table.dataTable.no-footer {
     border-collapse: collapse;
     margin: 15px 0;
 }
-table.dataTable thead .sorting {
+/*table.dataTable thead .sorting {
     background-image: url("/img/sort.png");
     background-repeat: no-repeat;
     background-position: right center;
@@ -330,6 +420,26 @@ table.dataTable thead .sorting_asc {
 
 table.dataTable thead .sorting_desc {
     background-image: url("/img/sort_desc.png");
+}*/
+
+span.arrow-hack {
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+.arrow-hack.sort {
+    background: url("/img/sort.png") no-repeat center right;
+}
+
+.arrow-hack.desc {
+    background: url("/img/sort_desc.png") no-repeat center right;
+}
+
+.arrow-hack.asc {
+    background: url("/img/sort_asc.png") no-repeat center right;
+}
+#spNewRequestTB thead th:nth-child(6) > span, #spUpServiceTB thead th:nth-child(6) > span {
+    display: none;
 }
 
 .table-bottom {
@@ -400,7 +510,7 @@ table.dataTable thead .sorting_desc {
 span.reqCommentText {
     margin-bottom: 10px;
 }
-.serviceReqIdDash:hover, .serReqDateTimeDash:hover, .CustomerDataSH:hover {
+.serviceReqIdDash:hover, .serReqDateTimeDash:hover, .CustomerDataSH:hover, .newReqServID:hover, .spRateSerDateTimeDiv:hover {
     cursor: pointer;
     font-weight: bold;
 }
@@ -617,6 +727,271 @@ h3.spAddressHead {
 }
 /********** My Account Page **********/
 
+/********** New Service Page **********/
+#spNewRequestTB thead {
+    color: #646464;
+    background-color: #F9F9F9;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #e1e1e1;
+}
+
+#spNewRequestTB thead th {
+    padding: 17px 20px 20px 14px;
+}
+
+#spNewRequestTB thead th img {
+    margin: -2px 0 0 8px;
+}
+
+#spNewRequestTB tbody td {
+    padding: 10px 20px 10px 14px;
+    color: #646464;
+}
+
+#spNewRequestTB tbody tr {
+    border: 1px solid #e1e1e1;
+}
+.petCheckBtn .form-check-input:checked {
+    background-color: #1D7A8C;
+    border-color: #1D7A8C;
+}
+button.acceptBtn {
+    padding: 8px 15px;
+    background-color: #1d7a8c;
+    color: white;
+    border-radius: 50px;
+    margin-top: 5px;
+}
+button.acceptBtn:hover{
+    color:white;
+    background-color:#146371;
+}
+.newReqPayment {
+    text-align: center;
+}
+.petCheckBtn label {
+    padding-left: 5px;
+    color: #646464;
+    font-size: 14px;
+}
+.dataTables_empty{
+    text-align:center;
+}
+button#acceptBtn {
+    background-color: #67b644;
+    color: white;
+    margin: 10px 5px;
+    padding: 6px 25px;
+    border-radius: 23px;
+}
+#spNewRequestTB thead th:nth-child(4), #spNewRequestTB thead th:nth-child(6), #spNewRequestTB thead th:nth-child(5), .acceptBtnDiv{
+    text-align: center;
+}
+/*Success Modal*/
+#newReqSuccessModal .modal-dialog {
+    justify-content: center;
+    align-items: center;
+}
+#newReqSuccessModal .modal-content {
+    max-width: 400px;
+}
+#newReqSuccessModal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px 20px;
+}
+i.fas.fa-check-circle {
+    color: #67b644;
+}
+span.successTxt {
+    font-size: 20px;
+    color: #646464;
+    padding: 25px 0px;
+}
+span.successBtn button {
+    text-decoration: none;
+    padding: 9px 20px;
+    background-color: #1D7A8C;
+    color: white;
+    border-radius: 23px;
+}
+span.successBtn button:hover{
+    color:white;
+    background-color:#146371;
+}
+span.successSmall {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+/*Success Modal*/
+/********** New Service Page **********/
+
+/********** Upcoming Service Page **********/
+.content-headerUSPg{
+    display:none;
+}
+.content-headerUSPg h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #646464;
+}
+.content-headerUSPg .smSortingBtn a{
+    color:#646464;
+}
+#spUpServiceTB thead {
+    color: #646464;
+    background-color: #F9F9F9;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #e1e1e1;
+}
+
+#spUpServiceTB thead th {
+    padding: 17px 20px 20px 14px;
+}
+
+#spUpServiceTB thead th img {
+    margin: -2px 0 0 8px;
+}
+
+#spUpServiceTB tbody td {
+    padding: 10px 20px 10px 14px;
+    color: #646464;
+}
+
+#spUpServiceTB tbody tr {
+    border: 1px solid #e1e1e1;
+}
+#spUpServiceTB thead th:nth-child(4), #spUpServiceTB thead th:nth-child(6), #spUpServiceTB thead th:nth-child(5), .acceptBtnDiv {
+    text-align: center;
+}
+.acceptBtnDiv .cancelBtn{
+    background-color:#fd6966;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 50px;
+    margin-top: 5px;
+}
+.acceptBtnDiv .cancelBtn:hover{
+    background-color:#f94f4b;
+}
+.acceptBtnDiv .completeBtn{
+    background-color:#1D7A8C;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 50px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.acceptBtnDiv .completeBtn:hover{
+    background-color:#146371;
+}
+.content-headerNewReq{
+    display:flex;
+    flex-direction:column;
+}
+.sortAndHeading{
+    display:none;
+}
+.sortAndHeading h3{
+    font-size: 22px;
+    font-weight: bold;
+    color: #646464;
+}
+.sortAndHeading a{
+    color: #646464;
+    padding-right: 5px;
+}
+#completeBtn {
+    background-color: #1D7A8C;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 50px;
+    margin:10px 0;
+}
+#cancelBtn i, #completeBtn i{
+    margin-right:5px;
+}
+#cancelBtn {
+    background-color: #fd6966;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 50px;
+    margin:10px 0;
+}
+#completeBtn:hover{
+    background-color:#146371;
+}
+#cancelBtn:hover{
+    background-color:#f94f4b;
+}
+#upServiceModal .modal-content {
+    width: auto;
+}
+#upServiceModal .modal-header {
+    border-bottom: none;
+}
+#upServiceModal .modal-header h5 {
+    color: #646464;
+    font-size: 24px;
+    font-weight: bold;
+}
+#upServiceModal .modal-body {
+    color: #646464;
+}
+#upServiceModal .modal-body h4 {
+    font-size: 16px;
+}
+#upServiceModal .modal-footer {
+    border-top: none;
+    justify-content: start;
+}
+#upServiceModal .modal-footer #completeReqBtn {
+    background-color: #1D7A8c;
+    padding: 6px 20px;
+    border-radius: 23px;
+    color:white;
+}
+#upServiceModal .modal-footer #completeReqBtn:hover{
+    background-color:#146371;
+}
+#upServiceModal .modal-footer #cancelReqBtn {
+    background-color: #fd6966;
+    padding: 6px 20px;
+    border-radius: 23px;
+    color:white;
+}
+#upServiceModal .modal-footer #cancelReqBtn:hover{
+    background-color:#f94f4b;
+}
+/*Success Modal*/
+#upSerSuccessModal .modal-dialog {
+    justify-content: center;
+    align-items: center;
+}
+#upSerSuccessModal .modal-content {
+    max-width: 400px;
+}
+#upSerSuccessModal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px 20px;
+}
+#upSerSuccessModal .successSmall {
+    color:#646464;
+}
+#upSerSuccessModal .successTxtUS {
+    font-size: 19px;
+    color: #646464;
+    padding: 25px 0px;
+}
+/*Success Modal*/
+/********** Upcoming Service Page **********/
 
 
 /*    Footer      */
@@ -703,6 +1078,10 @@ h3.spAddressHead {
         padding: 5px;
     }
     div#spRateTable_paginate {
+        text-align: end;
+        padding: 5px;
+    }
+    div#spUpServiceTB_paginate {
         text-align: end;
         padding: 5px;
     }
@@ -797,6 +1176,14 @@ h3.spAddressHead {
         text-align: center;
         padding: 5px;
     }
+    div#spNewRequestTB_paginate {
+        text-align: center;
+        padding: 5px;
+    }
+    div#spUpServiceTB_paginate {
+        text-align: center;
+        padding: 5px;
+    }
     #spServiceHistoryTB thead {
         display: none;
     }
@@ -814,8 +1201,46 @@ h3.spAddressHead {
     #spServiceHistoryTB td {
         display: block;
         border: 1px solid #e1e1e1;
-    }    
+    }
+    #spUpServiceTB thead {
+        display: none;
+    }
 
+    #spUpServiceTB tbody {
+        display: grid;
+    }
+
+    #spUpServiceTB tbody tr {
+        border: 1px solid #8d8d8d;
+        margin-bottom: 15px;
+        box-shadow: 3px 3px #8888;
+    }
+
+    #spUpServiceTB td {
+        display: block;
+        border: 1px solid #e1e1e1;
+    }
+    #spNewRequestTB thead {
+        display: none;
+    }
+
+    #spNewRequestTB tbody {
+        display: grid;
+    }
+
+    #spNewRequestTB tbody tr {
+        border: 1px solid #8d8d8d;
+        margin-bottom: 15px;
+        box-shadow: 3px 3px #8888;
+    }
+
+    #spNewRequestTB td {
+        display: block;
+        border: 1px solid #e1e1e1;
+    }
+    .acceptBtnDiv {
+        text-align: center;
+    }
     .firstPart {
         width: 50vw;
     }
@@ -841,5 +1266,17 @@ h3.spAddressHead {
     .content-header .smSortingBtn a{
         color:#646464;
         padding-right:5px;
+    }
+    .content-headerUSPg {
+        display: flex;
+        justify-content:space-between;
+    }
+    .sortAndHeading {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .petCheckBtn{
+        text-align:center;
     }
 }

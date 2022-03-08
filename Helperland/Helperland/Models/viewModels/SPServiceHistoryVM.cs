@@ -11,5 +11,7 @@
         public string? AddLine2 { get; set; }
         public string? PostalCode { get; set; }
         public string? City { get; set; }
+        public decimal? Payment { get; set; }
+        public bool? HasPet { get; set; }
     }
 }

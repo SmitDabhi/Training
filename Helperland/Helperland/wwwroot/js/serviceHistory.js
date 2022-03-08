@@ -64,11 +64,17 @@ $(document).ready( function () {
             url: "/Customer/RateSP",
             method: "POST",
             data: obj,
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
             success: (data) => {
                 window.location.reload();
             },
             error: (err) => {
                 console.log(err);
+            },
+            complete: () => {
+                $(".loading-div").addClass("d-none");
             }
         });
     });
@@ -80,6 +86,9 @@ function getSerHistoryData() {
     $.ajax({
         url: "/Customer/GetSerHistoryData",
         method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: (data) => {
 
             if (data != "notfound") {
@@ -173,6 +182,9 @@ function getSerHistoryData() {
                         url: "/Customer/GetReqData",
                         method: "GET",
                         data: { Reqid: reqId },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
                         success: (data) => {
                             if (data != "notfound") {
                                 $(".reqDataDate").text(data.serviceDateTime);
@@ -225,6 +237,9 @@ function getSerHistoryData() {
                         },
                         error: (err) => {
                             console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
                         }
                     });
 
@@ -238,7 +253,10 @@ function getSerHistoryData() {
                     $.ajax({
                         url: "/Customer/GetRateModalData",
                         method: "GET",
-                        data: { reqId : reqId },
+                        data: { reqId: reqId },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
                         success: (data) => {
                             if (data == "NoRating") {
                                 $(".rate-submitBtn").removeClass("d-none");
@@ -268,6 +286,9 @@ function getSerHistoryData() {
                         },
                         error: (err) => {
                             console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
                         }
                     });
 
@@ -276,6 +297,28 @@ function getSerHistoryData() {
         },
         error: (err) => {
             console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
         }
     });
 }
+
+var spanSorting = '<span class="arrow-hack sort">&nbsp;&nbsp;&nbsp;</span>',
+    spanAsc = '<span class="arrow-hack asc">&nbsp;&nbsp;&nbsp;</span>',
+    spanDesc = '<span class="arrow-hack desc">&nbsp;&nbsp;&nbsp;</span>';
+$("#shTable").on('click', 'th', function () {
+    $("#shTable thead th").each(function (i, th) {
+        $(th).find('.arrow-hack').remove();
+        var html = $(th).html();
+        if ($(th).hasClass("sorting_asc")) {
+            $(th).html(html + spanAsc);
+        } else if ($(th).hasClass("sorting_desc")) {
+            $(th).html(html + spanDesc);
+        } else {
+            $(th).html(html + spanSorting);
+        }
+    });
+});
+
+$("#shTable th").first().click().click();

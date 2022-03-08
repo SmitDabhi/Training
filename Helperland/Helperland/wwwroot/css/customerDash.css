@@ -36,6 +36,89 @@ input::-webkit-inner-spin-button {
 }
 /*  SP Star Ratings form DashBoard and SH  */
 
+/*Loading Spinner*/
+.loading-div{
+    position:fixed;
+    height:100vh;
+    width:100vw;
+    background-color:rgba(26,26,26,0.6);
+    top:0;
+    left:0;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.spinner {
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.cube1, .cube2 {
+    background-color: #1D7A8C;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+    animation: sk-cubemove 1.8s infinite ease-in-out;
+    border: 1px solid white;
+}
+
+.cube2 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+    25% {
+        -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+    }
+
+    50% {
+        -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+    }
+
+    75% {
+        -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+    }
+
+    100% {
+        -webkit-transform: rotate(-360deg)
+    }
+}
+
+@keyframes sk-cubemove {
+    25% {
+        transform: translateX(42px) rotate(-90deg) scale(0.5);
+        -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+    }
+
+    50% {
+        transform: translateX(42px) translateY(42px) rotate(-179deg);
+        -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+    }
+
+    50.1% {
+        transform: translateX(42px) translateY(42px) rotate(-180deg);
+        -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+    }
+
+    75% {
+        transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+        -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+    }
+}
+/*Loading Spinner*/
 
 /*   ----------Customer Dashboard----------   */
 #srBookReq {
@@ -132,7 +215,34 @@ span.sp-Name-rate {
 .reqDataDuration, .reqDataAddress, .reqDataId, .reqDataNetAmount, .reqDataPhone, .reqDataEmail, .reqDataComments, .reqDataHasPetTrue, .reqDataHasPetTrue, .reqDataHasPetFalse, .reqDataExtra, .reqDataExtraTitle {
     font-size: 16px;
 }
+span.arrow-hack {
+    margin-left: 5px;
+    padding-left: 5px;
+}
 
+.arrow-hack.sort {
+    background: url("/img/sort.png") no-repeat center right;
+}
+
+.arrow-hack.desc {
+    background: url("/img/sort_desc.png") no-repeat center right;
+}
+
+.arrow-hack.asc {
+    background: url("/img/sort_asc.png") no-repeat center right;
+}
+#serReqTable thead th:nth-child(5) > span, #shTable thead th:nth-child(6) > span {
+    display: none;
+}
+ul#radioSelectUl {
+    min-width: 13rem;
+    color: #646464;
+    inset: 0px;
+}
+#radioSelectUl li label {
+    padding-left: 5px;
+    cursor: pointer;
+}
 
 
 
@@ -928,7 +1038,7 @@ table.dataTable.no-footer {
     color:white;
 }
 
-table.dataTable thead .sorting {
+/*table.dataTable thead .sorting {
     background-image: url("/img/sort.png");
     background-repeat: no-repeat;
     background-position: right center;
@@ -940,7 +1050,7 @@ table.dataTable thead .sorting_asc {
 
 table.dataTable thead .sorting_desc {
     background-image: url("/img/sort_desc.png");
-}
+}*/
 
 .table-bottom {
     margin-top: 10px;

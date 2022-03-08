@@ -53,6 +53,9 @@
             url: "/Customer/PassChange",
             method: "POST",
             data: obj,
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
             success: (data) => {
                 if (data == "Success") {
                     $("#inputOldPass").val("");
@@ -73,6 +76,9 @@
             },
             error: (err) => {
                 console.log(err);
+            },
+            complete: () => {
+                $(".loading-div").addClass("d-none");
             }
         });
     });
@@ -92,6 +98,9 @@
                 method: "GET",
                 dataType: "json",
                 cache: false,
+                beforeSend: () => {
+                    $(".loading-div").removeClass("d-none");
+                },
                 success: (data) => {
 
                     console.log(data);
@@ -105,6 +114,9 @@
                 },
                 error: (err) => {
                     console.log(err);
+                },
+                complete: () => {
+                    $(".loading-div").addClass("d-none");
                 }
 
             });
@@ -162,6 +174,9 @@
                 url: "/Serviceprovider/UpdateSpData",
                 method: "POST",
                 data: obj,
+                beforeSend: () => {
+                    $(".loading-div").removeClass("d-none");
+                },
                 success: (data) => {
                     console.log(data);
                     if (data == "true") {
@@ -173,6 +188,9 @@
                 },
                 error: (err) => {
                     console.log(err);
+                },
+                complete: () => {
+                    $(".loading-div").addClass("d-none");
                 }
             });
         }
@@ -185,6 +203,9 @@ function getAccData() {
     $.ajax({
         url: "/Serviceprovider/GetMyAccountData",
         method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: (data) => {
             if (data != "notfound") {
                 $("#inputFname").val(data.fname);
@@ -230,6 +251,9 @@ function getAccData() {
         },
         error: (err) => {
             console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
         }
     });
 }

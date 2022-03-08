@@ -691,6 +691,7 @@ input#inputLocation {
     color: #4F4F4F;
 }
 
+/*Loading Spinner*/
 .loading-div{
     position:fixed;
     height:100vh;
@@ -772,6 +773,7 @@ input#inputLocation {
         -webkit-transform: rotate(-360deg);
     }
 }
+/*Loading Spinner*/
 
 @media screen and (min-width: 993px) {
     #smHomeNav {
