@@ -25,11 +25,22 @@
             </div>
             <div class="us-right-menu flex-fill" id="us-right-sideNav">
                 <div>
-                    <div class="content-header mb-2">
-                        Dashboard
-                    </div>
-                    <div class="customer-table">
-                        
+                    <div class="custDashboard">
+                        <div class="newServTab">
+                            <span class="newServCount">0</span>
+                            <span class="tabTitle">New Service Requests</span>
+                            <a id="newSerBtn" class="btn viewAllBtn" asp-controller="Serviceprovider" asp-action="NewServiceRequest">View All</a>
+                        </div>
+                        <div class="upServTab">
+                            <span class="upServCount">0</span>
+                            <span class="tabTitle">Upcoming Services</span>
+                            <a id="upSerBtn" class="btn viewAllBtn" asp-controller="Serviceprovider" asp-action="UpcomingServices">View All</a>
+                        </div>
+                        <div class="compServTab">
+                            <span class="compServCount">0</span>
+                            <span class="tabTitle">Completed Services</span>
+                            <a id="compSerBtn" class="btn viewAllBtn" asp-controller="Serviceprovider" asp-action="ServiceHistory">View All</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,3 +48,7 @@
     </div>
 </section>
 <!-- SP Dashboard End -->
+
+@section script{
+    <script src="/js/spDash.js"></script>
+}

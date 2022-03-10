@@ -24,7 +24,6 @@
     $(".content-header button").click(() => {
 
         var data = document.getElementById("spServiceHistoryTB");
-        console.log(data);
 
         var file = XLSX.utils.table_to_book(data, { sheet: "sheet1" });
 
@@ -45,7 +44,6 @@ function getSerHistoryData() {
             $(".loading-div").removeClass("d-none");
         },
         success: (data) => {
-            console.log(data);
             if (data != "notfound") {
                 var AddList = $("#spServiceHistoryTB tbody");
                 AddList.empty();
@@ -84,7 +82,6 @@ function getSerHistoryData() {
                 }
 
                 function sort(col, order) {
-                    console.log(col + " " + order)
                     table.order([col, order]).draw();
                 }
             });

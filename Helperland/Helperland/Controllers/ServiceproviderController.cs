@@ -767,5 +767,31 @@ namespace Helperland.Controllers
                 return Json("notfound");
             }
         }
+
+        [HttpGet]
+        public IActionResult GetCount()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                var spZip = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid).ZipCode;
+                var newService = _dbContext.ServiceRequests.Where(x => x.ZipCode == spZip && x.ServiceProviderId == null && x.Status == null).ToList().Count();
+                var upService = _dbContext.ServiceRequests.Where(x => x.ZipCode == spZip && x.ServiceProviderId == Uid && x.Status == null).ToList().Count();
+                var compService = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == Uid && x.Status == 1).ToList().Count();
+
+                var obj = new
+                {
+                    NewSer = newService,
+                    UpSer = upService,
+                    compSer = compService
+                };
+
+                return Json(obj);
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
     }
 }

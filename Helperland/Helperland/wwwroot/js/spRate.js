@@ -32,7 +32,6 @@ function getRateData() {
             $(".loading-div").removeClass("d-none");
         },
         success: (data) => {
-            console.log(data);
             if (data != "notfound") {
                 var DataList = $("#spRateTable tbody");
                 DataList.empty();
@@ -75,7 +74,6 @@ function getRateData() {
                     }
 
                     function sort(col, order) {
-                        console.log(col + " " + order)
                         table.order([col, order]).draw();
                     }
                 });

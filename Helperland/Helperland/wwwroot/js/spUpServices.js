@@ -50,7 +50,6 @@
                     $(".loading-div").removeClass("d-none");
                 },
                 success: (data) => {
-                    console.log(data);
 
                     if (data != "notfound") {
                         $(".successTxtUS").text("Service Request Completed Successfully!");
@@ -90,7 +89,6 @@
                     $(".loading-div").removeClass("d-none");
                 },
                 success: (data) => {
-                    console.log(data);
 
                     if (data != "notfound") {
                         $(".successTxtUS").text("Service Request Cancelled Successfully!");
@@ -120,9 +118,7 @@ function getServiceData() {
         beforeSend: () => {
             $(".loading-div").removeClass("d-none");
         },
-        success: (data) => {
-            console.log(data);
-            
+        success: (data) => {            
 
             if (data != "notfound") {
                 var DataList = $("#spUpServiceTB tbody");
@@ -177,7 +173,6 @@ function getServiceData() {
                 }
 
                 function sort(col, order) {
-                    console.log(col + " " + order)
                     table.order([col, order]).draw();
                 }
             });
@@ -282,7 +277,6 @@ function getServiceData() {
                                 $(".loading-div").removeClass("d-none");
                             },
                             success: (data) => {
-                                console.log(data);
 
                                 if (data != "notfound") {
                                     $(".successTxtUS").text("Service Request Completed Successfully!");
@@ -321,7 +315,6 @@ function getServiceData() {
                                 $(".loading-div").removeClass("d-none");
                             },
                             success: (data) => {
-                                console.log(data);
 
                                 if (data != "notfound") {
                                     $(".successTxtUS").text("Service Request Cancelled Successfully!");
@@ -374,7 +367,6 @@ var map = L.map('map');
 
 function showMap(pin) {
 
-    console.log(pin)
     $.ajax({
         "async": true,
         "crossDomain": true,

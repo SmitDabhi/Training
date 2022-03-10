@@ -41,7 +41,6 @@ function getNewReqData() {
             $(".loading-div").removeClass("d-none");
         },
         success: (data) => {
-            console.log(data);
             if (data != "notfound") {
                 var DataList = $("#spNewRequestTB tbody");
                 DataList.empty();
@@ -100,7 +99,6 @@ function getNewReqData() {
                 }
 
                 function sort(col, order) {
-                    console.log(col + " " + order)
                     table.order([col, order]).draw();
                 }
             });
@@ -128,7 +126,6 @@ function getNewReqData() {
                             $(".loading-div").removeClass("d-none");
                         },
                         success: (data) => {
-                            console.log(data)
                             if (data != "notfound") {
                                 $(".reqDataDate").text(data.serviceDateTime);
                                 $(".reqDataDuration").html('<strong>Duration</strong> : ' + data.duration + ' Hours');
@@ -193,8 +190,6 @@ function getNewReqData() {
                 if (e.target.className == "acceptBtn btn") {
                     var reqId = parseInt(e.target.closest('tr').childNodes[0].textContent);
 
-                    console.log(reqId);
-
                     $.ajax({
                         url: "/Serviceprovider/AcceptNewReq",
                         method: "POST",
@@ -203,7 +198,6 @@ function getNewReqData() {
                             $(".loading-div").removeClass("d-none");
                         },
                         success: (data) => {
-                            console.log(data);
                             if (data != "accepted") {
                                 $(".newReqImg").show();
                                 $(".successTxt").show().text("Service Request Accepted Successfully!");
@@ -317,7 +311,6 @@ $("#acceptBtn").click(() => {
         method: "POST",
         data: { ReqId: id },
         success: (data) => {
-            console.log(data);
             if (data != "accepted") {
                 $("#reqDetailsModal").modal('hide');
                 $(".newReqImg").show();
@@ -361,7 +354,6 @@ var map = L.map('map');
 
 function showMap(pin) {
 
-    console.log(pin)
     $.ajax({
         "async": true,
         "crossDomain": true,

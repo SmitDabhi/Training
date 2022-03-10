@@ -1027,6 +1027,74 @@ span.successSmall {
 /*Success Modal*/
 /********** Upcoming Service Page **********/
 
+/********** Dashboard Page **********/
+.custDashboard {
+    display: flex;
+    justify-content: space-around;
+}
+.newServTab, .upServTab, .compServTab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.viewAllBtn{
+    background-color:white;
+    border:1px solid #1D7A8C;
+    color:#1D7A8C;
+    border-radius:50px;
+}
+.viewAllBtn:hover{
+    background-color:#1D7A8C;
+    color:white;
+}
+span.tabTitle {
+    color: #646464;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+span.newServCount {
+    font-size: 44px;
+    font-weight: bold;
+    background-color: #1fb6ff;
+    color: white;
+    height: 100px;
+    border-radius: 50%;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom:10px;
+}
+span.upServCount {
+    font-size: 44px;
+    font-weight: bold;
+    background-color: #2cc896;
+    color: white;
+    height: 100px;
+    border-radius: 50%;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+span.compServCount {
+    font-size: 44px;
+    font-weight: bold;
+    background-color: #fd6966;
+    color: white;
+    height: 100px;
+    border-radius: 50%;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+/********** Dashboard Page **********/
 
 /*    Footer      */
 .footer {
@@ -1321,5 +1389,9 @@ span.successSmall {
         height: 200px;
         z-index: 100;
         margin: 15px 0;
+    }
+    .custDashboard {
+        flex-direction:column;
+
     }
 }

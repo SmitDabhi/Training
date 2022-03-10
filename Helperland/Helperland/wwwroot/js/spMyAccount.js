@@ -103,9 +103,7 @@
                 },
                 success: (data) => {
 
-                    console.log(data);
                     if (data[0].Status == "Error") {
-                        console.log("err");
                         $("#errorDataPage").html('<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Please Enter Valid Postal Code!</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
                     } else if (data[0].Status == "Success") {
                         $("#inputCity").val(data[0].PostOffice[0].District);
@@ -168,7 +166,6 @@
             if ($("#inputDOB").val() != "") {
                 obj.DOB = $("#inputDOB").val();
             }
-            console.log(obj)
 
             $.ajax({
                 url: "/Serviceprovider/UpdateSpData",
@@ -178,7 +175,6 @@
                     $(".loading-div").removeClass("d-none");
                 },
                 success: (data) => {
-                    console.log(data);
                     if (data == "true") {
                         $("#errorDataPage").html('<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>User has been updated successfully!</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
                         setTimeout(() => {
