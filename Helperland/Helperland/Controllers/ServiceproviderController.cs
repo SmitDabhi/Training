@@ -576,6 +576,42 @@ namespace Helperland.Controllers
                         res.PostalCode = AddressData.PostalCode;
                         res.City = AddressData.City;
 
+                        var check = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == Uid && x.Status == null).ToList();
+
+                        if (check.Count() > 0)
+                        {
+                            foreach (var i in check)
+                            {
+                                var newSerStartDT = item.ServiceStartDate;
+                                var newSerEndDT = item.ServiceStartDate.AddHours((double)item.SubTotal);
+                                var accSerStartDT = i.ServiceStartDate;
+                                var accSerEndDT = i.ServiceStartDate.AddHours((double)i.SubTotal+1);
+                                
+                                if(newSerStartDT >= accSerStartDT && newSerStartDT <= accSerEndDT)
+                                {
+                                    res.ConflictId = i.ServiceRequestId;
+                                    break;
+                                }else if (newSerEndDT >= accSerStartDT && newSerEndDT <= accSerEndDT)
+                                {
+                                    res.ConflictId = i.ServiceRequestId;
+                                    break;
+                                }else if(newSerStartDT < accSerStartDT && newSerEndDT > accSerEndDT)
+                                {
+                                    res.ConflictId = i.ServiceRequestId;
+                                    break;
+                                }
+                                else
+                                {
+                                    res.ConflictId = null;
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            res.ConflictId = null;
+                        }
+
                         data.Add(res);
                     }
 

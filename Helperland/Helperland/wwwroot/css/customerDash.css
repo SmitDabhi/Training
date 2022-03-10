@@ -529,10 +529,11 @@ span#basic-addon1 {
     padding: 10px 10px 10px 20px;
     color: #646464;
 }
-.addNewAddressBtn{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.addNewAddressBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 #loadMoreDataBtn {
     padding: 8px 15px;
@@ -1412,6 +1413,12 @@ table.dataTable thead .sorting_desc {
     }
     #srBookReq::after {
         content: "Book";
+    }
+    #addNewAddress span {
+        display: none;
+    }
+    #addNewAddress::after {
+        content: "Add";
     }
 
     #reqDetailsModal .modal-body{

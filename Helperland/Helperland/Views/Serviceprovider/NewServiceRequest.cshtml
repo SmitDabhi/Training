@@ -129,9 +129,8 @@
                         <span class="reqDataPayment"></span>
                     </div>
                     <div class="row">
+                        <span class="reqDataCName"></span>
                         <span class="reqDataAddress"></span>
-                        <span class="reqDataPhone"></span>
-                        <span class="reqDataEmail"></span>
                     </div>
                     <div class="row">
                         <span class="reqDataComments"><strong>Comments</strong> : </span>
@@ -143,7 +142,9 @@
                         <button class="btn" id="acceptBtn">Accept</button>
                     </div>
                 </div>
-                <div id="serReqSpDataSH" class="d-none"></div>
+                <div id="reqDataMapDiv">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -172,11 +173,17 @@
     <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
 }
 
 @section script{
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
     <script src="/js/spNewRequest.js"></script>
 }

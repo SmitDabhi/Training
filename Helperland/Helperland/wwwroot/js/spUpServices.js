@@ -186,6 +186,8 @@ function getServiceData() {
                 if (e.target.className == "newReqServID" || e.target.className == "spanSPNewReqDT" || e.target.className == "custNameSH" || e.target.className == "custAdd1SH" || e.target.className == "custAdd2SH" || e.target.className == "CustomerDataSH" || e.target.className == "CustomerDataIcon") {
                     var reqId = parseInt(e.target.closest('tr').childNodes[0].textContent);
 
+                    var custName = e.target.closest('tr').childNodes[2].childNodes[0].childNodes[1].childNodes[0].textContent;
+
                     $.ajax({
                         url: "/Serviceprovider/GetServiceReqSummary",
                         method: "GET",
@@ -200,8 +202,7 @@ function getServiceData() {
                                 $(".reqDataId").html('<strong>Service Id</strong> : ' + data.serviceId);
                                 $(".reqDataPayment").html(data.netPay + " &euro;");
                                 $(".reqDataAddress").html('<strong>Service Address</strong> : ' + data.address);
-                                $(".reqDataPhone").html('<strong>Phone</strong> : ' + data.phone);
-                                $(".reqDataEmail").html('<strong>Email</strong> : ' + data.email);
+                                $(".reqDataCName").html('<strong>Customer Name</strong> : ' + custName);
                                 $("#acceptBtn").val(data.serviceId);
                                 if (data.comment != null) {
                                     $(".reqCommentText").text(data.comment);
@@ -245,6 +246,8 @@ function getServiceData() {
                                 }
 
                                 $("#reqIdUS").val(data.serviceId);
+
+                                showMap(data.address.split(",")[1]);
 
                                 $("#reqDetailsModal").modal('show');
                             }
@@ -366,3 +369,34 @@ $("#spUpServiceTB").on('click', 'th', function () {
 });
 
 $("#spUpServiceTB th").first().click().click();
+
+var map = L.map('map');
+
+function showMap(pin) {
+
+    console.log(pin)
+    $.ajax({
+        "async": true,
+        "crossDomain": true,
+        "url": "https://trueway-geocoding.p.rapidapi.com/Geocode?address="+pin,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "trueway-geocoding.p.rapidapi.com",
+            "x-rapidapi-key": "2f895194afmsh2cc2623a0a2eacbp184f45jsn0be03c28e2eb"
+        },
+        success: (response) => {
+
+            map.setView([response.results[0].location.lat, response.results[0].location.lng], 14);
+
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([response.results[0].location.lat, response.results[0].location.lng]).addTo(map);
+        },
+        error: (err) => {
+            console.log(err);
+
+        }
+    });
+}

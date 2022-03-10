@@ -151,6 +151,7 @@ function getServReqData() {
                     "dom": 'Bt<"table-bottom d-flex justify-content-between"<"table-bottom-inner d-flex"li>p>',
                     "pagingType": "full_numbers",
                     "searching": false,
+                    "order": [[0, "desc"]],
                     'columnDefs': [{
                         'targets': [4],
                         'orderable': false,

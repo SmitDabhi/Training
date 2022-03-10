@@ -13,5 +13,6 @@
         public string? City { get; set; }
         public decimal? Payment { get; set; }
         public bool? HasPet { get; set; }
+        public int? ConflictId { get; set;}
     }
 }

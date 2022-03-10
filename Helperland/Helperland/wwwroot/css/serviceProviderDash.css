@@ -177,6 +177,28 @@ a#navbarDarkDropdownMenuLink {
 }
 /*Loading Spinner*/
 
+/*Map Part*/
+#map {
+    width: 350px;
+    height: 440px;
+    z-index: 100;
+    margin: 15px 0;
+}
+
+#mapSearchContainer {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    height: 30px;
+    width: 180px;
+    z-index: 110;
+    font-size: 10pt;
+    color: #5d5d5d;
+    border: solid 1px #bbb;
+    background-color: #f8f8f8;
+}
+/*Map Part*/
+
 /*    SP Dashboard Common Part   */
 .user-name {
     margin-top: 64px;
@@ -788,6 +810,18 @@ button#acceptBtn {
 #spNewRequestTB thead th:nth-child(4), #spNewRequestTB thead th:nth-child(6), #spNewRequestTB thead th:nth-child(5), .acceptBtnDiv{
     text-align: center;
 }
+.conflictBtnDiv {
+    text-align: center;
+}
+.conflictBtnDiv button.conflictBtn {
+    border-radius: 50px;
+}
+.conflictBtnDiv button.conflictBtn:hover{
+    background-color:#db2536;
+}
+#reqDetailsModal .modal-dialog{
+    max-width: 750px;
+}
 /*Success Modal*/
 #newReqSuccessModal .modal-dialog {
     justify-content: center;
@@ -1278,5 +1312,14 @@ span.successSmall {
     }
     .petCheckBtn{
         text-align:center;
+    }
+    #reqDetailsModal .modal-body {
+        flex-direction:column;
+    }
+    #map {
+        width: 100%;
+        height: 200px;
+        z-index: 100;
+        margin: 15px 0;
     }
 }

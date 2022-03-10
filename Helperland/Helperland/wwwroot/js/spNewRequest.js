@@ -48,9 +48,17 @@ function getNewReqData() {
 
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].hasPet) {
-                        DataList.append('<tr><td><div class="newReqServID">' + data[i].serviceId + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + '  ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="newReqPayment">' + data[i].payment + ' &euro;</div></td><td></td><td><div class="acceptBtnDiv"><button class="acceptBtn btn">Accept</button></div></td></tr>');
+                        if (data[i].conflictId != null) {
+                            DataList.append('<tr><td><div class="newReqServID">' + data[i].serviceId + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + '  ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="newReqPayment">' + data[i].payment + ' &euro;</div></td><td><div class="conflictBtnDiv"><button class="conflictBtn btn btn-danger" value="' + data[i].conflictId +'">Conflict</button></div></td><td><div class="acceptBtnDiv"><button class="acceptBtn btn" disabled>Accept</button></div></td></tr>');
+                        } else {
+                            DataList.append('<tr><td><div class="newReqServID">' + data[i].serviceId + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + '  ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="newReqPayment">' + data[i].payment + ' &euro;</div></td><td></td><td><div class="acceptBtnDiv"><button class="acceptBtn btn">Accept</button></div></td></tr>');
+                        }
                     } else {
-                        DataList.append('<tr><td><div class="newReqServID">' + data[i].serviceId + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + '  ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="newReqPayment">' + data[i].payment + ' &euro;</div></td><td></td><td><div class="acceptBtnDiv"><button class="acceptBtn btn">Accept</button></div><div class="d-none">WithoutPet</div></td></tr>');
+                        if (data[i].conflictId != null) {
+                            DataList.append('<tr><td><div class="newReqServID">' + data[i].serviceId + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + '  ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="newReqPayment">' + data[i].payment + ' &euro;</div></td><td><div class="conflictBtnDiv"><button class="conflictBtn btn btn-danger" value="'+ data[i].conflictId +'">Conflict</button></div></td><td><div class="acceptBtnDiv"><button class="acceptBtn btn" disabled>Accept</button></div><div class="d-none">WithoutPet</div></td></tr>');
+                        } else {
+                            DataList.append('<tr><td><div class="newReqServID">' + data[i].serviceId + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + ' - ' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + '  ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="newReqPayment">' + data[i].payment + ' &euro;</div></td><td></td><td><div class="acceptBtnDiv"><button class="acceptBtn btn">Accept</button></div><div class="d-none">WithoutPet</div></td></tr>');
+                        }
                     }
                 }
             }
@@ -100,18 +108,17 @@ function getNewReqData() {
             $("#inputPetCheckBox").change(() => {
                 var petCheck = $("#inputPetCheckBox").is(':checked');
                 if (!petCheck) {
-                    console.log("in")
                     table.search("withoutpet").draw();
                 } else {
-                    console.log("out")
                     table.search("").draw();
                 }
-
-            })
+            });
 
             $("#spNewRequestTB").click((e) => {
                 if (e.target.className == "newReqServID" || e.target.className == "spanSPNewReqDT" || e.target.className == "custNameSH" || e.target.className == "custAdd1SH" || e.target.className == "custAdd2SH" || e.target.className == "CustomerDataSH" || e.target.className == "CustomerDataIcon") {
                     var reqId = parseInt(e.target.closest('tr').childNodes[0].textContent);
+
+                    var custName = e.target.closest('tr').childNodes[2].childNodes[0].childNodes[1].childNodes[0].textContent;
 
                     $.ajax({
                         url: "/Serviceprovider/GetServiceReqSummary",
@@ -121,15 +128,21 @@ function getNewReqData() {
                             $(".loading-div").removeClass("d-none");
                         },
                         success: (data) => {
+                            console.log(data)
                             if (data != "notfound") {
                                 $(".reqDataDate").text(data.serviceDateTime);
                                 $(".reqDataDuration").html('<strong>Duration</strong> : ' + data.duration + ' Hours');
                                 $(".reqDataId").html('<strong>Service Id</strong> : ' + data.serviceId);
                                 $(".reqDataPayment").html(data.netPay + " &euro;");
                                 $(".reqDataAddress").html('<strong>Service Address</strong> : ' + data.address);
-                                $(".reqDataPhone").html('<strong>Phone</strong> : ' + data.phone);
-                                $(".reqDataEmail").html('<strong>Email</strong> : ' + data.email);
-                                $("#acceptBtn").val(data.serviceId);
+                                $(".reqDataCName").html('<strong>Customer Name</strong> : ' + custName);
+
+                                if (e.target.closest('tr').lastChild.childNodes[0].childNodes[0].disabled) {
+                                    $("#acceptBtn").prop('disabled', true).show();
+                                } else {
+                                    $("#acceptBtn").prop('disabled', false).val(data.serviceId).show();
+                                }
+
                                 if (data.comment != null) {
                                     $(".reqCommentText").text(data.comment);
                                 }
@@ -159,6 +172,8 @@ function getNewReqData() {
                                 if (data.window) {
                                     $(".reqDataExtra").append(" Inside Windows");
                                 }
+                                
+                                showMap(data.address.split(",")[1]);
 
                                 $("#reqDetailsModal").modal('show');
                             }
@@ -171,6 +186,8 @@ function getNewReqData() {
                             $(".loading-div").addClass("d-none");
                         }
                     });
+
+                    
                 }
 
                 if (e.target.className == "acceptBtn btn") {
@@ -207,7 +224,76 @@ function getNewReqData() {
                         }
                     });
                 }
+
+                if (e.target.className == "conflictBtn btn btn-danger") {
+                    var reqId = $(e.target).val();
+
+                    var custName = e.target.closest('tr').childNodes[2].childNodes[0].childNodes[1].childNodes[0].textContent;
+
+                    $.ajax({
+                        url: "/Serviceprovider/GetServiceReqSummary",
+                        method: "GET",
+                        data: { Reqid: reqId },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
+                        success: (data) => {
+                            if (data != "notfound") {
+                                $(".reqDataDate").text(data.serviceDateTime);
+                                $(".reqDataDuration").html('<strong>Duration</strong> : ' + data.duration + ' Hours');
+                                $(".reqDataId").html('<strong>Service Id</strong> : ' + data.serviceId);
+                                $(".reqDataPayment").html(data.netPay + " &euro;");
+                                $(".reqDataAddress").html('<strong>Service Address</strong> : ' + data.address);
+                                $(".reqDataCName").html('<strong>Customer Name</strong> : ' + custName);
+                                $("#acceptBtn").hide();
+                                if (data.comment != null) {
+                                    $(".reqCommentText").text(data.comment);
+                                }
+
+                                if (data.pets) {
+                                    $(".reqDataHasPetTrue").removeClass("d-none");
+                                    $(".reqDataHasPetFalse").addClass("d-none");
+                                } else {
+                                    $(".reqDataHasPetTrue").addClass("d-none");
+                                    $(".reqDataHasPetFalse").removeClass("d-none");
+                                }
+
+                                $(".reqDataExtra").empty();
+
+                                if (data.cabinet) {
+                                    $(".reqDataExtra").append("Inside Cabinet,");
+                                }
+                                if (data.fridge) {
+                                    $(".reqDataExtra").append(" Inside Fridge,");
+                                }
+                                if (data.oven) {
+                                    $(".reqDataExtra").append(" Inside Oven,");
+                                }
+                                if (data.wash) {
+                                    $(".reqDataExtra").append(" Laundry wash & dry,");
+                                }
+                                if (data.window) {
+                                    $(".reqDataExtra").append(" Inside Windows");
+                                }
+
+                                showMap(data.address.split(",")[1]);
+
+                                $("#reqDetailsModal").modal('show');
+                            }
+
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
+                        }
+                    });
+                }
             });
+
+
+            
         },
         error: (err) => {
             console.log(err);
@@ -216,6 +302,10 @@ function getNewReqData() {
             $(".loading-div").addClass("d-none");
         }
     });
+
+    
+
+    
     
 }
 
@@ -266,3 +356,33 @@ $("#spNewRequestTB").on('click', 'th', function () {
 });
 
 $("#spNewRequestTB th").first().click().click();
+
+var map = L.map('map');
+
+function showMap(pin) {
+
+    console.log(pin)
+    $.ajax({
+        "async": true,
+        "crossDomain": true,
+        "url": "https://trueway-geocoding.p.rapidapi.com/Geocode?address="+pin,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "trueway-geocoding.p.rapidapi.com",
+            "x-rapidapi-key": "2f895194afmsh2cc2623a0a2eacbp184f45jsn0be03c28e2eb"
+        },
+        success: (response) => {
+
+            map.setView([response.results[0].location.lat, response.results[0].location.lng], 14);
+
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([response.results[0].location.lat, response.results[0].location.lng]).addTo(map);
+        },
+        error: (err) => {
+            console.log(err);
+        }
+    });
+}
