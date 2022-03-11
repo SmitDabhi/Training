@@ -553,14 +553,88 @@ namespace Helperland.Controllers
         public IActionResult RescheduleDT(GetServiceReqDataVM service)
         {
             ServiceRequest req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == service.ServiceId);
+            
+            if(req.ServiceProviderId == null)
+            {
+                req.ServiceStartDate = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null);
+                req.ModifiedDate = DateTime.Now;
 
-            req.ServiceStartDate = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null);
-            req.ModifiedDate = DateTime.Now;
+                _dbContext.ServiceRequests.Update(req);
+                _dbContext.SaveChanges();
 
-            _dbContext.ServiceRequests.Update(req);
-            _dbContext.SaveChanges();
+                return Json("true");
+            }
+            else
+            {
+                var check = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == req.ServiceProviderId && x.Status == null && x.ServiceRequestId != req.ServiceRequestId).ToList();
 
-            return Json("true");
+                if (check.Count() > 0)
+                {
+                    var conflict = false;
+                    var sDt = "";
+                    var eDt = "";
+                    foreach (var i in check)
+                    {
+                        var newSerStartDT = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null);
+                        var newSerEndDT = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null).AddHours((double)req.SubTotal);
+                        var accSerStartDT = i.ServiceStartDate;
+                        var accSerEndDT = i.ServiceStartDate.AddHours((double)i.SubTotal + 1);
+
+                        if (newSerStartDT >= accSerStartDT && newSerStartDT <= accSerEndDT)
+                        {
+                            conflict = true;
+                            sDt = accSerStartDT.ToString();
+                            eDt = accSerEndDT.ToString();
+                            break;
+                        }
+                        else if (newSerEndDT >= accSerStartDT && newSerEndDT <= accSerEndDT)
+                        {
+                            conflict = true;
+                            sDt = accSerStartDT.ToString();
+                            eDt = accSerEndDT.ToString();
+                            break;
+
+                        }
+                        else if (newSerStartDT < accSerStartDT && newSerEndDT > accSerEndDT)
+                        {
+                            conflict = true;
+                            sDt = accSerStartDT.ToString();
+                            eDt = accSerEndDT.ToString();
+                            break;
+                        }
+                    }
+                    if (conflict)
+                    {
+                        var obj = new
+                        {
+                            msg = "false",
+                            startDate = sDt,
+                            endDate = eDt
+                        };
+                        return Json(obj);
+                    }
+                    else
+                    {
+                        req.ServiceStartDate = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null);
+                        req.ModifiedDate = DateTime.Now;
+
+                        _dbContext.ServiceRequests.Update(req);
+                        _dbContext.SaveChanges();
+
+                        return Json("true");
+                    }
+                }
+                else
+                {
+                    req.ServiceStartDate = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null);
+                    req.ModifiedDate = DateTime.Now;
+
+                    _dbContext.ServiceRequests.Update(req);
+                    _dbContext.SaveChanges();
+
+                    return Json("true");
+                }
+            }
         }
 
         [HttpPost]

@@ -747,6 +747,12 @@ h3.spAddressHead {
     border-bottom: 1px solid #c8c8c8;
     margin-bottom: 10px;
 }
+.avatarRadio.d-flex {
+    flex-wrap: wrap;
+}
+.avatarRadioOptions {
+    margin-bottom: 10px;
+}
 /********** My Account Page **********/
 
 /********** New Service Page **********/
@@ -1096,6 +1102,72 @@ span.compServCount {
 }
 /********** Dashboard Page **********/
 
+/********** Block Customer Page **********/
+#blockCustTB thead {
+    display: none;
+}
+#blockCustTB tbody{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+}
+#blockCustTB tbody tr {
+    border: 1px solid #E1E1E1;
+    margin: 15px;
+}
+#blockCustTB tbody td{
+    display: flex;
+    justify-content:center;
+    min-width:275px;
+}
+.blockBtn {
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+}
+.blockBtn:hover {
+    color:white;
+    background-color: #cc5656;
+}
+.unblockBtn {
+    background-color: #67B644;
+    color: white;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+}
+.unblockBtn:hover {
+    color:white;
+    background-color: #51b425;
+}
+#blockCustTB tbody td img{
+    border: 1px solid #c8c8c8;
+    border-radius: 50%;
+    margin-top:30px;
+    margin-bottom:20px;
+}
+.customerNameBlockTB{
+    font-size:18px;
+    color:#646464;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+.customer-table .dataTables_length {
+    padding-left: 15px;
+}
+#blockCustTB .dataTables_empty{
+    height:277px;
+    width:277px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#646464;
+    font-size:18px;
+    font-weight:bold;
+}
+/********** Block Customer Page **********/
 /*    Footer      */
 .footer {
     background-color: #111111;
@@ -1286,6 +1358,10 @@ span.compServCount {
         text-align: center;
         padding: 5px;
     }
+    div#blockCustTB_paginate {
+        text-align: center;
+        padding: 5px;
+    }
     #spServiceHistoryTB thead {
         display: none;
     }
@@ -1392,6 +1468,11 @@ span.compServCount {
     }
     .custDashboard {
         flex-direction:column;
-
+    }
+    .avatarRadio.d-flex{
+        justify-content:space-around;
+    }
+    #blockCustTB tbody{
+        flex-direction:column;
     }
 }

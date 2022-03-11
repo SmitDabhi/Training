@@ -29,6 +29,9 @@ function showCount() {
     $.ajax({
         url: "/Serviceprovider/GetCount",
         method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: (data) => {
             $(".newServCount").text(data.newSer);
             $(".upServCount").text(data.upSer);
@@ -36,6 +39,9 @@ function showCount() {
         },
         error: (err) => {
             console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
         }
     });
 }

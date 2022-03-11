@@ -169,6 +169,32 @@ namespace Helperland.Controllers
             }
         }
 
+        public IActionResult BlockCustomer()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+
+                if (req.UserTypeId == 2)
+                {
+                    ViewBag.IsloggedIn = "success";
+                    ViewBag.Uname = req.FirstName;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.UType = 2;
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                ViewBag.UType = 2;
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
         [HttpGet]
         public IActionResult GetSerHistoryData()
         {
@@ -553,66 +579,69 @@ namespace Helperland.Controllers
                 List<SPServiceHistoryVM> data = new();
                 var spZip = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid).ZipCode;
                 var req = _dbContext.ServiceRequests.Where(x => x.ZipCode == spZip && x.ServiceProviderId == null && x.Status == null).ToList();
-
                 if (req.Count() > 0)
                 {
                     foreach (var item in req)
                     {
-                        SPServiceHistoryVM res = new();
-                        res.ServiceId = item.ServiceRequestId;
-                        res.ServiceDate = item.ServiceStartDate.ToString("dd/MM/yyyy");
-                        res.ServiceStartTime = item.ServiceStartDate.ToString("HH:mm");
-                        res.ServiceEndTime = item.ServiceStartDate.AddHours((double)item.SubTotal).ToString("HH:mm");
-                        res.Payment = item.TotalCost;
-                        res.HasPet = item.HasPets;
-
-                        var cData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.UserId);
-                        res.CustName = cData.FirstName + " " + cData.LastName;
-
-                        var AddressData = _dbContext.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == item.ServiceRequestId);
-
-                        res.AddLine1 = AddressData.AddressLine1;
-                        res.AddLine2 = AddressData.AddressLine2;
-                        res.PostalCode = AddressData.PostalCode;
-                        res.City = AddressData.City;
-
-                        var check = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == Uid && x.Status == null).ToList();
-
-                        if (check.Count() > 0)
+                        var isBlocked = _dbContext.FavoriteAndBlockeds.FirstOrDefault(x => x.UserId == Uid && x.TargetUserId == item.UserId && x.IsBlocked == true);
+                        if (isBlocked == null)
                         {
-                            foreach (var i in check)
+                            SPServiceHistoryVM res = new();
+                            res.ServiceId = item.ServiceRequestId;
+                            res.ServiceDate = item.ServiceStartDate.ToString("dd/MM/yyyy");
+                            res.ServiceStartTime = item.ServiceStartDate.ToString("HH:mm");
+                            res.ServiceEndTime = item.ServiceStartDate.AddHours((double)item.SubTotal).ToString("HH:mm");
+                            res.Payment = item.TotalCost;
+                            res.HasPet = item.HasPets;
+
+                            var cData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.UserId);
+                            res.CustName = cData.FirstName + " " + cData.LastName;
+
+                            var AddressData = _dbContext.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == item.ServiceRequestId);
+
+                            res.AddLine1 = AddressData.AddressLine1;
+                            res.AddLine2 = AddressData.AddressLine2;
+                            res.PostalCode = AddressData.PostalCode;
+                            res.City = AddressData.City;
+
+                            var check = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == Uid && x.Status == null).ToList();
+
+                            if (check.Count() > 0)
                             {
-                                var newSerStartDT = item.ServiceStartDate;
-                                var newSerEndDT = item.ServiceStartDate.AddHours((double)item.SubTotal);
-                                var accSerStartDT = i.ServiceStartDate;
-                                var accSerEndDT = i.ServiceStartDate.AddHours((double)i.SubTotal+1);
-                                
-                                if(newSerStartDT >= accSerStartDT && newSerStartDT <= accSerEndDT)
+                                foreach (var i in check)
                                 {
-                                    res.ConflictId = i.ServiceRequestId;
-                                    break;
-                                }else if (newSerEndDT >= accSerStartDT && newSerEndDT <= accSerEndDT)
-                                {
-                                    res.ConflictId = i.ServiceRequestId;
-                                    break;
-                                }else if(newSerStartDT < accSerStartDT && newSerEndDT > accSerEndDT)
-                                {
-                                    res.ConflictId = i.ServiceRequestId;
-                                    break;
-                                }
-                                else
-                                {
-                                    res.ConflictId = null;
-                                    break;
+                                    var newSerStartDT = item.ServiceStartDate;
+                                    var newSerEndDT = item.ServiceStartDate.AddHours((double)item.SubTotal);
+                                    var accSerStartDT = i.ServiceStartDate;
+                                    var accSerEndDT = i.ServiceStartDate.AddHours((double)i.SubTotal + 1);
+
+                                    if (newSerStartDT >= accSerStartDT && newSerStartDT <= accSerEndDT)
+                                    {
+                                        res.ConflictId = i.ServiceRequestId;
+                                        break;
+                                    }
+                                    else if (newSerEndDT >= accSerStartDT && newSerEndDT <= accSerEndDT)
+                                    {
+                                        res.ConflictId = i.ServiceRequestId;
+                                        break;
+                                    }
+                                    else if (newSerStartDT < accSerStartDT && newSerEndDT > accSerEndDT)
+                                    {
+                                        res.ConflictId = i.ServiceRequestId;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        res.ConflictId = null;
+                                    }
                                 }
                             }
+                            else
+                            {
+                                res.ConflictId = null;
+                            }
+                            data.Add(res);
                         }
-                        else
-                        {
-                            res.ConflictId = null;
-                        }
-
-                        data.Add(res);
                     }
 
                     return new JsonResult(data);
@@ -775,13 +804,23 @@ namespace Helperland.Controllers
             if (Uid != null)
             {
                 var spZip = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid).ZipCode;
-                var newService = _dbContext.ServiceRequests.Where(x => x.ZipCode == spZip && x.ServiceProviderId == null && x.Status == null).ToList().Count();
+                var newService = _dbContext.ServiceRequests.Where(x => x.ZipCode == spZip && x.ServiceProviderId == null && x.Status == null).ToList();
+                int newSerCount = 0;
+                foreach (var item in newService)
+                {
+                    if(!_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == item.UserId && x.IsBlocked == true))
+                    {
+                        newSerCount += 1;
+                    }
+
+                }
+
                 var upService = _dbContext.ServiceRequests.Where(x => x.ZipCode == spZip && x.ServiceProviderId == Uid && x.Status == null).ToList().Count();
                 var compService = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == Uid && x.Status == 1).ToList().Count();
 
                 var obj = new
                 {
-                    NewSer = newService,
+                    NewSer = newSerCount,
                     UpSer = upService,
                     compSer = compService
                 };
@@ -793,5 +832,110 @@ namespace Helperland.Controllers
                 return Json("notfound");
             }
         }
-    }
+
+        [HttpGet]
+        public IActionResult GetBlockCust()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+
+            List<spBlockCustVM> data = new();
+            if (Uid != null)
+            {
+                var req = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == Uid && x.Status == 1).ToList().DistinctBy(x => x.UserId);
+                if (req.Count() > 0)
+                {
+                    foreach (var item in req)
+                    {
+                        spBlockCustVM res = new();
+                        res.Uid = item.UserId;
+
+                        var userData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.UserId);
+                        res.Name = userData.FirstName + " " + userData.LastName;
+
+                        var isBlocked = _dbContext.FavoriteAndBlockeds.FirstOrDefault(x=>x.UserId == Uid && x.TargetUserId==item.UserId);
+                        
+                        if (isBlocked != null)
+                        {
+                            if(isBlocked.IsBlocked == true)
+                            {
+                                res.IsBlocked = true;
+                            }
+                            else
+                            {
+                                res.IsBlocked= false;
+                            }
+                        }
+                        else
+                        {
+                            res.IsBlocked = false;
+                        }
+                        data.Add(res);
+                    }
+                    return new JsonResult(data);
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult BlockCustomer(int UID)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                if (_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == UID))
+                {
+                    FavoriteAndBlocked req = _dbContext.FavoriteAndBlockeds.FirstOrDefault(x => x.UserId == Uid && x.TargetUserId == UID);
+                    req.IsBlocked = true;
+
+                    _dbContext.FavoriteAndBlockeds.Update(req);
+                    _dbContext.SaveChanges();
+                }
+                else
+                {
+                    FavoriteAndBlocked req = new();
+                    req.UserId = (int)Uid;
+                    req.TargetUserId = UID;
+                    req.IsFavorite = false;
+                    req.IsBlocked = true;
+
+                    _dbContext.FavoriteAndBlockeds.Add(req);
+                    _dbContext.SaveChanges();
+                }
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult UnBlockCustomer(int UID)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                FavoriteAndBlocked req = _dbContext.FavoriteAndBlockeds.FirstOrDefault(x => x.UserId == Uid && x.TargetUserId == UID);
+                req.IsBlocked = false;
+
+                _dbContext.FavoriteAndBlockeds.Update(req);
+                _dbContext.SaveChanges();
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+    }   
 }

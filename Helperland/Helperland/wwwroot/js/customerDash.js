@@ -103,6 +103,15 @@
                 if (data == "true") {
                     $(".reCancelSuccessTxt").text("Your service request reschedule successfully!");
                     $("#reScheCancelSuccessModal").modal("show");
+                    $(".reCancelSuccessImg").show();
+                    $("#rescheduleModal").modal("hide");
+                } else if (data.msg == "false") {
+                    console.log(data);
+                    console.log(data.endDate.split(" ")[0]);
+
+                    $(".reCancelSuccessTxt").text("Another service request has been assigned to the service provider on " + data.endDate.split(" ")[0] + " from " + data.startDate.split(" ")[1].slice(0, -3) + data.startDate.split(" ")[2] + " to " + data.endDate.split(" ")[1].slice(0, -3) + data.endDate.split(" ")[2] + ".Either choose another date or pick up a different time slot");
+                    $(".reCancelSuccessImg").hide();
+                    $("#reScheCancelSuccessModal").modal("show");
                     $("#rescheduleModal").modal("hide");
                 }
             },

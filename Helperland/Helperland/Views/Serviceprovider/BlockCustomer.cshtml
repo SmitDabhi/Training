@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "Block Customer";
+    Layout = "~/Views/Shared/_SPDashLayout.cshtml";
+}
+
+<div class="user-name d-flex justify-content-center align-items-center">
+    <h2>Welcome, <strong>@ViewBag.Uname</strong> </h2>
+</div>
+
+<!-- Loader  -->
+<div class="loading-div d-none">
+    <div class="spinner">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+</div>
+<!-- Loader  -->
+
+<!-- SP BlockCust Start -->
+<section class="customer-dash">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <div class="nav flex-column us-left-menu text-start">
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="Dashboard">Dashboard</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="NewServiceRequest">New Service Requests</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="UpcomingServices">Upcoming Services</a>
+                <a class="nav-link">Service Schedule</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="ServiceHistory">Service History</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="MyRatings">My Ratings</a>
+                <a class="nav-link active">Block Customer</a>
+                <a class="nav-link">Invoices</a>
+                <a class="nav-link">Notifications</a>
+            </div>
+            <div class="us-right-menu flex-fill" id="us-right-sideNav">
+                <div>
+                    <div class="content-headerUSPg mb-2">
+                        <h3>Block Customer</h3> 
+                    </div>
+                    <div class="customer-table">
+                        <table id="blockCustTB" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Icon</th>
+                                    <th>Name</th>
+                                    <th>Button</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @*<tr>
+                                    <td><img src="/img/avatar-car.png" /></td>
+                                    <td><span class="customerNameBlockTB">Smit Dabhi</span></td>
+                                    <td><button class="btn blockBtn">Button</button></td>
+                                </tr>*@
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SP BlockCust End -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#upSerSuccessModal">
+  Launch demo modal
+</button>
+<!--Success Modal-->
+<div class="modal fade" id="upSerSuccessModal" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <span class="newReqImg">
+                    <i class="fas fa-check-circle fa-5x"></i>
+                </span>
+                <span class="successTxtUS"></span>
+                <span class="successBtn">
+                    <button class="btn">Ok</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Success Modal-->
+
+@section css{
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+}
+
+@section script{
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="/js/spBlockCust.js"></script>
+}
+
+
+
