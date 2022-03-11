@@ -132,8 +132,29 @@
         window.location.reload();
     });
 
+    checkServiceDT();
+
     getServReqData();
 });
+
+function checkServiceDT() {
+    $.ajax({
+        url: "/Customer/CheckServiceDT",
+        method: "POST",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
+        success: (data) => {
+            console.log(data);
+        },
+        error: (err) => {
+            console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
+        }
+    });
+}
 
 function getServReqData() {
 

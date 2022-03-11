@@ -22,8 +22,29 @@ $(document).ready( function () {
         $("html, body").animate({ scrollTop: 0 }, 0);
     });
 
+    checkServiceDT();
+
     showCount();
 });
+
+function checkServiceDT() {
+    $.ajax({
+        url: "/Serviceprovider/CheckServiceDT",
+        method: "POST",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
+        success: (data) => {
+            console.log(data);
+        },
+        error: (err) => {
+            console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
+        }
+    });
+}
 
 function showCount() {
     $.ajax({

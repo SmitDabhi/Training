@@ -570,6 +570,42 @@ namespace Helperland.Controllers
             }
         }
 
+        [HttpPost]
+        public IActionResult CheckServiceDT()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                var spZip = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid).ZipCode;
+                var req = _dbContext.ServiceRequests.Where(x => x.ZipCode == spZip && x.ServiceProviderId == null && x.Status == null).ToList();
+
+                if (req.Count > 0)
+                {
+                    foreach (var item in req)
+                    {
+                        if (DateTime.Now >= item.ServiceStartDate)
+                        {
+                            item.Status = 0;
+                            item.Comments = "Out of Time";
+                            item.ModifiedDate = DateTime.Now;
+
+                            _dbContext.ServiceRequests.Update(item);
+                            _dbContext.SaveChanges();
+                        }
+                    }
+                    return Json("true");
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
         [HttpGet]
         public IActionResult GetNewRequestData()
         {
@@ -773,11 +809,22 @@ namespace Helperland.Controllers
                 ServiceRequest data = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ReqID && x.ServiceProviderId == Uid);
                 if(data != null)
                 {
-                    data.Status = 0;
+                    if(DateTime.Now >= data.ServiceStartDate)
+                    {
+                        data.Status = 0;
 
-                    _dbContext.ServiceRequests.Update(data);
-                    _dbContext.SaveChanges();
+                        _dbContext.ServiceRequests.Update(data);
+                        _dbContext.SaveChanges();
+                    }
+                    else
+                    {
+                        data.Status = null;
+                        data.ServiceProviderId = null;
 
+                        _dbContext.ServiceRequests.Update(data);
+                        _dbContext.SaveChanges();
+                    }
+                    
                     var obj = new
                     {
                         msg = "true",

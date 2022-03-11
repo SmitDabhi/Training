@@ -429,6 +429,41 @@ namespace Helperland.Controllers
             return Json("true");
         }
 
+        [HttpPost]
+        public IActionResult CheckServiceDT()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                var req = _dbContext.ServiceRequests.Where(x => x.UserId == Uid).ToList();
+
+                if (req.Count > 0)
+                {
+                    foreach (var item in req)
+                    {
+                        if(DateTime.Now >= item.ServiceStartDate)
+                        {
+                            item.Status = 0;
+                            item.Comments = "Out of Time";
+                            item.ModifiedDate = DateTime.Now;
+
+                            _dbContext.ServiceRequests.Update(item);
+                            _dbContext.SaveChanges();
+                        }
+                    }
+                    return Json("true");
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
         [HttpGet]
         public IActionResult GetDashData()
         {
