@@ -118,7 +118,7 @@
                                     <a asp-controller="Customer" asp-action="Dashboard">Dashboard</a>
                                     <a asp-controller="Customer" asp-action="Servicerequest">Service History</a>
                                     <a>Service Schedule</a>
-                                    <a>Favourite Pros</a>
+                                    <a asp-controller="Customer" asp-action="FavouritePro">Favourite Pros</a>
                                     <a>Invoices</a>
                                     <a>Notifications</a>
                                 }else if(@ViewBag.UType == 2)

@@ -19,7 +19,7 @@
 }
 
 .um-navbar .container-fluid {
-    padding: 9px 15px 10px 15px;
+    padding: 12px 15px 12.6px 15px;
 }
 
 .um-top-menu .nav-item {
@@ -29,36 +29,47 @@
 }
 
 .um-top-menu {
-    margin-right: 3.35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-right: 5px;
 }
 
-.um-username {
+span.userName {
     font-size: 16px;
     color: white;
     margin: 0 17.35px 0 7px;
 }
 
+.logoutBtn a{
+    text-decoration:none;
+    color:white
+}
+
 .admin-panel {
     margin-top: 55px;
-
+    height: 100%;
 }
 
 .um-admin {
     display: flex;
+    height:100%
 }
 
 .admin-leftMenu {
     position: sticky;
     top: 55px;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 55px);
     width: 20vw;
 }
 
 .um-left-menu a {
     color: #646464;
-    border: 1px solid#E5E5E5;
+    border-bottom: 1px solid#E5E5E5;
     padding: 15px 14px 16px 14px;
     border-top: none;
+    font-size:16px;
 }
 
 .um-left-menu a.active {
@@ -76,330 +87,20 @@
     padding-left: 20px;
 }
 
-.contentHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 24px;
-}
-
 .sectionName {
     font-size: 22px;
     font-weight: bold;
     color: #646464;
 }
 
-.addUserBtn img {
-    margin: -2px 7px 0 0;
-}
-
-.addUserBtn button {
-    background-color: #1FB6FF;
-    color: white;
-    border-radius: 4px;
-    text-align: center;
-    border: 1px solid #1FB6FF;
-    padding: 10px 10px 9px 11px;
-    margin-right: 20px;
-    font-size: 14px;
-}
-
-.serchingTab {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 15px;
-    margin: 10px 20px 0 0;
-}
-
-.userName {
-    width: 205px;
-}
-
-.userName select {
-    height: 46px;
-    width: 205px;
-    color: #646464;
-}
-
-.userRole select {
-    height: 46px;
-    width: 215px;
-    color: #646464;
-}
-
-.phoneNumber {
-    width: 219px;
-    height: 46px;
-    color: #646464;
-}
-
-.phoneNumber span {
-    color: #646464;
-}
-
-.postCode input {
-    width: 140px;
-    height: 46px;
-}
-
-.btn-submit {
-    color: white;
-    background-color: #1FB6FF;
-    font-size: 16px;
-    height: 46px;
-    width: 84px;
-    border: 1px solid #1FB6FF;
-    border-radius: 5px;
-}
-
-.btn-clear {
-    color: #646464;
-    font-size: 16px;
-    height: 46px;
-    width: 84px;
-    background-color: #fff;
-    border: 1px solid #DEDDDD;
-    border-radius: 5px;
-}
-
-.umTable {
-    margin: 20px 20px 0 0;
-}
-
-.umDoR span {
-    margin-left: 5px;
-}
-
-.umDoR {
-    display: flex;
-    align-items: center;
-}
-
-.threeDotMenu {
-    cursor: pointer;
-}
-
-.threeDotToggleMenu::before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: -6px;
-    right: 28px;
-    transform: rotate(45deg);
-    box-shadow: -5px -5px 6px #00000040;
-    background-color: white;
-
-}
-
-#servReqTB .threeDotToggleMenu {
-    display: none;
-    position: absolute;
-    right: 26px;
-    top: 55px;
-    width: 163px;
-    background-color: white;
-    border-radius: 4px;
-    border: 1px solid #D6D6D6;
-    box-shadow: 0px 0px 6px #00000040;
-    z-index: 10;
-}
-
-#userManageTB .threeDotToggleMenu {
-    display: none;
-    position: absolute;
-    right: 25px;
-    top: 45px;
-    width: 163px;
-    background-color: white;
-    border-radius: 4px;
-    border: 1px solid #D6D6D6;
-    box-shadow: 0px 0px 6px #00000040;
-    z-index: 10;
-}
-
-.threeDotToggleMenu ul {
-    padding: 15px 0 13px 13px;
-    margin: 0;
-}
-
-.threeDotToggleMenu li {
-    list-style: none;
-    text-align: left;
-    margin-bottom: 6px;
-}
-
-.threeDotToggleMenu a {
-    text-decoration: none;
-    color: #646464;
-    font-size: 16px;
-}
-
-#userManageTB thead {
-    color: #646464;
-    background-color: #F9F9F9;
-    font-size: 16px;
-    font-weight: bold;
-    border: 1px solid #E1E1E1;
-}
-
-#userManageTB thead th {
-    padding: 17px 20px 18px 14px;
-}
-
-#userManageTB thead th img {
-    margin: -2px 0 0 8px;
-}
-
-#userManageTB tbody td {
-    padding: 15px 20px 15px 14px;
-    color: #646464;
-}
-
-#userManageTB tbody tr {
-    background-color: white !important;
-    border: 1px solid #e1e1e1;
-}
-
-table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1, table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
-    background-color: white !important;
-}
-
-table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
-    border-top: none;
-}
-
-.dataTables_length {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dataTables_length label {
-    color: #646464;
-    font-size: 14px;
-}
-
-.dataTables_length label select {
-    color: #646464;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.dataTables_wrapper .dataTables_info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0;
-    color: #646464;
-    font-size: 14px;
-    padding-left: 8px;
-}
-
-div#userManageTB_paginate {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 0;
-}
-
-.dataTables_wrapper .dataTables_info {
-    display: none;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
-    border: 1px solid #D6D6D6;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-    border: 1px solid #D6D6D6;
-    color: #646464;
-    margin: 0;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current {
-    color: white !important;
-    background: #565656 !important;
-    border: 1px solid #D6D6D6;
-}
-
-.dataTables_wrapper .dataTables_paginate span .paginate_button:hover, .dataTables_wrapper .dataTables_paginate span .paginate_button.current:hover {
-    color: white !important;
-    background: #565656 !important;
-    border: 1px solid transparent;
-}
-
-.dataTables_wrapper .dataTables_paginate a.paginate_button.previous {
-    border-radius: 4px 0 0 4px;
-}
-
-.dataTables_wrapper .dataTables_paginate a.paginate_button.next {
-    border-radius: 0 4px 4px 0;
-}
-
-.dataTables_wrapper .dataTables_paginate a.paginate_button.next:hover, .dataTables_wrapper .dataTables_paginate a.paginate_button.previous:hover {
-    background: transparent !important;
-    border: 1px solid #D6D6D6;
-}
-
-table.dataTable thead th {
-    border-bottom: none;
-}
-
-table.dataTable.no-footer {
-    border-bottom: none;
-    border-collapse: collapse;
-}
-
-table.dataTable thead .sorting {
-    background-image: url("../img/sort.png");
-}
-
-table.dataTable thead .sorting_asc {
-    background-image: url("../img/sort_asc.png") !important;
-}
-
-table.dataTable thead .sorting_desc {
-    background-image: url("../img/sort_desc.png") !important;
-}
-
-.table-bottom {
-    background-color: #fff;
-    border: 1px solid #e1e1e1;
-    padding: 15px 15px;
-    border-top: none;
-}
-
-.activeTB {
-    background-color: #67B644;
-    color: #FFFFFF;
-    font-size: 13px;
-    padding: 4px 11px;
-}
-
-.inactiveTB {
-    background-color: #FF6B6B;
-    color: #FFFFFF;
-    font-size: 13px;
-    padding: 4px 8px;
-}
-
-.actionBTN {
-    text-align: center;
-    position: relative;
-}
-
 .content-footer {
-    color: #A2A6A8;
     font-size: 14px;
-    padding: 22px 0;
+    color: #A2A6A8;
+}
+.srContentHeader {
+    margin-top: 20px;
 }
 
-.statusTB {
-    text-align: center;
-}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -409,141 +110,129 @@ input::-webkit-inner-spin-button {
 
 
 /****************** Service Requests ******************/
-.srContentHeader {
+.exportBtnDiv {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 29px;
+    justify-content: end;
+    margin-bottom:20px;
 }
-
-.serviceID input {
-    width: 110px;
-    height: 46px;
+button.exportBtn {
+    background-color: #1FB6FF;
+    color: white;
+    padding: 14px 18px;
+    font-size: 16px;
+    border-radius: 7px;
 }
-
-.customer select {
-    height: 46px;
-    width: 127px;
-    color: #646464;
+.umTable {
+    margin: 20px 20px 0 0;
 }
-
-.serviceProvider select {
-    height: 46px;
-    width: 166px;
-    color: #646464;
-}
-
-.statusSelect select {
-    height: 46px;
-    width: 120px;
-    color: #646464;
-}
-
-.fromDt input, .toDt input {
-    width: 135px;
-    height: 46px;
-}
-
-.ui[class*="left icon"].input>input::placeholder {
-    color: #646464;
-}
-
-.fDT {
-    position: relative;
-}
-
-.fDT svg {
-    position: absolute;
-    top: 12px;
-    left: 11px;
-}
-
-.tDT {
-    position: relative;
-}
-
-.tDT svg {
-    position: absolute;
-    top: 12px;
-    left: 11px;
-}
-
-.img-home {
-    margin-top: -5px;
-}
-
-.sr-tb-provider {
-    display: flex;
-    align-items: center;
-}
-
-.sr-tb-provider span:nth-child(1) img {
-    padding: 12px 7px;
-    border: 1px solid #aaa;
-    border-radius: 50%;
-}
-
-.sr-tb-provider .sp-details {
-    padding: 12px 7px;
-    display: flex;
-    flex-direction: column;
-}
-
-#servReqTB thead {
+#userManageTB thead {
     color: #646464;
     background-color: #F9F9F9;
     font-size: 16px;
     font-weight: bold;
     border: 1px solid #E1E1E1;
 }
-
-#servReqTB thead th {
+#userManageTB thead tr {
+    background-color: #F9F9F9;
+}
+#userManageTB thead th {
     padding: 17px 20px 18px 14px;
 }
-
-
-
-#servReqTB tbody td {
-    padding: 0 20px 0 14px;
-    color: #646464;
-}
-
-#servReqTB tbody tr {
-    background-color: white !important;
+#userManageTB tbody tr {
+    background-color: white;
     border: 1px solid #e1e1e1;
 }
-
-div#servReqTB_paginate {
+#userManageTB tbody td {
+    padding: 15px 20px 15px 14px;
+    color: #646464;
+}
+.table-bottom {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    padding: 15px 15px;
+    border-top: none;
+}
+.dataTables_wrapper .dataTables_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    color: #646464;
+    font-size: 14px;
+    padding-left: 8px;
+}
+.dataTables_length label {
+    color: #646464;
+    font-size: 14px;
+}
+.dataTables_length label select {
+    color: #646464;
+    margin:0 10px;
+}
+div#userManageTB_paginate {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 0;
 }
-
-.newTB {
-    color: #FFFFFF;
-    font-size: 13px;
-    background-color: #F2BB37;
-    padding: 4px 12px 5px 7px;
+.dataTables_wrapper .dataTables_paginate a.paginate_button.previous {
+    border-radius: 4px 0 0 4px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    border: 1px solid #D6D6D6;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border: 1px solid #D6D6D6;
+    color: #646464;
+    margin: 0;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: white;
+    background: #565656;
+    border: 1px solid #565656;
+}
+.dataTables_wrapper .dataTables_paginate a.paginate_button.next {
+    border-radius: 0 4px 4px 0;
+}
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: transparent;
+    padding: 4px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: .5em 1em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+span.arrow-hack {
+    margin-left: 5px;
+    padding-left: 5px;
 }
 
-.pendingTB {
-    color: #FFFFFF;
-    font-size: 13px;
-    background-color: #1FB6FF;
-    padding: 4px 8px 5px 7px;
+.arrow-hack.sort {
+    background: url("/img/sort.png") no-repeat center right;
 }
 
-.completedTB {
-    color: #FFFFFF;
-    font-size: 13px;
-    background-color: #67B644;
-    padding: 4px 8px 5px 7px;
+.arrow-hack.desc {
+    background: url("/img/sort_desc.png") no-repeat center right;
 }
 
-.cancelledTB {
-    color: #FFFFFF;
-    font-size: 13px;
-    background-color: #FF6B6B;
-    padding: 4px 7px 5px 8px;
+.arrow-hack.asc {
+    background: url("/img/sort_asc.png") no-repeat center right;
 }
+#userManageTB thead th:nth-child(8) > span{
+    display: none;
+}
+.content-footer {
+    margin: 22px 0;
+}
+div#userManageTB_info {
+    display: none;
+}
+/****************** Service Requests ******************/

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon_img.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link
+        href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/adminPanel.css">
+
+    <title>User Management</title>
+</head>
+
+<body>
+    <!-- Admin Panel Navabar Start -->
+    <header class="um-navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid">
+                <div class="um-logo-txt">
+                    <span>helperland</span>
+                </div>
+                <div class="um-top-menu">
+                    <span class="userIcon"><i class="fal fa-user-circle fa-2x"></i></span>
+                    <span class="userName">@ViewBag.Uname</span>
+                    <span class="logoutBtn"><a href="#"><i class="far fa-power-off fa-2x"></i></a></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Admin Panel Navabar End -->
+
+    <!-- Admin Panel Start -->
+    <section class="admin-panel">
+        <div class="um-admin">
+            <div class="admin-leftMenu">
+                <div class="nav flex-column text-start um-left-menu">
+                    <a class="nav-link" asp-controller="Admin" asp-action="Servicerequest">Service Requests</a>
+                    <a class="nav-link active">User Management</a>
+                </div>
+            </div>
+            <div class="admin-mainContent">
+                <div class="srContentHeader">
+                    <span class="sectionName">User Management</span>
+                </div>
+
+                <div class="searchingTab">
+
+                </div>
+
+                <div class="umTable">
+                    <div class="exportBtnDiv">
+                        <button class="btn exportBtn">Export</button>
+                    </div>   
+                    <table id="userManageTB" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <th>Role</th>
+                                <th>Date of Registration</th>
+                                <th>User Type</th>
+                                <th>Phone</th>
+                                <th>Postal code</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*<tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                            </tr>*@
+                        </tbody>
+                    </table> 
+                </div>
+                <div class="content-footer">
+                    <span>©2018 Helperland. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Admin Panel End -->
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script
+        src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+    
+        <script src="/js/adminUM.js"></script>
+</body>
+
+</html>

@@ -897,6 +897,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
     border: 1px solid #E1E1E1;
     border-radius: 50%;
     padding: 15px;
+    margin: 0 3px;
 }
 
 .dataTables_wrapper .dataTables_paginate span .paginate_button {
@@ -906,13 +907,14 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
     display: inline;
     color: #646464;
     text-decoration: none;
+    margin: 0 3px;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
     color: white !important;
     background: #1d7a8c !important;
     border: 1px solid transparent;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
@@ -1196,6 +1198,64 @@ table.dataTable thead .sorting_desc {
     margin-bottom: 10px;
 }
 
+/*    Favourite Pro   */
+.content-headerFavPro, #favProTB thead {
+    display: none;
+}
+#favProTB tbody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+#favProTB tbody tr {
+    border: 1px solid #E1E1E1;
+    margin: 15px;
+    color: #646464;
+}
+#favProTB tbody td {
+    display: flex;
+    justify-content: center;
+    min-width: 275px;
+}
+#favProTB tbody td img {
+    border: 1px solid #c8c8c8;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.spNameFavTB {
+    font-size: 18px;
+    color: #646464;
+    font-weight: bold;
+}
+.cleaningCount {
+    color: #646464;
+    margin: 20px;
+}
+.blockSPBtn, .unblockSPBtn {
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+}
+.favSPBtn, .unfavSPBtn {
+    background-color: #1D7A8C;
+    color: white;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+    margin-right: 5px;
+}
+.blockSPBtn:hover, .unblockSPBtn:hover {
+    color: white;
+    background-color: #cc5656;
+}
+.favSPBtn:hover, .unfavSPBtn:hover {
+    color: white;
+    background-color: #146371;
+}
+/*    Favourite Pro   */
 
 
 
@@ -1404,6 +1464,30 @@ table.dataTable thead .sorting_desc {
     .content-header .smSortingBtn a{
         color:#646464;
         padding-right:5px;
+    }
+    #favProTB tbody {
+        flex-direction: column;
+    }
+    div#favProTB_paginate {
+        text-align: center;
+        margin: 5px;
+    }
+    div#serReqTable_paginate {
+        text-align: center;
+        padding: 5px;
+    }
+
+    div#shTable_paginate {
+        text-align: center;
+        padding: 5px;
+    }
+    .content-headerFavPro{
+        display:block;
+    }
+    .content-headerFavPro h3{
+        font-size: 22px;
+    font-weight: bold;
+    color: #646464;
     }
 }
 

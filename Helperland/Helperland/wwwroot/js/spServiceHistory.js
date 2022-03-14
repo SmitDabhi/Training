@@ -206,7 +206,6 @@ function showMap(pin) {
         },
         error: (err) => {
             console.log(err);
-
         }
     });
 }

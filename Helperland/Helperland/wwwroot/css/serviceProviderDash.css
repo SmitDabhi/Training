@@ -388,6 +388,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
     border: 1px solid #E1E1E1;
     border-radius: 50%;
     padding: 15px;
+    margin: 0 3px;
 }
 
 .dataTables_wrapper .dataTables_paginate span .paginate_button {
@@ -397,6 +398,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
     display: inline;
     color: #646464;
     text-decoration: none;
+    margin: 0 3px;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {

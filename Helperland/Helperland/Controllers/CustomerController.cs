@@ -2,6 +2,7 @@
 using Helperland.Models.viewModels;
 using Helperland.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
 using System;
 
 namespace Helperland.Controllers
@@ -9,10 +10,12 @@ namespace Helperland.Controllers
     public class CustomerController : Controller
     {
         private readonly HelperlandDBContext _dbContext;
+        private readonly IConfiguration _config;
 
-        public CustomerController(HelperlandDBContext dbContext)
+        public CustomerController(HelperlandDBContext dbContext, IConfiguration config)
         {
             _dbContext = dbContext;
+            _config = config;
         }
         public IActionResult Servicerequest()
         {
@@ -65,6 +68,160 @@ namespace Helperland.Controllers
             {
                 ViewBag.UType = 1;
                 return RedirectToAction("Index", "Home", new { login = "true" });
+            }
+        }
+
+        public IActionResult Dashboard()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+                if(req.UserTypeId == 1)
+                {
+                    ViewBag.IsloggedIn = "success";
+                    ViewBag.Uname = req.FirstName;
+                    ViewBag.UType = req.UserTypeId;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.UType = 1;
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                ViewBag.UType = 1;
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        public IActionResult Myaccount()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+
+                if(req.UserTypeId == 1)
+                {
+                    ViewBag.IsloggedIn = "success";
+                    ViewBag.Uname = req.FirstName;
+                    ViewBag.UType = req.UserTypeId;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.UType = 1;
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                ViewBag.UType = 1;
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        public IActionResult FavouritePro()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+
+                if(req.UserTypeId == 1)
+                {
+                    ViewBag.IsloggedIn = "success";
+                    ViewBag.Uname = req.FirstName;
+                    ViewBag.UType = req.UserTypeId;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.UType = 1;
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                ViewBag.UType = 1;
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetFavProData()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+
+            List<spBlockCustVM> data = new();
+            if (Uid != null)
+            {
+                var req = _dbContext.ServiceRequests.Where(x => x.UserId == Uid && x.Status == 1).ToList().DistinctBy(x => x.ServiceProviderId);
+                if (req.Count() > 0)
+                {
+                    foreach (var item in req)
+                    {
+                        spBlockCustVM res = new();
+                        res.Uid = (int)item.ServiceProviderId;
+
+                        var userData = _dbContext.Users.FirstOrDefault(x => x.UserId == item.ServiceProviderId);
+                        res.Name = userData.FirstName + " " + userData.LastName;
+                        res.ProfIcon = userData.UserProfilePicture;
+
+                        var rating = _dbContext.Ratings.Where(x => x.RatingTo == item.ServiceProviderId);
+                        if (rating.Count() > 0)
+                        {
+                            res.Rating = Math.Round(rating.Average(x => x.Ratings), 1);
+                        }
+                        else
+                        {
+                            res.Rating = 0;
+                        }
+
+                        res.ServCount = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == item.ServiceProviderId && x.Status == 1).Count();
+
+                        var favData = _dbContext.FavoriteAndBlockeds.FirstOrDefault(x=>x.UserId == Uid && x.TargetUserId==item.ServiceProviderId);
+                        
+                        if (favData != null)
+                        {
+                            if(favData.IsBlocked == true)
+                            {
+                                res.IsBlocked = true;
+                            }
+                            else
+                            {
+                                res.IsBlocked= false;
+                            }
+                            
+                            if(favData.IsFavorite == true)
+                            {
+                                res.IsFav = true;
+                            }
+                            else
+                            {
+                                res.IsFav= false;
+                            }
+                        }
+                        else
+                        {
+                            res.IsBlocked = false;
+                            res.IsFav = false;
+                        }
+                        data.Add(res);
+                    }
+                    return new JsonResult(data);
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
             }
         }
 
@@ -247,65 +404,48 @@ namespace Helperland.Controllers
                     _dbContext.SaveChanges();
                 }
 
+                //Mailing SP
+                var pin = ServiceRequest.Entity.ZipCode;
+
+                var reqEmail = _dbContext.Users.Where(x => x.ZipCode == pin && x.UserTypeId == 2).ToList();
+
+                
+                foreach (var item in reqEmail)
+                {
+                    if(!_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == item.UserId && x.TargetUserId == Uid && x.IsBlocked == true) && !_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == item.UserId && x.IsBlocked == true))
+                    {
+                        string Subject = "New Service Request";
+                        string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello Service Providers, <br> New service request available in your area, Please check it out. <br>" + "<a href='" + Url.Action("Index", "Home", new { }, "https") + "' style ='text-decoration: none; cursor: pointer; color: #1D7A8C; font-size: 16px; font-family: sans-serif; font-weight:bold'>Check<br></a></span>";
+                        MailMessage msg = new MailMessage();
+                        msg.Body = Body;
+                        msg.Subject = Subject;
+                        msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
+                        msg.To.Add(item.Email);
+                        msg.IsBodyHtml = true;
+
+                        SmtpClient smtp = new SmtpClient();
+                        smtp.Host = "smtp.gmail.com";
+                        smtp.Port = 587;
+                        smtp.EnableSsl = true;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                        System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+
+                        credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                        credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = credential;
+                        smtp.Send(msg);
+                    }
+                }
+                //Mailing SP
+
                 return Json(ServiceRequest.Entity.ServiceRequestId);
 
             }
             else
             {
                 return Json("false");
-            }
-        }
-
-        public IActionResult Dashboard()
-        {
-            int? Uid = HttpContext.Session.GetInt32("userid");
-            if(Uid != null)
-            {
-                var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
-                if(req.UserTypeId == 1)
-                {
-                    ViewBag.IsloggedIn = "success";
-                    ViewBag.Uname = req.FirstName;
-                    ViewBag.UType = req.UserTypeId;
-                    return View();
-                }
-                else
-                {
-                    ViewBag.UType = 1;
-                    return RedirectToAction("Index", "Home");
-                }
-            }
-            else
-            {
-                ViewBag.UType = 1;
-                return RedirectToAction("Index", "Home");
-            }
-        }
-
-        public IActionResult Myaccount()
-        {
-            int? Uid = HttpContext.Session.GetInt32("userid");
-            if(Uid != null)
-            {
-                var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
-
-                if(req.UserTypeId == 1)
-                {
-                    ViewBag.IsloggedIn = "success";
-                    ViewBag.Uname = req.FirstName;
-                    ViewBag.UType = req.UserTypeId;
-                    return View();
-                }
-                else
-                {
-                    ViewBag.UType = 1;
-                    return RedirectToAction("Index", "Home");
-                }
-            }
-            else
-            {
-                ViewBag.UType = 1;
-                return RedirectToAction("Index", "Home");
             }
         }
 
@@ -441,7 +581,7 @@ namespace Helperland.Controllers
                 {
                     foreach (var item in req)
                     {
-                        if(DateTime.Now >= item.ServiceStartDate)
+                        if(DateTime.Now >= item.ServiceStartDate && item.Status == null)
                         {
                             item.Status = 0;
                             item.Comments = "Out of Time";
@@ -581,6 +721,36 @@ namespace Helperland.Controllers
             _dbContext.ServiceRequests.Update(req);
             _dbContext.SaveChanges();
 
+            //Mailing SP
+            if(req.ServiceProviderId != null)
+            {
+                var spData = _dbContext.Users.FirstOrDefault(x => x.UserId == req.ServiceProviderId);
+
+                string Subject = "Cancellation of Service Request";
+                string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello " + spData.FirstName + ", <br> Service Request " + req.ServiceRequestId + " has been cancelled by customer.";
+                MailMessage msg = new MailMessage();
+                msg.Body = Body;
+                msg.Subject = Subject;
+                msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
+                msg.To.Add(spData.Email);
+                msg.IsBodyHtml = true;
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.EnableSsl = true;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+
+                credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = credential;
+                smtp.Send(msg);
+            }
+            //Mailing SP
+
             return Json(obj);
         }
 
@@ -608,6 +778,7 @@ namespace Helperland.Controllers
                     var conflict = false;
                     var sDt = "";
                     var eDt = "";
+
                     foreach (var i in check)
                     {
                         var newSerStartDT = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null);
@@ -638,6 +809,7 @@ namespace Helperland.Controllers
                             break;
                         }
                     }
+
                     if (conflict)
                     {
                         var obj = new
@@ -655,6 +827,36 @@ namespace Helperland.Controllers
 
                         _dbContext.ServiceRequests.Update(req);
                         _dbContext.SaveChanges();
+
+                        //Mailing SP
+
+                        var spData = _dbContext.Users.FirstOrDefault(x => x.UserId == req.ServiceProviderId);
+                        var newSerStartDT = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null);
+                        var newSerEndDT = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null).AddHours((double)req.SubTotal);
+
+                        string Subject = "Reschedule Service Request";
+                        string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello " + spData.FirstName + ", <br> Service Request "+ req.ServiceRequestId +" has been rescheduled by customer. New date and time are "+ DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null) +" to "+ newSerEndDT.ToString("t");
+                        MailMessage msg = new MailMessage();
+                        msg.Body = Body;
+                        msg.Subject = Subject;
+                        msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
+                        msg.To.Add(spData.Email);
+                        msg.IsBodyHtml = true;
+
+                        SmtpClient smtp = new SmtpClient();
+                        smtp.Host = "smtp.gmail.com";
+                        smtp.Port = 587;
+                        smtp.EnableSsl = true;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                        System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+
+                        credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                        credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = credential;
+                        smtp.Send(msg);
+                        //Mailing SP
 
                         return Json("true");
                     }

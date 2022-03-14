@@ -2,15 +2,19 @@
 using Helperland.Models.viewModels;
 using Helperland.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
 
 namespace Helperland.Controllers
 {
     public class ServiceproviderController : Controller
     {
         private readonly HelperlandDBContext _dbContext;
-        public ServiceproviderController(HelperlandDBContext dbContext)
+        private readonly IConfiguration _config;
+
+        public ServiceproviderController(HelperlandDBContext dbContext, IConfiguration config)
         {
             _dbContext = dbContext;
+            _config = config;
         }
 
         public IActionResult Dashboard()
@@ -28,13 +32,13 @@ namespace Helperland.Controllers
                 }
                 else
                 {
-                    ViewBag.UType = 2;
+                    ViewBag.UType = 1;
                     return RedirectToAction("Index", "Home");
                 }
             }
             else
             {
-                ViewBag.UType = 2;
+                ViewBag.UType = 1;
                 return RedirectToAction("Index", "Home");
             }
         }
@@ -80,13 +84,13 @@ namespace Helperland.Controllers
                 }
                 else
                 {
-                    ViewBag.UType = 2;
+                    ViewBag.UType = 1;
                     return RedirectToAction("Index", "Home");
                 }
             }
             else
             {
-                ViewBag.UType = 2;
+                ViewBag.UType = 1;
                 return RedirectToAction("Index", "Home");
             }
         }
@@ -106,13 +110,13 @@ namespace Helperland.Controllers
                 }
                 else
                 {
-                    ViewBag.UType = 2;
+                    ViewBag.UType = 1;
                     return RedirectToAction("Index", "Home");
                 }
             }
             else
             {
-                ViewBag.UType = 2;
+                ViewBag.UType = 1;
                 return RedirectToAction("Index", "Home");
             } 
         }
@@ -132,13 +136,13 @@ namespace Helperland.Controllers
                 }
                 else
                 {
-                    ViewBag.UType = 2;
+                    ViewBag.UType = 1;
                     return RedirectToAction("Index", "Home");
                 }
             }
             else
             {
-                ViewBag.UType = 2;
+                ViewBag.UType = 1;
                 return RedirectToAction("Index", "Home");
             }
         }
@@ -158,13 +162,13 @@ namespace Helperland.Controllers
                 }
                 else
                 {
-                    ViewBag.UType = 2;
+                    ViewBag.UType = 1;
                     return RedirectToAction("Index", "Home");
                 }
             }
             else
             {
-                ViewBag.UType = 2;
+                ViewBag.UType = 1;
                 return RedirectToAction("Index", "Home");
             }
         }
@@ -184,13 +188,13 @@ namespace Helperland.Controllers
                 }
                 else
                 {
-                    ViewBag.UType = 2;
+                    ViewBag.UType = 1;
                     return RedirectToAction("Index", "Home");
                 }
             }
             else
             {
-                ViewBag.UType = 2;
+                ViewBag.UType = 1;
                 return RedirectToAction("Index", "Home");
             }
         }
@@ -583,7 +587,7 @@ namespace Helperland.Controllers
                 {
                     foreach (var item in req)
                     {
-                        if (DateTime.Now >= item.ServiceStartDate)
+                        if (DateTime.Now >= item.ServiceStartDate && item.Status == null)
                         {
                             item.Status = 0;
                             item.Comments = "Out of Time";
@@ -712,6 +716,42 @@ namespace Helperland.Controllers
                     Msg = "Success",
                     Id = ReqId
                 };
+
+                //Mailing SP
+                var pin = req.ZipCode;
+
+                var reqEmail = _dbContext.Users.Where(x => x.ZipCode == pin && x.UserTypeId == 2).ToList();
+
+
+                foreach (var item in reqEmail)
+                {
+                    if (!_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == item.UserId && x.TargetUserId == req.UserId && x.IsBlocked == true) && !_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == req.UserId && x.TargetUserId == item.UserId && x.IsBlocked == true) && item.UserId != Uid)
+                    {
+                        string Subject = "Service no more available";
+                        string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello "+ item.FirstName + ", <br> Service request "+ req.ServiceRequestId +" is no more available now.";
+                        MailMessage msg = new MailMessage();
+                        msg.Body = Body;
+                        msg.Subject = Subject;
+                        msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
+                        msg.To.Add(item.Email);
+                        msg.IsBodyHtml = true;
+
+                        SmtpClient smtp = new SmtpClient();
+                        smtp.Host = "smtp.gmail.com";
+                        smtp.Port = 587;
+                        smtp.EnableSsl = true;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                        System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+
+                        credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                        credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = credential;
+                        smtp.Send(msg);
+                    }
+                }
+                //Mailing SP
 
                 return Json(obj);
             }

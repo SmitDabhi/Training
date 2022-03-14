@@ -1,7 +1,7 @@
 ﻿
 @{
-    ViewData["Title"] = "Block Customer";
-    Layout = "~/Views/Shared/_SPDashLayout.cshtml";
+    ViewData["Title"] = "Favourite Pros";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
 }
 
 <div class="user-name d-flex justify-content-center align-items-center">
@@ -17,41 +17,47 @@
 </div>
 <!-- Loader  -->
 
-<!-- SP BlockCust Start -->
+<!-- Cust Dashboard Start -->
 <section class="customer-dash">
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
             <div class="nav flex-column us-left-menu text-start">
-                <a class="nav-link" asp-controller="Serviceprovider" asp-action="Dashboard">Dashboard</a>
-                <a class="nav-link" asp-controller="Serviceprovider" asp-action="NewServiceRequest">New Service Requests</a>
-                <a class="nav-link" asp-controller="Serviceprovider" asp-action="UpcomingServices">Upcoming Services</a>
+                <a class="nav-link" asp-action="Dashboard" asp-controller="Customer">Dashboard</a>
+                <a class="nav-link" asp-action="Servicerequest" asp-controller="Customer">Service History</a>
                 <a class="nav-link">Service Schedule</a>
-                <a class="nav-link" asp-controller="Serviceprovider" asp-action="ServiceHistory">Service History</a>
-                <a class="nav-link" asp-controller="Serviceprovider" asp-action="MyRatings">My Ratings</a>
-                <a class="nav-link active">Block Customer</a>
+                <a class="nav-link active">Favourite Pros</a>
                 <a class="nav-link">Invoices</a>
                 <a class="nav-link">Notifications</a>
             </div>
             <div class="us-right-menu flex-fill" id="us-right-sideNav">
                 <div>
-                    <div class="content-headerUSPg mb-2">
-                        <h3>Block Customer</h3> 
+                    <div class="content-headerFavPro">
+                        <h3 class="my-auto">Favourite Pros</h3>
                     </div>
                     <div class="customer-table">
-                        <table id="blockCustTB" class="display" style="width:100%">
+                        <table id="favProTB" class="display" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Icon</th>
                                     <th>Name</th>
+                                    <th>Rating</th>
+                                    <th>Service Count</th>
                                     <th>Button</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @*<tr>
-                                    <td><img src="/img/avatar-car.png" /></td>
-                                    <td><span class="customerNameBlockTB">Smit Dabhi</span></td>
-                                    <td><button class="btn blockBtn">Button</button></td>
-                                </tr>*@
+                               @*<tr>
+                                   <td><img src="/img/avatar-car.png" /></td>
+                                   <td><span class="spNameFavTB">Smit Dabhi</span></td>
+                                   <td>Rating</td>
+                                   <td><span class="cleaningCount">1 Cleanings</span></td>
+                                   <td>
+                                       <div class="favTBBtn">
+                                           <button class="btn favSPBtn">Favourite</button>
+                                           <button class="btn blockSPBtn">Block</button>
+                                       </div>
+                                   </td>
+                               </tr>*@
                             </tbody>
                         </table>
                     </div>
@@ -60,38 +66,18 @@
         </div>
     </div>
 </section>
-<!-- SP BlockCust End -->
- 
-<!--Success Modal-->
-<div class="modal fade" id="upSerSuccessModal" aria-modal="true" role="dialog">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <span class="newReqImg">
-                    <i class="fas fa-check-circle fa-5x"></i>
-                </span>
-                <span class="successTxtUS"></span>
-                <span class="successBtn">
-                    <button class="btn">Ok</button>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Success Modal-->
+<!-- Cust Dashboard End -->
 
 @section css{
     <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+    <link href="/css/customerDash.css" rel="stylesheet" />
 }
 
 @section script{
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
-    <script src="/js/spBlockCust.js"></script>
+    <script src="/js/favPro.js"></script>
 }
-
-
-

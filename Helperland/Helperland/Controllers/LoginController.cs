@@ -131,6 +131,10 @@ namespace Helperland.Controllers
                         {
                             HttpContext.Session.SetInt32("userid", req.UserId);
                             return RedirectToAction("Dashboard", "Serviceprovider");
+                        }else if(req.UserTypeId == 3)
+                        {
+                            HttpContext.Session.SetInt32("userid", req.UserId);
+                            return RedirectToAction("Servicerequest", "Admin");
                         }
                     }
                     else
@@ -171,12 +175,12 @@ namespace Helperland.Controllers
                     int Uid = req.UserId;
                     string Subject = "Reset Password";
                     string Hash = BCrypt.Net.BCrypt.HashPassword(req.Password);
-                    string Body = "<span>Hi <br> Click the link below to reset your account password. <br>" + "<a href='" + Url.Action("ResetPassword", "Login", new { id = Uid, code = Hash }, "https") + "'>Reset Password</a></span>";
+                    string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello "+ req.FirstName +" <br> Click the link below to reset your account password. <br>" + "<a href='" + Url.Action("ResetPassword", "Login", new { id = Uid, code = Hash }, "https") + "' style ='text-decoration: none; cursor: pointer; color: #1D7A8C; font-size: 16px; font-family: sans-serif; font-weight:bold'>Reset Password <br></a></span>";
                     MailMessage msg = new MailMessage();
                     msg.Body = Body;
                     msg.To.Add(To);
                     msg.Subject = Subject;
-                    msg.From = new MailAddress("sm.project.workstation@gmail.com");
+                    msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
                     msg.IsBodyHtml = true;
 
                     SmtpClient smtp = new SmtpClient();

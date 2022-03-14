@@ -15,12 +15,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = S:\Training Tatvasoft\Helperland\Helperland
 build_property._RazorSourceGeneratorDebug = 
 
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Admin/Servicerequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2VydmljZXJlcXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Admin/Usermanagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcm1hbmFnZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [S:/Training Tatvasoft/Helperland/Helperland/Views/Customer/Bookservice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQm9va3NlcnZpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [S:/Training Tatvasoft/Helperland/Helperland/Views/Customer/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Customer/FavouritePro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRmF2b3VyaXRlUHJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [S:/Training Tatvasoft/Helperland/Helperland/Views/Customer/Myaccount.cshtml]
