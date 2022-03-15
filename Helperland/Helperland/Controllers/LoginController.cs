@@ -46,6 +46,8 @@ namespace Helperland.Controllers
                     Password = BCrypt.Net.BCrypt.HashPassword(userModel.Password),
                     Mobile = userModel.PhoneNumber,
                     UserTypeId = 1,
+                    IsActive = true,
+                    IsApproved = true,
                     CreatedDate = DateTime.Now,
                     ModifiedDate = DateTime.Now, 
                 };
@@ -91,6 +93,8 @@ namespace Helperland.Controllers
                     Password = BCrypt.Net.BCrypt.HashPassword(spModel.Password),
                     Mobile = spModel.PhoneNumber,
                     UserTypeId = 2,
+                    IsActive = false,
+                    IsApproved = false,
                     CreatedDate = DateTime.Now,
                     ModifiedDate = DateTime.Now,
                 };
@@ -127,15 +131,24 @@ namespace Helperland.Controllers
                         {
                             HttpContext.Session.SetInt32("userid", req.UserId);
                             return RedirectToAction("Dashboard", "Customer");
-                        }else if(req.UserTypeId == 2)
-                        {
-                            HttpContext.Session.SetInt32("userid", req.UserId);
-                            return RedirectToAction("Dashboard", "Serviceprovider");
                         }else if(req.UserTypeId == 3)
                         {
                             HttpContext.Session.SetInt32("userid", req.UserId);
                             return RedirectToAction("Servicerequest", "Admin");
                         }
+
+                        if (req.UserTypeId == 2 && req.IsApproved == true)
+                        {
+                            HttpContext.Session.SetInt32("userid", req.UserId);
+                            return RedirectToAction("Dashboard", "Serviceprovider");
+                        }
+                        else if (req.UserTypeId == 2 && req.IsApproved == false)
+                        {
+                            TempData["showClass"] = "alert show";
+                            TempData["errorMsg"] = "You are not approved by admin yet!";
+                            return RedirectToAction("Index", "Home", new { login = "true" });
+                        }
+                        
                     }
                     else
                     {

@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
     <link
         href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css"
         rel="stylesheet" type="text/css" />
@@ -31,7 +28,7 @@
                 <div class="um-top-menu">
                     <span class="userIcon"><i class="fal fa-user-circle fa-2x"></i></span>
                     <span class="userName">@ViewBag.Uname</span>
-                    <span class="logoutBtn"><a href="#"><i class="far fa-power-off fa-2x"></i></a></span>
+                    <span class="logoutBtn"><a asp-controller="Login" asp-action="Logout"><i class="far fa-power-off fa-2x"></i></a></span>
                 </div>
             </div>
         </nav>
@@ -57,7 +54,52 @@
                 </div>
 
                 <div class="umTable">
-                           
+                    <table id="servReqTB" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Service ID</th>
+                                <th>Service Date</th>
+                                <th>Customer Details</th>
+                                <th>Service Provider</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*<tr>
+                                <td>10</td>
+                                <td>
+                                    <div class="spRateSerDateTimeDiv">
+                                        <span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />01/01/2011</span>
+                                        <span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />08:00-11:00</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="CustomerDataSH">
+                                        <div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div>
+                                        <div class="CustomerDataAdd">
+                                            <span class="custNameSH">Smit Dabhi</span>
+                                            <span class="custAdd1SH">Last Street, 45</span>
+                                            <span class="custAdd2SH">364001 Bhavnagar</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="SPData">
+                                        <div><img src="/img/avatar-car.png" alt=""></div>
+                                        <div class="SPNameRate">
+                                            <span class="spName">Ravi Patel</span>
+                                            <div class="Stars" style="--rating: 4.3;"><span class="rateNumber">4.3</span></div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>133 &euro;</td>
+                                <td><span class="newStausSR">New</span></td>
+                                <td>1</td>
+                            </tr>*@
+                        </tbody>
+                    </table>     
                 </div>
                 <div class="content-footer">
                     <span>©2018 Helperland. All rights reserved.</span>
@@ -67,12 +109,49 @@
     </section>
     <!-- Admin Panel End -->
 
+    <!--Details Modal-->
+    <div class="modal fade" id="reqDetailsModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Service Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="serReqDetailsSH">
+                        <div class="row">
+                            <span class="reqDataDate"></span>
+                            <span class="reqDataDuration"></span>
+                        </div>
+                        <div class="row">
+                            <span class="reqDataId"></span>
+                            <span class="reqDataExtraTitle"><strong>Extras</strong> : <span class="reqDataExtra"></span></span>
+                            <span class="reqDataNetAmount"><strong>Net Amount</strong> :</span>
+                            <span class="reqDataPayment"></span>
+                        </div>
+                        <div class="row">
+                            <span class="reqDataAddress"></span>
+                            <span class="reqDataPhone"></span>
+                            <span class="reqDataEmail"></span>
+                        </div>
+                        <div class="row">
+                            <span class="reqDataComments"><strong>Comments</strong> : </span>
+                            <span class="reqCommentText"></span>
+                            <span class="reqDataHasPetTrue d-none"><i class="fa fa-check" aria-hidden="true"></i>I have pets at Home</span>
+                            <span class="reqDataHasPetFalse"><i class="fa fa-times" aria-hidden="true"></i>I don't have pets at Home</span>
+                        </div>
+                    </div>
+                    <div id="serReqSpDataSH" class="d-none"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Details Modal-->
+
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
     <script
         src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
     <script src="/js/adminSR.js"></script>

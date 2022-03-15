@@ -28,7 +28,7 @@
                 <div class="um-top-menu">
                     <span class="userIcon"><i class="fal fa-user-circle fa-2x"></i></span>
                     <span class="userName">@ViewBag.Uname</span>
-                    <span class="logoutBtn"><a href="#"><i class="far fa-power-off fa-2x"></i></a></span>
+                    <span class="logoutBtn"><a asp-controller="Login" asp-action="Logout"><i class="far fa-power-off fa-2x"></i></a></span>
                 </div>
             </div>
         </nav>
@@ -57,6 +57,8 @@
                     <div class="exportBtnDiv">
                         <button class="btn exportBtn">Export</button>
                     </div>   
+                    <div class="alert alert-success d-none" role="alert" id="actionMsg">
+                    </div>
                     <table id="userManageTB" class="display" style="width:100%">
                         <thead>
                             <tr>
@@ -79,7 +81,18 @@
                                 <td>5</td>
                                 <td>6</td>
                                 <td>7</td>
-                                <td>8</td>
+                                <td>
+                                    <div class="dropdown">
+                                      <a id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="far fa-ellipsis-v fa-lg"></i>
+                                      </a>
+                                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                      </ul>
+                                    </div>
+                                </td>
                             </tr>*@
                         </tbody>
                     </table> 
@@ -92,6 +105,24 @@
     </section>
     <!-- Admin Panel End -->
 
+    <!--Success Modal-->
+    <div class="modal fade" id="adminUMSuccessModal" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <span class="newReqImg">
+                        <i class="fas fa-check-circle fa-5x"></i>
+                    </span>
+                    <span class="successTxt"></span>
+                    <span class="successBtn">
+                        <button class="btn">Ok</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Success Modal-->
+
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -100,8 +131,8 @@
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
     <script
         src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
-    
-        <script src="/js/adminUM.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.2/xlsx.full.min.js"></script>
+    <script src="/js/adminUM.js"></script>
 </body>
 
 </html>

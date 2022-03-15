@@ -198,10 +198,15 @@ function getNewReqData() {
                             $(".loading-div").removeClass("d-none");
                         },
                         success: (data) => {
-                            if (data != "accepted") {
+                            if (data != "accepted" && data != "notactive") {
                                 $(".newReqImg").show();
                                 $(".successTxt").show().text("Service Request Accepted Successfully!");
                                 $(".successSmall").css("color", "#646464").text("Accepted Service Request Id: " + data.id);
+                                $("#newReqSuccessModal").modal("show");
+                            } else if (data == "notactive") {
+                                $(".newReqImg").hide();
+                                $(".successTxt").show().text("Access Denied");
+                                $(".successSmall").css("color", "#646464").text("Kindly Contact Admin to activate your account.");
                                 $("#newReqSuccessModal").modal("show");
                             } else {
                                 $(".newReqImg").hide();

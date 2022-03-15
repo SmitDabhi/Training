@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 
 * {
@@ -49,12 +49,10 @@ span.userName {
 
 .admin-panel {
     margin-top: 55px;
-    height: 100%;
 }
 
 .um-admin {
     display: flex;
-    height:100%
 }
 
 .admin-leftMenu {
@@ -85,6 +83,7 @@ span.userName {
     width: 80vw;
     background-color: #eeeeef;
     padding-left: 20px;
+    min-height:100vh;
 }
 
 .sectionName {
@@ -109,7 +108,7 @@ input::-webkit-inner-spin-button {
 }
 
 
-/****************** Service Requests ******************/
+/****************** User Management ******************/
 .exportBtnDiv {
     display: flex;
     justify-content: end;
@@ -118,9 +117,9 @@ input::-webkit-inner-spin-button {
 button.exportBtn {
     background-color: #1FB6FF;
     color: white;
-    padding: 14px 18px;
-    font-size: 16px;
-    border-radius: 7px;
+}
+button.exportBtn:hover {
+    color: white;
 }
 .umTable {
     margin: 20px 20px 0 0;
@@ -235,4 +234,245 @@ span.arrow-hack {
 div#userManageTB_info {
     display: none;
 }
-/****************** Service Requests ******************/
+span.ActiveStatus {
+    padding: 4px 11px;
+    background: #67B644;
+    color: white;
+    font-size:13px;
+}
+span.InactiveStatus {
+    padding: 4px 9px;
+    background: #FF6B6B;
+    color: white;
+    font-size:13px;
+}
+span.Not.ApprovedStatus {
+    padding: 4px;
+    background: #1FB6FF;
+    color: white;
+    font-size: 13px;
+}
+.dropdown a{
+    color:#646464;
+    text-decoration:none;
+    cursor:pointer;
+    text-align:center;
+}
+#userManageTB thead th:nth-child(8), #userManageTB thead th:nth-child(7), #userManageTB tbody tr td:nth-child(7), .dropdown{
+    text-align:center
+}
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color:transparent;
+    color:#4f4f4f;
+    font-weight:bold;
+}
+
+div#actionMsg {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*Success Modal*/
+#adminUMSuccessModal .modal-dialog {
+    justify-content: center;
+    align-items: center;
+}
+
+#adminUMSuccessModal .modal-content {
+    max-width: 400px;
+}
+
+#adminUMSuccessModal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px 20px;
+}
+
+i.fas.fa-check-circle {
+    color: #67b644;
+}
+
+span.successTxt {
+    font-size: 20px;
+    color: #646464;
+    padding: 25px 0px;
+}
+
+span.successBtn button {
+    text-decoration: none;
+    padding: 9px 20px;
+    background-color: #1D7A8C;
+    color: white;
+    border-radius: 23px;
+}
+
+span.successBtn button:hover {
+    color: white;
+    background-color: #146371;
+}
+/*Success Modal*/
+/****************** User Management ******************/
+
+/****************** Service Request ******************/
+#servReqTB thead {
+    color: #646464;
+    background-color: #F9F9F9;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #E1E1E1;
+}
+#servReqTB thead tr {
+    background-color: #F9F9F9;
+}
+#servReqTB thead th {
+    padding: 17px 20px 18px 14px;
+}
+#servReqTB tbody tr {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+}
+#servReqTB tbody td {
+    padding: 15px 20px 15px 14px;
+    color: #646464;
+}
+div#servReqTB_paginate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+}
+#servReqTB thead th:nth-child(7) > span {
+    display: none;
+}
+div#servReqTB_info {
+    display: none;
+}
+.CustomerDataSH, .SPData{
+    display: flex;
+    align-items: center;
+}
+.CustomerDataAdd, .SPNameRate{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+.spRateSerDateTimeDiv {
+    display: flex;
+    flex-direction: column;
+}
+.SPData img{
+    height:46px;
+}
+#servReqTB thead th:nth-child(7), #servReqTB thead th:nth-child(6), #servReqTB thead th:nth-child(5), #servReqTB tbody td:nth-child(7),#servReqTB tbody td:nth-child(6),#servReqTB tbody td:nth-child(5) {
+   text-align:center;
+}
+span.NewStausSR {
+    padding: 4px 11px;
+    background: #F2BB37;
+    color: white;
+    font-size: 13px;
+}
+span.CompletedStausSR {
+    padding: 4px 11px;
+    background: #67B644;
+    color: white;
+    font-size: 13px;
+}
+span.PendingStausSR {
+    padding: 4px 11px;
+    background: #1FB6FF;
+    color: white;
+    font-size: 13px;
+}
+span.CancelledStausSR {
+    padding: 4px 11px;
+    background: #FF6B6B;
+    color: white;
+    font-size: 13px;
+}
+.spRateSerDateTimeDiv:hover, .CustomerDataSH:hover, .reqIdSR:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+ /* ---ReqDetails Modal--- */
+#reqDetailsModal .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+#reqDetailsModal .modal-header h5 {
+    color: #646464;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+}
+#reqDetailsModal .modal-body {
+    color: #646464;
+    padding: 0px 14px;
+    display:flex;
+}
+#reqDetailsModal .modal-footer {
+    border-top: none;
+    justify-content:start;
+}
+#reqDetailsModal .modal-body .row {
+    margin: 0 5px;
+    border-bottom: 1px solid #c8c8c8;
+    padding: 10px 0;
+}
+#reqDetailsModal .modal-body .row span{
+    padding:0;
+}
+.reqDataPayment {
+    color: #1d7a8c;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.reqDataHasPetTrue i {
+    background-color: #67B644;
+    color: white;
+    padding: 4px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.reqDataHasPetFalse i {
+    background-color: #f93737;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+span.reqCommentText {
+    margin-bottom: 10px;
+}
+#serReqSpDataSH {
+    padding: 10px;
+    border-left: 2px solid #c8c8c8;
+    margin-bottom: 10px;
+}
+/* ---Reschedule Modal---*/
+/*  SP Star Ratings  */
+.Stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: flex;
+    font-size: 25px;
+    line-height: 1;
+    align-items: center;
+}
+
+.Stars::before {
+    content: '★★★★★';
+    background: linear-gradient(90deg, #fc0 var(--percent), #ccc var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rateNumber {
+    font-size: 14px;
+    padding-left: 5px;
+}
+/*  SP Star Ratings  */
+/****************** Service Request ******************/

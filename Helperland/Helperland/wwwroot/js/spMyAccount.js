@@ -203,6 +203,7 @@ function getAccData() {
             $(".loading-div").removeClass("d-none");
         },
         success: (data) => {
+            console.log(data)
             if (data != "notfound") {
                 $("#inputFname").val(data.fname);
                 $("#inputLname").val(data.lname);
@@ -211,6 +212,12 @@ function getAccData() {
 
                 if (data.avatar != null) {
                     $(".spAccProfIcon").html('<img src="/img/avatar-' + data.avatar + '.png">');
+                }
+
+                if (data.status) {
+                    $("#spAccountStatus").text("Active").css({ "color": "#67B644", "font-size": "20px" })
+                } else {
+                    $("#spAccountStatus").text("Inactive").css({ "color": "#fd6966", "font-size": "20px" })
                 }
 
                 if (data.dob != null) {

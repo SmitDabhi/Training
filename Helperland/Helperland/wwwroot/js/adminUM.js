@@ -1,5 +1,20 @@
 $(document).ready( function () {
 
+    $("#adminUMSuccessModal .successBtn button").click(() => {
+        window.location.reload();
+    });
+
+    $(".exportBtnDiv button").click(() => {
+
+        var data = document.getElementById("userManageTB");
+
+        var file = XLSX.utils.table_to_book(data, { sheet: "sheet1" });
+
+        XLSX.write(file, { bookType: "xlsx", bookSST: true, type: "base64" });
+
+        XLSX.writeFile(file, "Admin_Userlist.xlsx");
+    });
+
     getUMAdminData();
 });
 
@@ -8,13 +23,24 @@ function getUMAdminData() {
         url: "/Admin/GetUMAdminData",
         method: "GET",
         success: (data) => {
-            console.log(data);
             if (data != "notfound") {
                 var dataList = $("#userManageTB tbody");
                 dataList.empty();
 
                 for (var i in data) {
-                    dataList.append('<tr><td>' + data[i].name + '</td><td></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td>' + data[i].status + '</td><td></td></tr>');
+                    if (data[i].uType == "Customer" && data[i].status == "Active") {
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Deactivate</a></li></ul></div ></td></tr>');
+                    } else if (data[i].uType == "Customer" && data[i].status == "Inactive") {
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Activate</a></li></ul></div ></td></tr>');
+                    } else if (data[i].uType == "Service Provider" && data[i].status == "Active") {
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Deactivate</a></li></ul></div ></td></tr>');
+                    } else if (data[i].uType == "Service Provider" && data[i].status == "Inactive") {
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Activate</a></li></ul></div ></td></tr>');
+                    } else if (data[i].uType == "Service Provider" && data[i].status == "Not Approved") {
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Approve</a></li></ul></div ></td></tr>');
+                    } else if (data[i].uType == "Admin") {
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">' + data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td></td></tr>');
+                    }
                 }
             }
 
@@ -33,12 +59,74 @@ function getUMAdminData() {
                     'info': "",
                 }
             });
+
+            $("#userManageTB").click((e) => {
+                if (e.target.className == "dropdown-item" && e.target.textContent == "Deactivate") {
+                    var id = parseInt(e.target.getAttribute("value"));
+
+                    $.ajax({
+                        url: "/Admin/DeactivateUser",
+                        method: "POST",
+                        data: { Id: id },
+                        success: (data) => {
+                            if (data == "true") {
+                                $(".successTxt").text("User Deactivated Successfully!");
+                                $("#adminUMSuccessModal").modal("show");
+                            }
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        }
+                    });
+                }
+
+                if (e.target.className == "dropdown-item" && e.target.textContent == "Activate") {
+                    var id = parseInt(e.target.getAttribute("value"));
+
+                    $.ajax({
+                        url: "/Admin/ActivateUser",
+                        method: "POST",
+                        data: { Id: id },
+                        success: (data) => {
+                            if (data == "true") {
+                                $(".successTxt").text("User Activated Successfully!");
+                                $("#adminUMSuccessModal").modal("show");
+                            }
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        }
+                    });
+                }
+
+                if (e.target.className == "dropdown-item" && e.target.textContent == "Approve") {
+                    var id = parseInt(e.target.getAttribute("value"));
+
+                    $.ajax({
+                        url: "/Admin/ApproveUser",
+                        method: "POST",
+                        data: { Id: id },
+                        success: (data) => {
+                            if (data == "true") {
+                                $(".successTxt").text("User Approved Successfully!");
+                                $("#adminUMSuccessModal").modal("show");
+                            }
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        }
+                    });
+                }
+
+            });
+
         },
         error: (err) => {
             console.log(err);
         }
     });
 }
+
 
 var spanSorting = '<span class="arrow-hack sort">&nbsp;&nbsp;&nbsp;</span>',
     spanAsc = '<span class="arrow-hack asc">&nbsp;&nbsp;&nbsp;</span>',

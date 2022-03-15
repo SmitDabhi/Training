@@ -411,7 +411,8 @@ namespace Helperland.Controllers
                     res.Nationaity = data.NationalityId;
                     res.Gender = data.Gender;
                     res.Avatar = data.UserProfilePicture;
-                    
+                    res.Status = data.IsActive;
+
                     var addDetails = _dbContext.UserAddresses.FirstOrDefault(x => x.UserId == data.UserId);
                     if(addDetails != null)
                     {
@@ -702,7 +703,7 @@ namespace Helperland.Controllers
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
 
-            if (_dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ReqId).ServiceProviderId == null)
+            if (_dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ReqId).ServiceProviderId == null && _dbContext.Users.FirstOrDefault(x => x.UserId == Uid).IsActive)
             {
                 ServiceRequest req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ReqId);
                 req.ServiceProviderId = Uid;
@@ -754,6 +755,10 @@ namespace Helperland.Controllers
                 //Mailing SP
 
                 return Json(obj);
+            }
+            else if (_dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ReqId).ServiceProviderId == null && !_dbContext.Users.FirstOrDefault(x => x.UserId == Uid).IsActive)
+            {
+                return Json("notactive");
             }
             else
             {
