@@ -180,6 +180,16 @@
                         setTimeout(() => {
                             $("#errorDataPage").html("");
                         }, 5000);
+                    } else if (data == "inactive") {
+                        $("#errorDataPage").html('<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Access Denied! Kindly contact Admin to activate your profile.</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                        setTimeout(() => {
+                            $("#errorDataPage").html("");
+                        }, 5000);
+                    } else if (data == "notfound") {
+                        $("#errorDataPage").html('<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Something went wrong! Try again later.</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                        setTimeout(() => {
+                            $("#errorDataPage").html("");
+                        }, 5000);
                     }
                 },
                 error: (err) => {
@@ -203,7 +213,6 @@ function getAccData() {
             $(".loading-div").removeClass("d-none");
         },
         success: (data) => {
-            console.log(data)
             if (data != "notfound") {
                 $("#inputFname").val(data.fname);
                 $("#inputLname").val(data.lname);

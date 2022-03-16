@@ -138,9 +138,19 @@ namespace Helperland.Controllers
             {
                 User req = _dbContext.Users.FirstOrDefault(x => x.UserId == Id);
                 req.IsActive = false;
+                req.ModifiedDate = DateTime.Now;
+                req.ModifiedBy = (int)Uid;
                 
                 _dbContext.Users.Update(req);
                 _dbContext.SaveChanges();
+
+                Zipcode add = _dbContext.Zipcodes.FirstOrDefault(x => x.ZipcodeValue == req.ZipCode);
+                if(add != null)
+                {
+                    add.ZipcodeValue = "0";
+                    _dbContext.Zipcodes.Update(add);
+                    _dbContext.SaveChanges();
+                }
 
                 return Json("true");
             }
@@ -158,9 +168,19 @@ namespace Helperland.Controllers
             {
                 User req = _dbContext.Users.FirstOrDefault(x => x.UserId == Id);
                 req.IsActive = true;
+                req.ModifiedDate = DateTime.Now;
+                req.ModifiedBy = (int)Uid;
 
                 _dbContext.Users.Update(req);
                 _dbContext.SaveChanges();
+
+                Zipcode add = _dbContext.Zipcodes.FirstOrDefault(x => x.ZipcodeValue == "0");
+                if (add != null)
+                {
+                    add.ZipcodeValue = req.ZipCode;
+                    _dbContext.Zipcodes.Update(add);
+                    _dbContext.SaveChanges();
+                }
 
                 return Json("true");
             }
@@ -179,6 +199,8 @@ namespace Helperland.Controllers
                 User req = _dbContext.Users.FirstOrDefault(x => x.UserId == Id);
                 req.IsActive = true;
                 req.IsApproved = true;
+                req.ModifiedBy= (int)Uid;
+                req.ModifiedDate= DateTime.Now;
 
                 _dbContext.Users.Update(req);
                 _dbContext.SaveChanges();
@@ -324,6 +346,121 @@ namespace Helperland.Controllers
             {
                 return Json("notfound");
             } 
+        }
+
+        [HttpPost]
+        public IActionResult CancelReq(int Reqid)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                ServiceRequest req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == Reqid);
+                if (req != null)
+                {
+                    req.Status = 0;
+                    req.ModifiedDate = DateTime.Now;
+                    req.ModifiedBy = (int)Uid;
+
+                    _dbContext.ServiceRequests.Update(req);
+                    _dbContext.SaveChanges();
+
+                    return Json("true");
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetEditModalData(int Reqid)
+        {
+            var req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == Reqid);
+
+            if(req != null)
+            {
+                AdminEditModalVM res = new();
+                res.Id = req.ServiceRequestId;
+                res.Date = req.ServiceStartDate.ToString("dd/MM/yyyy");
+                res.Time = req.ServiceStartDate.ToString("HH:mm");
+                res.Comment = req.Comments;
+
+                var reqAdd = _dbContext.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == req.ServiceRequestId);
+                res.AddLine1 = reqAdd.AddressLine1;
+                res.AddLine2 = reqAdd.AddressLine2;
+                res.City = reqAdd.City;
+                res.Pincode = reqAdd.PostalCode;
+
+                return new JsonResult(res);
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult ValidateZip(string Pin)
+        {
+            var req = _dbContext.Zipcodes.FirstOrDefault(x => x.ZipcodeValue == Pin);
+            if(req != null)
+            {
+                var res = _dbContext.Cities.FirstOrDefault(x => x.Id == req.CityId).CityName;
+
+                return Json(res);
+            }
+            else
+            {
+                return Json("false");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult UpdateService(AdminEditModalVM data)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if(Uid != null)
+            {
+                ServiceRequest req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == data.Id);
+                if (req != null)
+                {
+                    req.ServiceStartDate = DateTime.ParseExact(data.Date+" "+data.Time, "dd/MM/yyyy HH:mm", null);
+                    req.Comments = data.Comment;
+                    req.ModifiedBy = Uid;
+                    req.ModifiedDate = DateTime.Now;
+
+                    _dbContext.ServiceRequests.Update(req);
+                    _dbContext.SaveChanges();
+
+                    ServiceRequestAddress reqAdd = _dbContext.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == req.ServiceRequestId);
+
+                    if(reqAdd != null)
+                    {
+                        reqAdd.AddressLine1 = data.AddLine1;
+                        reqAdd.AddressLine2 = data.AddLine2;
+                        reqAdd.City = data.City;
+                        reqAdd.PostalCode = data.Pincode;
+
+                        _dbContext.ServiceRequestAddresses.Update(reqAdd);
+                        _dbContext.SaveChanges();
+                    }                    
+    
+                    return Json("true");
+                }
+                else
+                {
+                    return Json("false");
+                }
+            }
+            else
+            {
+                return Json("false");
+            }
         }
     }   
 }

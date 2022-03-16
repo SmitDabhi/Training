@@ -1,5 +1,17 @@
 $(document).ready( function () {
 
+    $("#searchFromDate").datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        orientation: "top"
+    });
+
+    $("#searchToDate").datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        orientation: "top"
+    });
+
     $("#adminUMSuccessModal .successBtn button").click(() => {
         window.location.reload();
     });
@@ -22,6 +34,9 @@ function getUMAdminData() {
     $.ajax({
         url: "/Admin/GetUMAdminData",
         method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: (data) => {
             if (data != "notfound") {
                 var dataList = $("#userManageTB tbody");
@@ -29,24 +44,26 @@ function getUMAdminData() {
 
                 for (var i in data) {
                     if (data[i].uType == "Customer" && data[i].status == "Active") {
-                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Deactivate</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="'+ data[i].id +'">Deactivate</a></li></ul></div ></td></tr>');
                     } else if (data[i].uType == "Customer" && data[i].status == "Inactive") {
-                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Activate</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="'+ data[i].id +'">Activate</a></li></ul></div ></td></tr>');
                     } else if (data[i].uType == "Service Provider" && data[i].status == "Active") {
-                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Deactivate</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="'+ data[i].id +'">Deactivate</a></li></ul></div ></td></tr>');
                     } else if (data[i].uType == "Service Provider" && data[i].status == "Inactive") {
-                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Activate</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="'+ data[i].id +'">Activate</a></li></ul></div ></td></tr>');
                     } else if (data[i].uType == "Service Provider" && data[i].status == "Not Approved") {
-                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="'+ data[i].id +'">Approve</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">'+ data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="'+ data[i].id +'">Approve</a></li></ul></div ></td></tr>');
                     } else if (data[i].uType == "Admin") {
                         dataList.append('<tr><td>' + data[i].name + '</td><td><div class="d-none">' + data[i].email +'</div></td><td>' + data[i].date + '</td><td>' + data[i].uType + '</td><td>' + data[i].phone + '</td><td>' + data[i].postalCode + '</td><td><span class="' + data[i].status + 'Status">' + data[i].status + '</span></td><td></td></tr>');
                     }
+
+                    $("#userSelect").append('<option value="' + data[i].name +'">' + data[i].name +'</option>');
                 }
             }
 
-            $('#userManageTB').DataTable({
+            var table = $('#userManageTB').DataTable({
                 "dom": 'Bt<"table-bottom d-flex justify-content-between"<"table-bottom-inner d-flex"li>p>',
-                "searching": false,
+                "searching": true,
                 'columnDefs': [{
                     'targets': [7],
                     'orderable': false,
@@ -68,6 +85,9 @@ function getUMAdminData() {
                         url: "/Admin/DeactivateUser",
                         method: "POST",
                         data: { Id: id },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
                         success: (data) => {
                             if (data == "true") {
                                 $(".successTxt").text("User Deactivated Successfully!");
@@ -76,6 +96,9 @@ function getUMAdminData() {
                         },
                         error: (err) => {
                             console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
                         }
                     });
                 }
@@ -87,6 +110,9 @@ function getUMAdminData() {
                         url: "/Admin/ActivateUser",
                         method: "POST",
                         data: { Id: id },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
                         success: (data) => {
                             if (data == "true") {
                                 $(".successTxt").text("User Activated Successfully!");
@@ -95,6 +121,9 @@ function getUMAdminData() {
                         },
                         error: (err) => {
                             console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
                         }
                     });
                 }
@@ -106,6 +135,9 @@ function getUMAdminData() {
                         url: "/Admin/ApproveUser",
                         method: "POST",
                         data: { Id: id },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
                         success: (data) => {
                             if (data == "true") {
                                 $(".successTxt").text("User Approved Successfully!");
@@ -114,15 +146,67 @@ function getUMAdminData() {
                         },
                         error: (err) => {
                             console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
                         }
                     });
                 }
 
             });
 
+            $("#searchBtn").click(() => {
+                var uName = $("#userSelect").val();
+                var UType = $("#userTypeSelect").val();
+                var Phone = $("#searchPhone").val();
+                var Pin = $("#searchPinCode").val();
+                var email = $("#searchEmail").val();
+                var FromDT = $("#searchFromDate").val();
+                var ToDT = $("#searchToDate").val();
+
+                if (uName != "" && uName != "User Name") {
+                    table.column(0).search(uName);
+                } else if (uName == "" || uName == "User Name") {
+                    table.column(0).search("");
+                }
+
+                if (UType != "" && UType != "User Type") {
+                    table.column(3).search(UType);
+                } else {
+                    table.column(3).search("");
+                }
+
+                if (Phone != "") {
+                    table.column(4).search(Phone);
+                } else {
+                    table.column(4).search("");
+                }
+
+                if (Pin != "") {
+                    table.column(5).search(Pin);
+                } else {
+                    table.column(5).search("");
+                }
+
+                if (email != "") {
+                    table.column(1).search(email);
+                } else {
+                    table.column(1).search("");
+                }
+
+                table.draw();
+            });
+
+            $("#clearBtn").click(() => {
+                window.location.reload();
+            });
+
         },
         error: (err) => {
             console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
         }
     });
 }

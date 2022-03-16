@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link
-        href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css"
-        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
     <link rel="stylesheet" href="/css/adminPanel.css">
 
     <title>User Management</title>
@@ -35,6 +33,15 @@
     </header>
     <!-- Admin Panel Navabar End -->
 
+    <!-- Loader  -->
+    <div class="loading-div d-none">
+        <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+    <!-- Loader  -->
+
     <!-- Admin Panel Start -->
     <section class="admin-panel">
         <div class="um-admin">
@@ -50,7 +57,47 @@
                 </div>
 
                 <div class="searchingTab">
-
+                    <div class="userSelect">
+                        <select class="form-select" id="userSelect">
+                            <option selected>User Name</option>
+                        </select>
+                    </div>
+                    <div class="userTypeSelect">
+                        <select class="form-select" id="userTypeSelect">
+                            <option selected>User Type</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Customer">Customer</option>
+                            <option value="Service Provider">Service Provider</option>
+                        </select>
+                    </div>
+                    <div class="PhoneNumberSearch">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1">+91</span>
+                          <input type="number" class="form-control" id="searchPhone" placeholder="Phone Number" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="PostalCodeSearch">
+                        <input type="number" placeholder="Postal Code" id="searchPinCode" class="form-control" />
+                    </div>
+                    <div class="EmailSearch">
+                        <input type="email" placeholder="Email" id="searchEmail" class="form-control" />
+                    </div>
+                    <div class="fromDTSearch">
+                        <input type="text" class="form-control" id="searchFromDate" placeholder="From Date" readonly/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                            <path fill-rule="evenodd" fill="#1FB6FF" d="M.457 20.1V2.143H4.15V.12h1.848v2.023H9.76V.12h1.163v2.023H14.1V.12h1.748v2.023h3.694V20.1H.457zM17.695 6.456H2.304v11.706h15.391V6.456zM7.229 11.385H5.382V9.536h1.847v1.849zm0 4.425H5.382v-2.577h1.847v2.577zm3.694-4.425H9.76V9.536h1.163v1.849zm0 4.425H9.76v-2.577h1.163v2.577zm3.694-4.425H12.77V9.536h1.847v1.849zm0 4.425H12.77v-2.577h1.847v2.577z"/>
+                        </svg>
+                    </div>
+                    <div class="toDTSearch">
+                        <input type="text" class="form-control" id="searchToDate" placeholder="To Date" readonly/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                            <path fill-rule="evenodd" fill="#1FB6FF" d="M.457 20.1V2.143H4.15V.12h1.848v2.023H9.76V.12h1.163v2.023H14.1V.12h1.748v2.023h3.694V20.1H.457zM17.695 6.456H2.304v11.706h15.391V6.456zM7.229 11.385H5.382V9.536h1.847v1.849zm0 4.425H5.382v-2.577h1.847v2.577zm3.694-4.425H9.76V9.536h1.163v1.849zm0 4.425H9.76v-2.577h1.163v2.577zm3.694-4.425H12.77V9.536h1.847v1.849zm0 4.425H12.77v-2.577h1.847v2.577z"/>
+                        </svg>
+                    </div>
+                    <div class="searchBtn">
+                        <button class="btn" id="searchBtn">Search</button>
+                        <button class="btn" id="clearBtn">Clear</button>
+                    </div>
                 </div>
 
                 <div class="umTable">
@@ -129,8 +176,7 @@
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
-    <script
-        src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>   
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.2/xlsx.full.min.js"></script>
     <script src="/js/adminUM.js"></script>
 </body>

@@ -439,9 +439,10 @@ namespace Helperland.Controllers
         public IActionResult UpdateSpData(SPAccountDataVM data)
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
-            if(Uid != null)
+            User req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+            
+            if(Uid != null && req.IsActive)
             {
-                User req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
                 req.FirstName = data.Fname;
                 req.LastName = data.Lname;
                 req.Email = data.Email;
@@ -569,8 +570,11 @@ namespace Helperland.Controllers
 
                 return Json("true");
             }
-            else
+            else if(Uid != null && !req.IsActive)
             {
+                return Json("inactive");
+            }
+            else { 
                 return Json("notfound");
             }
         }

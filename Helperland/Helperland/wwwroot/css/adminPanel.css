@@ -8,6 +8,90 @@
     font-family: "Roboto", sans-serif;
 }
 
+/*Loading Spinner*/
+.loading-div{
+    position:fixed;
+    height:100vh;
+    width:100vw;
+    background-color:rgba(26,26,26,0.6);
+    top:0;
+    left:0;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.spinner {
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.cube1, .cube2 {
+    background-color: #1D7A8C;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+    animation: sk-cubemove 1.8s infinite ease-in-out;
+    border: 1px solid white;
+}
+
+.cube2 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+    25% {
+        -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+    }
+
+    50% {
+        -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+    }
+
+    75% {
+        -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+    }
+
+    100% {
+        -webkit-transform: rotate(-360deg)
+    }
+}
+
+@keyframes sk-cubemove {
+    25% {
+        transform: translateX(42px) rotate(-90deg) scale(0.5);
+        -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+    }
+
+    50% {
+        transform: translateX(42px) translateY(42px) rotate(-179deg);
+        -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+    }
+
+    50.1% {
+        transform: translateX(42px) translateY(42px) rotate(-180deg);
+        -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+    }
+
+    75% {
+        transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+        -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+    }
+}
+/*Loading Spinner*/
+
 .um-logo-txt {
     font-size: 30px;
     color: white;
@@ -19,7 +103,7 @@
 }
 
 .um-navbar .container-fluid {
-    padding: 12px 15px 12.6px 15px;
+    padding: 5px 15px;
 }
 
 .um-top-menu .nav-item {
@@ -144,6 +228,9 @@ button.exportBtn:hover {
 #userManageTB tbody td {
     padding: 15px 20px 15px 14px;
     color: #646464;
+}
+.dropdown ul.dropdown-menu{
+    inset:0px;
 }
 .table-bottom {
     background-color: #fff;
@@ -271,7 +358,78 @@ div#actionMsg {
     font-size: 16px;
     font-weight: bold;
 }
-
+.searchingTab {
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    margin: 20px 20px 0px 0px;
+    padding: 20px 15px;
+}
+.userTypeSelect {
+    max-width: 123px;
+}
+.fromDTSearch {
+    position: relative;
+}
+#searchFromDate[readonly]{
+    background-color:white;
+    max-width:135px;
+    padding-left:35px;
+    color: #646464;
+}
+.fromDTSearch svg {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+}
+.toDTSearch {
+    position: relative;
+}
+#searchToDate[readonly]{
+    background-color:white;
+    max-width:135px;
+    padding-left:35px;
+    color: #646464;
+}
+.toDTSearch svg {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+}
+.PhoneNumberSearch {
+    max-width: 185px;
+}
+input#searchPinCode {
+    max-width: 112px;
+}
+.PhoneNumberSearch .input-group {
+    margin: 0;
+}
+#searchBtn {
+    background-color: #1FB6FF;
+    color: white;
+    margin-right: 5px;
+}
+#clearBtn {
+    border: 1px solid #DEDDDD;
+    background-color:white;
+    color:#646464;
+}
+select#userSelect, select#userTypeSelect {
+    color: #646464;
+}
+span#basic-addon1 {
+    color: #646464;
+}
+input#searchEmail, input#searchPhone, input#searchPinCode {
+    color: #646464 !important;
+}
+.searchingTab div {
+    margin: 0 5px 10px;
+}
+#userManageTB td.dataTables_empty {
+    text-align: center;
+}
 /*Success Modal*/
 #adminUMSuccessModal .modal-dialog {
     justify-content: center;
@@ -475,4 +633,56 @@ span.reqCommentText {
     padding-left: 5px;
 }
 /*  SP Star Ratings  */
+
+/*    Edit command Reschedule main    */
+#editAndRescheduleModal{
+    color:#646464;
+}
+#editAndRescheduleModal .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+#editAndRescheduleModal .modal-header h5 {
+    font-size: 20px;
+    font-weight:bold;
+}
+#editAndRescheduleModal .col-md-6{
+    margin:5px 0;
+}
+#editAndRescheduleModal .col-md-12 span{
+    font-weight:bold;
+}
+select#selectBookTime {
+    color: #646464;
+}
+#textComment{
+    resize:none;
+}
+#updateBtn{
+    background-color:#1FB6FF;
+    color:white;
+    width:100%;
+    margin-top:20px;
+}
+#updateBtn:hover{
+    background-color:#0bacfb;
+}
+.datepicker{
+    margin-top:60px;
+}
+#editAndRescheduleModal .col-md-6:nth-child(1){
+    position:relative;
+}
+#editAndRescheduleModal .col-md-6:nth-child(1) svg{
+    position: absolute;
+    top: 40px;
+    left: 23px;
+}
+input#inputDate {
+    padding-left: 40px;
+}
+input#inputDate[readonly]{
+    background-color:white;
+}
+/*    Edit command Reschedule main    */
 /****************** Service Request ******************/

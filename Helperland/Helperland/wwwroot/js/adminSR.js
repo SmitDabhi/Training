@@ -1,5 +1,97 @@
 $(document).ready(function () {
 
+    $("#inputDate").datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        startDate: '+1d',
+        orientation: "top"
+    });
+
+    $("#adminUMSuccessModal .successBtn button").click(() => {
+        window.location.reload();
+    });
+
+    $("#inputStreetName, #inputHouseNo, #inputZipCode, #textComment").keyup(() => {
+        if ($("#inputStreetName").val() == "") {
+            $("#updateBtn").prop("disabled", true);
+        } else if ($("#inputHouseNo").val() == "") {
+            $("#updateBtn").prop("disabled", true);
+        } else if ($("#inputZipCode").val() == "") {
+            $("#updateBtn").prop("disabled", true);
+        } else if ($("#textComment").val() == "") {
+            $("#updateBtn").prop("disabled", true);
+        } else{
+            $("#updateBtn").prop("disabled", false);
+        }
+    });
+
+    $("#inputZipCode").keyup(() => {
+        var pin = $("#inputZipCode").val();
+
+        if (pin.length == 6) {
+            $("#pinError").addClass("d-none");
+            $.ajax({
+                url: "/Admin/ValidateZip",
+                method: "POST",
+                data: { Pin: pin },
+                beforeSend: () => {
+                    $(".loading-div").removeClass("d-none");
+                },
+                success: (data) => {
+                    if (data == "false") {
+                        $("#pinError").removeClass("d-none").text("Postal code not available!");
+                    } else {
+                        $("#pinError").addClass("d-none");
+                        $("#inputCity").val(data);
+                    }
+                },
+                error: (err) => {
+                    console.log(err);
+                },
+                complete: () => {
+                    $(".loading-div").addClass("d-none");
+                }
+            });
+        } else {
+            $("#pinError").removeClass("d-none").text("Invalid Postal Code");
+        }
+    });
+
+    $("#updateBtn").click(() => {
+        var obj = {
+            Id: $("#serviceID").val(),
+            Date: $("#inputDate").val(),
+            Time: $("#selectBookTime").val(),
+            AddLine1: $("#inputStreetName").val(),
+            AddLine2: $("#inputHouseNo").val(),
+            City: $("#inputCity").val(),
+            Pincode: $("#inputZipCode").val(),
+            Comment: $("#textComment").val()
+        };
+
+        $.ajax({
+            url: "/Admin/UpdateService",
+            method: "POST",
+            data: obj,
+            beforeSend: () => {
+                $(".loading-div").removeClass("d-none");
+            },
+            success: (data) => {
+                if (data == "true") {
+                    $(".successTxt").text("Service Request Updated Successfully!");
+                    $("#editAndRescheduleModal").modal("hide");
+                    $("#adminUMSuccessModal").modal("show");
+                }
+            },
+            error: (err) => {
+                console.log(err);
+            },
+            complete: () => {
+                $(".loading-div").addClass("d-none");
+            }
+        });
+    })
+
     getSRAdminData();
     
 });
@@ -8,8 +100,10 @@ function getSRAdminData() {
     $.ajax({
         url: "/Admin/GetSRAdminData",
         method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
         success: (data) => {
-            console.log(data);
             if (data != "notfound") {
                 var dataList = $("#servReqTB tbody");
                 dataList.empty();
@@ -17,15 +111,15 @@ function getSRAdminData() {
 
                 for (var i in data) {
                     if (data[i].status == "New") {
-                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="' + data[i].id + '">Edit & Reschedule</a></li><li><a class="dropdown-item" href="#" value="' + data[i].id + '">Cancel</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="' + data[i].id + '">Edit & Reschedule</a></li><li><a class="dropdown-item" value="' + data[i].id + '">Cancel</a></li></ul></div ></td></tr>');
                     } else if (data[i].status == "Completed") {
-                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="SPData"><div><img src="/img/avatar-' + data[i].profIcon + '.png" alt=""></div><div class="SPNameRate"><span class="spName">' + data[i].spName + '</span><div class="Stars" style="--rating: ' + data[i].rating + ';"><span class="rateNumber">' + data[i].rating + '</span></div></div></div></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="' + data[i].id + '">Refund</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="SPData"><div><img src="/img/avatar-' + data[i].profIcon + '.png" alt=""></div><div class="SPNameRate"><span class="spName">' + data[i].spName + '</span><div class="Stars" style="--rating: ' + data[i].rating + ';"><span class="rateNumber">' + data[i].rating + '</span></div></div></div></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="' + data[i].id + '">Refund</a></li></ul></div ></td></tr>');
                     } else if (data[i].status == "Pending") {
-                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="SPData"><div><img src="/img/avatar-' + data[i].profIcon + '.png" alt=""></div><div class="SPNameRate"><span class="spName">' + data[i].spName + '</span><div class="Stars" style="--rating: ' + data[i].rating + ';"><span class="rateNumber">' + data[i].rating + '</span></div></div></div></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="' + data[i].id + '">Edit & Reschedule</a></li><li><a class="dropdown-item" href="#" value="' + data[i].id + '">Cancel</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="SPData"><div><img src="/img/avatar-' + data[i].profIcon + '.png" alt=""></div><div class="SPNameRate"><span class="spName">' + data[i].spName + '</span><div class="Stars" style="--rating: ' + data[i].rating + ';"><span class="rateNumber">' + data[i].rating + '</span></div></div></div></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="' + data[i].id + '">Edit & Reschedule</a></li><li><a class="dropdown-item" value="' + data[i].id + '">Cancel</a></li></ul></div ></td></tr>');
                     } else if (data[i].status == "Cancelled" && data[i].spName != null) {
-                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="SPData"><div><img src="/img/avatar-' + data[i].profIcon + '.png" alt=""></div><div class="SPNameRate"><span class="spName">' + data[i].spName + '</span><div class="Stars" style="--rating: ' + data[i].rating + ';"><span class="rateNumber">' + data[i].rating + '</span></div></div></div></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="' + data[i].id + '">Refund</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td><div class="SPData"><div><img src="/img/avatar-' + data[i].profIcon + '.png" alt=""></div><div class="SPNameRate"><span class="spName">' + data[i].spName + '</span><div class="Stars" style="--rating: ' + data[i].rating + ';"><span class="rateNumber">' + data[i].rating + '</span></div></div></div></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="' + data[i].id + '">Refund</a></li></ul></div ></td></tr>');
                     } else if (data[i].status == "Cancelled" && data[i].spName == null) {
-                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" href="#" value="' + data[i].id + '">Refund</a></li></ul></div ></td></tr>');
+                        dataList.append('<tr><td><div class="reqIdSR">' + data[i].id + '</div></td><td><div class="spRateSerDateTimeDiv"><span class="spanSPNewReqDT"><img src="/img/calendar2.png" class="me-2" />' + data[i].serviceDate + '</span><span class="spanSPNewReqDT"><img src="/img/layer-14.png" class="me-2" />' + data[i].serviceStartTime + '-' + data[i].serviceEndTime + '</span></div></td><td><div class="CustomerDataSH"><div><img  class="CustomerDataIcon" src="/img/layer-15.png" /></div><div class="CustomerDataAdd"><span class="custNameSH">' + data[i].custName + '</span><span class="custAdd1SH">' + data[i].addLine1 + ' ' + data[i].addLine2 + '</span><span class="custAdd2SH">' + data[i].postalCode + ' ' + data[i].city + '</span></div></div></td><td></td><td>' + data[i].payment + ' &euro;</td><td><span class="' + data[i].status + 'StausSR">' + data[i].status + '</span></td><td><div class="dropdown"><a id="dropdownMenuButton' + data[i].id + '" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-ellipsis-v fa-lg"></i></a><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton' + data[i].id + '"><li><a class="dropdown-item" value="' + data[i].id + '">Refund</a></li></ul></div ></td></tr>');
                     }
                 }
             }
@@ -56,8 +150,10 @@ function getSRAdminData() {
                         url: "/Admin/GetReqData",
                         method: "GET",
                         data: { Reqid: reqId },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
                         success: (data) => {
-                            console.log(data);
                             if (data != "notfound") {
                                 $(".reqDataDate").text(data.serviceDateTime);
                                 $(".reqDataDuration").html('<strong>Duration</strong> : ' + data.duration + ' Hours');
@@ -108,15 +204,101 @@ function getSRAdminData() {
                         },
                         error: (err) => {
                             console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
                         }
                     });
 
 
                 }
+
+                if (e.target.className == "dropdown-item" && e.target.textContent == "Refund") {
+                    console.log("r")
+                }
+
+                if (e.target.className == "dropdown-item" && e.target.textContent == "Edit & Reschedule") {
+                    var reqId = e.target.closest('tr').childNodes[0].textContent;
+
+                    $.ajax({
+                        url: "/Admin/GetEditModalData",
+                        method: "GET",
+                        data: { Reqid: reqId },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
+                        success: (data) => {
+                            if (data != "notfound") {
+                                $("#serviceID").val(data.id);
+                                var sDT = data.date.split("-");
+                                $("#inputDate").datepicker("setDate", new Date(sDT[1] + "-" + sDT[0] + "-" + sDT[2]));
+                                $("#selectBookTime").val(data.time);
+                                $("#inputStreetName").val(data.addLine1);
+                                $("#inputHouseNo").val(data.addLine2);
+                                $("#inputZipCode").val(data.pincode);
+                                $("#inputCity").val(data.city);
+
+                                if (data.comment != null) {
+                                    $("#textComment").val(data.comment);
+                                } else {
+                                    $("#textComment").val("");
+                                }
+                                if (e.target.closest('tr').childNodes[5].textContent == "New") {
+                                    $("#inputZipCode").prop('disabled', false);
+                                } else if (e.target.closest('tr').childNodes[5].textContent == "Pending") {
+                                    $("#inputZipCode").prop('disabled', true);
+                                }
+
+                                $("#editAndRescheduleModal").modal("show");
+                            }
+
+                            if ($("#textComment").val() == "") {
+                                $("#updateBtn").prop("disabled", true);
+                            } else {
+                                $("#updateBtn").prop("disabled", false);
+                            }
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
+                        }
+                    });
+                }
+
+                if (e.target.className == "dropdown-item" && e.target.textContent == "Cancel") {
+                    var id = parseInt(e.target.closest('tr').childNodes[0].textContent);
+
+                    $.ajax({
+                        url: "/Admin/CancelReq",
+                        method: "POST",
+                        data: { Reqid: id },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
+                        success: (data) => {
+                            console.log(data);
+                            if (data == "true") {
+                                $(".successTxt").text("Service Request Cancelled Successfully!");
+                                $("#adminUMSuccessModal").modal("show");
+                            }
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
+                        }
+                    });
+                }
             });
         },
         error: (err) => {
             console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
         }
     });
 }
