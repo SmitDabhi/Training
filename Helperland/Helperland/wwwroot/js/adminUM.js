@@ -12,6 +12,9 @@ $(document).ready( function () {
         orientation: "top"
     });
 
+    $("#spSelect").select2();
+    $("#userSelect").select2();
+
     $("#adminUMSuccessModal .successBtn button").click(() => {
         window.location.reload();
     });
@@ -72,8 +75,7 @@ function getUMAdminData() {
                     "paginate": {
                         "previous": '<img src="/img/adminLeft.png" alt="">',
                         "next": '<img src="/img/adminRight.png" alt="">'
-                    },
-                    'info': "",
+                    }
                 }
             });
 
@@ -164,13 +166,13 @@ function getUMAdminData() {
                 var FromDT = $("#searchFromDate").val();
                 var ToDT = $("#searchToDate").val();
 
-                if (uName != "" && uName != "User Name") {
+                if (uName != "") {
                     table.column(0).search(uName);
-                } else if (uName == "" || uName == "User Name") {
+                } else {
                     table.column(0).search("");
                 }
 
-                if (UType != "" && UType != "User Type") {
+                if (UType != "") {
                     table.column(3).search(UType);
                 } else {
                     table.column(3).search("");
@@ -193,6 +195,29 @@ function getUMAdminData() {
                 } else {
                     table.column(1).search("");
                 }
+
+                if (FromDT != "" && ToDT != "") {
+                    $.fn.dataTable.ext.search.push(
+                        function (settings, data, dataIndex) {
+                            var min = new Date(FromDT.split("/")[1] + "/" + FromDT.split("/")[0] + "/" + FromDT.split("/")[2]);
+                            var max = new Date(ToDT.split("/")[1] + "/" + ToDT.split("/")[0] + "/" + ToDT.split("/")[2]);
+                        
+                            var date = new Date(data[2].split("-")[1] + "-" + data[2].split("-")[0] + "-" + data[2].split("-")[2]);
+                            if (
+                                (min === null && max === null) ||
+                                (min === null && date <= max) ||
+                                (min <= date && max === null) ||
+                                (min <= date && date <= max)
+                            ) {
+                                return true;
+                            }
+                            return false;
+                        }
+                    );
+                } else {
+                    table.column(2).search("");
+                }
+
 
                 table.draw();
             });

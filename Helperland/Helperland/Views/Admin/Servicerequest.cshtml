@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/adminPanel.css">
 
     <title>Service Request</title>
@@ -57,7 +58,50 @@
                 </div>
 
                 <div class="searchingTab">
-
+                    <div class="ServiceIDSearch">
+                        <input type="number" placeholder="Service ID" id="searchServiceId" class="form-control" />
+                    </div>
+                    <div class="PostalCodeSearch">
+                        <input type="number" placeholder="Postal Code" id="searchPinCode" class="form-control" />
+                    </div>
+                    <div class="EmailSearch">
+                        <input type="email" placeholder="Email" id="searchEmail" class="form-control" />
+                    </div>
+                    <div class="customerSelect">
+                        <select class="form-select" id="customerSelect" data-live-search="true">
+                            <option value="" hidden selected>Customer</option>
+                        </select>
+                    </div>
+                    <div class="spSelect">
+                        <select class="form-select" id="spSelect">
+                            <option value="" hidden selected>Service Provider</option>
+                        </select>
+                    </div>
+                    <div class="statusSelect">
+                        <select class="form-select" id="reqStatusSelect">
+                            <option value="" hidden selected>Status</option>
+                            <option value="New">New</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div class="fromDTSearch">
+                        <input type="text" class="form-control" id="searchFromDate" placeholder="From Date" readonly/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                            <path fill-rule="evenodd" fill="#1FB6FF" d="M.457 20.1V2.143H4.15V.12h1.848v2.023H9.76V.12h1.163v2.023H14.1V.12h1.748v2.023h3.694V20.1H.457zM17.695 6.456H2.304v11.706h15.391V6.456zM7.229 11.385H5.382V9.536h1.847v1.849zm0 4.425H5.382v-2.577h1.847v2.577zm3.694-4.425H9.76V9.536h1.163v1.849zm0 4.425H9.76v-2.577h1.163v2.577zm3.694-4.425H12.77V9.536h1.847v1.849zm0 4.425H12.77v-2.577h1.847v2.577z"/>
+                        </svg>
+                    </div>
+                    <div class="toDTSearch">
+                        <input type="text" class="form-control" id="searchToDate" placeholder="To Date" readonly/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                            <path fill-rule="evenodd" fill="#1FB6FF" d="M.457 20.1V2.143H4.15V.12h1.848v2.023H9.76V.12h1.163v2.023H14.1V.12h1.748v2.023h3.694V20.1H.457zM17.695 6.456H2.304v11.706h15.391V6.456zM7.229 11.385H5.382V9.536h1.847v1.849zm0 4.425H5.382v-2.577h1.847v2.577zm3.694-4.425H9.76V9.536h1.163v1.849zm0 4.425H9.76v-2.577h1.163v2.577zm3.694-4.425H12.77V9.536h1.847v1.849zm0 4.425H12.77v-2.577h1.847v2.577z"/>
+                        </svg>
+                    </div>
+                    <div class="searchBtn">
+                        <button class="btn" id="searchBtn">Search</button>
+                        <button class="btn" id="clearBtn">Clear</button>
+                    </div>
                 </div>
 
                 <div class="umTable">
@@ -71,6 +115,8 @@
                                 <th>Amount</th>
                                 <th>Status</th>
                                 <th>Action</th>
+                                <th class="d-none">Email</th>
+                                <th class="d-none">Pin</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -251,11 +297,68 @@
     </div>
     <!--Edit and Reschedule Modal-->
 
+    <!--Refund Modal-->
+    <div class="modal fade" id="refundModal" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Refund Amount</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="amountDetail">
+                        <div class="paidAmountDiv">
+                            <span>Paid Amount</span>
+                            <span id="paidAmount"></span>
+                        </div>
+                        <div class="refundAmountDiv">
+                            <span>Refunded Amount</span>
+                            <span id="refundAmount"></span>
+                        </div>
+                        <div class="balanceAmountDiv">
+                            <span>In Balance Amount</span>
+                            <span id="balanceAmount"></span>
+                        </div>
+                    </div>
+                    <form>
+                        <input type="hidden" id="refundReqId" />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="inputAmount">Amount</label>
+                                <div class="input-group mb-3">
+                                    <input type="number" class="form-control" aria-describedby="percentageTxt" id="inputAmount">
+                                    <span class="input-group-text" id="percentageTxt">Percentage</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="calcShow">Calculate</label>
+                                <div class="input-group mb-3">
+                                    <button class="btn" type="button" id="calcBtn">Calculate</button>
+                                    <input type="text" id="calcShow" class="form-control" placeholder="" aria-describedby="calcBtn" disabled>
+                                </div>
+                                <span id="refundErr" class="text-danger fw-bold d-none">Can not refund more than paid amount!</span>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="textComment" class="form-label"><span>Why you want to refund amount?</span></label>
+                                <textarea class="form-control" placeholder="Why you want to refund amount?" id="textRefund" rows="3"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="button" class="btn" id="refundBtn">Refund</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Refund Modal-->
+
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="/js/adminSR.js"></script>
 </body>
 

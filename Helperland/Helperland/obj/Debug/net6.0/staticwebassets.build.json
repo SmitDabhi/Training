@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "seUXXeuAhiachdBz2HiYlJQD5pOV6a/4uzdelrl/ArU=",
+  "Hash": "d4ec8tBvXUarwzPhc8XLxq+eXB5KkGiMeG4bfMmiEZs=",
   "Source": "Helperland",
   "BasePath": "_content/Helperland",
   "Mode": "Default",
@@ -748,6 +748,23 @@
       "OriginalItemSpec": "wwwroot\\img\\admin-user.png"
     },
     {
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\angle-arrow-down.png",
+      "SourceId": "Helperland",
+      "SourceType": "Discovered",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
+      "BasePath": "_content/Helperland",
+      "RelativePath": "img/angle-arrow-down.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\angle-arrow-down.png"
+    },
+    {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\arrow-white.png",
       "SourceId": "Helperland",
       "SourceType": "Discovered",
@@ -1171,6 +1188,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\down-arrow.png"
+    },
+    {
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\dropdownArrow.png",
+      "SourceId": "Helperland",
+      "SourceType": "Discovered",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
+      "BasePath": "_content/Helperland",
+      "RelativePath": "img/dropdownArrow.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\dropdownArrow.png"
     },
     {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\img\\ellipse-525.png",

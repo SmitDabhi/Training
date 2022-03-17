@@ -363,7 +363,7 @@ div#actionMsg {
     flex-wrap: wrap;
     background: white;
     margin: 20px 20px 0px 0px;
-    padding: 20px 15px;
+    padding: 20px 15px 10px;
 }
 .userTypeSelect {
     max-width: 123px;
@@ -415,13 +415,10 @@ input#searchPinCode {
     background-color:white;
     color:#646464;
 }
-select#userSelect, select#userTypeSelect {
-    color: #646464;
-}
 span#basic-addon1 {
     color: #646464;
 }
-input#searchEmail, input#searchPhone, input#searchPinCode {
+input#searchEmail, input#searchPhone, input#searchPinCode, #searchServiceId, select#userSelect, select#userTypeSelect, select#customerSelect, select#spSelect, select#reqStatusSelect, input#searchEmail {
     color: #646464 !important;
 }
 .searchingTab div {
@@ -430,6 +427,11 @@ input#searchEmail, input#searchPhone, input#searchPinCode {
 #userManageTB td.dataTables_empty {
     text-align: center;
 }
+#userTypeSelect {
+    background-image: url("/img/angle-arrow-down.png");
+    background-size: 12px 12px;
+}
+
 /*Success Modal*/
 #adminUMSuccessModal .modal-dialog {
     justify-content: center;
@@ -481,6 +483,9 @@ span.successBtn button:hover {
     font-weight: bold;
     border: 1px solid #E1E1E1;
 }
+#servReqTB td.dataTables_empty{
+    text-align:center;
+}
 #servReqTB thead tr {
     background-color: #F9F9F9;
 }
@@ -503,6 +508,9 @@ div#servReqTB_paginate {
 }
 #servReqTB thead th:nth-child(7) > span {
     display: none;
+}
+.costomerSelect span{
+    height:38px;
 }
 div#servReqTB_info {
     display: none;
@@ -554,8 +562,32 @@ span.CancelledStausSR {
     font-weight: bold;
     cursor: pointer;
 }
-
- /* ---ReqDetails Modal--- */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #646464;
+    line-height: 28px;
+    margin-top: 5px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    background-image: url("/img/angle-arrow-down.png");
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position-y: center;
+    margin-top:5px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    display: none;
+}
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    height: 38px;
+}
+table#servReqTB {
+    display: block;
+    overflow-x: scroll;
+}
+/* ---ReqDetails Modal--- */
 #reqDetailsModal .modal-header {
     border-bottom: none;
     padding-bottom: 0;
@@ -611,6 +643,15 @@ span.reqCommentText {
     border-left: 2px solid #c8c8c8;
     margin-bottom: 10px;
 }
+
+input#searchServiceId, select#reqStatusSelect {
+    max-width: 100px;
+}
+
+input#searchEmail{
+    max-width:180px;
+}
+
 /* ---Reschedule Modal---*/
 /*  SP Star Ratings  */
 .Stars {
@@ -685,4 +726,63 @@ input#inputDate[readonly]{
     background-color:white;
 }
 /*    Edit command Reschedule main    */
+
+/*    Refund Modal    */
+#refundModal{
+    color:#646464;
+}
+#refundModal .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+#refundModal .modal-header h5 {
+    font-size: 20px;
+    font-weight:bold;
+}
+#refundModal .col-md-6{
+    margin:5px 0;
+}
+#refundModal .col-md-12 span{
+    font-weight:bold;
+}
+#refundModal form {
+    margin-top: 10px;
+}
+#refundModal label{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+.amountDetail {
+    display: flex;
+    justify-content: space-between;
+}
+.paidAmountDiv, .refundAmountDiv, .balanceAmountDiv {
+    display: flex;
+    flex-direction: column;
+}
+#refundBtn {
+    background-color: #1FB6FF;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+#textRefund {
+    resize: none;
+}
+span#percentageTxt {
+    color: #646464;
+}
+button#calcBtn {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    color:#646464;
+}
+/*    Refund Modal    */
 /****************** Service Request ******************/
+
+@media only screen and (max-width: 1080px) {
+    table#userManageTB {
+        overflow-x: scroll;
+        display: block;
+    }
+}

@@ -2,15 +2,19 @@
 using Helperland.Models;
 using Helperland.Models.viewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
 
 namespace Helperland.Controllers
 {
     public class AdminController : Controller
     {
         private readonly HelperlandDBContext _dbContext;
-        public AdminController(HelperlandDBContext dbContext)
+        private readonly IConfiguration _config;
+
+        public AdminController(HelperlandDBContext dbContext, IConfiguration config)
         {
             _dbContext = dbContext;
+            _config = config;
         }
         public IActionResult Servicerequest()
         {
@@ -448,8 +452,61 @@ namespace Helperland.Controllers
 
                         _dbContext.ServiceRequestAddresses.Update(reqAdd);
                         _dbContext.SaveChanges();
-                    }                    
-    
+                    }
+
+                    if(req.UserId != null)
+                    {
+                        var custData = _dbContext.Users.FirstOrDefault(x => x.UserId == req.UserId);
+                        string Subject = "Changes in Service Request";
+                        string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello " + custData.FirstName + ", <br> Service request " + req.ServiceRequestId + " has been updated by Admin. <br></span>";
+                        MailMessage msg = new MailMessage();
+                        msg.Body = Body;
+                        msg.Subject = Subject;
+                        msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
+                        msg.To.Add(custData.Email);
+                        msg.IsBodyHtml = true;
+
+                        SmtpClient smtp = new SmtpClient();
+                        smtp.Host = "smtp.gmail.com";
+                        smtp.Port = 587;
+                        smtp.EnableSsl = true;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                        System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+
+                        credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                        credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = credential;
+                        smtp.Send(msg);
+                    }
+
+                    if (req.ServiceProviderId != null)
+                    {
+                        var spEmail = _dbContext.Users.FirstOrDefault(x => x.UserId == req.ServiceProviderId);
+                        string Subject = "Changes in Service Request";
+                        string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello "+ spEmail.FirstName +", <br> Service request "+ req.ServiceRequestId +" has been updated by Admin. <br></span>";
+                        MailMessage msg = new MailMessage();
+                        msg.Body = Body;
+                        msg.Subject = Subject;
+                        msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
+                        msg.To.Add(spEmail.Email);
+                        msg.IsBodyHtml = true;
+
+                        SmtpClient smtp = new SmtpClient();
+                        smtp.Host = "smtp.gmail.com";
+                        smtp.Port = 587;
+                        smtp.EnableSsl = true;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                        System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+
+                        credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                        credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = credential;
+                        smtp.Send(msg);
+                    }
                     return Json("true");
                 }
                 else
@@ -461,6 +518,38 @@ namespace Helperland.Controllers
             {
                 return Json("false");
             }
+        }
+
+        [HttpGet]
+        public IActionResult CheckRefund(int Id)
+        {
+            var req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == Id).RefundedAmount;
+
+            if(req != null)
+            {
+                return Json(req);
+            }
+            else
+            {
+                return Json("false");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult RefundAmount(int Id, int Refund)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+
+            ServiceRequest req = _dbContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == Id);
+
+            req.RefundedAmount = Refund;
+            req.ModifiedBy = Uid;
+            req.ModifiedDate = DateTime.Now;
+
+            _dbContext.ServiceRequests.Update(req);
+            _dbContext.SaveChanges();
+
+            return Json("true");
         }
     }   
 }

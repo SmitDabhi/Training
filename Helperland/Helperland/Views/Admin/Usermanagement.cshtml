@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/adminPanel.css">
 
     <title>User Management</title>
@@ -59,12 +60,12 @@
                 <div class="searchingTab">
                     <div class="userSelect">
                         <select class="form-select" id="userSelect">
-                            <option selected>User Name</option>
+                            <option value="" hidden selected>User Name</option>
                         </select>
                     </div>
                     <div class="userTypeSelect">
                         <select class="form-select" id="userTypeSelect">
-                            <option selected>User Type</option>
+                            <option value="" hidden selected>User Type</option>
                             <option value="Admin">Admin</option>
                             <option value="Customer">Customer</option>
                             <option value="Service Provider">Service Provider</option>
@@ -178,6 +179,7 @@
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>   
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.2/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="/js/adminUM.js"></script>
 </body>
 
