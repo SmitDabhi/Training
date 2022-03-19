@@ -16,5 +16,6 @@
         public bool Oven { get; set; }
         public bool Window { get; set; }
         public bool Wash { get; set; }
+        public string? CustName { get; set; }
     }
 }

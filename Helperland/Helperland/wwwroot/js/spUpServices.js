@@ -181,8 +181,6 @@ function getServiceData() {
                 if (e.target.className == "newReqServID" || e.target.className == "spanSPNewReqDT" || e.target.className == "custNameSH" || e.target.className == "custAdd1SH" || e.target.className == "custAdd2SH" || e.target.className == "CustomerDataSH" || e.target.className == "CustomerDataIcon") {
                     var reqId = parseInt(e.target.closest('tr').childNodes[0].textContent);
 
-                    var custName = e.target.closest('tr').childNodes[2].childNodes[0].childNodes[1].childNodes[0].textContent;
-
                     $.ajax({
                         url: "/Serviceprovider/GetServiceReqSummary",
                         method: "GET",
@@ -197,7 +195,7 @@ function getServiceData() {
                                 $(".reqDataId").html('<strong>Service Id</strong> : ' + data.serviceId);
                                 $(".reqDataPayment").html(data.netPay + " &euro;");
                                 $(".reqDataAddress").html('<strong>Service Address</strong> : ' + data.address);
-                                $(".reqDataCName").html('<strong>Customer Name</strong> : ' + custName);
+                                $(".reqDataCName").html('<strong>Customer Name</strong> : ' + data.custName);
                                 $("#acceptBtn").val(data.serviceId);
                                 if (data.comment != null) {
                                     $(".reqCommentText").text(data.comment);

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d4ec8tBvXUarwzPhc8XLxq+eXB5KkGiMeG4bfMmiEZs=",
+  "Hash": "viaFuNlsOnv8yYhl3SJwUDV2zbnJvUU0LlX9lC7D/4Q=",
   "Source": "Helperland",
   "BasePath": "_content/Helperland",
   "Mode": "Default",
@@ -2803,6 +2803,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\spServiceHistory.js"
+    },
+    {
+      "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\spServiceSchedule.js",
+      "SourceId": "Helperland",
+      "SourceType": "Discovered",
+      "ContentRoot": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\",
+      "BasePath": "_content/Helperland",
+      "RelativePath": "js/spServiceSchedule.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\spServiceSchedule.js"
     },
     {
       "Identity": "S:\\Training Tatvasoft\\Helperland\\Helperland\\wwwroot\\js\\spUpServices.js",

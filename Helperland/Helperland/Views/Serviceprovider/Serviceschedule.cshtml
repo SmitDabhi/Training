@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Service History";
+    ViewData["Title"] = "Service Schedule";
     Layout = "~/Views/Shared/_SPDashLayout.cshtml";
 }
 
@@ -25,44 +25,24 @@
                 <a class="nav-link" asp-controller="Serviceprovider" asp-action="Dashboard">Dashboard</a>
                 <a class="nav-link" asp-controller="Serviceprovider" asp-action="NewServiceRequest">New Service Requests</a>
                 <a class="nav-link" asp-controller="Serviceprovider" asp-action="UpcomingServices">Upcoming Services</a>
-                <a class="nav-link" asp-controller="Serviceprovider" asp-action="Serviceschedule">Service Schedule</a>
-                <a class="nav-link active">Service History</a>
+                <a class="nav-link active">Service Schedule</a>
+                <a class="nav-link" asp-controller="Serviceprovider" asp-action="ServiceHistory">Service History</a>
                 <a class="nav-link" asp-controller="Serviceprovider" asp-action="MyRatings">My Ratings</a>
                 <a class="nav-link" asp-controller="Serviceprovider" asp-action="BlockCustomer">Block Customer</a>
                 <a class="nav-link">Invoices</a>
                 <a class="nav-link">Notifications</a>
             </div>
             <div class="us-right-menu flex-fill" id="us-right-sideNav">
-                <div>
-                    <div class="content-header mb-2">
-                        <div class="headAndSortDiv">
-                            <h3 class="my-auto">Service History</h3>
-                            <div class="dropdown smSortingBtn">
-                                <a class="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-sort-amount-down fa-lg"></i></a>
-
-                                <ul class="dropdown-menu" id="radioSelectUl" aria-labelledby="dropdownMenuLink">
-                                <li><input type="radio" name="sortOption" id="ServiceIDOldest" value="SID:Asc"><label for="ServiceIDOldest">Service Id : Ascending </label></li>
-                                <li><input type="radio" name="sortOption" id="ServiceIDLatest" value="SID:Desc"><label for="ServiceIDLatest">Service Id : Descending </label></li>
-                                <li><input type="radio" name="sortOption" id="CustomerAsc" value="CUST:Asc"><label for="CustomerAsc">Customer:Ascending</label></li>
-                                <li><input type="radio" name="sortOption" id="CustomerDesc" value="CUST:Desc"><label for="CustomerDesc">Customer:Descending</label></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <button>Export</button>
+                <div id="serviceScheduleHeadingDiv">
+                    <div class="content-headerSSPg mb-2">
+                        <h3>Service Schedule</h3>
+                    </div>
+                    <div class="reqLblDiv">
+                        <span class="completedLbl">Completed</span>
+                        <span class="upcomingLbl">Upcoming</span>
                     </div>
                     <div class="customer-table">
-                        <table id="spServiceHistoryTB" class="display" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Service Id</th>
-                                    <th>Service Date</th>
-                                    <th>Customer Details</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                
-                            </tbody>
-                        </table>
+                        <div id='calendar'></div>
                     </div>
                 </div>
             </div>
@@ -70,10 +50,9 @@
     </div>
 </section>
 <!-- SP Dashboard End -->
-
-
+ 
 <!--SH Details Modal-->
-<div class="modal fade" id="reqDetailsModal" aria-hidden="true">
+<div class="modal fade" id="serScheduleModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center">
         <div class="modal-content">
             <div class="modal-header">
@@ -111,22 +90,18 @@
     </div>
 </div>
 <!--SH Details Modal-->
+
 @section css{
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
 }
 
 @section script{
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
-    <script src="/js/spServiceHistory.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.2/xlsx.full.min.js"></script>
+    <script src="/js/spServiceSchedule.js"></script>
 }

@@ -57,10 +57,11 @@ function getRateData() {
 
                 $(".ratingSelect select").change(() => {
                     var search = $(".ratingSelect select").val();
+
                     if (search != "All") {
-                        table.search(search).draw();
+                        table.column(0).search(search).draw();
                     } else {
-                        table.search("Ratings").draw();
+                        table.search('').columns().search('').draw();
                     }
                 })
                 

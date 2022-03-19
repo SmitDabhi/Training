@@ -99,6 +99,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXFNlcnZpY2VIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Serviceprovider/Serviceschedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXFNlcnZpY2VzY2hlZHVsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [S:/Training Tatvasoft/Helperland/Helperland/Views/Serviceprovider/UpcomingServices.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXFVwY29taW5nU2VydmljZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

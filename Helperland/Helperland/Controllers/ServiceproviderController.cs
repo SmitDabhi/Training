@@ -199,6 +199,32 @@ namespace Helperland.Controllers
             }
         }
 
+        public IActionResult Serviceschedule()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                var req = _dbContext.Users.FirstOrDefault(x => x.UserId == Uid);
+
+                if (req.UserTypeId == 2)
+                {
+                    ViewBag.IsloggedIn = "success";
+                    ViewBag.Uname = req.FirstName;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.UType = 1;
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                ViewBag.UType = 1;
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
         [HttpGet]
         public IActionResult GetSerHistoryData()
         {
@@ -264,6 +290,9 @@ namespace Helperland.Controllers
                 res.Email = serReqAdd.Email;
                 res.Comment = serviceReq.Comments;
 
+                var uData = _dbContext.Users.FirstOrDefault(x => x.UserId == serviceReq.UserId);
+
+                res.CustName = uData.FirstName + " " + uData.LastName;
 
                 foreach (var item in serReqExtraa)
                 {
@@ -1027,6 +1056,44 @@ namespace Helperland.Controllers
                 _dbContext.SaveChanges();
 
                 return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetServiceReqCalendar()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                List<SPServiceScheduleVM> data = new();
+                var req = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == Uid && (x.Status == 1 || x.Status == null)).ToList();
+
+                var obj = new { };
+
+                foreach (var item in req)
+                {
+                    SPServiceScheduleVM res = new();
+                    res.Id = item.ServiceRequestId;
+                    res.Title = item.ServiceStartDate.ToString("HH:mm") + " - " + item.ServiceStartDate.AddHours((double)item.SubTotal).ToString("HH:mm");
+                    res.Start = item.ServiceStartDate.ToString("yyyy-MM-dd");
+
+                    if(item.Status == 1)
+                    {
+                        res.Color = "#67b644";
+                    }else if(item.Status == null)
+                    {
+                        res.Color = "#1D7A8C";
+                    }
+
+
+                    data.Add(res);
+                }
+
+                return new JsonResult(data);
             }
             else
             {
