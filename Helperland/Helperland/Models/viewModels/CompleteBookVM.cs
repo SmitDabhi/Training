@@ -24,5 +24,6 @@
         public bool Wash { get; set; }
 
         public bool Windows { get; set; }
+        public int SpId { get; set; }
     }
 }

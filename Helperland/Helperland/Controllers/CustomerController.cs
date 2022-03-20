@@ -287,6 +287,40 @@ namespace Helperland.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult GetFavSP()
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                List<FavSPVM> data = new();
+                var req = _dbContext.FavoriteAndBlockeds.Where(x => x.UserId == Uid && x.IsFavorite == true).ToList();
+                if(req.Count > 0)
+                {
+                    foreach (var item in req)
+                    {
+                        FavSPVM res = new();
+                        res.SPID = item.TargetUserId;
+                        var spdata = _dbContext.Users.FirstOrDefault(x => x.UserId == item.TargetUserId);
+                        res.SPName = spdata.FirstName + " " + spdata.LastName;
+                        res.ProfIcon = spdata.UserProfilePicture;
+
+                        data.Add(res);
+                    }
+
+                    return new JsonResult(data);
+                }
+                else
+                {
+                    return Json("notfound");
+                }
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
         [HttpPost]
         public IActionResult AddressSave(UserAddress userAddress)
         {
@@ -338,6 +372,12 @@ namespace Helperland.Controllers
                 req.ModifiedDate = DateTime.Now;
                 req.ModifiedBy = Uid;
                 req.Distance = 0;
+                
+                if(completeBook.SpId != null)
+                {
+                    req.ServiceProviderId = completeBook.SpId;
+                    req.SpacceptedDate = DateTime.Now;
+                }
 
                 var ServiceRequest =_dbContext.ServiceRequests.Add(req);
                 _dbContext.SaveChanges();
@@ -409,33 +449,62 @@ namespace Helperland.Controllers
 
                 var reqEmail = _dbContext.Users.Where(x => x.ZipCode == pin && x.UserTypeId == 2).ToList();
 
-                
-                foreach (var item in reqEmail)
+                if(completeBook.SpId != null)
                 {
-                    if(!_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == item.UserId && x.TargetUserId == Uid && x.IsBlocked == true) && !_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == item.UserId && x.IsBlocked == true))
+                    var spEmailData = _dbContext.Users.FirstOrDefault(x => x.UserId == completeBook.SpId);
+
+                    string Subject = "New Service Request";
+                    string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello "+ spEmailData.FirstName + ", <br> A service request "+ ServiceRequest.Entity.ServiceRequestId + " has been directly assigned to you, <br>Please check it out. <br>" + "<a href='" + Url.Action("Index", "Home", new { }, "https") + "' style ='text-decoration: none; cursor: pointer; color: #1D7A8C; font-size: 16px; font-family: sans-serif; font-weight:bold'>Check<br></a></span>";
+                    MailMessage msg = new MailMessage();
+                    msg.Body = Body;
+                    msg.Subject = Subject;
+                    msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
+                    msg.To.Add(spEmailData.Email);
+                    msg.IsBodyHtml = true;
+
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                    System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+
+                    credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                    credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = credential;
+                    smtp.Send(msg);
+                }
+                else
+                {
+                    foreach (var item in reqEmail)
                     {
-                        string Subject = "New Service Request";
-                        string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello Service Providers, <br> New service request available in your area, Please check it out. <br>" + "<a href='" + Url.Action("Index", "Home", new { }, "https") + "' style ='text-decoration: none; cursor: pointer; color: #1D7A8C; font-size: 16px; font-family: sans-serif; font-weight:bold'>Check<br></a></span>";
-                        MailMessage msg = new MailMessage();
-                        msg.Body = Body;
-                        msg.Subject = Subject;
-                        msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
-                        msg.To.Add(item.Email);
-                        msg.IsBodyHtml = true;
+                        if (!_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == item.UserId && x.TargetUserId == Uid && x.IsBlocked == true) && !_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == item.UserId && x.IsBlocked == true))
+                        {
+                            string Subject = "New Service Request";
+                            string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello Service Providers, <br> New service request available in your area, <br>Please check it out. <br>" + "<a href='" + Url.Action("Index", "Home", new { }, "https") + "' style ='text-decoration: none; cursor: pointer; color: #1D7A8C; font-size: 16px; font-family: sans-serif; font-weight:bold'>Check<br></a></span>";
+                            MailMessage msg = new MailMessage();
+                            msg.Body = Body;
+                            msg.Subject = Subject;
+                            msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
+                            msg.To.Add(item.Email);
+                            msg.IsBodyHtml = true;
 
-                        SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.Port = 587;
-                        smtp.EnableSsl = true;
-                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            SmtpClient smtp = new SmtpClient();
+                            smtp.Host = "smtp.gmail.com";
+                            smtp.Port = 587;
+                            smtp.EnableSsl = true;
+                            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 
-                        System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+                            System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
 
-                        credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
-                        credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
-                        smtp.UseDefaultCredentials = false;
-                        smtp.Credentials = credential;
-                        smtp.Send(msg);
+                            credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                            credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
+                            smtp.UseDefaultCredentials = false;
+                            smtp.Credentials = credential;
+                            smtp.Send(msg);
+                        }
                     }
                 }
                 //Mailing SP

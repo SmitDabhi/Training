@@ -1,5 +1,7 @@
 ﻿$(document).ready(function () {
     var today = new Date();
+
+
     $('#bookDate').calendar({
         type: 'date',
         monthFirst: false,
@@ -130,7 +132,6 @@ function btnCheckZip() {
             $(".loading-div").removeClass("d-none");
         },
         success: function (data) {
-            console.log(data);
             if (data.results == "Success") {
                 $("#errorPostalDiv").addClass("d-none");
                 $("#inputLocation").val(data.city);
@@ -161,6 +162,7 @@ function setupTime() {
     } else {
         $("#BookDTError").addClass("d-none");
         GetAddresses();
+        GetFavSP();
         form3();
     }
 }
@@ -275,6 +277,44 @@ function GetAddresses() {
     });
 }
 
+function GetFavSP() {
+    $.ajax({
+        url: "/Customer/GetFavSP",
+        method: "GET",
+        beforeSend: () => {
+            $(".loading-div").removeClass("d-none");
+        },
+        success: (data) => {
+            if (data != "notfound") {
+                $("#favSPDATA").removeClass("d-none");
+                var dataList = $("#favSPDIV");
+                dataList.empty();
+
+                for (var i in data) {
+                    dataList.append('<div><span class="favSPAcc"><input type="hidden" id="spID" value="' + data[i].spid + '"><span class="favSpIcon"><img src="/img/avatar-' + data[i].profIcon + '.png" /></span><span class="favSpName">' + data[i].spName + '</span><span class="favSpSelectBtn"><button type="button" class="btn selectSPBtn">Select</button></span></span></div>');
+                }
+
+            } else {
+                $("#favSPDATA").addClass("d-none");
+            }
+
+            $(".selectSPBtn").click((e) => {
+                var selectedSpid = $(e.target.closest('div').childNodes[0].childNodes[0]).val();
+                $("#selectSPID").val(selectedSpid);
+
+                $("span.favSpIcon img").removeClass('selectedSPImg');
+                $(e.target.closest('div').childNodes[0].childNodes[1].childNodes[0]).addClass('selectedSPImg');
+            });
+        },
+        error: (err) => {
+            console.log(err);
+        },
+        complete: () => {
+            $(".loading-div").addClass("d-none");
+        }
+    });
+}
+
 function ClearForm() {
     $("#inputStreet").val("");
     $("#inputHouseNo").val("");
@@ -365,6 +405,7 @@ function completeBook() {
     obj.AddressId = $(".radioAdd div input[type=radio]:checked").val();
     obj.PostalCode = $("#zipCodeValidate").val();
     obj.ExtraHours = 0;
+    obj.SpId = $("#selectSPID").val();
 
     if ($("#cabinet").is(":checked")) {
         obj.ExtraHours += 0.5;

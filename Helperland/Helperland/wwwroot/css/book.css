@@ -447,21 +447,25 @@ p.accordion-header.accordion_btn {
     color:white;
 }
 .favSpDetails {
-    border-bottom: 1px solid #dcdcdc;
-    margin: 0 0.5px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    margin: 0px 0.5px;
+    flex-wrap: wrap;
 }
 .favSPAcc {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:center;
-    margin:10px 0;
+    margin:10px;
 }
 .favSPAcc span{
     margin:5px 0;
 }
+.selectedSPImg {
+    border: 2px solid #1d7a8c;
+    border-radius: 50%;
+}
 .favSpIcon {
-    padding: 35px 30px;
     border: 1px solid #E1E1E1;
     background-color: #F3F3F3;
     border-radius: 50%;
@@ -474,6 +478,13 @@ p.accordion-header.accordion_btn {
     border: 1px solid #dcdcdc;
     border-radius:5px;
     color:#4f4f4f;
+}
+.favSpSelectBtn button:hover{
+    color:#4f4f4f;
+    font-weight:bold;
+}
+.favSpSelectBtn button:focus{
+    box-shadow:none;
 }
 .addBtn{
     padding:0;

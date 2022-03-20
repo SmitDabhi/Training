@@ -253,25 +253,14 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="row favSP">
+                        <div class="row favSP" id="favSPDATA">
+                            <input type="hidden" id="selectSPID" />
                             <span class="bookSectionTitle">Your favourite Service Providers</span>
                             <span>You can choose your favourite service provider from the below list</span>
-                            <div class="favSpDetails d-flex">
-                                <span class="favSPAcc">
-                                    <span class="favSpIcon">
-                                        <img src="/img/cap.png" />
-                                    </span>
-                                    <span class="favSpName">
-                                        Sandip Patel
-                                    </span>
-                                    <span class="favSpSelectBtn">
-                                        <button type="button" class="btn">Select</button>
-                                    </span>
-                                </span>
-                            </div>
-                            <div class="addBtn">
-                                <button type="button" class="btn btn-check-postal" onclick="addressFun()">Continue</button>
-                            </div>
+                            <div id="favSPDIV" class="favSpDetails d-flex"></div>
+                        </div>
+                        <div class="addBtn">
+                            <button type="button" class="btn btn-check-postal" onclick="addressFun()">Continue</button>
                         </div>
                       </div>
                   </div>
