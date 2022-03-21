@@ -8,6 +8,7 @@ builder.Services.AddSession();
 builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("sqlConnection");
 builder.Services.AddDbContext<HelperlandDBContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddResponseCaching();
 
 var app = builder.Build();
 
@@ -20,6 +21,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseResponseCaching();
 app.UseStaticFiles();
 
 app.UseRouting();

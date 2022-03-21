@@ -16,6 +16,7 @@ namespace Helperland.Controllers
             _dbContext = dbContext;
             _config = config;
         }
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Servicerequest()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -41,6 +42,7 @@ namespace Helperland.Controllers
             }
         }
         
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Usermanagement()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");

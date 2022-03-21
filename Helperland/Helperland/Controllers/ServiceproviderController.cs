@@ -16,7 +16,7 @@ namespace Helperland.Controllers
             _dbContext = dbContext;
             _config = config;
         }
-
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Dashboard()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -43,6 +43,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult NewServiceRequest()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -69,6 +70,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult UpcomingServices()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -95,6 +97,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult ServiceHistory() 
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -121,6 +124,7 @@ namespace Helperland.Controllers
             } 
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult MyRatings()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -147,6 +151,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult MyAccount()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -173,6 +178,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult BlockCustomer()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -199,6 +205,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Serviceschedule()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");

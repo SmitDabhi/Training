@@ -17,6 +17,8 @@ namespace Helperland.Controllers
             _dbContext = dbContext;
             _config = config;
         }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Servicerequest()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -44,6 +46,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [Route("book-service")]
         public IActionResult Bookservice()
         {
@@ -71,6 +74,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Dashboard()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -97,6 +101,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Myaccount()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
@@ -124,6 +129,7 @@ namespace Helperland.Controllers
             }
         }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult FavouritePro()
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
