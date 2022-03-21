@@ -23,6 +23,8 @@ namespace Helperland.Models.viewModels
         public string PhoneNumber { get; set; } = null!;
 
         public string? Message { get; set; }
+
+        [Required(ErrorMessage ="Please Upload File")]
         public IFormFile? UploadFile { get; set; }
 
         public string? UploadPath { get; set; }

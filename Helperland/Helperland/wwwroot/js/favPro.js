@@ -22,6 +22,14 @@
         $("html, body").animate({ scrollTop: 0 }, 0);
     });
 
+    $('#upSerSuccessModal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+    $("#upSerSuccessModal .successBtn button").click(() => {
+        window.location.reload();
+    });
+
     getFavProData();
 });
 
@@ -33,7 +41,6 @@ function getFavProData() {
             $(".loading-div").removeClass("d-none");
         },
         success: (data) => {
-            console.log(data);
             if (data != "notfound") {
                 var dataList = $("#favProTB tbody");
                 dataList.empty();
@@ -64,6 +71,107 @@ function getFavProData() {
                 }
             });
 
+            $("#favProTB .dataTables_empty").text("No data Available!");
+
+            $("#favProTB").click((e) => {
+                var id = $(e.target.closest("tr").childNodes[1].childNodes[1]).val();
+
+                if (e.target.className == "btn favSPBtn") {
+                    $.ajax({
+                        url: "/Customer/FavCustomer",
+                        method: "POST",
+                        data: { ID: id },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
+                        success: (data) => {
+                            console.log(data);
+                            if (data != "notfound") {
+                                $(".successTxtUS").text("SP has been added to favourite list!");
+                                $("#upSerSuccessModal").modal("show");
+                            }
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
+                        }
+                    });
+                }
+
+                if (e.target.className == "btn unfavSPBtn") {
+                    $.ajax({
+                        url: "/Customer/UnfavCustomer",
+                        method: "POST",
+                        data: { ID: id },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
+                        success: (data) => {
+                            console.log(data);
+                            if (data != "notfound") {
+                                $(".successTxtUS").text("SP has been removed from favourite list!");
+                                $("#upSerSuccessModal").modal("show");
+                            }
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
+                        }
+                    });
+                }
+
+                if (e.target.className == "btn blockSPBtn") {
+                    $.ajax({
+                        url: "/Customer/BlockCustomer",
+                        method: "POST",
+                        data: { ID: id },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
+                        success: (data) => {
+                            console.log(data);
+                            if (data != "notfound") {
+                                $(".successTxtUS").text("SP has been blocked successfully!");
+                                $("#upSerSuccessModal").modal("show");
+                            }
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
+                        }
+                    });
+                }
+
+                if (e.target.className == "btn unblockSPBtn") {
+                    $.ajax({
+                        url: "/Customer/UnblockCustomer",
+                        method: "POST",
+                        data: { ID: id },
+                        beforeSend: () => {
+                            $(".loading-div").removeClass("d-none");
+                        },
+                        success: (data) => {
+                            console.log(data);
+                            if (data != "notfound") {
+                                $(".successTxtUS").text("SP has been unblocked successfully!");
+                                $("#upSerSuccessModal").modal("show");
+                            }
+                        },
+                        error: (err) => {
+                            console.log(err);
+                        },
+                        complete: () => {
+                            $(".loading-div").addClass("d-none");
+                        }
+                    });
+                }
+            });
         },
         error: (err) => {
             console.log(err);

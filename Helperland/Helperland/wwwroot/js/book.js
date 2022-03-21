@@ -445,8 +445,19 @@ function completeBook() {
             console.log("Success");
             if (data == "false") {
                 alert("False");
+            } else if (data.msg == "con") {
+                $(".bookSuccessImg").hide();
+                $(".bookSuccessTxt").hide();
+                $(".bookSuccessSmTxt").text("Another service request has been assigned to the service provider on " + data.endDate.split(" ")[0] + " from " + data.startDate.split(" ")[1].slice(0, -3) + data.startDate.split(" ")[2] + " to " + data.endDate.split(" ")[1].slice(0, -3) + data.endDate.split(" ")[2] + ".Either choose another date or pick up a different time slot");
+                $("#bookSuccessModal .modal-header").html('<a data-bs-dismiss="modal" aria-label="Close" class="btn-close"></a>')
+                $(".bookSuccessModalBtn").html('<a data-bs-dismiss="modal" href="#" aria-label="Close">Ok</a>');
+                $("#bookSuccessModal").modal("show");
             } else {
+                $(".bookSuccessImg").show();
+                $(".bookSuccessTxt").show();
                 $(".bookSuccessSmTxt").text("Service request id : " + data);
+                $("#bookSuccessModal .modal-header").html('<a href="Customer/Dashboard" class="btn-close"></a>')
+                $(".bookSuccessModalBtn").html('<a href="Customer/Dashboard">Ok</a>')
                 $("#bookSuccessModal").modal("show");
             }
         },

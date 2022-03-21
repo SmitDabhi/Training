@@ -107,6 +107,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXByb3ZpZGVyXFVwY29taW5nU2VydmljZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [S:/Training Tatvasoft/Helperland/Helperland/Views/Shared/_DashLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EYXNoTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -352,6 +352,7 @@ namespace Helperland.Controllers
         public IActionResult CompleteBooking(CompleteBookVM completeBook)
         {
             int? Uid = HttpContext.Session.GetInt32("userid");
+
             if (Uid != null)
             {
                 ServiceRequest req = new();
@@ -372,14 +373,66 @@ namespace Helperland.Controllers
                 req.ModifiedDate = DateTime.Now;
                 req.ModifiedBy = Uid;
                 req.Distance = 0;
-                
-                if(completeBook.SpId != null)
+
+                if (completeBook.SpId != null)
                 {
+                    var check = _dbContext.ServiceRequests.Where(x => x.ServiceProviderId == completeBook.SpId && x.Status == null).ToList();
+
+                    if (check.Count() > 0)
+                    {
+                        var conflict = false;
+                        var sDt = "";
+                        var eDt = "";
+
+                        foreach (var i in check)
+                        {
+                            var newSerStartDT = DateTime.ParseExact(completeBook.StartDateTIme, "d/M/yyyy hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
+                            var newSerEndDT = DateTime.ParseExact(completeBook.StartDateTIme, "d/M/yyyy hh:mm tt", System.Globalization.CultureInfo.InvariantCulture).AddHours((double)completeBook.Duration + (double)completeBook.ExtraHours);
+                            var accSerStartDT = i.ServiceStartDate;
+                            var accSerEndDT = i.ServiceStartDate.AddHours((double)i.SubTotal + 1);
+
+                            if (newSerStartDT >= accSerStartDT && newSerStartDT <= accSerEndDT)
+                            {
+                                conflict = true;
+                                sDt = accSerStartDT.ToString();
+                                eDt = accSerEndDT.ToString();
+                                break;
+                            }
+                            else if (newSerEndDT >= accSerStartDT && newSerEndDT <= accSerEndDT)
+                            {
+                                conflict = true;
+                                sDt = accSerStartDT.ToString();
+                                eDt = accSerEndDT.ToString();
+                                break;
+
+                            }
+                            else if (newSerStartDT < accSerStartDT && newSerEndDT > accSerEndDT)
+                            {
+                                conflict = true;
+                                sDt = accSerStartDT.ToString();
+                                eDt = accSerEndDT.ToString();
+                                break;
+                            }
+                        }
+
+                        if (conflict)
+                        {
+                            var obj = new
+                            {
+                                msg = "con",
+                                startDate = sDt,
+                                endDate = eDt
+                            };
+                            return Json(obj);
+                        }
+                    }
+
                     req.ServiceProviderId = completeBook.SpId;
                     req.SpacceptedDate = DateTime.Now;
                 }
-
-                var ServiceRequest =_dbContext.ServiceRequests.Add(req);
+                
+                
+                var ServiceRequest = _dbContext.ServiceRequests.Add(req);
                 _dbContext.SaveChanges();
 
                 UserAddress userReq = _dbContext.UserAddresses.FirstOrDefault(x => x.AddressId == completeBook.AddressId);
@@ -388,7 +441,7 @@ namespace Helperland.Controllers
 
                 ServiceRequestAddress serviceRequestAddress = new();
                 serviceRequestAddress.AddressLine1 = userReq.AddressLine1;
-                serviceRequestAddress.AddressLine2= userReq.AddressLine2;
+                serviceRequestAddress.AddressLine2 = userReq.AddressLine2;
                 serviceRequestAddress.City = userReq.City;
                 serviceRequestAddress.PostalCode = userReq.PostalCode;
                 serviceRequestAddress.State = state.StateName;
@@ -401,43 +454,43 @@ namespace Helperland.Controllers
 
                 if (completeBook.Cabinet)
                 {
-                    ServiceRequestExtra requestExtra = new ();
+                    ServiceRequestExtra requestExtra = new();
                     requestExtra.ServiceRequestId = ServiceRequest.Entity.ServiceRequestId;
                     requestExtra.ServiceExtraId = 1;
                     _dbContext.ServiceRequestExtras.Add(requestExtra);
                     _dbContext.SaveChanges();
                 }
-                
+
                 if (completeBook.Fridge)
                 {
-                    ServiceRequestExtra requestExtra = new ();
+                    ServiceRequestExtra requestExtra = new();
                     requestExtra.ServiceRequestId = ServiceRequest.Entity.ServiceRequestId;
                     requestExtra.ServiceExtraId = 2;
                     _dbContext.ServiceRequestExtras.Add(requestExtra);
                     _dbContext.SaveChanges();
                 }
-                
+
                 if (completeBook.Oven)
                 {
-                    ServiceRequestExtra requestExtra = new ();
+                    ServiceRequestExtra requestExtra = new();
                     requestExtra.ServiceRequestId = ServiceRequest.Entity.ServiceRequestId;
                     requestExtra.ServiceExtraId = 3;
                     _dbContext.ServiceRequestExtras.Add(requestExtra);
                     _dbContext.SaveChanges();
                 }
-                
+
                 if (completeBook.Wash)
                 {
-                    ServiceRequestExtra requestExtra = new ();
+                    ServiceRequestExtra requestExtra = new();
                     requestExtra.ServiceRequestId = ServiceRequest.Entity.ServiceRequestId;
                     requestExtra.ServiceExtraId = 4;
                     _dbContext.ServiceRequestExtras.Add(requestExtra);
                     _dbContext.SaveChanges();
                 }
-                
+
                 if (completeBook.Windows)
                 {
-                    ServiceRequestExtra requestExtra = new ();
+                    ServiceRequestExtra requestExtra = new();
                     requestExtra.ServiceRequestId = ServiceRequest.Entity.ServiceRequestId;
                     requestExtra.ServiceExtraId = 5;
                     _dbContext.ServiceRequestExtras.Add(requestExtra);
@@ -449,12 +502,12 @@ namespace Helperland.Controllers
 
                 var reqEmail = _dbContext.Users.Where(x => x.ZipCode == pin && x.UserTypeId == 2).ToList();
 
-                if(completeBook.SpId != null)
+                if (completeBook.SpId != null)
                 {
                     var spEmailData = _dbContext.Users.FirstOrDefault(x => x.UserId == completeBook.SpId);
 
                     string Subject = "New Service Request";
-                    string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello "+ spEmailData.FirstName + ", <br> A service request "+ ServiceRequest.Entity.ServiceRequestId + " has been directly assigned to you, <br>Please check it out. <br>" + "<a href='" + Url.Action("Index", "Home", new { }, "https") + "' style ='text-decoration: none; cursor: pointer; color: #1D7A8C; font-size: 16px; font-family: sans-serif; font-weight:bold'>Check<br></a></span>";
+                    string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello " + spEmailData.FirstName + ", <br> A service request " + ServiceRequest.Entity.ServiceRequestId + " has been directly assigned to you, <br>Please check it out. <br>" + "<a href='" + Url.Action("Index", "Home", new { }, "https") + "' style ='text-decoration: none; cursor: pointer; color: #1D7A8C; font-size: 16px; font-family: sans-serif; font-weight:bold'>Check<br></a></span>";
                     MailMessage msg = new MailMessage();
                     msg.Body = Body;
                     msg.Subject = Subject;
@@ -483,7 +536,7 @@ namespace Helperland.Controllers
                         if (!_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == item.UserId && x.TargetUserId == Uid && x.IsBlocked == true) && !_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == item.UserId && x.IsBlocked == true))
                         {
                             string Subject = "New Service Request";
-                            string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello Service Providers, <br> New service request available in your area, <br>Please check it out. <br>" + "<a href='" + Url.Action("Index", "Home", new { }, "https") + "' style ='text-decoration: none; cursor: pointer; color: #1D7A8C; font-size: 16px; font-family: sans-serif; font-weight:bold'>Check<br></a></span>";
+                            string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello Service Providers, <br> New service request available in your area, Please check it out. <br>" + "<a href='" + Url.Action("Index", "Home", new { }, "https") + "' style ='text-decoration: none; cursor: pointer; color: #1D7A8C; font-size: 16px; font-family: sans-serif; font-weight:bold'>Check<br></a></span>";
                             MailMessage msg = new MailMessage();
                             msg.Body = Body;
                             msg.Subject = Subject;
@@ -507,6 +560,7 @@ namespace Helperland.Controllers
                         }
                     }
                 }
+                    
                 //Mailing SP
 
                 return Json(ServiceRequest.Entity.ServiceRequestId);
@@ -938,6 +992,36 @@ namespace Helperland.Controllers
                     _dbContext.ServiceRequests.Update(req);
                     _dbContext.SaveChanges();
 
+                    //Mailing SP
+
+                    var spData = _dbContext.Users.FirstOrDefault(x => x.UserId == req.ServiceProviderId);
+                    var newSerStartDT = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null);
+                    var newSerEndDT = DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null).AddHours((double)req.SubTotal);
+
+                    string Subject = "Reschedule Service Request";
+                    string Body = "<h2 style='text-align: center; background-color: #1D7A8C; color: white; padding: 10px 0; font-family: sans-serif;' > Helperland | Home Services </h2>" + "<span style='margin: 5px 0; color: #646464; font-size: 16px; font-family: sans-serif;'> Hello " + spData.FirstName + ", <br> Service Request " + req.ServiceRequestId + " has been rescheduled by customer. New date and time are " + DateTime.ParseExact(service.ServiceDate, "d/M/yyyy HH:mm", null) + " to " + newSerEndDT.ToString("t");
+                    MailMessage msg = new MailMessage();
+                    msg.Body = Body;
+                    msg.Subject = Subject;
+                    msg.From = new MailAddress("sm.project.workstation@gmail.com", "Helperland");
+                    msg.To.Add(spData.Email);
+                    msg.IsBodyHtml = true;
+
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                    System.Net.NetworkCredential credential = new System.Net.NetworkCredential();
+
+                    credential.UserName = _config.GetSection("MailProfile").GetSection("UserName").Value;
+                    credential.Password = _config.GetSection("MailProfile").GetSection("Password").Value;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = credential;
+                    smtp.Send(msg);
+                    //Mailing SP
+
                     return Json("true");
                 }
             }
@@ -1094,6 +1178,144 @@ namespace Helperland.Controllers
             else
             {
                 return Json("NoRating");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult FavCustomer(int ID)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                if (_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == ID))
+                {
+                    FavoriteAndBlocked req = _dbContext.FavoriteAndBlockeds.FirstOrDefault(x => x.UserId == Uid && x.TargetUserId == ID);
+                    req.IsFavorite = true;
+                    req.IsBlocked = false;
+
+                    _dbContext.FavoriteAndBlockeds.Update(req);
+                    _dbContext.SaveChanges();
+                }
+                else
+                {
+                    FavoriteAndBlocked req = new();
+                    req.UserId = (int)Uid;
+                    req.TargetUserId = ID;
+                    req.IsFavorite = true;
+                    req.IsBlocked = false;
+
+                    _dbContext.FavoriteAndBlockeds.Add(req);
+                    _dbContext.SaveChanges();
+                }
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+        
+        [HttpPost]
+        public IActionResult UnfavCustomer(int ID)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                if (_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == ID))
+                {
+                    FavoriteAndBlocked req = _dbContext.FavoriteAndBlockeds.FirstOrDefault(x => x.UserId == Uid && x.TargetUserId == ID);
+                    req.IsFavorite = false;
+
+                    _dbContext.FavoriteAndBlockeds.Update(req);
+                    _dbContext.SaveChanges();
+                }
+                else
+                {
+                    FavoriteAndBlocked req = new();
+                    req.UserId = (int)Uid;
+                    req.TargetUserId = ID;
+                    req.IsFavorite = false;
+                    req.IsBlocked = false;
+
+                    _dbContext.FavoriteAndBlockeds.Add(req);
+                    _dbContext.SaveChanges();
+                }
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult BlockCustomer(int ID)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                if (_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == ID))
+                {
+                    FavoriteAndBlocked req = _dbContext.FavoriteAndBlockeds.FirstOrDefault(x => x.UserId == Uid && x.TargetUserId == ID);
+                    req.IsFavorite = false;
+                    req.IsBlocked = true;
+
+                    _dbContext.FavoriteAndBlockeds.Update(req);
+                    _dbContext.SaveChanges();
+                }
+                else
+                {
+                    FavoriteAndBlocked req = new();
+                    req.UserId = (int)Uid;
+                    req.TargetUserId = ID;
+                    req.IsFavorite = false;
+                    req.IsBlocked = true;
+
+                    _dbContext.FavoriteAndBlockeds.Add(req);
+                    _dbContext.SaveChanges();
+                }
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult UnblockCustomer(int ID)
+        {
+            int? Uid = HttpContext.Session.GetInt32("userid");
+            if (Uid != null)
+            {
+                if (_dbContext.FavoriteAndBlockeds.Any(x => x.UserId == Uid && x.TargetUserId == ID))
+                {
+                    FavoriteAndBlocked req = _dbContext.FavoriteAndBlockeds.FirstOrDefault(x => x.UserId == Uid && x.TargetUserId == ID);
+                    req.IsBlocked = false;
+
+                    _dbContext.FavoriteAndBlockeds.Update(req);
+                    _dbContext.SaveChanges();
+                }
+                else
+                {
+                    FavoriteAndBlocked req = new();
+                    req.UserId = (int)Uid;
+                    req.TargetUserId = ID;
+                    req.IsFavorite = false;
+                    req.IsBlocked = false;
+
+                    _dbContext.FavoriteAndBlockeds.Add(req);
+                    _dbContext.SaveChanges();
+                }
+
+                return Json("true");
+            }
+            else
+            {
+                return Json("notfound");
             }
         }
     }

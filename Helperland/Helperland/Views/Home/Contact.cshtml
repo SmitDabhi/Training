@@ -111,6 +111,7 @@
                         <input asp-for="UploadFile" id="uploadFile" class="d-none" placeholder="Upload"/>
                         <span class="uploadBtnLabel">Upload</span>
                         <span class="custom-txt">No file chosen, yet.</span>
+                        <span asp-validation-for="UploadFile" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12">
